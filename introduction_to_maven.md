@@ -96,21 +96,50 @@ Tim Notes:
 
 # BREAK (10 minutes)
 
-## Writing and Executing Unit Tests
+## Working with Dependencies (45 minutes)
+
+* Coordinate Details (5 minutes)
+* Where do dependencies come from?
+* Checkout a Project from Version Control
+* Run a Build and Identify a New Requirement
+* Locate the Appropriate Dependency in Central
+* Add a new Dependency
+* Modify Code to Use New Dependency
+* Demonstrate Maven Downloading a Dependency
+* Where dependencies go?
+* Repository Format
+* Release Versions
+
+Tim Note:
+
+* This is going to seem strange, but there's no mention of a snapshot here. Here's my thought: most users don't need to know what a snapshot is until they think of in-house software releases.   Almost no one is depending on SNAPSHOT versions from Apache.  Introducing SNAPSHOTs right now is confusing.
+
+* Also note that this module isn't called 'Dependency Management'.  That's a fancy name that means nothing to a junior developer that just needs to use a new dependency.
+
+
+
+
+## Writing and Executing Unit Tests (45 minutes)
 
 * Checkout a Project from Version Control
 * Demonstrate Surefire Plugin
 * Introduce Surefire Plugin
-* Show JUnit Tests
-* Show JUnit Maven Configuration
-* Execute JUnit Tests
 * Show TestNG Tests
-* Show TestNG Maven Configuration
 * Execute TestNG Tests
 * Discuss Test Resources
 * Demonstrate Test Resources
+* Including and Excluding Tests
+* Running a Single Test
+* Parallel Test Execution
+* Surefire Plugin Configuration Examples
 
 Length:
 
-     Min: 30 min
-     Max: 40 min
+     Min: 33 min
+     Max: 45 min
+     
+Tim Notes:
+
+* Unit tests are such a fundamental requirement, we should spend an entire module on it. 
+
+## BREAK (10 minutes)
