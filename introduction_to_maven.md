@@ -7,7 +7,9 @@ Tim's Notes on Class:
 
 ## Prerequisites
  
-* Student should understand how to set an environment variable on an OS.
+* Understand how to set an environment variable on an OS.
+* Know what the command line is and are comfortable with it
+* Have some experience with Java
 
 ## Target Platforms
 
