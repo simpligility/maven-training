@@ -4,6 +4,12 @@ Tim's Notes on Class:
 
 * I'd like for this class to be focused on activity rather than theory.  There's nothing worse than standing up in front of a class and having to talk for an hour about the theory of dependency management.
 
+* There's no Eclipse here. I did that on purpose.  I think we can teach the content with any editor or IDE, and I think we should keep the initial content somewhat flexible.  Many don't use Eclipse, I'm noticing a trend toward IntelliJ.  Also there's a large population using Rational tools, which, while they use the same Maven plugins present frustrating differences. If we're keeping this confined to five hours, I don't think we should lose 30 minutes to IDE integration - let's focus on POM.xml
+
+* There's going to be a lot that isn't covered in this class, but this is alright.  From my perspective, this class is for users.  The point of this class is to get people to a point where they can look at a POM and begin to understand it.  
+
+
+
 
 ## Prerequisites
  
@@ -81,6 +87,7 @@ Tim Notes:
 * Examine the pom.xml
 * Introduce coordinates
 * Introduce dependencies
+* Talk about dependency scope
 * Explain directory structure
 * Modify code
 * Modify a dependency
@@ -95,6 +102,7 @@ Tim Notes:
 
 * Don't go into all the detail.  This class is not a reference book.  
 * Don't talk about where resource filters go, they are not there yet.  src/main/java, src/test/java - that's it.
+* You'll note that we introduce dependency scope out of order here.   This is fine, we're hinting at the next section.
 
 # BREAK (10 minutes)
 
