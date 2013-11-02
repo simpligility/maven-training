@@ -75,15 +75,368 @@
                     <ul>
                         <li>Checkout a Simple Project from Version Control</li>
                         <li>Examine the pom.xml</li>
+                        <li>Explain directory structure</li>
                         <li>Introduce coordinates</li>
                         <li>Introduce dependencies</li>
-                        <li>Talk about dependency scope</li>
-                        <li>Explain directory structure</li>
-                        <li>Modify code</li>
-                        <li>Modify a dependency</li>
-                        <li>Examine the Output</li>
                     </ul>
 
+                </section>
+                <section>
+                    <section>
+                    <h2>Do First, Learn Later</h2>
+
+                    <p>Our training philsophy is straightforward...</p>
+
+                    <p>We learn from experience, not from watching slides.</p>
+
+                    <p><b>Let's get to work.</b></p>
+
+                </section>
+
+                <section>
+                    <h2>First Example</h2>
+
+                    <p>Checkout a project from Git:</p>
+
+                    <pre>$ git clone TODO</pre>
+
+                </section>
+
+                <section>
+                    <h2>First Example</h2>
+
+                    <p>This example is a single-module Maven build.</p>
+
+                    <p>A command-line application which...</p>
+
+                </section>
+
+                </section>
+                <section>
+
+                    <section>
+                    <h2>Building the Project</h2>
+
+                    <p>Let's build this project...</p>
+
+                    <pre>$ mvn clean install</pre>
+
+                </section>
+
+                <section>
+
+                    <h2>What Just Happened?</h2>
+
+                    <ul>
+                        <li>Maven inspected a file called the Project Object Model (POM)</li>
+                        <li>It downloaded dependencies.</li>
+                        <li>It compiled Java code into bytecode.</li>
+                        <li>It ran a series of Unit Tests.</li>
+                        <li>It assembled everything into a JAR file.</li>
+                    </ul>
+                </section>
+
+                <section>
+
+                    <h2>Running the Project</h2>
+
+                    <p>target/sample-project-1.0-SNAPSHOT.jar</p>
+
+                    <pre>$ java -jar target/sample-project-1.0-SNAPSHOT.jar</pre>
+
+                </section>
+</section>
+
+                <section>
+
+                    <section>
+                    <h2>What is a Maven Project?</h2>
+
+                    <p>A Maven project is...
+
+                    <ol>
+                        <li>A collection of files and folders.</li>
+                        <li>With a pom.xml file.</li>
+                    </ol>
+
+                    </section>
+
+                    <section>
+                        <h2>What's in a POM?</h2>
+                    </section>
+
+                    <section>
+                        <h2>Everything is in the POM...</h2>
+
+                        <ul>
+                            <li>Directory Structure</li>
+                            <li>Coordinates</li>
+                            <li>Dependencies</li>
+                            <li>Build Configuration</li>
+                            <li>Directory Structure</li>
+                            <li>Unit Testing Configuration</li>
+                            <li>Package Customizations</li>
+                            <li>Repository Manager Configuration</li>
+                            <li>Continuous Integration Server Configuration</li>
+                            <li>Open Source Project Information*</li>
+                            <li>Container Configuration</li>
+                            <li>Custom User Properties</li>
+                        </ul>
+
+                    </section>
+
+                    <section>
+                        <h2>Focus on First Steps...</h2>
+
+                        <p>Directory Structure</p>
+                        <p>Coordinates & Dependencies</p>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Directory Structure</h2>
+                    </section>
+                    <section>
+                        <h2>Example Project Contents</h2>
+
+                        <p>Our example project has...</p>
+
+                        <ul>
+                            <li>Java Source Files</li>
+                            <li>Properties Files</li>
+                            <li>A Web Application Descriptor</li>
+                            <li>Javascript and HTML</li>
+                            <li>Unit Tests</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>A Common Structure</h2>
+
+                        <p>Maven provides a common structure</p>
+
+                        <p>Everything is in its right place.</p>
+                    </section>
+                    <section>
+                        <h2>Source and Resources</h2>
+
+                        <ul>
+                            <li><b>Source Code:</b>: <code>src/main/java</code></li>
+                            <li><b>Resources:</b>: <code>src/main/resources</code></li>
+                        </ul>
+
+                        <p>Both directories added to classpath and resulting artifact.</p>
+                    </section>
+                    <section>
+                        <h2>Web Application</h2>
+
+                        <ul>
+                            <li><b>Web Application:</b>: <code>src/main/webapp</code></li>
+                        </ul>
+
+                        <p>Stored in the resulting artifact.</p>
+                    </section>
+                    <section>
+                        <h2>Unit Tests</h2>
+
+                        <ul>
+                            <li><b>Unit Tests:</b>: <code>src/test/java</code></li>
+                            <li><b>Test Resources:</b>: <code>src/test/resources</code></li>
+                        </ul>
+
+                        <p><b>Not</b> stored in the resulting artifact.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Inspect Example Artifact</h2>
+                    </section>
+                </section>
+                      
+
+                <section>
+                    <section>
+                        <h2>Coordinates</h2>
+                    </section>
+                    <section>
+                        <h2>Everything has a Coordinate</h2>
+
+                        <ul>
+                            <li>Projects</li>
+                            <li>Dependencies</li>
+                            <li>Maven Plugins</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Give me the Coordinates?</h2>
+
+                        <ol>
+                            <li>Group ID</li>
+                            <li>Artifact ID</li>
+                            <li>Version</li>
+                        </ol>
+                    </section>
+
+                    <section>
+                        <h2>Group ID</h2>
+
+                        <p><b>Identifier:</b> <code>groupId</code></p>
+
+                        <p><b>Role:</b> Artifacts (JARs, WARs, EARs) are organized into groups.</p>
+
+                        <p>Groups correspond to organizations and projects.</p>
+                    </section>
+
+                    <section>
+                        <h2>Artifact ID</h2>
+
+                        <p><b>Identifier:</b> <code>artifactId</code></p>
+
+                        <p><b>Role:</b> Projects produce artifacts.  This project produces a WAR artifact.</p>
+                        
+                        <p>A Maven project produces a single artifact.</p>
+                    </section>
+
+                    <section>
+                        <h2>Version</h2>
+
+                        <p><b>Identifier:</b> <code>version</code></p>
+
+                        <p><b>Role:</b> Software changes over time and releases need to be versioned.</p>
+                    </section>
+
+                    <section>
+                        <h2>Example Coordinates</h2>
+
+                        <p>Open up our example project's pom.xml and see this...</p>
+
+                        <code>TODO</code>
+                    </section>
+
+                    <section>
+                        <h2>Example Coordinates</h2>
+
+                        <ul>
+                            <li><code>groupId</code>: "com.jvanzyl.training"</li>
+                            <li><code>artifactId</code>: "sample-project"</li>
+                            <li><code>version</code>: "1.0-SNAPSHOT"</li>
+                        </ul>
+
+                    </section>
+
+                    <section>
+                        <h2>GAV Coordinate</h2>
+
+                        <p><b>G</b>roup ID, <b>A</b>rtifact ID, <b>V</b>version</p>
+
+                        <pre>com.jvanzyl.training:sample-project:1.0-SNAPSHOT</pre>
+                    </section>
+
+                    <section>
+                        <h2>Coordinates Affects Output</h2>
+
+                        <pre>sample-project-1.0-SNAPSHOT.jar</pre>
+                    </section>
+                    <section>
+                        <h2>Demo: Change Coordinates</h2>
+                    </section>
+
+                </section>
+                <section>
+                    <section>
+                        <h2>Dependencies</h2>
+                    </section>
+                    <section>
+                        <h2>Example Project</h2>
+
+                        <p>We built a web application which does the following:</p>
+
+                        <ul>
+                            <li>Connects to an embedded Database</li>
+                            <li>Creates service objects</li>
+                            <li>Exposes a REST API to a...</li>
+                            <li>...client-side Javascript application</li>
+                        </ul>
+
+                    </section>
+                    <section>
+                        <h2>Example Project Dependencies</h2>
+
+                        <p>We assembled this project using open source libraries:</p>
+
+                        <ul>
+                            <li>Embedded Database: HSQLDB and jDBI</li>
+                            <li>Dependency Injection: Guice</li>
+                            <li>REST API: Jersey</li>
+                            <li>Client-side Javascript: React</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Example pom.xml Dependencies</h2>
+
+                        <pre>TODO</pre>
+                    </section>
+
+                    <section>
+                        <h2>Dependencies have Coordinates</h2>
+
+                        <p>Take Guice as an example:</p>
+
+                        <pre>TODO</pre>
+                    </section>
+
+                    <section>
+                        <h2>Maven Downloads Dependencies</h2>
+
+                        <p>Maven turns these coordinates into a URL.</p>
+                        <p>Download dependencies from Central to your Local Repository.</p>
+                    </section>
+
+                    <section>
+                        <h2>Dependencies have Scope</h2>
+
+                        <p>This example uses two scopes:</p>
+
+                        <ul>
+                            <li>compile</li>
+                            <li>test</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Demo: Add a Dependency</h2>
+
+                        <p>Add a new dependency, run the build, follow the artifact.</p>
+                    </section>
+
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>In Summary...</h2>
+                    </section>
+                    <section>
+                        <h2>mvn clean install</h2>
+
+                        <p>Building a Maven Project is straightforward.</p>
+                    </section>
+                    <section>
+                        <h2>Project Object Model (POM)</h2>
+
+                        <p>All Maven project have a POM.</p>
+
+                        <p>An XML file in pom.xml</p>
+                    </section>
+                    <section>
+                        <h2>Projects have Coordinates</h2>
+
+                    </section>
+                    <section>
+                        <h2>Projects have Dependencies</h2>
+
+                    </section>
                 </section>
                 <section>
                     <h2>Next</h2>
