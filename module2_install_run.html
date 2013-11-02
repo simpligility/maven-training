@@ -68,6 +68,7 @@
 					<h2>Module Objectives</h2>
 
                     <ul>
+                        <li>Install Java 7</li>
                         <li>Downloading Maven</li>
                         <li>Installing Maven</li>
                         <li>Running Maven</li>
@@ -75,6 +76,66 @@
                     </ul>
 
                 </section>
+
+                <section>
+                    <h2>Install Java 7</h2>
+
+                    <p>Maven is designed to run on Java 6 or higher.</p>
+
+                    <p><b>This class uses Java 7.</b></p>
+
+                    <ol>
+                        <li>Visit Oracle's JavaSE Page: <a href="http://www.oracle.com/technetwork/java/javase/overview/index.html">http://java.oracle.com</a></li>
+                        <li>Download Java</li>
+                        <li>Install Java</li>
+                        <li>Set the JAVA_HOME variable to point to installation directory.</li>
+                    </ol>
+
+                </section>
+                
+                <section>
+                    <h2>Downloading Maven</h2>
+
+                    <p>Downloading Maven is Easy</p>
+                    
+                    <ol>
+                        <li>Go to <a href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a></li>
+                        <li>Download
+                        either <a href="http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz">apache-maven-3.1.1-bin.tar.gz</a>
+                        or <a href="http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.zip">apache-maven-3.1.1-bin.zip</a></li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Installing Maven</h2>
+
+                    <ol>
+                        <li>Unpack the Maven distribution to a directory. (i.e. /usr/local/apache-maven-3.1.1)</li>
+                        <li>Set two environment variables:
+                            <ol>
+                                <li><code>M2_HOME</code> should point to /usr/local/apache-maven-3.1.1</li>
+                                <li><code>PATH</code> add ${M2_HOME}/bin to PATH</li>
+                            </ol>
+                        </li>
+                        <li>Restart shell to pick-up environment variable changes</li>
+                     </ol>
+                </section>
+
+                <section>
+                    <h2>Running Maven</h2>
+
+                    <p>Once Maven has been installed, run the following command:</p>
+
+                    <pre>$ mvn -v
+Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 10:22:22-0500)
+Maven home: /Users/Tim/programs/apache-maven-3.1.1
+Java version: 1.7.0_05, vendor: Oracle Corporation
+Java home: /Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "mac os x", version: "10.8.3", arch: "x86_64", family: "mac"
+</pre>
+                </section>
+
                 <section>
                     <h2>Next</h2>
                     <a href="module3_build_simple.html">Building a Simple Project</a>
