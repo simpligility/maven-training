@@ -70,25 +70,335 @@
                         
 					</aside>
 				</section>
+
+                <section>
+                    <h2>Where were we?</h2>
+
+                    <p>Last module was a brief introduction to the Surefire Plugin.</p>
+
+                    <ul>
+                        <li>Tests are integral to a build.</li>
+                        <li>Surefire plugin has a Test goal.</li>
+                        <li>This goal can be configure.</li>
+                        <li>Tests generate reports.</li>
+                    </ul>
+
+                    <aside class="note">
+                        <ul>
+                            <li>Last module was "foreshadowing"</li>
+                            <li>Now, you'll really show them goals.</li>
+                        </ul>
+                    </aside>
+                </section>
                 
                 <section>
                     <!-- TODO -->
 					<h2>Module Objectives</h2>
 
                     <ul>
-                        <li>When you run a Maven build...</li>
-                        <li>Maven just runs a series of Goals (2 slides - QUICK!)</li>
-                        <li>These goals are contained in Plugins (2 slides - QUICK!)</li>
-                        <li>Goals are executed within a Lifecycle (2 slides - QUICK)</li>
-                        <li>Let's review: Goals are units of work, Plugins group similar goals, and Maven has a set lifecycle to which goals are bound.</li>
-                        <li>So when you run your build, this is what's happening (show default lifecycle)</li>
-                        <li>Demonstrate the lifecycle</li>
-                        <li>Hit them with a bit of theory… All maven projects follow this lifecycle, it is configurable, but this is why we standardized.</li>
+                        <li>What is a Goal?
+                            <ul>
+                                <li>When you run a Maven build...</li>
+                                <li>Maven just runs a series of Goals (2 slides - QUICK!)</li>
+                                <li>These goals are contained in Plugins (2 slides - QUICK!)</li>
+                                <li>Let's review: Goals are units of work, Plugins group similar goals, and Maven has a set lifecycle to which goals are bound.</li>
+                            </ul>
+                        </li>
+                        <li>What is the Lifecycle?
+                            <ul>
+                                <li>Goals are executed within a Lifecycle (2 slides - QUICK)</li>
+                                <li>So when you run your build, this is what's happening (show default lifecycle)</li>
+                                <li>Demonstrate the lifecycle</li>
+                                <li>Hit them with a bit of theory… All maven projects follow this lifecycle, it is configurable, but this is why we standardized.</li>
+                            </ul>
+                        </li>
                         <li>Talk (briefly) about convention over configuration</li>
                         <li>Talk (briefly) about what life is like without Maven</li>
                     </ul>
 
                 </section>
+                <section>
+                    <section>
+                        <h2>What is a Goal?</h2>
+                    </section>
+                    <section>
+                        <h2>Test Goal</h2>
+
+                        <p>In the previous module we ran the "test" goal.</p>
+                        
+                        <ul>
+                            <li>A single action.</li>
+                            <li>Configurable from the Command-line</li>
+                            <li>Take a look at this goals configurable properties...</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Demo: Goal Documentation for test</h2>
+
+                        <p>Look at the <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">test goal documentation</a>.</p>
+                        <aside class="notes">
+                            <ul>
+                                <li>Load the Goal documentation from <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html</a></li>
+                                <li>Show the description, full name, and properties.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Other goals in our build</h2>
+
+                        <p>Our default build does many things...</p>
+
+                        <ul>
+                            <li>It compiles Java code.</li>
+                            <li>It runs unit tests.</li>
+                            <li>It creates a package.</li>
+                        </ul>
+
+                        <p>Each of these actions is encpaulated in a goal.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Goal Documentation for compile</h2>
+
+                        <p>Look at the <a href="http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html">compile goal documentation</a>.</p>
+                        <aside class="notes">
+                            <ul>
+                                <li>Load the Goal documentation from <a href="http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html">http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html</a></li>
+                                <li>Show the description, full name, and properties.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Demo: Customize the Compile Goal</h2>
+
+                        <p>Target different Java versions with "source" and "target".</p>
+
+                        <p>From the command-line.</p>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>You would never do this from the command-line.</li>
+                                <li>This demo sets up the next few slides.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Configuring Goals in a POM</h2>
+
+                        <p>The compile Goal of the compiler plugin can be configured in a POM.</p>
+
+                        <pre>TBD</pre>
+                    </section>
+                    <section>
+                        <h2>Demo: Configure Compile Goal in POM</h2>
+
+                        <p>Configure Compile Behavior in the POM</p>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Do same thing as previous except in POM.</li>
+                                <li>Run build, demonstrate results.</li>
+                        </aside>
+                     </section>
+                    <section>
+                        <h2>Configuring a Goal Execution</h2>
+
+                        <p>In the last demonstration we configured a Goal Execution.</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>What is a Plugin?</h2>
+                        <h3>Zooming Out a Level</h3>
+                    </section>
+                    <section>
+                        <h2>Plugins contain Goals</h2>
+
+                        <p>A plugin is an artifact, with a coordinate.</p>
+
+                        <p>A plugin contains one or more related goals.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Maven Surefire Plugin Documentation</h2>
+
+                        <ul>
+                            <li>LIST GOALS</li>
+                        </ul>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Show the plugin web page.</li>
+                                <li>Reading plugin doc is a main objective of this module.</li>
+                                <li>Teach them how to find answers.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Demo: Maven Compiler Plugin Documentation</h2>
+                   
+                        <ul>
+                            <li>LIST GOALS</li>
+                        </ul>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>These pages are very helpful...</li>
+                                <li>..."In fact, you should bookmark the plugin documentation."</li>
+                                <li>..."This is where you can come to find answers about Maven."</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Demo: Maven War Plugin Documentation</h2>
+
+                        <ul>
+                            <li>LIST GOALS</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Plugins have Coordinates</h2>
+
+                        <ul>
+                            <li>groupId</li>
+                            <li>artifactId</li>
+                            <li>version</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Plugins are Artifacts</h2>
+
+                        <p>Maven downloads plugins as needed.</p>
+
+                        <p>Maven can have more than one version of a plugin.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Show Maven Downloading Plugins</h2>
+                        <aside class="notes">
+                            <ul>
+                                <li>Show how Maven downloads a plugin.</li>
+                                <li>Just like a dependency.</li>
+                                <li>Make strong point: Maven ships with very little "built-in".</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Demo: Configuring Goals at Plugin Level</h2>
+                        
+                        <aside class="notes">
+                            <ul>
+                                <li>Take the compile goal example...</li>
+                                <li>Move the configuration up to the plugin level.</li>
+                                <li>Demonstrate different config scope.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Ways to Configure a Goal</h2>
+
+                        <ul>
+                            <li>From the command-line</li>
+                            <li>In a Goal Execution</li>
+                            <li>In the plugin configuration</li>
+                        </ul>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>These different levels are used for different reasons.</li>
+                                <li>Command-line customizations are one-off, throw away commands.</li>
+                                <li>Configuration at the execution level are for targeted changes.</li>
+                                <li>Configuring at the Plugin is for wider customization.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Why do these goals run?</h2>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>The Lifecycle</h2>
+                        <h3>Zooming Out Another Level</h3>
+                    </section>
+                    <section>
+                        <h2>Everything Hinges on the Lifecycle</h2>
+
+                        <p>The Lifecycle is...</p>
+
+                        <ul>
+                            <li>A single, linear series of steps (or phases)</li>
+                            <li>Goals are bound to these phases.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>The Default Lifecycle</h2>
+
+                        <ul>
+                            <li>TBD</li>
+                        </ul>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>This is the default lifecycle.</li>
+                                <li>You can customize this, but that falls outside the scope of this class.</li>
+                                <li>It is also not very common.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Goals Bind to Lifecycle Phases</h2>
+
+                        <img src="http://placehold.it/350x150">
+
+                    </section>
+                    <section>
+                        <h2>Running Phases: Test</h2>
+
+                        <p><code>mvn test</code></p>
+
+                        <img src="http://placehold.it/350x150">
+                    </section>
+                    <section>
+                        <h2>Running Phases: Install</h2>
+
+                        <p><code>mvn install</code></p>
+
+                        <img src="http://placehold.it/350x150">
+                    </section>
+                    <section>
+                        <h2>Default Lifecycle Bindings</h2>
+
+                        <ul>
+                            <li>TBD</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Customizing the Lifecycle</h2>
+                        <p>This is explored later in the class.</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                    <h2>Summary</h2>
+                    </section>
+                    <section>
+                        <h2>Everything is Implement in Goals</h2>
+                    </section>
+                    <section>
+                        <h2>Goals can be Configured in Executions</h2>
+                    </section>
+                    <section>
+                        <h2>Plugins Aggregate Goals</h2>
+                    </section>
+                    <section>
+                        <h2>Plugins are Downloadable Artifacts</h2>
+                    </section>
+                    <section>
+                        <h2>Goals execute because they are Bound to a Lifecycle</h2>
+                    </section>
+                    <section>
+                        <h2>There is a Default Lifecycle</h2>
+                    </section>
+                </section>
+                    
                 <section>
                     <h2>Next</h2>
                     <a href="module7_packaging_software.html">Packaging Your Software</a>
