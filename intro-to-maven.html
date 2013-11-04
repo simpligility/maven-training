@@ -1,0 +1,1835 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introduction to Maven</title>
+
+		<meta name="description" content="A Introduction to Maven">
+		<meta name="author" content="Tim O'Brien, Jason Van Zyl">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		    <script src="lib/js/html5shiv.js"></script>
+		    <![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Introduction to Maven</h1>
+					<h3>Building, Testing, and Assembling Applications</h3>
+					<p>
+						<small>Created by Jason Van Zyl / <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+					</p>
+                    
+					<aside class="notes">
+                        <ul>
+                            <li>Focus on activity rather than theory.
+                                There's nothing worse than standing up in
+                                front of a class and having to talk for an
+                                hour about the theory of dependency
+                                management.  Move quickly, and try not to
+                                dwell too long.</li>
+                            
+                            <li>There's going to be a lot that isn't covered
+                                in this class, but this is alright.  This
+                                class is for users.  The point of this class
+                                is to get people to a point where they can
+                                look at a POM and begin to understand it.</li>
+                        </ul>
+                        
+					</aside>
+				</section>
+                
+                <section>
+                    <!-- TODO -->
+					<h2>Welcome</h2>
+					<p>
+                        Welcome to Introduction to Maven.  In this
+                        class you will learn how to use Maven to build
+                        your projects.
+					</p>
+
+                    <aside class="notes">
+
+                        <b>Min Time: 5 minutes, Max Time: 10 minutes</b>
+                        <ul>
+                            <li>Don't dwell. This section needs to start and end in a manner of minutes.</li>
+                            <li>You might see this as a filler section, but it's important to provide a "roadmap" for the course.</li>
+                            <li>We should make sure to define what the instructor introduction is (and what it is not)</li>
+                            <li>Giving people a way to provide feedback during class is critical for virtual.</li>
+                        </ul>
+
+                    </aside>
+                </section>
+                
+                
+				<section>
+					<section>
+						<h2>Prerequisites</h2>
+						<p>
+                            For the best learning experience this
+                            class has been designed to be both
+                            efficient and fast-paced. Here are a few
+                            prerequisites we've assumed...
+						</p>
+					</section>
+					<section>
+						<h2>You are Comfortable with the OS</h2>
+						<p>In this class we ask you to perform the
+						    following tasks without much explanation:</p>
+                        <ul>
+                            <li>Download a file to your workstation</li>
+                            <li>Set an Environment Variable</li>
+                            <li>Run shell and batch scripts</li>
+                        </ul>
+					</section>
+					<section>
+						<h2>You Understand Java Development</h2>
+                        <p>This class is targeted at Java developers.
+                            We assume that you:</p>
+                        <ul>
+                            <li>Know how to install Java.</li>
+                            <li>Understand the structure of simple programs.</li>
+                            <li>Have had experience compiling Java code.</li>
+                        </ul>
+					</section>
+				</section>
+                
+				<section>
+					<section>
+						<h2>Target Technologies</h2>
+						<p>
+                            We've developed this class to address a set
+                            of technologies currently used for
+                            development.  These technologies include...
+						</p>
+                        
+					</section>
+					<section>
+						<h2>Operating Systems</h2>
+						<p>You'll have no problem running the examples in
+                            this class if you use:</p>
+                        <ul>
+                            <li>Windows 7 or Higher</li>
+                            <li>OSX Mountain Lion</li>
+                        </ul>
+                        <p>
+                            You can also use Linux, (but you do so at
+                            your own risk.)
+                        </p>
+					</section>
+					<section>
+						<h2>Java Version</h2>
+                        <p>This class is based on Java 7.</p>
+                        <p>Can you use Java 6? One or two examples may
+                            break, use at your own risk.</p>
+					</section>
+					<section>
+						<h2>IDE</h2>
+                        <p>The examples in this class will feature
+                            Eclipse Kepler.</p>
+                        
+                        <p>But, you can use IntelliJ or NetBeans if
+                            that is what you are familiar with.</p>
+                        
+                        <p>Again, use an alternative IDE at your own
+                            risk.</p>
+					</section>
+				</section>
+                
+				<section>
+					<h2>Goals and Objectives</h2>
+					<p>
+                        At the end of this class, you should know:
+					</p>
+                    <ul>
+                        <li>How to download and install Maven</li>
+                        <li>How to run a simple build</li>
+                        <li>How to configure and locate dependencies for a project</li>
+                        <li>How to configure the Surefire plugin to run unit tests</li>
+                    </ul>
+                    
+				</section>
+                
+				<section>
+					<h2>Instructor Intro</h2>
+					<p>
+                        Who's teaching this class?
+					</p>
+				</section>
+                
+				<section>
+					<h2>Planned Class Structure</h2>
+					<p>
+                        In this class we are going to:
+					</p>
+                    <ul>
+                        <li>Learn this</li>
+                        <li>Learn that</li>
+                        <li>Learn a bunch more stuff.</li>
+                    </ul>
+				</section>
+				<section>
+					<h1>Installing and Running Maven</h1>
+					<h3>First Steps</h3>
+					<p>
+
+						<small>Created by Jason Van Zyl
+						/ <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+
+					</p>
+                    
+					<aside class="notes">
+                        <p><b>Min Time: 10 minutes, Max Time: 15 minutes</b></p>
+                        <ul>
+                            <li>Instead of starting with a VERY BORING
+                            "What is Maven?" section. We start with a
+                            demo.</li>
+
+                            <li>Pay attention to prerequisites - if
+                            someone doesn't get how to set an
+                            environment, they shouldn't be in this
+                            class.</li>
+
+                        </ul>
+                        
+					</aside>
+				</section>
+                
+                <section>
+                    <!-- TODO -->
+					<h2>Module Objectives</h2>
+
+                    <ul>
+                        <li>Install Java 7</li>
+                        <li>Downloading Maven</li>
+                        <li>Installing Maven</li>
+                        <li>Running Maven</li>
+                        <li>Questions</li>
+                    </ul>
+
+                </section>
+
+                <section>
+                    <h2>Install Java 7</h2>
+
+                    <p>Maven is designed to run on Java 6 or higher.</p>
+
+                    <p><b>This class uses Java 7.</b></p>
+
+                    <ol>
+                        <li>Visit Oracle's JavaSE Page: <a href="http://www.oracle.com/technetwork/java/javase/overview/index.html">http://java.oracle.com</a></li>
+                        <li>Download Java</li>
+                        <li>Install Java</li>
+                        <li>Set the JAVA_HOME variable to point to installation directory.</li>
+                    </ol>
+
+                </section>
+                
+                <section>
+                    <h2>Downloading Maven</h2>
+
+                    <p>Downloading Maven is Easy</p>
+                    
+                    <ol>
+                        <li>Go to <a href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a></li>
+                        <li>Download
+                        either <a href="http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz">apache-maven-3.1.1-bin.tar.gz</a>
+                        or <a href="http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.zip">apache-maven-3.1.1-bin.zip</a></li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Installing Maven</h2>
+
+                    <ol>
+                        <li>Unpack the Maven distribution to a directory. (i.e. /usr/local/apache-maven-3.1.1)</li>
+                        <li>Set two environment variables:
+                            <ol>
+                                <li><code>M2_HOME</code> should point to /usr/local/apache-maven-3.1.1</li>
+                                <li><code>PATH</code> add ${M2_HOME}/bin to PATH</li>
+                            </ol>
+                        </li>
+                        <li>Restart shell to pick-up environment variable changes</li>
+                     </ol>
+                </section>
+
+                <section>
+                    <h2>Running Maven</h2>
+
+                    <p>Once Maven has been installed, run the following command:</p>
+
+                    <pre>$ mvn -v
+Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 10:22:22-0500)
+Maven home: /Users/Tim/programs/apache-maven-3.1.1
+Java version: 1.7.0_05, vendor: Oracle Corporation
+Java home: /Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "mac os x", version: "10.8.3", arch: "x86_64", family: "mac"
+</pre>
+                </section>
+
+				<section>
+					<h1>Building a Simple Project</h1>
+					<h3>First Steps</h3>
+					<p>
+
+						<small>Created by Jason Van Zyl
+						/ <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+
+					</p>
+                    
+					<aside class="notes">
+                        <p><b>Min Time: 25 minutes, Max Time: 35 minutes</b></p>
+                        <ul>
+
+                            <li>Don't go into all the detail.  This
+                                class is not a reference book.</li>
+
+                            <li>Don't talk about where resource
+                                filters go, they are not there yet.
+                                src/main/java, src/test/java - that's
+                                it.</li>
+
+                            <li>You'll note that we introduce
+                                dependency scope out of order here.
+                                This is fine, we're hinting at the
+                                next section.</li>
+
+                        </ul>
+                        
+					</aside>
+				</section>
+                
+                <section>
+                    <!-- TODO -->
+					<h2>Module Objectives</h2>
+
+                    <ul>
+                        <li>Checkout a Simple Project from Version Control</li>
+                        <li>Examine the pom.xml</li>
+                        <li>Explain directory structure</li>
+                        <li>Introduce coordinates</li>
+                        <li>Introduce dependencies</li>
+                    </ul>
+
+                </section>
+                <section>
+                    <section>
+                    <h2>Do First, Learn Later</h2>
+
+                    <p>Our training philsophy is straightforward...</p>
+
+                    <p>We learn from experience, not from watching slides.</p>
+
+                    <p><b>Let's get to work.</b></p>
+
+                </section>
+
+                <section>
+                    <h2>First Example</h2>
+
+                    <p>Checkout a project from Git:</p>
+
+                    <pre>$ git clone TODO</pre>
+
+                </section>
+
+                <section>
+                    <h2>First Example</h2>
+
+                    <p>This example is a single-module Maven build.</p>
+
+                    <p>A command-line application which...</p>
+
+                </section>
+
+                </section>
+                <section>
+
+                    <section>
+                    <h2>Building the Project</h2>
+
+                    <p>Let's build this project...</p>
+
+                    <pre>$ mvn clean install</pre>
+
+                </section>
+
+                <section>
+
+                    <h2>What Just Happened?</h2>
+
+                    <ul>
+                        <li>Maven inspected a file called the Project Object Model (POM)</li>
+                        <li>It downloaded dependencies.</li>
+                        <li>It compiled Java code into bytecode.</li>
+                        <li>It ran a series of Unit Tests.</li>
+                        <li>It assembled everything into a JAR file.</li>
+                    </ul>
+                </section>
+
+                <section>
+
+                    <h2>Running the Project</h2>
+
+                    <p>target/sample-project-1.0-SNAPSHOT.jar</p>
+
+                    <pre>$ java -jar target/sample-project-1.0-SNAPSHOT.jar</pre>
+
+                </section>
+</section>
+
+                <section>
+
+                    <section>
+                    <h2>What is a Maven Project?</h2>
+
+                    <p>A Maven project is...
+
+                    <ol>
+                        <li>A collection of files and folders.</li>
+                        <li>With a pom.xml file.</li>
+                    </ol>
+
+                    </section>
+
+                    <section>
+                        <h2>What's in a POM?</h2>
+                    </section>
+
+                    <section>
+                        <h2>Everything is in the POM...</h2>
+
+                        <ul>
+                            <li>Directory Structure</li>
+                            <li>Coordinates</li>
+                            <li>Dependencies</li>
+                            <li>Build Configuration</li>
+                            <li>Directory Structure</li>
+                            <li>Unit Testing Configuration</li>
+                            <li>Package Customizations</li>
+                            <li>Repository Manager Configuration</li>
+                            <li>Continuous Integration Server Configuration</li>
+                            <li>Open Source Project Information*</li>
+                            <li>Container Configuration</li>
+                            <li>Custom User Properties</li>
+                        </ul>
+
+                    </section>
+
+                    <section>
+                        <h2>Focus on First Steps...</h2>
+
+                        <p>Directory Structure</p>
+                        <p>Coordinates & Dependencies</p>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Directory Structure</h2>
+                    </section>
+                    <section>
+                        <h2>Example Project Contents</h2>
+
+                        <p>Our example project has...</p>
+
+                        <ul>
+                            <li>Java Source Files</li>
+                            <li>Properties Files</li>
+                            <li>A Web Application Descriptor</li>
+                            <li>Javascript and HTML</li>
+                            <li>Unit Tests</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>A Common Structure</h2>
+
+                        <p>Maven provides a common structure</p>
+
+                        <p>Everything is in its right place.</p>
+                    </section>
+                    <section>
+                        <h2>Source and Resources</h2>
+
+                        <ul>
+                            <li><b>Source Code:</b>: <code>src/main/java</code></li>
+                            <li><b>Resources:</b>: <code>src/main/resources</code></li>
+                        </ul>
+
+                        <p>Both directories added to classpath and resulting artifact.</p>
+                    </section>
+                    <section>
+                        <h2>Web Application</h2>
+
+                        <ul>
+                            <li><b>Web Application:</b>: <code>src/main/webapp</code></li>
+                        </ul>
+
+                        <p>Stored in the resulting artifact.</p>
+                    </section>
+                    <section>
+                        <h2>Unit Tests</h2>
+
+                        <ul>
+                            <li><b>Unit Tests:</b>: <code>src/test/java</code></li>
+                            <li><b>Test Resources:</b>: <code>src/test/resources</code></li>
+                        </ul>
+
+                        <p><b>Not</b> stored in the resulting artifact.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Inspect Example Artifact</h2>
+                    </section>
+                </section>
+                      
+
+                <section>
+                    <section>
+                        <h2>Coordinates</h2>
+                    </section>
+                    <section>
+                        <h2>Everything has a Coordinate</h2>
+
+                        <ul>
+                            <li>Projects</li>
+                            <li>Dependencies</li>
+                            <li>Maven Plugins</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Give me the Coordinates?</h2>
+
+                        <ol>
+                            <li>Group ID</li>
+                            <li>Artifact ID</li>
+                            <li>Version</li>
+                        </ol>
+                    </section>
+
+                    <section>
+                        <h2>Group ID</h2>
+
+                        <p><b>Identifier:</b> <code>groupId</code></p>
+
+                        <p><b>Role:</b> Artifacts (JARs, WARs, EARs) are organized into groups.</p>
+
+                        <p>Groups correspond to organizations and projects.</p>
+                    </section>
+
+                    <section>
+                        <h2>Artifact ID</h2>
+
+                        <p><b>Identifier:</b> <code>artifactId</code></p>
+
+                        <p><b>Role:</b> Projects produce artifacts.  This project produces a WAR artifact.</p>
+                        
+                        <p>A Maven project produces a single artifact.</p>
+                    </section>
+
+                    <section>
+                        <h2>Version</h2>
+
+                        <p><b>Identifier:</b> <code>version</code></p>
+
+                        <p><b>Role:</b> Software changes over time and releases need to be versioned.</p>
+                    </section>
+
+                    <section>
+                        <h2>Example Coordinates</h2>
+
+                        <p>Open up our example project's pom.xml and see this...</p>
+
+                        <code>TODO</code>
+                    </section>
+
+                    <section>
+                        <h2>Example Coordinates</h2>
+
+                        <ul>
+                            <li><code>groupId</code>: "com.jvanzyl.training"</li>
+                            <li><code>artifactId</code>: "sample-project"</li>
+                            <li><code>version</code>: "1.0-SNAPSHOT"</li>
+                        </ul>
+
+                    </section>
+
+                    <section>
+                        <h2>GAV Coordinate</h2>
+
+                        <p><b>G</b>roup ID, <b>A</b>rtifact ID, <b>V</b>version</p>
+
+                        <pre>com.jvanzyl.training:sample-project:1.0-SNAPSHOT</pre>
+                    </section>
+
+                    <section>
+                        <h2>Coordinates Affects Output</h2>
+
+                        <pre>sample-project-1.0-SNAPSHOT.jar</pre>
+                    </section>
+                    <section>
+                        <h2>Demo: Change Coordinates</h2>
+                    </section>
+
+                </section>
+                <section>
+                    <section>
+                        <h2>Dependencies</h2>
+                    </section>
+                    <section>
+                        <h2>Example Project</h2>
+
+                        <p>We built a web application which does the following:</p>
+
+                        <ul>
+                            <li>Connects to an embedded Database</li>
+                            <li>Creates service objects</li>
+                            <li>Exposes a REST API to a...</li>
+                            <li>...client-side Javascript application</li>
+                        </ul>
+
+                    </section>
+                    <section>
+                        <h2>Example Project Dependencies</h2>
+
+                        <p>We assembled this project using open source libraries:</p>
+
+                        <ul>
+                            <li>Embedded Database: HSQLDB and jDBI</li>
+                            <li>Dependency Injection: Guice</li>
+                            <li>REST API: Jersey</li>
+                            <li>Client-side Javascript: React</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Example pom.xml Dependencies</h2>
+
+                        <pre>TODO</pre>
+                    </section>
+
+                    <section>
+                        <h2>Dependencies have Coordinates</h2>
+
+                        <p>Take Guice as an example:</p>
+
+                        <pre>TODO</pre>
+                    </section>
+
+                    <section>
+                        <h2>Maven Downloads Dependencies</h2>
+
+                        <p>Maven turns these coordinates into a URL.</p>
+                        <p>Download dependencies from Central to your Local Repository.</p>
+                    </section>
+
+                    <section>
+                        <h2>Dependencies have Scope</h2>
+
+                        <p>This example uses two scopes:</p>
+
+                        <ul>
+                            <li>compile</li>
+                            <li>test</li>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>In Summary...</h2>
+                    </section>
+                    <section>
+                        <h2>mvn clean install</h2>
+
+                        <p>Building a Maven Project is straightforward.</p>
+                    </section>
+                    <section>
+                        <h2>Project Object Model (POM)</h2>
+
+                        <p>All Maven project have a POM.</p>
+
+                        <p>An XML file in pom.xml</p>
+                    </section>
+                    <section>
+                        <h2>Projects have Coordinates</h2>
+
+                    </section>
+                    <section>
+                        <h2>Projects have Dependencies</h2>
+
+                    </section>
+                </section>
+				<section>
+					<h1>Working with Dependencies</h1>
+					<h3>First Steps</h3>
+					<p>
+
+						<small>Created by Jason Van Zyl
+						    / <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+
+					</p>
+                    
+					<aside class="notes">
+                        <p><b>Min Time: 35 minutes, Max Time: 45 minutes</b></p>
+                        <ul>
+
+                            <li>This is going to seem strange, but
+                                there's no mention of a snapshot
+                                here. Here's my thought: most users don't
+                                need to know what a snapshot is until they
+                                think of in-house software releases.
+                                Almost no one is depending on SNAPSHOT
+                                versions from Apache.  Introducing
+                                SNAPSHOTs right now is confusing.</li>
+
+                            <li>Also note that this module isn't
+                                called 'Dependency Management'.  That's a
+                                fancy name that means nothing to a junior
+                                developer that just needs to use a new
+                                dependency.</li>
+
+                        </ul>
+                        
+					</aside>
+				</section>
+                
+                <section>
+                    <!-- TODO -->
+					<h2>Module Objectives</h2>
+
+                    <ul>
+                        <li>Demo: Add a New Dependency
+                            <ul>
+                                <li>Checkout a Project from Version Control</li>
+                                <li>Run a Build and Identify a New Requirement</li>
+                                <li>Locate the Appropriate Dependency in Central</li>
+                                <li>Add a new Dependency</li>
+                                <li>Modify Code to Use New Dependency</li>
+                                <li>Demonstrate Maven Downloading a Dependency</li>
+                            </ul>
+                        </li>
+                        <li>Coordinate Details (5 minutes)</li>
+                        <li>Dependencies
+                            <ul>
+                                
+                                <li>Where do dependencies come from?</li>
+                                
+                                <li>Where dependencies go?</li>
+                                <li>Repository Format</li>
+                                <li>Release Versions</li>
+                                <li>What if your dependency isn't on Central?</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </section>
+                <section>
+                    <h2>Where were we?</h2>
+
+                    <p>The previous section really only gave you part of the picture, you learned that:</p>
+
+                    <ul>
+                        <li>Dependencies have Coodinates</li>
+                        <li>Maven Downloads Dependencies</li>
+                    </ul>
+
+                    <b>How?</b>
+                </section>
+                <section>
+                    <section>
+                        <h2>Let's add a Feature</h2>
+
+                        <p>Our web application could use some cache.</p>
+
+                        <p>Let's add a Caching library to the REST API</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Find a New Dependency</h2>
+                        
+                        <p>To find a new dependency, use <a href="http://maven.search.org">maven.search.org</a>
+
+                        <p>We're looking for Guava.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Select the Appropriate Version</h2>
+                        
+                        <p>Show how to locate an artifact on Central.</p>
+
+                        <p>Show how to get a list of available versions.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Find the appropriate coordinates</h2>
+
+                        <p>Once you've located the artifact, grab the coordinates.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Add the Coordinates to the POM</h2>
+
+                        <p>Once you have the appropriate coordinates add them to the POM.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Modify code to use new dependency</h2>
+                        
+                        <p></p>
+                    </section>
+                    <section>
+                        <h2>Demo: Run the build and track the download</h2>
+
+                        <p>Run the build, follow the artifact.</p>
+                    </section>
+                    <section>
+                        <h2>What just happened?</h2>
+
+                        <p>The next few sections explain.</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Coordinate Details</h2>
+                    </section>
+                    <section>
+                        <h2>GAV Coordinate Review</h2>
+
+                        <p>In the previous module we learned:</p>
+
+                        <ul>
+                            <li>groupId</li>
+                            <li>artifact</li>
+                            <li>version</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Dependencies have coordinates</h2>
+
+                        <p>Our dependencies:</p>
+
+                        <ul>
+                            <li>groupId:artifactId:version</li>
+                            <li>com.sample:sample-artifact:1.0</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Two more coordinates...</h2>
+
+                        <ul>
+                            <li>packaging</li>
+                            <li>classifier</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Coordinate: Packaging</h2>
+
+                        <ul>
+                            <li>Implicit value is "jar"</li>
+                            <li>Influences packaging type of a build</li>
+                            <li>Possible values? Anything...
+                                <ul>
+                                    <li>zip</li>
+                                    <li>war</li>
+                                    <li>ear</li>
+                                    <li>sar</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Coordinate: Classifier</h2>
+
+                        <ul>
+                            <li>Rarely used</li>
+                            <li>Classified can be used for:
+                                <ul>
+                                    <li>JDK compatibility</li>
+                                    <li>Extra Packages and Assemblies</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Summary: There are 5 Coordinates</h2>
+                        
+                        <ul>
+                            <li>groupId</li>
+                            <li>artifactId</li>
+                            <li>version</li>
+                            <li>packaging</li>
+                            <li>classifier</li>
+                        </ul>
+
+                        <p>Next: How does Maven download a dependency?</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>How do Dependencies Work?</h2>
+                    </section>
+                    <section>
+                        <h2>Maven sees a Coordinate</h2>
+
+                        <p><code>com.sample:sample-artifact:1.0:jar</code></p>
+                    </section>
+                    <section>
+                        <h2>Maven creates a URL</h2>
+                        
+                        <p><code>com.sample:sample-artifact:1.0:jar</code></p>
+                        
+                        <p>Turns into:</p>
+
+                        <p><code>http://repo1.maven.org/maven2/com/sample/sample-artifact/1.0/sample-artifact-1.0.jar</code></p>
+                    </section>
+                    <section>
+                        <h2>Coordinates form a Pattern</h2>
+
+                        <ul>
+                           <li>http://repo1.maven.org</li>
+                           <li>/{groupId}</li>
+                           <li>/{artifactId}</li>
+                           <li>/{version}</li>
+                           <li>/{artifactId}-{version}.{packaging}</li>
+                         </ul>
+
+                    </section>
+                    <section>
+                        <h2>Maven Downloads the Dependency</h2>
+
+                        <p>It also download a POM at the same coordinates...</p>
+
+                        <p>The POM for a depenency points to other dependencies.</p>
+                    </section>
+                    <section>
+                        <h2>Maven Builds a Graph of Dependencies</h2>
+
+                        <p>Maven grabs your dependencies...</p>
+
+                        <p>...then it grabs your dependencies dependencies...</p>
+
+                        <p>...and so on.</p>
+
+                        <p><b>It's Turtles, all the way down.</b></p>
+                     </section>
+                     <section>
+                         <h2>Demo: Show Complex Dependency Graph</h2>
+
+                         <p>Show a large graph.</p>
+                     </section>
+                     <section>
+                         <h2>Maven then Creates a Classpath</h2>
+
+                         <p>There are a few different classpaths:</p>
+
+                         <ul>
+                             <li>Classpath for Compilation</li>
+                             <li>Classpath for Testing</li>
+                             <li>Classpath for Packaging</li>
+                             <li>Classpath at Runtime</li>
+                         </ul>
+                     </section>
+                     <section>
+                         <h2>Dependency Scopes</h2>
+                         
+                         <p>Maven has several scopes, here are two:</p>
+
+                         <ul>
+                             <li>compile - Classpath for Compilation, Testing, Packaging, and Runtime</li>
+                             <li>test - Classpath for Testing Only</li>
+                          </ul>
+                     </section>
+                     <section>
+                         <h2>Demo: Dependency Resolution Result for Compile Scope</h2>
+                     </section>
+                     <section>
+                         <h2>Demo: Add a Dependency to the Test Scope</h2>
+                     </section>
+
+                </section>
+                <section>
+                    <section>
+                        <h2>Summary: Coordinates and Dependencies</h2>
+                    </section>
+                    <section>
+                        <h2>It's easy to manage dependencies</h2>
+                    </section>
+                    <section>
+                        <h2>Coordinates form Basis of Dependency Management</h2>
+                    </section>
+                    <section>
+                        <h2>Maven turn Coordinates into a URL</h2>
+                    </section>
+                    <section>
+                        <h2>Maven downloads artifacts + POMs</h2>
+                    </section>
+                    <section>
+                        <h2>Maven builds a Graph</h2>
+                    </section>
+                    <section>
+                        <h2>Maven turns Graph into Classpaths</h2>
+                    </section>
+                    <section>
+                        <h2>Scopes Influence Classpaths</h2>
+                    </section>
+                </section>
+				<section>
+					<h1>Writing and Executing Unit Tests</h1>
+					<h3>First Steps</h3>
+					<p>
+
+						<small>Created by Jason Van Zyl
+						    / <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+
+					</p>
+                    
+					<aside class="notes">
+                        <p><b>Min Time: 35 minutes, Max Time: 45 minutes</b></p>
+                        <ul>
+
+                            <li>Module not about Unit Tests as much as it is about core principles.
+                                <ul>
+                                    <li>Hint at full story..</li>
+                                    <li>Goals</li>
+                                    <li>Plugins</li>
+                                    <li>Plugin Configuration</li>
+                                    <li>Reporting</li>
+                                </ul>
+                            </li>
+
+                            <li>Unit tests are such a fundamental
+                                requirement, we should spend an entire
+                                module on it.</li>
+
+                        </ul>
+                        
+					</aside>
+				</section>
+                
+                <section>
+                    <h2>Where were we?</h2>
+                    
+                    <p>You just learned about coordinates and dependencies.</p>
+
+                    <p>Now, we're going to dive into Maven's execution model by learning how Maven executes Unit Tests.</p>
+                </section>
+                <section>
+                    <!-- TODO -->
+					<h2>Module Objectives</h2>
+
+                    <ul>
+                        <li>Execute Unit Tests
+                            <ul>
+                                <li>Introduce Surefire Plugin</li>
+                                <li>Demonstrate Surefire Plugin</li>
+                                <li>Running a Single Test</li>
+                            </ul>
+                        </li>
+                        <li>Discuss Plugin Configuration
+                            <ul>
+                                <li>Show TestNG Tests</li>
+                                <li>Configure Plugin to run TestNG
+                                <li>Execute TestNG Tests</li>
+                                <li>Including and Excluding Tests</li>
+                            </ul>
+                        </li>
+                        <li>Project Resources
+                            <ul>
+
+                                <li>Discuss Test Resources</li>
+                                <li>Demonstrate Test Resources</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </section>
+                <section>
+                    <section>
+                        <h2>Demo: Execute Unit Tests</h2>
+
+                        <p>Checkout a project and execute unit tests.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Execute a Single Unit Test</h2>
+
+                        <p>Pintpoint one unit test and run it.</p>
+                    </section>
+                    <section>
+                        <h2>What happened here?</h2>
+
+                        <ul>
+                            <li>Instead of packging a project...</li>
+                            <li>We executed Unit Tests</li>
+                            <li>Unit Testing is the domain of the...</li>
+                        </ul>
+                        
+                        <p><b>...Maven Surefire Plugin</b></p>
+                    </section>
+                </section>   
+                <section>
+                    <section>
+                        <h2>What's a Plugin? Quickly.</h2>
+                    </section>
+                    <section>
+                        <h2>Everything is a Goal</h2>
+
+                        <p>In Maven, every action is a goal.</p>
+
+                        <p>From compilation to running unit tests to packaging.</p>
+                    </section>
+                    <section>
+                        <h2>Every Goal is in a Plugin</h2>
+
+                        <p>Every goal is combined in a plugin.</p>
+
+                        <p>In Maven, the Surefire plugin is responsible for Unit Testing.</p>
+                    </section>
+                    <section>
+                        <h2>Maven's Surefire Plugin</h2>
+
+                        <p>Provides one important goal:</p>
+
+                        <ul>
+                            <li><code>test</code> - Runs a projects Unit Tests</li>
+                        </ul>
+
+                        <p><a href="http://maven.apache.org/surefire/maven-surefire-plugin/">Maven Surefire Plugin Page</a></p>
+                    </section>
+                    <section>
+                        <h2>Surefire's Test Goal is a Default</h2>
+
+                        <p>When we run "mvn test" we invoke a phase.</p>
+
+                        <p>The Surefire "test" goal is bound to this phase.</p>
+
+                        <p>It's a default.  (We'll learn more about this later.)</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Running Unit Tests in Maven</h2>
+                        
+                        <p>Unit tests are an integral part of software development.</p>
+
+                    </section>
+                    <section>
+                        <h2>Test in Project Layout</h2>
+
+                        <ul>
+                            <li>Unit tests are found in src/test/java</li>
+                            <li>Test resources are in src/test/resources</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Test Output</h2>
+
+                        <ul>
+                            <li>Bytecode goes into target/test-classes</li>
+                            <li>Reports go into target/surefire</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Demo: Demonstrate Tests Failing a Build</h2>
+
+					    <aside class="notes">
+                            <p>Tests are so integral, your build should fail if they don't pass.</p>
+                            
+					    </aside>
+
+                    </section>
+                    <section>
+                        <h2>Demo: Using a Command-line Option to Skip Tests</h2>
+
+					    <aside class="notes">
+                            <p>Demonstrate plugin configuration from the command-line</p>
+                            
+                            <p>Make the point that we're changing build behavior.</p>
+                            
+					    </aside>
+
+                    </section>
+                    <section>
+                        <h2>Modifying Plugin Behavior from Command-line</h2>
+
+                        <p>What just happened?<p>
+
+                            <ul>
+                                <li>The Surefire Plugins's...</li>
+                                <li>...Test goal...</li>
+                                <li>...changed behavior based on a command-line argument.</li>
+                            </ul>
+
+                        <p>This is one of several ways to influence build behavior.</p>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>We're starting to customize behavior.</li>
+
+                                <li>In the next section, we'll see different ways to configure a plugin.</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+
+                </section>
+                <section>
+                    <section>
+                        <h2>Test Reporting</h2>
+                    </section>
+                    <section>
+                        <h2>Generating Reporting Data</h2>
+
+                        <p>Maven generates data that can be easily understood by other tools.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Show simple HTML Report</h2>
+                        <p>View the HTML generated by the Site plugin.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Test Results from a CI Server</h2>
+
+                        <p>View the test results from a Jenkins instance.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Test Results from a Sonar Instance</h2>
+
+                        <p>View the test results on a Sonar instance.</p>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                    <h2>Summary</h2>
+                    </section>
+
+                    <section>
+                        <h2>Tests are an Integral Part of a Build</h2>
+                    </section>
+
+                    <section>
+                        <h2>Maven Surefire Plugin Runs Tests</h2>
+                    </section>
+
+                    <section>
+                        <h2>Goal Behavior can be Customized</h2>
+                    </section>
+                    
+                    <section>
+                        <h2>Tests Generate Reports</h2>
+                    </section>
+
+                    <section>
+                        <h2>Standards Make Integration Easier</h2>
+                    </section>
+                </section>
+
+				<section>
+					<h1>Building Your Software</h1>
+					<h3>First Steps</h3>
+					<p>
+
+						<small>Created by Jason Van Zyl
+						/ <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+
+					</p>
+                    
+					<aside class="notes">
+                        <p><b>Min Time: 30 minutes, Max Time: 40 minutes</b></p>
+                        <ul>
+
+                            <li>Notice how this section is a bit more
+                            theory than the others.  It is also
+                            smaller for a reason.</li>
+
+                            <li>There's a bit of propaganda
+                            here. We're talking about benefits, but
+                            we're putting it in the middle of the
+                            class after the students have seen Maven's
+                            strong points.</li>
+
+                            <li>You can talk for an hour on goals,
+                            plugins, and the lifecycle, but you really
+                            shouldn't.  This section is the stuff that
+                            everyone touch Maven should know, but
+                            never does.</li>
+
+                        </ul>
+                        
+					</aside>
+				</section>
+
+                <section>
+                    <h2>Where were we?</h2>
+
+                    <p>Last module was a brief introduction to the Surefire Plugin.</p>
+
+                    <ul>
+                        <li>Tests are integral to a build.</li>
+                        <li>Surefire plugin has a Test goal.</li>
+                        <li>This goal can be configure.</li>
+                        <li>Tests generate reports.</li>
+                    </ul>
+
+                    <aside class="note">
+                        <ul>
+                            <li>Last module was "foreshadowing"</li>
+                            <li>Now, you'll really show them goals.</li>
+                        </ul>
+                    </aside>
+                </section>
+                
+                <section>
+                    <!-- TODO -->
+					<h2>Module Objectives</h2>
+
+                    <ul>
+                        <li>What is a Goal?
+                            <ul>
+                                <li>When you run a Maven build...</li>
+                                <li>Maven just runs a series of Goals (2 slides - QUICK!)</li>
+                                <li>These goals are contained in Plugins (2 slides - QUICK!)</li>
+                                <li>Let's review: Goals are units of work, Plugins group similar goals, and Maven has a set lifecycle to which goals are bound.</li>
+                            </ul>
+                        </li>
+                        <li>What is the Lifecycle?
+                            <ul>
+                                <li>Goals are executed within a Lifecycle (2 slides - QUICK)</li>
+                                <li>So when you run your build, this is what's happening (show default lifecycle)</li>
+                                <li>Demonstrate the lifecycle</li>
+                                <li>Hit them with a bit of theory… All maven projects follow this lifecycle, it is configurable, but this is why we standardized.</li>
+                            </ul>
+                        </li>
+                        <li>Talk (briefly) about convention over configuration</li>
+                        <li>Talk (briefly) about what life is like without Maven</li>
+                    </ul>
+
+                </section>
+                <section>
+                    <section>
+                        <h2>What is a Goal?</h2>
+                    </section>
+                    <section>
+                        <h2>Test Goal</h2>
+
+                        <p>In the previous module we ran the "test" goal.</p>
+                        
+                        <ul>
+                            <li>A single action.</li>
+                            <li>Configurable from the Command-line</li>
+                            <li>Take a look at this goals configurable properties...</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Demo: Goal Documentation for test</h2>
+
+                        <p>Look at the <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">test goal documentation</a>.</p>
+                        <aside class="notes">
+                            <ul>
+                                <li>Load the Goal documentation from <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html</a></li>
+                                <li>Show the description, full name, and properties.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Other goals in our build</h2>
+
+                        <p>Our default build does many things...</p>
+
+                        <ul>
+                            <li>It compiles Java code.</li>
+                            <li>It runs unit tests.</li>
+                            <li>It creates a package.</li>
+                        </ul>
+
+                        <p>Each of these actions is encpaulated in a goal.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Goal Documentation for compile</h2>
+
+                        <p>Look at the <a href="http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html">compile goal documentation</a>.</p>
+                        <aside class="notes">
+                            <ul>
+                                <li>Load the Goal documentation from <a href="http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html">http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html</a></li>
+                                <li>Show the description, full name, and properties.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Demo: Customize the Compile Goal</h2>
+
+                        <p>Target different Java versions with "source" and "target".</p>
+
+                        <p>From the command-line.</p>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>You would never do this from the command-line.</li>
+                                <li>This demo sets up the next few slides.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Configuring Goals in a POM</h2>
+
+                        <p>The compile Goal of the compiler plugin can be configured in a POM.</p>
+
+                        <pre>TBD</pre>
+                    </section>
+                    <section>
+                        <h2>Demo: Configure Compile Goal in POM</h2>
+
+                        <p>Configure Compile Behavior in the POM</p>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Do same thing as previous except in POM.</li>
+                                <li>Run build, demonstrate results.</li>
+                        </aside>
+                     </section>
+                    <section>
+                        <h2>Configuring a Goal Execution</h2>
+
+                        <p>In the last demonstration we configured a Goal Execution.</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>What is a Plugin?</h2>
+                        <h3>Zooming Out a Level</h3>
+                    </section>
+                    <section>
+                        <h2>Plugins contain Goals</h2>
+
+                        <p>A plugin is an artifact, with a coordinate.</p>
+
+                        <p>A plugin contains one or more related goals.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Maven Surefire Plugin Documentation</h2>
+
+                        <ul>
+                            <li>LIST GOALS</li>
+                        </ul>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Show the plugin web page.</li>
+                                <li>Reading plugin doc is a main objective of this module.</li>
+                                <li>Teach them how to find answers.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Demo: Maven Compiler Plugin Documentation</h2>
+                   
+                        <ul>
+                            <li>LIST GOALS</li>
+                        </ul>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>These pages are very helpful...</li>
+                                <li>..."In fact, you should bookmark the plugin documentation."</li>
+                                <li>..."This is where you can come to find answers about Maven."</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Demo: Maven War Plugin Documentation</h2>
+
+                        <ul>
+                            <li>LIST GOALS</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Plugins have Coordinates</h2>
+
+                        <ul>
+                            <li>groupId</li>
+                            <li>artifactId</li>
+                            <li>version</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Plugins are Artifacts</h2>
+
+                        <p>Maven downloads plugins as needed.</p>
+
+                        <p>Maven can have more than one version of a plugin.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Show Maven Downloading Plugins</h2>
+                        <aside class="notes">
+                            <ul>
+                                <li>Show how Maven downloads a plugin.</li>
+                                <li>Just like a dependency.</li>
+                                <li>Make strong point: Maven ships with very little "built-in".</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Demo: Configuring Goals at Plugin Level</h2>
+                        
+                        <aside class="notes">
+                            <ul>
+                                <li>Take the compile goal example...</li>
+                                <li>Move the configuration up to the plugin level.</li>
+                                <li>Demonstrate different config scope.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Ways to Configure a Goal</h2>
+
+                        <ul>
+                            <li>From the command-line</li>
+                            <li>In a Goal Execution</li>
+                            <li>In the plugin configuration</li>
+                        </ul>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>These different levels are used for different reasons.</li>
+                                <li>Command-line customizations are one-off, throw away commands.</li>
+                                <li>Configuration at the execution level are for targeted changes.</li>
+                                <li>Configuring at the Plugin is for wider customization.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Why do these goals run?</h2>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>The Lifecycle</h2>
+                        <h3>Zooming Out Another Level</h3>
+                    </section>
+                    <section>
+                        <h2>Everything Hinges on the Lifecycle</h2>
+
+                        <p>The Lifecycle is...</p>
+
+                        <ul>
+                            <li>A single, linear series of steps (or phases)</li>
+                            <li>Goals are bound to these phases.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>The Default Lifecycle</h2>
+
+                        <ul>
+                            <li>TBD</li>
+                        </ul>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>This is the default lifecycle.</li>
+                                <li>You can customize this, but that falls outside the scope of this class.</li>
+                                <li>It is also not very common.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Goals Bind to Lifecycle Phases</h2>
+
+                        <img src="http://placehold.it/350x150">
+
+                    </section>
+                    <section>
+                        <h2>Running Phases: Test</h2>
+
+                        <p><code>mvn test</code></p>
+
+                        <img src="http://placehold.it/350x150">
+                    </section>
+                    <section>
+                        <h2>Running Phases: Install</h2>
+
+                        <p><code>mvn install</code></p>
+
+                        <img src="http://placehold.it/350x150">
+                    </section>
+                    <section>
+                        <h2>Default Lifecycle Bindings</h2>
+
+                        <ul>
+                            <li>TBD</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Customizing the Lifecycle</h2>
+                        <p>This is explored later in the class.</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                    <h2>Summary</h2>
+                    </section>
+                    <section>
+                        <h2>Everything is Implement in Goals</h2>
+                    </section>
+                    <section>
+                        <h2>Goals can be Configured in Executions</h2>
+                    </section>
+                    <section>
+                        <h2>Plugins Aggregate Goals</h2>
+                    </section>
+                    <section>
+                        <h2>Plugins are Downloadable Artifacts</h2>
+                    </section>
+                    <section>
+                        <h2>Goals execute because they are Bound to a Lifecycle</h2>
+                    </section>
+                    <section>
+                        <h2>There is a Default Lifecycle</h2>
+                    </section>
+                </section>
+                    
+				<section>
+					<h1>Packaging Your Software</h1>
+					<h3>First Steps</h3>
+					<p>
+
+						<small>Created by Jason Van Zyl
+						/ <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+
+					</p>
+                    
+					<aside class="notes">
+                        <p><b>Min Time: 45 minutes, Max Time: 50 minutes</b></p>
+                        <ul>
+
+                            <li>Don't fully explain the Assembly
+                            plugin.  Leave that for either the
+                            advanced class or for consulting.</li>
+
+                            <li>Get out of the mindset that you have
+                            to read the students everything about
+                            these plugins.  Really this is just a
+                            starting point, 5 hours isn't enough to
+                            tell them everything about the WAR
+                            plugin.</li>
+
+                        </ul>
+                        
+					</aside>
+				</section>
+                
+                <section>
+                    <h2>Where were we?</h2>
+
+                    <p>In the previous sections:</p>
+
+                    <ul>
+                        <li>You've learned about Plugins</li>
+                        <li>You understand the lifecycle.</li>
+                    </ul>
+                </section>
+                <section>
+                    <!-- TODO -->
+					<h2>Module Objectives</h2>
+
+                    <p>This module does two things.  It focuses on the
+                    WAR plugin and it uses a simple Assembly:</p>
+
+                    <ul>
+                        <li>Remember the lifecycle form the previous section, well the packaging changes it...</li>
+                        <ul>
+                            <li>Demonstrate Packaging</li>
+                            <ul>
+                                <li>Checkout a project from source control, a WAR project</li>
+                                <li>Demonstrate the WAR build</li>
+                                <li>Inspect the WAR output</li>
+                                <li>Discuss the WAR Plugin</li>
+                                <li>Hit upon some customization points for the WAR plugin</li>
+                            </ul>
+                            
+                        <li>Run the WAR in Jetty or Tomcat using Maven</li>
+                        <li>Switch gears to a Standalone Java program</li>
+                        <li>Demonstrate (but don't fully delve into) the Assembly plugin</li>
+                        <li>Build a program that creates a jar with dependencies</li>
+                        <li>For completeness talk about the JAR plugin and just mention the EAR plugin</li>
+                        <li>Introduce SNAPSHOT versions</li>
+                    </ul>
+
+                </section>
+                <section>
+                    <section>
+                        <h2>Creating Packages</h2>
+                    </section>
+                    
+                </section>
+                <section>
+                    <section>
+                        <h2>Running Applications</h2>
+                        <aside class="notes">
+                            <ul>
+                                <li>We're going to create a self-executing JAR and we're going to deploy a WAR to a container.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Demo: Creating a JAR with Dependencies</h2>
+                    </section>
+                    <section>
+                        <h2>Configuring the JAR Plugin</h2>
+                    </section>
+                    <section>
+                        <h2>Demo: Creating a Self-executing JAR</h2>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                    <h2>Publishing Packages</h2>
+                    </section>
+                    <section>
+                        <h2>What is a SNAPSHOT?</h2>
+                    </section>
+                    <section>
+                        <h2>What is a Release?</h2>
+                    </section>
+                </section>
+    
+				<section>
+					<h1>Creating a Multi-module Project</h1>
+					<h3>First Steps</h3>
+					<p>
+
+						<small>Created by Jason Van Zyl
+						/ <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+
+					</p>
+                    
+					<aside class="notes">
+                        <p><b>Min Time: 45 minutes, Max Time: 50 minutes</b></p>
+                        <ul>
+
+                            <li>You can't leave an intro Maven class
+                            without having some exposure to
+                            multi-module projects. </li>
+
+                            <li>That last bullet item.  It is
+                            audacious, but I feel like the class
+                            should build up to something big, right?
+                            Like at the end of the Maven intro class,
+                            a pretty basic class.  We end up standing
+                            up an application server and deploying and
+                            application to it.  </li>
+
+                        </ul>
+                        
+					</aside>
+				</section>
+                
+                <section>
+                    <!-- TODO -->
+					<h2>Module Objectives</h2>
+
+                    <p>This module does two things.  It focuses on the
+                    WAR plugin and it uses a simple Assembly:</p>
+
+                    <ul>
+                        <li>Checkout a multi-module project from source control</li>
+                        <li>Show the file system structure with a top-level directory</li>
+                        <li>Show the pom.xml files with relationships</li>
+                        <li>Why would you do this?  Why group projects together?</li>
+                        <li>Define Inheritance and discuss what is inherited</li>
+                        <li>Define Aggregation and discuss what is aggregated</li>
+                        <li>Talk about how version numbers are often aligned in a multi-module project</li>
+                        <li>Demonstrate a Multi-module Build</li>
+                        <li>Discuss the Reactor and how it orders builds</li>
+                        <li>Checkout a big multi-module project from source control</li>
+                        <li>Demonstrate multiple levels of hierarchy</li>
+                        <li>Build a big project that has many pieces and deploy it to an application server...</li>
+                    </ul>
+
+                </section>
+
+				<section>
+					<h1>Course Summary</h1>
+					<h3>First Steps</h3>
+					<p>
+
+						<small>Created by Jason Van Zyl
+						/ <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+
+					</p>
+                    
+					<aside class="notes">
+                        <p><b>Min Time: 45 minutes, Max Time: 50 minutes</b></p>
+                        <ul>
+
+                            <li>Hey, thanks for coming.  I hope you had a great time.</li>
+                            <li>We have another class that opens up the advanced parts of Maven, here's a link to sign-up with a 15% off discount code.</li>
+                            <li>If you have any questions, we're always available to help.  Here, if you want free help… here's the number for our sales team.
+                        </ul>
+                        
+					</aside>
+				</section>
+                
+            </div>
+        </div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
