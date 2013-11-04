@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Writing and Executing Unit Tests</title>
+
+		<meta name="description" content="Writing and Executing Unit Tests">
+		<meta name="author" content="Tim O'Brien, Jason Van Zyl">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		    <script src="lib/js/html5shiv.js"></script>
+		    <![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Writing and Executing Unit Tests</h1>
+					<h3>First Steps</h3>
+					<p>
+
+						<small>Created by Jason Van Zyl
+						    / <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+
+					</p>
+                    
+					<aside class="notes">
+                        <p><b>Min Time: 35 minutes, Max Time: 45 minutes</b></p>
+                        <ul>
+
+                            <li>Module not about Unit Tests as much as it is about core principles.
+                                <ul>
+                                    <li>Hint at full story..</li>
+                                    <li>Goals</li>
+                                    <li>Plugins</li>
+                                    <li>Plugin Configuration</li>
+                                    <li>Reporting</li>
+                                </ul>
+                            </li>
+
+                            <li>Unit tests are such a fundamental
+                                requirement, we should spend an entire
+                                module on it.</li>
+
+                        </ul>
+                        
+					</aside>
+				</section>
+                
+                <section>
+                    <h2>Where were we?</h2>
+                    
+                    <p>You just learned about coordinates and dependencies.</p>
+
+                    <p>Now, we're going to dive into Maven's execution model by learning how Maven executes Unit Tests.</p>
+                </section>
+                <section>
+                    <!-- TODO -->
+					<h2>Module Objectives</h2>
+
+                    <ul>
+                        <li>Execute Unit Tests
+                            <ul>
+                                <li>Introduce Surefire Plugin</li>
+                                <li>Demonstrate Surefire Plugin</li>
+                                <li>Running a Single Test</li>
+                            </ul>
+                        </li>
+                        <li>Discuss Plugin Configuration
+                            <ul>
+                                <li>Show TestNG Tests</li>
+                                <li>Configure Plugin to run TestNG
+                                <li>Execute TestNG Tests</li>
+                                <li>Including and Excluding Tests</li>
+                            </ul>
+                        </li>
+                        <li>Project Resources
+                            <ul>
+
+                                <li>Discuss Test Resources</li>
+                                <li>Demonstrate Test Resources</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </section>
+                <section>
+                    <section>
+                        <h2>Demo: Execute Unit Tests</h2>
+
+                        <p>Checkout a project and execute unit tests.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Execute a Single Unit Test</h2>
+
+                        <p>Pintpoint one unit test and run it.</p>
+                    </section>
+                    <section>
+                        <h2>What happened here?</h2>
+
+                        <ul>
+                            <li>Instead of packging a project...</li>
+                            <li>We executed Unit Tests</li>
+                            <li>Unit Testing is the domain of the...</li>
+                        </ul>
+                        
+                        <p><b>...Maven Surefire Plugin</b></p>
+                    </section>
+                </section>   
+                <section>
+                    <section>
+                        <h2>What's a Plugin? Quickly.</h2>
+                    </section>
+                    <section>
+                        <h2>Everything is a Goal</h2>
+
+                        <p>In Maven, every action is a goal.</p>
+
+                        <p>From compilation to running unit tests to packaging.</p>
+                    </section>
+                    <section>
+                        <h2>Every Goal is in a Plugin</h2>
+
+                        <p>Every goal is combined in a plugin.</p>
+
+                        <p>In Maven, the Surefire plugin is responsible for Unit Testing.</p>
+                    </section>
+                    <section>
+                        <h2>Maven's Surefire Plugin</h2>
+
+                        <p>Provides one important goal:</p>
+
+                        <ul>
+                            <li><code>test</code> - Runs a projects Unit Tests</li>
+                        </ul>
+
+                        <p><a href="http://maven.apache.org/surefire/maven-surefire-plugin/">Maven Surefire Plugin Page</a></p>
+                    </section>
+                    <section>
+                        <h2>Surefire's Test Goal is a Default</h2>
+
+                        <p>When we run "mvn test" we invoke a phase.</p>
+
+                        <p>The Surefire "test" goal is bound to this phase.</p>
+
+                        <p>It's a default.  (We'll learn more about this later.)</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Running Unit Tests in Maven</h2>
+                        
+                        <p>Unit tests are an integral part of software development.</p>
+
+                    </section>
+                    <section>
+                        <h2>Test in Project Layout</h2>
+
+                        <ul>
+                            <li>Unit tests are found in src/test/java</li>
+                            <li>Test resources are in src/test/resources</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Test Output</h2>
+
+                        <ul>
+                            <li>Bytecode goes into target/test-classes</li>
+                            <li>Reports go into target/surefire</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Demo: Demonstrate Tests Failing a Build</h2>
+
+					    <aside class="notes">
+                            <p>Tests are so integral, your build should fail if they don't pass.</p>
+                            
+					    </aside>
+
+                    </section>
+                    <section>
+                        <h2>Demo: Using a Command-line Option to Skip Tests</h2>
+
+					    <aside class="notes">
+                            <p>Demonstrate plugin configuration from the command-line</p>
+                            
+                            <p>Make the point that we're changing build behavior.</p>
+                            
+					    </aside>
+
+                    </section>
+                    <section>
+                        <h2>Modifying Plugin Behavior from Command-line</h2>
+
+                        <p>What just happened?<p>
+
+                            <ul>
+                                <li>The Surefire Plugins's...</li>
+                                <li>...Test goal...</li>
+                                <li>...changed behavior based on a command-line argument.</li>
+                            </ul>
+
+                        <p>This is one of several ways to influence build behavior.</p>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>We're starting to customize behavior.</li>
+
+                                <li>In the next section, we'll see different ways to configure a plugin.</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+
+                </section>
+                <section>
+                    <section>
+                        <h2>Test Reporting</h2>
+                    </section>
+                    <section>
+                        <h2>Generating Reporting Data</h2>
+
+                        <p>Maven generates data that can be easily understood by other tools.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Show simple HTML Report</h2>
+                        <p>View the HTML generated by the Site plugin.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Test Results from a CI Server</h2>
+
+                        <p>View the test results from a Jenkins instance.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Test Results from a Sonar Instance</h2>
+
+                        <p>View the test results on a Sonar instance.</p>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                    <h2>Summary</h2>
+                    </section>
+
+                    <section>
+                        <h2>Tests are an Integral Part of a Build</h2>
+                    </section>
+
+                    <section>
+                        <h2>Maven Surefire Plugin Runs Tests</h2>
+                    </section>
+
+                    <section>
+                        <h2>Goal Behavior can be Customized</h2>
+                    </section>
+                    
+                    <section>
+                        <h2>Tests Generate Reports</h2>
+                    </section>
+
+                    <section>
+                        <h2>Standards Make Integration Easier</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Next</h2>
+                    <a href="module6_building_your_software.html">Building Your Software</a>
+                </section>
+                
+            </div>
+        </div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+			// Optional libraries used to extend on reveal.js
+			dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+			{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+			]
+			});
+
+		</script>
+    </body>
+</html>
+
