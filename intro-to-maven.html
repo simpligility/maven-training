@@ -46,17 +46,14 @@
 					<aside class="notes">
                         <ul>
                             <li>Focus on activity rather than theory.
-                                There's nothing worse than standing up in
-                                front of a class and having to talk for an
-                                hour about the theory of dependency
-                                management.  Move quickly, and try not to
+                            <li>Move quickly, and try not to
                                 dwell too long.</li>
-                            
-                            <li>There's going to be a lot that isn't covered
-                                in this class, but this is alright.  This
-                                class is for users.  The point of this class
-                                is to get people to a point where they can
-                                look at a POM and begin to understand it.</li>
+                            <li>There's going to be a lot that isn't
+                                covered in this class, this class is
+                                for users.</li>
+                            <li>Get people to a point where they can
+                                look at a POM and begin to understand
+                                it.</li>
                         </ul>
                         
 					</aside>
@@ -75,10 +72,8 @@
 
                         <b>Min Time: 5 minutes, Max Time: 10 minutes</b>
                         <ul>
-                            <li>Don't dwell. This section needs to start and end in a manner of minutes.</li>
-                            <li>You might see this as a filler section, but it's important to provide a "roadmap" for the course.</li>
-                            <li>We should make sure to define what the instructor introduction is (and what it is not)</li>
-                            <li>Giving people a way to provide feedback during class is critical for virtual.</li>
+                            <li>This section needs to start and end in a manner of minutes.</li>
+                            <li>You might see this as filler, but it's important to provide a "roadmap" for the course.</li>
                         </ul>
 
                     </aside>
@@ -89,11 +84,14 @@
 					<section>
 						<h2>Prerequisites</h2>
 						<p>
-                            For the best learning experience this
+                            For the best learning experience in this
                             class has been designed to be both
                             efficient and fast-paced. Here are a few
                             prerequisites we've assumed...
 						</p>
+                        <aside class="notes">
+                            
+                        </aside>
 					</section>
 					<section>
 						<h2>You are Comfortable with the OS</h2>
@@ -104,6 +102,8 @@
                             <li>Set an Environment Variable</li>
                             <li>Run shell and batch scripts</li>
                         </ul>
+                        <aside class="notes">
+                        </aside>
 					</section>
 					<section>
 						<h2>You Understand Java Development</h2>
@@ -114,6 +114,8 @@
                             <li>Understand the structure of simple programs.</li>
                             <li>Have had experience compiling Java code.</li>
                         </ul>
+                        <aside class="notes">
+                        </aside>
 					</section>
 				</section>
                 
@@ -125,7 +127,8 @@
                             of technologies currently used for
                             development.  These technologies include...
 						</p>
-                        
+                        <aside class="notes">
+                        </aside>                        
 					</section>
 					<section>
 						<h2>Operating Systems</h2>
@@ -139,12 +142,28 @@
                             You can also use Linux, (but you do so at
                             your own risk.)
                         </p>
+                        <aside class="notes">
+                            <ul>
+                                <li>If someone is using Linux, make
+                                certain they understand that we may
+                                not be able to assist them with
+                                errors.</li>
+                            </ul>
+                        </aside>
 					</section>
 					<section>
 						<h2>Java Version</h2>
                         <p>This class is based on Java 7.</p>
                         <p>Can you use Java 6? One or two examples may
                             break, use at your own risk.</p>
+                        <aside class="notes">
+                            <ul>
+                                <li>Several example depend on Java 7</li>
+                                <li>You may get pushback from some
+                                here, tell them we have to run a
+                                supported version.</li>
+                            </ul>
+                        </aside>
 					</section>
 					<section>
 						<h2>IDE</h2>
@@ -156,6 +175,13 @@
                         
                         <p>Again, use an alternative IDE at your own
                             risk.</p>
+                        <aside class="notes">
+                            <ul>
+                                <li>You can mention that IntelliJ is
+                                acceptable, but again "at your own
+                                risk".</li>
+                            </ul>
+                        </aside>
 					</section>
 				</section>
                 
@@ -167,10 +193,22 @@
                     <ul>
                         <li>How to download and install Maven</li>
                         <li>How to run a simple build</li>
-                        <li>How to configure and locate dependencies for a project</li>
-                        <li>How to configure the Surefire plugin to run unit tests</li>
+                        <li>How to configure and locate dependencies
+                        for a project</li>
+                        <li>How to configure the Surefire plugin to
+                        run unit tests</li>
+                        <li>How plugins are configured</li>
+                        <li>How projects are packaged</li>
+                        <li>How multimodule projects used</li>
                     </ul>
-                    
+                    <aside class="notes">
+                        <ul>
+                            <li>Emphasize that this is basic scope.</li>
+                            <li>Mention that there's a lot of ground to cover.</li>
+                            <li>"When you are finished with this class, you understand Maven basics."</li>
+                            <li>"Even if you already know Maven, this class can help clarify and reinforce the basics."</li>
+                        </ul>
+                    </aside>                    
 				</section>
                 
 				<section>
@@ -178,12 +216,19 @@
 					<p>
                         Who's teaching this class?
 					</p>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>Instructor, please make this quick.</li>
+                            <li>Reminder: This training class is not about you.</li>
+                        </ul>
+                    </aside>
 				</section>
                 
 				<section>
 					<h2>Planned Class Structure</h2>
 					<p>
-                        In this class we are going to:
+                        In this class we are going to (TBD):
 					</p>
                     <ul>
                         <li>Learn this</li>
@@ -191,105 +236,6 @@
                         <li>Learn a bunch more stuff.</li>
                     </ul>
 				</section>
-				<section>
-					<h1>Installing and Running Maven</h1>
-					<h3>First Steps</h3>
-					<p>
-
-						<small>Created by Jason van Zyl
-						/ <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
-
-					</p>
-                    
-					<aside class="notes">
-                        <p><b>Min Time: 10 minutes, Max Time: 15 minutes</b></p>
-                        <ul>
-                            <li>Instead of starting with a VERY BORING
-                            "What is Maven?" section. We start with a
-                            demo.</li>
-
-                            <li>Pay attention to prerequisites - if
-                            someone doesn't get how to set an
-                            environment, they shouldn't be in this
-                            class.</li>
-
-                        </ul>
-                        
-					</aside>
-				</section>
-                
-                <section>
-                    <!-- TODO -->
-					<h2>Module Objectives</h2>
-
-                    <ul>
-                        <li>Install Java 7</li>
-                        <li>Downloading Maven</li>
-                        <li>Installing Maven</li>
-                        <li>Running Maven</li>
-                        <li>Questions</li>
-                    </ul>
-
-                </section>
-
-                <section>
-                    <h2>Install Java 7</h2>
-
-                    <p>Maven is designed to run on Java 6 or higher.</p>
-
-                    <p><b>This class uses Java 7.</b></p>
-
-                    <ol>
-                        <li>Visit Oracle's JavaSE Page: <a href="http://www.oracle.com/technetwork/java/javase/overview/index.html">http://java.oracle.com</a></li>
-                        <li>Download Java</li>
-                        <li>Install Java</li>
-                        <li>Set the JAVA_HOME variable to point to installation directory.</li>
-                    </ol>
-
-                </section>
-                
-                <section>
-                    <h2>Downloading Maven</h2>
-
-                    <p>Downloading Maven is Easy</p>
-                    
-                    <ol>
-                        <li>Go to <a href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a></li>
-                        <li>Download
-                        either <a href="http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz">apache-maven-3.1.1-bin.tar.gz</a>
-                        or <a href="http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.zip">apache-maven-3.1.1-bin.zip</a></li>
-                    </ol>
-                </section>
-
-                <section>
-                    <h2>Installing Maven</h2>
-
-                    <ol>
-                        <li>Unpack the Maven distribution to a directory. (i.e. /usr/local/apache-maven-3.1.1)</li>
-                        <li>Set two environment variables:
-                            <ol>
-                                <li><code>M2_HOME</code> should point to /usr/local/apache-maven-3.1.1</li>
-                                <li><code>PATH</code> add ${M2_HOME}/bin to PATH</li>
-                            </ol>
-                        </li>
-                        <li>Restart shell to pick-up environment variable changes</li>
-                     </ol>
-                </section>
-
-                <section>
-                    <h2>Running Maven</h2>
-
-                    <p>Once Maven has been installed, run the following command:</p>
-
-                    <pre>$ mvn -v
-Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 10:22:22-0500)
-Maven home: /Users/Tim/programs/apache-maven-3.1.1
-Java version: 1.7.0_05, vendor: Oracle Corporation
-Java home: /Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home/jre
-Default locale: en_US, platform encoding: UTF-8
-OS name: "mac os x", version: "10.8.3", arch: "x86_64", family: "mac"
-</pre>
-                </section>
 
 				<section>
 					<h1>Building a Simple Project</h1>
@@ -1880,15 +1826,24 @@ OS name: "mac os x", version: "10.8.3", arch: "x86_64", family: "mac"
                 <section>
                     <section>
                         <h2>Inheritance</h2>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Show students how inheritance mechanism works.</li>
+                                <li>No need to to a full exploration of what is and what is not inherited.</li>
+                                <li>Students should exit section understanding that different things are done at different levels.</li>
+                            </ul>
+                        </aside>
+
                     </section>
                     <section>
-                        <h2>Demo: Show Dependencies Defined at Top Level</h2>
+                        <h2>Demo: Show Dependencies Defined</h2>
                     </section>
                     <section>
-                        <h2>Demo: Show Compiler Configuration at Top Level<h2>
+                        <h2>Demo: Show Compiler Configuration<h2>
                     </section>
                     <section>
-                        <h2>Demo: Show War Configuration at Second Level</h2>
+                        <h2>Demo: Show War Configuration</h2>
                     </section>
                     <section>
                         <h2>How is this possible?</h2>
