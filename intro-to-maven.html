@@ -1769,6 +1769,173 @@ OS name: "mac os x", version: "10.8.3", arch: "x86_64", family: "mac"
 
                 </section>
 
+<section>
+                    <section>
+                        <h2>Demo: Build a Large Multi-module Project</h2>
+                    </section>
+                    <section>
+                        <h2>How Projects Scale in Maven</h2>
+
+                        <ul>
+                            <li>Maven projects scale in a particular way.</li>
+                            <li>Through the aggregation of smaller projects.</li>
+                        </ul>
+
+                        <p>This is a core assumption of the tool.</p>
+                    </section>
+                    <section>
+                        <h2>One common pattern: Monolithic Apps</h2>
+
+                        <p>A popular build pattern for large projects is...</p>
+
+                        <ul>
+                            <li>The Monolith</li>
+                            <li>Many modules crammed into one.</li>
+                            <li>A Very Large (Unmanageable) Build</li>
+                            <li>Produces multiple outputs</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Monoliths Don't Scale</h2>
+
+                        <p>Software lives for years (often decades)</p>
+
+                        <ul>
+                            <li>As systems and teams scale, single builds do not.</li>
+                            <li>As modularity develops, monolithic builds constrain.</li>
+                            <li>At scale, monolithic builds inhibit progress.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Maven's Approach: Modularity</h2>
+                        
+                        <p>Maven favors smaller components.  Components that produce one artifact.</p>
+
+                        <ul>
+                            <li>Easier to model dependencies</li>
+                            <li>Easier to separate from larger builds</li>
+                            <li>Supported by dependency management</li>
+                        </ul>
+
+                        <p>Beware: It is still possible to create a Monolith in Maven.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Structure of a Multi-module Project</h2>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Start with a diagram</li>
+                                <li>Connect modules together</li>
+                                <li>Then show a filesystem</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Two Concepts: Aggregation and Inheritance</h2>
+                        <ul>
+                            <li><b>Aggregation:</b> A Parent Module contains Submodules</li>
+                            <li><b>Inheritance:</b> A Model Declares a Parent and Inherits POM Configuration</li>
+                        </ul>
+                </section>
+                <section>
+                    <section>
+                        <h2>Aggregation</h2>
+                    </section>
+                    <section>
+                        <h2>Demo: Building a Large Multi-module Project</h2>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Build a large, multi-module project from the top leve.</li>
+                                <li>Show the reactor</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Interdependent Projects</h2>
+
+                        <p>Internal dependencies between modules dictate build order.</p>
+                    </section>
+                    <section>
+                        <h2>The Reactor</h2>
+
+                        <p>The reactor is in charge of making sure that build order is correct.</p>
+                    </section>
+                    <section>
+                        <h2>How a Multi-module Build Works</h2>
+
+                        <p>The lifecycle is executed for each project.</p>
+                    </section>
+                    <section>
+                        <h2>Demo: Briefly Show Reactor Options</h2>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Don't dwell on this, just hint at it.</li>
+                                <li>People need to understand how to short-cut large reactor builds.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Inheritance</h2>
+                    </section>
+                    <section>
+                        <h2>Demo: Show Dependencies Defined at Top Level</h2>
+                    </section>
+                    <section>
+                        <h2>Demo: Show Compiler Configuration at Top Level<h2>
+                    </section>
+                    <section>
+                        <h2>Demo: Show War Configuration at Second Level</h2>
+                    </section>
+                    <section>
+                        <h2>How is this possible?</h2>
+
+                        <p>The <code>parent</code> element.</p>
+
+                        <ul>
+                            <li>Instructs Maven to interpolate (or merge) POMs together.</li>
+                            <li>POMs at different levels are overlayed to create an effective POM.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Inheritance at Every Level</h2>
+
+                        <ul>
+                            <li>Inheritance gives you the ability to define build-wide configuration.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Demo: Show Group ID / Version Inheritance</h2>
+                    </section>                        
+                </section>
+                <section>
+                    <section>
+                        <h2>Releasing Software</h2>
+                    </section>
+                    <section>
+                        <h2>Releases vs. Snapshots</h2>
+
+                    </section>
+                    <section>
+                        <h2>Snapshot are for Development</h2>
+                    </section>
+                    <section>
+                        <h2>Releases are Point in Time Events</h2>
+                    </section>
+                    <section>
+                        <h2>Preparing a Multimodule Project for Release</h2>
+                    </section>
+                    <section>
+                        <h2>Updating Version Numbers</h2>
+                    </section>
+                    <section>
+                        <h2>Demo: Perform a Release</h2>
+                    </section>
+                </section>
+
 				<section>
 					<h1>Course Summary</h1>
 					<h3>First Steps</h3>
