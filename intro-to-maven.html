@@ -1869,10 +1869,63 @@
                 <section>
                     <section>
                         <h2>Releasing Software</h2>
+
+                        <p>Maven has a standard for a transition from
+                        development to release.</p>
+
+                        <ul>
+                            <li>When software is released it is a
+                            point-in-time release.</li>
+                            <li>A software release is an immutable
+                            artifact.</li>
+                            <li>Releases are published to
+                            repositories.</li>
+                        </ul>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Important point: Maven releases !=
+                                Your releases</li>
+                                <li>"You might have an internal
+                                release that uses puppet or chef, that
+                                is not the same as a Maven
+                                release."</li>
+                                <li>Maven releases focus on push build
+                                output to repositories.</li>
+                            </ul>
+                        </aside>
+
                     </section>
                     <section>
                         <h2>Releases vs. Snapshots</h2>
 
+                        <p>A critical distinction: two types of
+                        versions.</p>
+
+                        <ul>
+                            <li><b>Snapshots</b> - Snapshot versions
+                            are for development.  They are constantly
+                            changing, and Maven builds a date and
+                            timestamp into the versions of SNAPSHOTs
+                            deployed to a repository.</li>
+                            <li><b>Releases</b> - Releases are
+                            point-in-time builds of a particular
+                            artifact.  Once published they should
+                            never change.</li>
+                        </ul>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>"Maven is based upon the
+                                difference between Snapshots and
+                                Releases, and these concepts are not
+                                up for redefinition."</li>
+                                <li>"If Snapshots and Releases don't
+                                fit your software model, we strongly
+                                discourage people to skip
+                                Snapshots."</li>
+                            </ul>
+                        </aside>
                     </section>
                     <section>
                         <h2>Snapshot are for Development</h2>
@@ -1881,13 +1934,55 @@
                         <h2>Releases are Point in Time Events</h2>
                     </section>
                     <section>
-                        <h2>Preparing a Multimodule Project for Release</h2>
-                    </section>
-                    <section>
-                        <h2>Updating Version Numbers</h2>
+                        <h2>Preparing for Release</h2>
+
+                        <p>When you need to release a project you
+                        perform the following tasks:</p>
+
+                        <ul>
+                            <li>Update project version numbers to a
+                            Release version.</li>
+                            <li>Run a build and generate output
+                            artifacts.</li>
+                            <li>Publish artifacts to a binary
+                            repository manager.</li>
+                            <li>Increment version numbers to next
+                            snapshot.</li>
+                        </ul>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>Yes, this is a lot of manual
+                                work.</li>
+                                <li>Most people automate this with the
+                                Maven Release Plugin.</li>
+                                <li>We explore the Maven Release
+                                plugin in the next class.</li>
+                            </ul>
+                        </aside>
                     </section>
                     <section>
                         <h2>Demo: Perform a Release</h2>
+
+                        <ul>
+                            <li>Demonstrate a manual release.</li>
+                            <li>Discuss the general process for
+                            Releases.</li>
+                            <li>In Advanced Maven you'll learn about
+                            the Release plugin.</li>
+                        </ul>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>We end the class on an advanced
+                                note.</li>
+                                <li>We want advanced questions that
+                                generate interest in next class.</li>
+                                <li>In the next class: the Release
+                                plugin and Continuous
+                                Integration.</li>
+                            </ul>
+                        </aside>
                     </section>
                 </section>
 
@@ -1902,19 +1997,25 @@
 					</p>
                     
 					<aside class="notes">
-                        <p><b>Min Time: 45 minutes, Max Time: 50 minutes</b></p>
+                        <p><b>Min Time: 5 minutes, Max Time: 10
+                        minutes</b></p>
                         <ul>
 
-                            <li>Hey, thanks for coming.  I hope you had a great time.</li>
-                            <li>We have another class that opens up the advanced parts of Maven, here's a link to sign-up with a 15% off discount code.</li>
-                            <li>If you have any questions, we're always available to help.  Here, if you want free help… here's the number for our sales team.
+                            <li>Hey, thanks for taking the class.  I
+                            hope you had a great time.</li>
+                            <li>We have another class that opens up
+                            the advanced parts of Maven, here's a link
+                            to sign-up with a 15% off discount
+                            code.</li>
+                            <li>If you have any questions, we're
+                            always available to help.</li>
                         </ul>
                         
 					</aside>
 				</section>
 
             </div>
-            <div class="slidenumber">BORK</div>
+            <div class="slidenumber">1</div>
         </div>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
