@@ -1,0 +1,17 @@
+phase {
+  border: 1px solid blue;
+  background-color: blue;
+  padding: 5px;
+}
+
+goal {
+  border: 1px solid green;
+  background-color: green;
+  padding: 5px;
+}
+
+section.present ul li {
+
+        line-height: 80px;
+
+}
