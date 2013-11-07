@@ -36,49 +36,75 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h1>Introduction to Maven</h1>
-					<h3>Building, Testing, and Assembling Applications</h3>
-					<p>
-						<small>Created by Jason van Zyl / <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
-					</p>
-                    
-					<aside class="notes">
-                        <ul>
-                            <li>Focus on activity rather than theory.
-                            <li>Move quickly, and try not to
-                                dwell too long.</li>
-                            <li>There's going to be a lot that isn't
-                                covered in this class, this class is
-                                for users.</li>
-                            <li>Get people to a point where they can
-                                look at a POM and begin to understand
-                                it.</li>
-                        </ul>
-                        
-					</aside>
-				</section>
-                
                 <section>
-                    <!-- TODO -->
-					<h2>Welcome</h2>
-					<p>
-                        Welcome to Introduction to Maven.  In this
-                        class you will learn how to use Maven to build
-                        your projects.
-					</p>
+				    <section>
+					    <h1>Introduction to Maven</h1>
+					    <h3>Building, Testing, and Assembling Applications</h3>
+					    <p>
+						    <small>Created by Jason van Zyl / <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+					    </p>
+                        
+					    <aside class="notes">
+                            <ul>
+                                <li>Focus on activity rather than theory.
+                                <li>Move quickly, and try not to
+                                    dwell too long.</li>
+                                <li>There's going to be a lot that isn't
+                                    covered in this class, this class is
+                                    for users.</li>
+                                <li>Get people to a point where they can
+                                    look at a POM and begin to understand
+                                    it.</li>
+                            </ul>
+                            
+					    </aside>
+				    </section>
+                    
+                    <section>
+                        <!-- TODO -->
+					    <h2>Welcome</h2>
+					    <p>
+                            Welcome to Introduction to Maven.  In this
+                            class you will learn how to use Maven to build
+                            your projects.
+					    </p>
 
-                    <aside class="notes">
-
-                        <b>Min Time: 5 minutes, Max Time: 10 minutes</b>
+                        <aside class="notes">
+                            
+                            <b>Min Time: 5 minutes, Max Time: 10 minutes</b>
+                            <ul>
+                                <li>This section needs to start and end in a manner of minutes.</li>
+                                <li>You might see this as filler, but it's important to provide a "roadmap" for the course.</li>
+                            </ul>
+                            
+                        </aside>
+                    </section>
+				    <section>
+					    <h2>Goals and Objectives</h2>
+					    <p>
+                            At the end of this class, you should know:
+					    </p>
                         <ul>
-                            <li>This section needs to start and end in a manner of minutes.</li>
-                            <li>You might see this as filler, but it's important to provide a "roadmap" for the course.</li>
+                            <li>How to download and install Maven</li>
+                            <li>How to run a simple build</li>
+                            <li>How to configure and locate dependencies
+                                for a project</li>
+                            <li>How to configure the Surefire plugin to
+                                run unit tests</li>
+                            <li>How plugins are configured</li>
+                            <li>How projects are packaged</li>
+                            <li>How multimodule projects used</li>
                         </ul>
-
-                    </aside>
+                        <aside class="notes">
+                            <ul>
+                                <li>Emphasize that this is basic scope.</li>
+                                <li>Mention that there's a lot of ground to cover.</li>
+                                <li>"When you are finished with this class, you understand Maven basics."</li>
+                                <li>"Even if you already know Maven, this class can help clarify and reinforce the basics."</li>
+                            </ul>
+                        </aside>                    
+				    </section>
                 </section>
-                
                 
 				<section>
 					<section>
@@ -184,32 +210,6 @@
                         </aside>
 					</section>
 				</section>
-                
-				<section>
-					<h2>Goals and Objectives</h2>
-					<p>
-                        At the end of this class, you should know:
-					</p>
-                    <ul>
-                        <li>How to download and install Maven</li>
-                        <li>How to run a simple build</li>
-                        <li>How to configure and locate dependencies
-                        for a project</li>
-                        <li>How to configure the Surefire plugin to
-                        run unit tests</li>
-                        <li>How plugins are configured</li>
-                        <li>How projects are packaged</li>
-                        <li>How multimodule projects used</li>
-                    </ul>
-                    <aside class="notes">
-                        <ul>
-                            <li>Emphasize that this is basic scope.</li>
-                            <li>Mention that there's a lot of ground to cover.</li>
-                            <li>"When you are finished with this class, you understand Maven basics."</li>
-                            <li>"Even if you already know Maven, this class can help clarify and reinforce the basics."</li>
-                        </ul>
-                    </aside>                    
-				</section>
                 <section>
 				    <section>
 					    <h2>Instructor Intro</h2>
@@ -253,62 +253,64 @@
                         
                     </section>
                 </section>
-				<section>
-					<h1>Building a Simple Project</h1>
-					<h3>First Steps</h3>
-					<p>
-
-						<small>Created by Jason van Zyl
-						/ <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
-
-					</p>
-                    
-					<aside class="notes">
-                        <p><b>Min Time: 25 minutes, Max Time: 35 minutes</b></p>
+                <section>
+				    <section>
+					    <h1>Building a Simple Project</h1>
+					    <h3>First Steps</h3>
+					    <p>
+                            
+						    <small>Created by Jason van Zyl
+						        / <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+                            
+					    </p>
+                        
+					    <aside class="notes">
+                            <p><b>Min Time: 25 minutes, Max Time: 35 minutes</b></p>
+                            <ul>
+                                
+                                <li>Don't go into all the detail.  This
+                                    class is not a reference book.</li>
+                                
+                                <li>Don't talk about where resource
+                                    filters go, they are not there yet.
+                                    src/main/java, src/test/java - that's
+                                    it.</li>
+                                
+                                <li>You'll note that we introduce
+                                    dependency scope out of order here.
+                                    This is fine, we're hinting at the
+                                    next section.</li>
+                                
+                            </ul>
+                            
+					    </aside>
+				    </section>
+                
+                    <section>
+                        <!-- TODO -->
+					    <h2>Module Objectives</h2>
+                        
                         <ul>
-
-                            <li>Don't go into all the detail.  This
-                                class is not a reference book.</li>
-
-                            <li>Don't talk about where resource
-                                filters go, they are not there yet.
-                                src/main/java, src/test/java - that's
-                                it.</li>
-
-                            <li>You'll note that we introduce
-                                dependency scope out of order here.
-                                This is fine, we're hinting at the
-                                next section.</li>
-
+                            <li>Introduce an Example Project</li>
+                            <li>Examine the pom.xml</li>
+                            <li>Explain directory structure</li>
+                            <li>Introduce coordinates</li>
+                            <li>Introduce dependencies</li>
                         </ul>
                         
-					</aside>
-				</section>
-                
-                <section>
-                    <!-- TODO -->
-					<h2>Module Objectives</h2>
-
-                    <ul>
-                        <li>Introduce an Example Project</li>
-                        <li>Examine the pom.xml</li>
-                        <li>Explain directory structure</li>
-                        <li>Introduce coordinates</li>
-                        <li>Introduce dependencies</li>
-                    </ul>
-
+                    </section>
                 </section>
-                <section>
                     <section>
-                    <h2>Do First, Learn Later</h2>
-
-                    <p>Our training philsophy is straightforward...</p>
-
-                    <p>We learn from experience, not from watching slides.</p>
-
-                    <p><b>Let's get to work.</b></p>
-
-                </section>
+                        <section>
+                            <h2>Do First, Learn Later</h2>
+                            
+                            <p>Our training philsophy is straightforward...</p>
+                            
+                            <p>We learn from experience, not from watching slides.</p>
+                            
+                            <p><b>Let's get to work.</b></p>
+                            
+                        </section>
 
                 <section>
                     <h2>First Example</h2>
@@ -648,81 +650,83 @@
 
                     </section>
                 </section>
-				<section>
-					<h1>Working with Dependencies</h1>
-					<h3>First Steps</h3>
-					<p>
-
-						<small>Created by Jason van Zyl
-						    / <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
-
-					</p>
+                <section>
+				    <section>
+					    <h1>Working with Dependencies</h1>
+					    <h3>First Steps</h3>
+					    <p>
+                            
+						    <small>Created by Jason van Zyl
+						        / <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+                            
+					    </p>
+                        
+					    <aside class="notes">
+                            <p><b>Min Time: 35 minutes, Max Time: 45 minutes</b></p>
+                            <ul>
+                                
+                                <li>This is going to seem strange, but
+                                    there's no mention of a snapshot
+                                    here. Here's my thought: most users don't
+                                    need to know what a snapshot is until they
+                                    think of in-house software releases.
+                                    Almost no one is depending on SNAPSHOT
+                                    versions from Apache.  Introducing
+                                    SNAPSHOTs right now is confusing.</li>
+                                
+                                <li>Also note that this module isn't
+                                    called 'Dependency Management'.  That's a
+                                    fancy name that means nothing to a junior
+                                    developer that just needs to use a new
+                                    dependency.</li>
+                                
+                            </ul>
+                            
+					    </aside>
+				    </section>
                     
-					<aside class="notes">
-                        <p><b>Min Time: 35 minutes, Max Time: 45 minutes</b></p>
+                    <section>
+                        <h2>Where were we?</h2>
+                        
+                        <p>The previous section really only gave you part of the picture, you learned that:</p>
+                        
                         <ul>
-
-                            <li>This is going to seem strange, but
-                                there's no mention of a snapshot
-                                here. Here's my thought: most users don't
-                                need to know what a snapshot is until they
-                                think of in-house software releases.
-                                Almost no one is depending on SNAPSHOT
-                                versions from Apache.  Introducing
-                                SNAPSHOTs right now is confusing.</li>
-
-                            <li>Also note that this module isn't
-                                called 'Dependency Management'.  That's a
-                                fancy name that means nothing to a junior
-                                developer that just needs to use a new
-                                dependency.</li>
-
+                            <li>Dependencies have Coodinates</li>
+                            <li>Maven Downloads Dependencies</li>
                         </ul>
                         
-					</aside>
-				</section>
-                
-                <section>
-                    <!-- TODO -->
-					<h2>Module Objectives</h2>
-
-                    <ul>
-                        <li>Demo: Add a New Dependency
-                            <ul>
-                                <li>Open simple-project pom.xml</li>
-                                <li>Run a Build and Identify a New Requirement</li>
-                                <li>Locate the Appropriate Dependency in Central</li>
-                                <li>Add a new Dependency</li>
-                                <li>Modify Code to Use New Dependency</li>
-                                <li>Demonstrate Maven Downloading a Dependency</li>
-                            </ul>
-                        </li>
-                        <li>Coordinate Details (5 minutes)</li>
-                        <li>Dependencies
-                            <ul>
-                                
-                                <li>Where do dependencies come from?</li>
-                                
-                                <li>Where dependencies go?</li>
-                                <li>Repository Format</li>
-                                <li>Release Versions</li>
-                                <li>What if your dependency isn't on Central?</li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                </section>
-                <section>
-                    <h2>Where were we?</h2>
-
-                    <p>The previous section really only gave you part of the picture, you learned that:</p>
-
-                    <ul>
-                        <li>Dependencies have Coodinates</li>
-                        <li>Maven Downloads Dependencies</li>
-                    </ul>
-
-                    <b>How?</b>
+                        <b>How?</b>
+                    </section>
+                    <section>
+                        <!-- TODO -->
+					    <h2>Module Objectives</h2>
+                        
+                        <ul>
+                            <li>Demo: Add a New Dependency
+                                <ul>
+                                    <li>Open simple-project pom.xml</li>
+                                    <li>Run a Build and Identify a New Requirement</li>
+                                    <li>Locate the Appropriate Dependency in Central</li>
+                                    <li>Add a new Dependency</li>
+                                    <li>Modify Code to Use New Dependency</li>
+                                    <li>Demonstrate Maven Downloading a Dependency</li>
+                                </ul>
+                            </li>
+                            <li>Coordinate Details (5 minutes)</li>
+                            <li>Dependencies
+                                <ul>
+                                    
+                                    <li>Where do dependencies come from?</li>
+                                    
+                                    <li>Where dependencies go?</li>
+                                    <li>Repository Format</li>
+                                    <li>Release Versions</li>
+                                    <li>What if your dependency isn't on Central?</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                    </section>
                 </section>
                 <section>
                     <section>
@@ -957,75 +961,77 @@
                         <h2>Scopes Influence Classpaths</h2>
                     </section>
                 </section>
-				<section>
-					<h1>Writing and Executing Unit Tests</h1>
-					<h3>First Steps</h3>
-					<p>
-
-						<small>Created by Jason van Zyl
-						    / <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
-
-					</p>
+                <section>
+				    <section>
+					    <h1>Writing and Executing Unit Tests</h1>
+					    <h3>First Steps</h3>
+					    <p>
+                            
+						    <small>Created by Jason van Zyl
+						        / <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+                            
+					    </p>
+                        
+					    <aside class="notes">
+                            <p><b>Min Time: 35 minutes, Max Time: 45 minutes</b></p>
+                            <ul>
+                                
+                                <li>Module not about Unit Tests as much as it is about core principles.
+                                    <ul>
+                                        <li>Hint at full story..</li>
+                                        <li>Goals</li>
+                                        <li>Plugins</li>
+                                        <li>Plugin Configuration</li>
+                                        <li>Reporting</li>
+                                    </ul>
+                                </li>
+                                
+                                <li>Unit tests are such a fundamental
+                                    requirement, we should spend an entire
+                                    module on it.</li>
+                                
+                            </ul>
+                            
+					    </aside>
+				    </section>
                     
-					<aside class="notes">
-                        <p><b>Min Time: 35 minutes, Max Time: 45 minutes</b></p>
+                    <section>
+                        <h2>Where were we?</h2>
+                        
+                        <p>You just learned about coordinates and dependencies.</p>
+                        
+                        <p>Now, we're going to dive into Maven's execution model by learning how Maven executes Unit Tests.</p>
+                    </section>
+                    <section>
+                        <!-- TODO -->
+					    <h2>Module Objectives</h2>
+                        
                         <ul>
-
-                            <li>Module not about Unit Tests as much as it is about core principles.
+                            <li>Execute Unit Tests
                                 <ul>
-                                    <li>Hint at full story..</li>
-                                    <li>Goals</li>
-                                    <li>Plugins</li>
-                                    <li>Plugin Configuration</li>
-                                    <li>Reporting</li>
+                                    <li>Introduce Surefire Plugin</li>
+                                    <li>Demonstrate Surefire Plugin</li>
+                                    <li>Running a Single Test</li>
                                 </ul>
                             </li>
-
-                            <li>Unit tests are such a fundamental
-                                requirement, we should spend an entire
-                                module on it.</li>
-
+                            <li>Discuss Plugin Configuration
+                                <ul>
+                                    <li>Show TestNG Tests</li>
+                                    <li>Configure Plugin to run TestNG
+                                    <li>Execute TestNG Tests</li>
+                                    <li>Including and Excluding Tests</li>
+                                </ul>
+                            </li>
+                            <li>Project Resources
+                                <ul>
+                                    
+                                    <li>Discuss Test Resources</li>
+                                    <li>Demonstrate Test Resources</li>
+                                </ul>
+                            </li>
                         </ul>
                         
-					</aside>
-				</section>
-                
-                <section>
-                    <h2>Where were we?</h2>
-                    
-                    <p>You just learned about coordinates and dependencies.</p>
-
-                    <p>Now, we're going to dive into Maven's execution model by learning how Maven executes Unit Tests.</p>
-                </section>
-                <section>
-                    <!-- TODO -->
-					<h2>Module Objectives</h2>
-
-                    <ul>
-                        <li>Execute Unit Tests
-                            <ul>
-                                <li>Introduce Surefire Plugin</li>
-                                <li>Demonstrate Surefire Plugin</li>
-                                <li>Running a Single Test</li>
-                            </ul>
-                        </li>
-                        <li>Discuss Plugin Configuration
-                            <ul>
-                                <li>Show TestNG Tests</li>
-                                <li>Configure Plugin to run TestNG
-                                <li>Execute TestNG Tests</li>
-                                <li>Including and Excluding Tests</li>
-                            </ul>
-                        </li>
-                        <li>Project Resources
-                            <ul>
-
-                                <li>Discuss Test Resources</li>
-                                <li>Demonstrate Test Resources</li>
-                            </ul>
-                        </li>
-                    </ul>
-
+                    </section>
                 </section>
                 <section>
                     <section>
@@ -1208,86 +1214,88 @@
                     </section>
                 </section>
 
-				<section>
-					<h1>Building Your Software</h1>
-					<h3>First Steps</h3>
-					<p>
-
-						<small>Created by Jason van Zyl
-						/ <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
-
-					</p>
+                <section>
+				    <section>
+					    <h1>Building Your Software</h1>
+					    <h3>First Steps</h3>
+					    <p>
+                            
+						    <small>Created by Jason van Zyl
+						        / <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+                            
+					    </p>
+                        
+					    <aside class="notes">
+                            <p><b>Min Time: 30 minutes, Max Time: 40 minutes</b></p>
+                            <ul>
+                                
+                                <li>Notice how this section is a bit more
+                                    theory than the others.  It is also
+                                    smaller for a reason.</li>
+                                
+                                <li>There's a bit of propaganda
+                                    here. We're talking about benefits, but
+                                    we're putting it in the middle of the
+                                    class after the students have seen Maven's
+                                    strong points.</li>
+                                
+                                <li>You can talk for an hour on goals,
+                                    plugins, and the lifecycle, but you really
+                                    shouldn't.  This section is the stuff that
+                                    everyone touch Maven should know, but
+                                    never does.</li>
+                                
+                            </ul>
+                            
+					    </aside>
+				    </section>
                     
-					<aside class="notes">
-                        <p><b>Min Time: 30 minutes, Max Time: 40 minutes</b></p>
+                    <section>
+                        <h2>Where were we?</h2>
+                        
+                        <p>Last module was a brief introduction to the Surefire Plugin.</p>
+                        
                         <ul>
-
-                            <li>Notice how this section is a bit more
-                            theory than the others.  It is also
-                            smaller for a reason.</li>
-
-                            <li>There's a bit of propaganda
-                            here. We're talking about benefits, but
-                            we're putting it in the middle of the
-                            class after the students have seen Maven's
-                            strong points.</li>
-
-                            <li>You can talk for an hour on goals,
-                            plugins, and the lifecycle, but you really
-                            shouldn't.  This section is the stuff that
-                            everyone touch Maven should know, but
-                            never does.</li>
-
+                            <li>Tests are integral to a build.</li>
+                            <li>Surefire plugin has a Test goal.</li>
+                            <li>This goal can be configure.</li>
+                            <li>Tests generate reports.</li>
                         </ul>
                         
-					</aside>
-				</section>
-
-                <section>
-                    <h2>Where were we?</h2>
-
-                    <p>Last module was a brief introduction to the Surefire Plugin.</p>
-
-                    <ul>
-                        <li>Tests are integral to a build.</li>
-                        <li>Surefire plugin has a Test goal.</li>
-                        <li>This goal can be configure.</li>
-                        <li>Tests generate reports.</li>
-                    </ul>
-
-                    <aside class="note">
+                        <aside class="note">
+                            <ul>
+                                <li>Last module was "foreshadowing"</li>
+                                <li>Now, you'll really show them goals.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    
+                    <section>
+                        <!-- TODO -->
+					    <h2>Module Objectives</h2>
+                        
                         <ul>
-                            <li>Last module was "foreshadowing"</li>
-                            <li>Now, you'll really show them goals.</li>
+                            <li>What is a Goal?
+                                <ul>
+                                    <li>When you run a Maven build...</li>
+                                    <li>Maven just runs a series of Goals (2 slides - QUICK!)</li>
+                                    <li>These goals are contained in Plugins (2 slides - QUICK!)</li>
+                                    <li>Let's review: Goals are units of work, Plugins group similar goals, and Maven has a set lifecycle to which goals are bound.</li>
+                                </ul>
+                            </li>
+                            <li>What is the Lifecycle?
+                                <ul>
+                                    <li>Goals are executed within a Lifecycle (2 slides - QUICK)</li>
+                                    <li>So when you run your build, this is what's happening (show default lifecycle)</li>
+                                    <li>Demonstrate the lifecycle</li>
+                                    <li>Hit them with a bit of theory… All maven projects follow this lifecycle, it is configurable, but this is why we standardized.</li>
+                                </ul>
+                            </li>
+                            <li>Talk (briefly) about convention over configuration</li>
+                            <li>Talk (briefly) about what life is like without Maven</li>
                         </ul>
-                    </aside>
-                </section>
-                
-                <section>
-                    <!-- TODO -->
-					<h2>Module Objectives</h2>
-
-                    <ul>
-                        <li>What is a Goal?
-                            <ul>
-                                <li>When you run a Maven build...</li>
-                                <li>Maven just runs a series of Goals (2 slides - QUICK!)</li>
-                                <li>These goals are contained in Plugins (2 slides - QUICK!)</li>
-                                <li>Let's review: Goals are units of work, Plugins group similar goals, and Maven has a set lifecycle to which goals are bound.</li>
-                            </ul>
-                        </li>
-                        <li>What is the Lifecycle?
-                            <ul>
-                                <li>Goals are executed within a Lifecycle (2 slides - QUICK)</li>
-                                <li>So when you run your build, this is what's happening (show default lifecycle)</li>
-                                <li>Demonstrate the lifecycle</li>
-                                <li>Hit them with a bit of theory… All maven projects follow this lifecycle, it is configurable, but this is why we standardized.</li>
-                            </ul>
-                        </li>
-                        <li>Talk (briefly) about convention over configuration</li>
-                        <li>Talk (briefly) about what life is like without Maven</li>
-                    </ul>
-
+                        
+                    </section>
                 </section>
                 <section>
                     <section>
@@ -1571,73 +1579,75 @@
                     </section>
                 </section>
                     
-				<section>
-					<h1>Packaging Your Software</h1>
-					<h3>First Steps</h3>
-					<p>
-
-						<small>Created by Jason van Zyl
-						/ <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
-
-					</p>
-                    
-					<aside class="notes">
-                        <p><b>Min Time: 45 minutes, Max Time: 50 minutes</b></p>
-                        <ul>
-
-                            <li>Don't fully explain the Assembly
-                            plugin.  Leave that for either the
-                            advanced class or for consulting.</li>
-
-                            <li>Get out of the mindset that you have
-                            to read the students everything about
-                            these plugins.  Really this is just a
-                            starting point, 5 hours isn't enough to
-                            tell them everything about the WAR
-                            plugin.</li>
-
-                        </ul>
+                <section>
+				    <section>
+					    <h1>Packaging Your Software</h1>
+					    <h3>First Steps</h3>
+					    <p>
+                            
+						    <small>Created by Jason van Zyl
+						        / <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+                            
+					    </p>
                         
-					</aside>
-				</section>
-                
-                <section>
-                    <h2>Where were we?</h2>
-
-                    <p>In the previous sections:</p>
-
-                    <ul>
-                        <li>You've learned about Plugins</li>
-                        <li>You understand the lifecycle.</li>
-                    </ul>
-                </section>
-                <section>
-                    <!-- TODO -->
-					<h2>Module Objectives</h2>
-
-                    <p>This module does two things.  It focuses on the
-                    WAR plugin and it uses a simple Assembly:</p>
-
-                    <ul>
-                        <li>Remember the lifecycle form the previous section, well the packaging changes it...</li>
-                        <ul>
-                            <li>Demonstrate Packaging</li>
+					    <aside class="notes">
+                            <p><b>Min Time: 45 minutes, Max Time: 50 minutes</b></p>
                             <ul>
-                                <li>Open war-example - a WAR project</li>
-                                <li>Demonstrate the WAR build</li>
-                                <li>Inspect the WAR output</li>
-                                <li>Discuss the WAR Plugin</li>
-                                <li>Hit upon some customization points for the WAR plugin</li>
+                                
+                                <li>Don't fully explain the Assembly
+                                    plugin.  Leave that for either the
+                                    advanced class or for consulting.</li>
+                                
+                                <li>Get out of the mindset that you have
+                                    to read the students everything about
+                                    these plugins.  Really this is just a
+                                    starting point, 5 hours isn't enough to
+                                    tell them everything about the WAR
+                                    plugin.</li>
+                                
                             </ul>
                             
-                        <li>Run the WAR in Jetty or Tomcat using Maven</li>
-                        <li>Switch gears to a Standalone Java program</li>
-                        <li>Demonstrate (but don't fully delve into) the Assembly plugin</li>
-                        <li>Build a program that creates a jar with dependencies</li>
-                        <li>For completeness talk about the JAR plugin and just mention the EAR plugin</li>
-                        <li>Introduce SNAPSHOT versions</li>
-                    </ul>
-
+					    </aside>
+				    </section>
+                    
+                    <section>
+                        <h2>Where were we?</h2>
+                        
+                        <p>In the previous sections:</p>
+                        
+                        <ul>
+                            <li>You've learned about Plugins</li>
+                            <li>You understand the lifecycle.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <!-- TODO -->
+					    <h2>Module Objectives</h2>
+                        
+                        <p>This module does two things.  It focuses on the
+                            WAR plugin and it uses a simple Assembly:</p>
+                        
+                        <ul>
+                            <li>Remember the lifecycle form the previous section, well the packaging changes it...</li>
+                            <ul>
+                                <li>Demonstrate Packaging</li>
+                                <ul>
+                                    <li>Open war-example - a WAR project</li>
+                                    <li>Demonstrate the WAR build</li>
+                                    <li>Inspect the WAR output</li>
+                                    <li>Discuss the WAR Plugin</li>
+                                    <li>Hit upon some customization points for the WAR plugin</li>
+                                </ul>
+                                
+                                <li>Run the WAR in Jetty or Tomcat using Maven</li>
+                                <li>Switch gears to a Standalone Java program</li>
+                                <li>Demonstrate (but don't fully delve into) the Assembly plugin</li>
+                                <li>Build a program that creates a jar with dependencies</li>
+                                <li>For completeness talk about the JAR plugin and just mention the EAR plugin</li>
+                                <li>Introduce SNAPSHOT versions</li>
+                            </ul>
+                            
+                    </section>
                 </section>
                 <section>
                     <section>
@@ -1676,68 +1686,69 @@
                     </section>
                 </section>
     
-				<section>
-					<h1>Creating a Multi-module Project</h1>
-					<h3>First Steps</h3>
-					<p>
-
-						<small>Created by Jason van Zyl
-						/ <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
-
-					</p>
+                <section>
+				    <section>
+					    <h1>Creating a Multi-module Project</h1>
+					    <h3>First Steps</h3>
+					    <p>
+                            
+						    <small>Created by Jason van Zyl
+						        / <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+                            
+					    </p>
+                        
+					    <aside class="notes">
+                            <p><b>Min Time: 45 minutes, Max Time: 50 minutes</b></p>
+                            <ul>
+                                
+                                <li>You can't leave an intro Maven class
+                                    without having some exposure to
+                                    multi-module projects. </li>
+                                
+                                <li>That last bullet item.  It is
+                                    audacious, but I feel like the class
+                                    should build up to something big, right?
+                                    Like at the end of the Maven intro class,
+                                    a pretty basic class.  We end up standing
+                                    up an application server and deploying and
+                                    application to it.  </li>
+                                
+                            </ul>
+                            
+					    </aside>
+				    </section>
                     
-					<aside class="notes">
-                        <p><b>Min Time: 45 minutes, Max Time: 50 minutes</b></p>
+                    <section>
+                        <!-- TODO -->
+					    <h2>Module Objectives</h2>
+                        
+                        <p>This module does two things.  It focuses on the
+                            WAR plugin and it uses a simple Assembly:</p>
+                        
                         <ul>
-
-                            <li>You can't leave an intro Maven class
-                            without having some exposure to
-                            multi-module projects. </li>
-
-                            <li>That last bullet item.  It is
-                            audacious, but I feel like the class
-                            should build up to something big, right?
-                            Like at the end of the Maven intro class,
-                            a pretty basic class.  We end up standing
-                            up an application server and deploying and
-                            application to it.  </li>
-
+                            <li>Open multi-example sample project</li>
+                            <li>Show the file system structure with a top-level directory</li>
+                            <li>Show the pom.xml files with relationships</li>
+                            <li>Why would you do this?  Why group projects together?</li>
+                            <li>Define Inheritance and discuss what is inherited</li>
+                            <li>Define Aggregation and discuss what is aggregated</li>
+                            <li>Talk about how version numbers are often aligned in a multi-module project</li>
+                            <li>Demonstrate a Multi-module Build</li>
+                            <li>Discuss the Reactor and how it orders builds</li>
+                            <li>Open complex-multi example project</li>
+                            <li>Demonstrate multiple levels of hierarchy</li>
+                            <li>Build a big project that has many pieces and deploy it to an application server...</li>
                         </ul>
                         
-					</aside>
-				</section>
-                
-                <section>
-                    <!-- TODO -->
-					<h2>Module Objectives</h2>
-
-                    <p>This module does two things.  It focuses on the
-                    WAR plugin and it uses a simple Assembly:</p>
-
-                    <ul>
-                        <li>Open multi-example sample project</li>
-                        <li>Show the file system structure with a top-level directory</li>
-                        <li>Show the pom.xml files with relationships</li>
-                        <li>Why would you do this?  Why group projects together?</li>
-                        <li>Define Inheritance and discuss what is inherited</li>
-                        <li>Define Aggregation and discuss what is aggregated</li>
-                        <li>Talk about how version numbers are often aligned in a multi-module project</li>
-                        <li>Demonstrate a Multi-module Build</li>
-                        <li>Discuss the Reactor and how it orders builds</li>
-                        <li>Open complex-multi example project</li>
-                        <li>Demonstrate multiple levels of hierarchy</li>
-                        <li>Build a big project that has many pieces and deploy it to an application server...</li>
-                    </ul>
-
+                    </section>
                 </section>
-
-<section>
+                <section>
                     <section>
                         <h2>Demo: Build a Large Multi-module Project</h2>
                     </section>
                     <section>
                         <h2>How Projects Scale in Maven</h2>
-
+                        
                         <ul>
                             <li>Maven projects scale in a particular way.</li>
                             <li>Through the aggregation of smaller projects.</li>
@@ -1798,6 +1809,7 @@
                             <li><b>Aggregation:</b> A Parent Module contains Submodules</li>
                             <li><b>Inheritance:</b> A Model Declares a Parent and Inherits POM Configuration</li>
                         </ul>
+                    </section>
                 </section>
                 <section>
                     <section>
