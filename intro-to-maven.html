@@ -19,6 +19,7 @@
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/training.css">
 
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
@@ -1090,7 +1091,7 @@
 
                         <p>When we run "mvn test" we invoke a phase.</p>
 
-                        <p>The Surefire "test" goal is bound to this phase.</p>
+                        <p>The Surefire "test" goal is bound to this <phase>phase</phase>.</p>
 
                         <p>It's a default.  (We'll learn more about this later.)</p>
                     </section>
@@ -1505,7 +1506,7 @@
 
                         <ul>
                             <li>A single, linear series of steps (or phases)</li>
-                            <li>Goals are bound to these phases.</li>
+                            <li>Goals are bound to these <phase>phases</phase>.</li>
                         </ul>
                     </section>
                     <section>
@@ -1653,7 +1654,154 @@
                     <section>
                         <h2>Creating Packages</h2>
                     </section>
-                    
+                    <section>
+                        <h2>JARs, WARs, EARs</h2>
+
+                        <ul>
+                            <li>Remember that packaging is a coordinate</li>
+                            <li>groupId, artfiactId, version, <b>packaging</b>, classifier.</li>
+                        </ul>
+                        <hr/>
+                        <p>Packaging influences the <phase>package</phase> Lifecycle phase.</p>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>"Packaging defines the build's lifecycle more than anything else."</li>
+                                <li>"When we describe the project we say, it is a WAR project."</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>JAR Lifecycle</h2>
+
+                        <p>When packaging is "jar":</p>
+
+                        <ul>
+                            <li><phase>compile</phase> - <goal>compiler:compile</goal></li>
+                            <li><phase>test</phase> - <goal>surefire:test</goal></li>
+                            <li><phase>package</phase> - <goal>jar:jar</goal></li>
+                            <li><phase>install</phase> - <goal>install:install</goal></li>
+                        </ul>
+
+                        <hr/>
+
+                        <aside>This is a simplified lifecycle.</aside>
+                        
+                        <aside class="notes">
+                            <ul>
+                                <li>"Here is a simplified view of the default lifecycle for 'jar'."</li>
+                                <li>"Note that jar:jar is executed during the package phase."</li>
+                            </ul>
+                        </aside>
+
+                    </section>
+                    <section>
+                        <h2>WAR Lifecycle</h2>
+
+                        <p>When packaging is "war":</p>
+
+                        <ul>
+                            <li><phase>compile</phase> - <goal>compiler:compile</goal></li>
+                            <li><phase>test</phase> - <goal>surefire:test</goal></li>
+                            <li><phase>package</phase> - <goal>war:war</goal></li>
+                            <li><phase>install</phase> - <goal>install:install</goal></li>
+                        </ul>
+
+                        <hr/>
+
+                        <aside>WAR packaging has one difference: <goal>war:war</goal> instead of <goal>jar:jar</goal></aside>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>"Here's the default lifecycle when packaging is 'war'."</li>
+                                <li>"Note that there is only one difference."</li>
+                            </ul>
+                        </aside>
+                        
+                    </section>
+                    <section>
+                        <h2>EAR Lifecycle</h2>
+
+                        <ul>
+                            <li><phase>generate-resources</phase> - <goal>ear:generate-application-xml</goal></li>
+                            <li><phase>package</phase> - <goal>ear:ear</goal></li>
+                            <li><phase>install</phase> - <goal>install:install</goal></li>
+                        </ul>
+
+                        <hr/>
+
+                        <aside>This is a simplified lifecycle. EAR is very different.</aside>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>"Here's the default lifecycle when packaging is 'ear'."</li>
+                                <li>"Some packaging types define an entirely different set of goal bindings."</li>
+                            </ul>
+                        </aside>
+
+                    </section>
+                    <section>
+                        <h2>Complex, Custom Packages</h2>
+
+                        <p>Need more advanced packages?<p>
+
+                        <hr/>
+
+                        <p>Use the Maven Assembly Plugin</p>
+                        
+                        <aside class="notes">
+                            <ul>
+                                <li>"Standard packages are not always enough."</li>
+                                <li>"Maybe you need a ZIP with arbitrary structure?"</li>
+                                <li>"Maybe you would like a self-executing JAR file?"</li>
+                                <li>"For these requirements we use the Assembly plugin."</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Built-in Assemblies</h2>
+
+                        <p>The Maven Assembly plugin has a number of built-in descriptor:</p>
+
+                        <ul>
+                            <li>bin</li>
+                            <li>jar-with-dependencies</li>
+                            <li>src</li>
+                            <li>project</li>
+                         </ul>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>"The assembly plugin defines some built-in assemblies."</li>
+                                <li><a href="http://maven.apache.org/plugins/maven-assembly-plugin/descriptor-refs.html#bin">bin</a> assembly for binary distributions.</li>
+                                <li><a href="http://maven.apache.org/plugins/maven-assembly-plugin/descriptor-refs.html#jar-with-dependencies">jar-with-dependencies</a> for a project with libraries included.</li>
+                            </ul>
+                        </aside>
+                       
+                    </section>
+                    <section>
+                        <h2>Custom Assemblies</h2>
+
+                        <p>You can also define your own assembly descriptors.</p>
+
+                        <hr/>
+
+                        <p>An assembly descriptor can:</p>
+
+                        <ul>
+                            <li>Copy files from your project to a custom directory structure.</li>
+                            <li>Include dependencies in your project's output.</li>
+                            <li>...and much more.</li>
+                        </ul>
+                        
+                        <aside class="notes">
+                            <ul>
+                                <li>"If the built-in descriptors don't satisfy your requirements you can define your own."</li>
+                                <li>"Assemblies are a declarative format that maps your current project to any archive structure."</li>
+                            </ul>
+                        </aside>
+
+                    </section>
                 </section>
                 <section>
                     <section>
@@ -1665,7 +1813,7 @@
                         </aside>
                     </section>
                     <section>
-                        <h2>Demo: Creating a JAR with Dependencies</h2>
+                        <h2>Demo: JAR with Dependencies</h2>
                     </section>
                     <section>
                         <h2>Configuring the JAR Plugin</h2>
