@@ -356,6 +356,14 @@
                     </ul>
                 </section>
 
+		<section>
+
+		  <h2>What Just Happened?</h2>
+
+		  <img src="img/web/simple-build.png"/>
+
+		  </section>
+
                 <section>
 
                     <h2>Running the Project</h2>
@@ -388,19 +396,56 @@
                     <section>
                         <h2>Everything is in the POM...</h2>
 
+			<p>Everything from the basics:</p>
+
                         <ul>
                             <li>Directory Structure</li>
                             <li>Coordinates</li>
                             <li>Dependencies</li>
+			</ul>
+		    </section>
+		    
+		    <section>
+		        <h2>..and Configuration</h2>
+
+			<p>
+			  Builds are configured, plugins are
+			  configured in the POM:
+			</p>
+
+			<ul>
                             <li>Build Configuration</li>
-                            <li>Directory Structure</li>
                             <li>Unit Testing Configuration</li>
                             <li>Package Customizations</li>
+			</ul>
+		    </section>
+
+		    <section>
+		        <h2>...and Project "Metadata"...</h2>
+
+			<p>
+			  Project often point to external resources
+			  such as CI servers and source control.  This
+			  is all in the POM.
+			</p>
+
+			<ul>
                             <li>Repository Manager Configuration</li>
                             <li>Continuous Integration Server Configuration</li>
                             <li>Open Source Project Information*</li>
-                            <li>Container Configuration</li>
-                            <li>Custom User Properties</li>
+			</ul>
+		    </section>
+		    <section>
+		      <h2>...and more...</h2>
+
+		      <ul>
+                            <li><b>Container Configuration</b> -
+                            Configuration for a deployment container
+                            such as a servlet container or an
+                            application server.</li>
+                            <li><b>Custom User Properties</b> - The
+                            POM model can be extended to includ custom
+                            user-driven properties as well.</li>
                         </ul>
 
                     </section>
@@ -436,7 +481,8 @@
 
                         <p>Maven provides a common structure</p>
 
-                        <p>Everything is in its right place.</p>
+                        <p>"Everything is in its right place."
+                        - <a href="http://en.wikipedia.org/wiki/Everything_in_Its_Right_Place">Radiohead</a></p>
                     </section>
                     <section>
                         <h2>Source and Resources</h2>
@@ -445,6 +491,8 @@
                             <li><b>Source Code:</b>: <code>src/main/java</code></li>
                             <li><b>Resources:</b>: <code>src/main/resources</code></li>
                         </ul>
+
+			<img src="img/web/source-dirs.png"/>
 
                         <p>Both directories added to classpath and resulting artifact.</p>
                     </section>
@@ -455,6 +503,8 @@
                             <li><b>Web Application:</b>: <code>src/main/webapp</code></li>
                         </ul>
 
+			<img src="img/web/webapp-dirs.png"/>
+
                         <p>Stored in the resulting artifact.</p>
                     </section>
                     <section>
@@ -464,6 +514,8 @@
                             <li><b>Unit Tests:</b>: <code>src/test/java</code></li>
                             <li><b>Test Resources:</b>: <code>src/test/resources</code></li>
                         </ul>
+
+			<img src="img/web/test-dirs.png"/>
 
                         <p><b>Not</b> stored in the resulting artifact.</p>
                     </section>
@@ -476,6 +528,7 @@
                 <section>
                     <section>
                         <h2>Coordinates</h2>
+			<img src="img/web/world-map-1600.jpg"/>
                     </section>
                     <section>
                         <h2>Everything has a Coordinate</h2>
@@ -485,6 +538,9 @@
                             <li>Dependencies</li>
                             <li>Maven Plugins</li>
                         </ul>
+			<br/>
+			<img src="img/web/artifact-coordinates.png"/>
+			
                     </section>
 
                     <section>
@@ -495,7 +551,28 @@
                             <li>Artifact ID</li>
                             <li>Version</li>
                         </ol>
+			<br/>
+			<img src="img/web/gav-coordinate.png">
                     </section>
+
+		    <section>
+		      <h2>Coordinate Systems</h2>
+
+		      <p>Coordinate systems bring order to dependencies.</p>
+
+		      <img src="img/web/dewey-decimal.jpg"/>
+
+		      <aside class="notes">
+
+			<ul>
+			  <li>The Dewey Decimal System - a good analogy</li>
+			  <li>"Maven introduced a coordinate system for dependencies."</li>
+			  <li>"Before Maven there was no structure. Maven makes dependencies explicit."</li>
+			</ul>
+
+		      </aside>
+
+		    </section>
 
                     <section>
                         <h2>Group ID</h2>
@@ -505,6 +582,20 @@
                         <p><b>Role:</b> Artifacts (JARs, WARs, EARs) are organized into groups.</p>
 
                         <p>Groups correspond to organizations and projects.</p>
+		    </section>
+		    <section>
+		        <h2>Groups contain Many Artifacts</h2>
+
+			<p>Groups are often organizational groups, but they can also be nested. The following are all Group IDs.</p>
+
+			<ul>
+			  <li><b>Google -</b> com.google</li>
+			  <li><b>Google Android -</b> com.google.android</li>
+			  <li><b>Apache -</b> org.apache</li>
+			  <li><b>Tesla -</b> io.tesla</li>
+			</ul>
+
+			<img src="img/web/group-galaxy.jpg"/>
                     </section>
 
                     <section>
@@ -512,9 +603,31 @@
 
                         <p><b>Identifier:</b> <code>artifactId</code></p>
 
-                        <p><b>Role:</b> Projects produce artifacts.  This project produces a WAR artifact.</p>
+                        <p><b>Role:</b> Projects produce artifacts.</p>
+
+			<br/><br/>
+
+			<p>"This project produces a WAR artifact."</p>
                         
                         <p>A Maven project produces a single artifact.</p>
+
+		    </section>
+		    <section>
+		        <h2>Artifacts contain Many Versions</h2>
+
+			<p>Artifacts correspond to project. For
+			example Google Guice has an artifact. The
+			following are all Artifact IDs listed with
+			corresponding Group IDs.</p>
+
+			<ul>
+			  <li>com.google:<b>guice</b></li>
+			  <li>org.apache.maven:<b>maven-core</b></li>
+			  <li>log4j:<b>log4j</b></li>
+			</ul>
+			  
+
+			<img src="img/web/artifact-planets.jpg"/>
                     </section>
 
                     <section>
@@ -523,6 +636,21 @@
                         <p><b>Identifier:</b> <code>version</code></p>
 
                         <p><b>Role:</b> Software changes over time and releases need to be versioned.</p>
+
+		    </section>
+		    <section>
+		      <h2>Artifact Version are Unique Artifacts</h2>
+
+		        <p>There may be several versions of a single artifact.</p>
+
+			<ul>
+			  <li>com.google:guice:<b>0.1</b></li>
+			  <li>com.google:guice:<b>2.0</b></li>
+			  <li>com.google:guice:<b>3.1</b></li>
+			</ul>
+
+
+			<img src="img/web/version-earth.jpg"/>
                     </section>
 
                     <section>
@@ -550,6 +678,12 @@
                         <p><b>G</b>roup ID, <b>A</b>rtifact ID, <b>V</b>version</p>
 
                         <pre>com.jvanzyl.training:sample-project:1.0-SNAPSHOT</pre>
+
+			<p>If you see or hear someone asking about a
+			"GAV" coordinate, they are asking for the
+			coordinate that uniquely identifies a
+			particular project, dependency, or Maven
+			Plugin.</p>
                     </section>
 
                     <section>
