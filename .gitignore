@@ -1,1 +1,5 @@
 *,v
+*~
+target
+.idea
+.DS_Store
