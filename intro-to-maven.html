@@ -376,21 +376,73 @@
     </section>
 
     <section>
-        <h2>First Example</h2>
+        <h2>First Example: Copy</h2>
 
-        <p>Introduce a Simple Example:</p>
+        <p>Introducing a Simple Example:</p>
 
         <pre>$ cp examples/simple-project working</pre>
+
+	<aside class="notes">
+	  <ul>
+	    <li>"Copy the simple-project directory from your labs to a working directory."</li>
+	    <li>"This working directory can be wherever you want it to
+	    be, but we recommend copying the lab examples so you can
+	    start over if you run into problems."</li>
+	  </ul>
+	</aside>
 
     </section>
 
     <section>
-        <h2>First Example</h2>
+        <h2>First Example: Purpose</h2>
 
         <p>This example is a single-module Maven build.</p>
 
-        <p>A command-line application which...</p>
+        <p>A command-line application which:</p>
 
+	<ul>
+	  <li>Demonstrates using Maven</li>
+	  <li>Builds a self-executable JAR</li>
+	  <li>A non-trivial POM example</li>
+	</ul>
+
+	<aside class="notes">
+	  <ul>
+	    <li>"We're starting off with a real example."</li>
+	    <li>"While I could show you a 10-line Maven project, that
+	    isn't relevant to a real application."</li>
+	    <li>"Real applications need to be packaged, they need to
+	    copy dependencies. We're starting with a practical
+	    example."</li>
+	  </ul>
+	</aside>
+    </section>
+
+    <section>
+        <h2>First Example: Program</h2>
+
+        <p>This is an example to check the status of a student.</p>
+
+        <p>A University has a Registrar who needs to check if a
+        student is full-time.</p>
+
+	<ul>
+	  <li>Registrar fires up the command-line application.</li>
+	  <li>Enters in a Student's ID Number</li>
+	  <li>Application checks a database to see if the student is
+	  enrolled in more than 12 credit hours.</li>
+	</ul>
+
+	<p>Note: A simple application one step beyond a Hello World
+	application.</p>
+
+	<aside class="notes">
+	  <ul>
+	    <li>This first application is more than a Hello World
+	    application.</li>
+	    <li>This simple project could be used as a template for
+	    your own applications.</li>
+	</aside>
     </section>
 
 </section>
@@ -403,19 +455,44 @@
 
         <pre>$ mvn clean install</pre>
 
+	<p>Note: This should take about a minute to complete.</p>
+
+	<aside class="notes">
+	  <ul>
+	    <li>ACTION: Switch to a Shell or to Eclipse and Run the
+	    build.</li>
+	    <li>ACTION: Make sure to show the console output.</li>
+	    <li>OPTION: Run the build multiple times.</li>
+	    <li>OPTION: Run "clean" separate from "install".</li>
+	  </ul>
+	</aside>
+
     </section>
 
     <section>
 
         <h2>What Just Happened?</h2>
 
+	<p>The Maven build...</p>
+
         <ul>
-            <li>Maven inspected a file called the Project Object Model (POM)</li>
-            <li>It downloaded dependencies.</li>
-            <li>It compiled Java code into bytecode.</li>
-            <li>It ran a series of Unit Tests.</li>
-            <li>It assembled everything into a JAR file.</li>
+            <li>...<b>inspected</b> a file called the Project Object
+            Model (POM)</li>
+            <li>...<b>downloaded</b> dependencies.</li>
+            <li>...<b>compiled</b> Java code into bytecode.</li>
+            <li>...<b>ran</b> a series of Unit Tests.</li>
+            <li>...<b>assembled</b> everything into a JAR file.</li>
         </ul>
+
+	<aside class="notes">
+	  <ul>
+	    <li>"Maven took care of the details of the build.  All we
+	    had to do was specify what we wanted."</li>
+	    <li>ACTION: Switch back to the console and show them
+	    evidence that Maven did each of these steps.</li>
+	  </ul>
+	</aside>
+
     </section>
 
     <section>
@@ -424,15 +501,67 @@
 
         <img src="img/web/simple-build.png"/>
 
+	<aside>
+	  <ul>
+	    <li>"Look at a visual representation of what this build
+	    did."</li>
+	    <li>"Maven started the build, iterated through a series of
+	    steps and produced output."</li>
+	  </ul>
+	</aside>
+
     </section>
 
     <section>
 
         <h2>Running the Project</h2>
 
-        <p>target/sample-project-1.0-SNAPSHOT.jar</p>
+        <p>After the build, we have the following:
 
-        <pre>$ java -jar target/sample-project-1.0-SNAPSHOT.jar</pre>
+	<ul>
+	  <li>simple-project-1.0-SNAPSHOT.jar in target/</li>
+	  <li>A number of JARs in target/</li>
+	</ul>
+
+	<p>Run the example application like this:</p>
+
+        <pre>$ cd target
+$ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
+
+	<aside class="notes">
+	  <ul>
+	    <li>This simple Maven build produced an executable JAR.</li>
+	    <li>ACTION: Show the Manifest with Main-Class.</li>
+	    <li>We can run this sample from the command-line.</li>
+	  </ul>
+	</aside>
+
+    </section>
+    <section>
+      <h2>Build Output</h2>
+
+      <p>For later...</p>
+
+      <ul>
+	<li>The target/ directory is standard for Maven, build output
+	is placed in target/</li>
+	<li>Our simple application configured the Manifest and also
+	copied dependencies to target/</li>
+	<li>You'll learn more about the Standard Directory Layout and
+	Dependencies soon.</li>
+      </ul>
+
+      <aside class="notes">
+	<ul>
+	  <li>"As I said earlier, this was more than just a Hello
+	  World example."</li>
+	  <li>"This application produces a JAR file in target/ and it
+	  copies dependencies."</li>
+	  <li>"We're going to learn exactly what's happening later in
+	  the class, but first we need to understand what a Maven
+	  project really is..."</li>
+	</ul>
+      </aside>
 
     </section>
 </section>
