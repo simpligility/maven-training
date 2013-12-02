@@ -875,16 +875,23 @@
 	  <section>
 	    <h2>Group ID</h2>
 
-	    <p><b>Identifier:</b> <code>groupId</code></p>
+	    <ul>
+	      <li><b>Identifier:</b> <code>groupId</code></li>
+	      <li><b>Role:</b> Artifacts (JARs, WARs, EARs) are organized into groups.</li>
+	      <li>Groups correspond to organizations and projects.</li>
+	    </ul>
 
-	    <p><b>Role:</b> Artifacts (JARs, WARs, EARs) are organized into groups.</p>
-
-	    <p>Groups correspond to organizations and projects.</p>
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: We're going to get to the meaning, make this slide quick.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Groups contain Many Artifacts</h2>
 
-	    <p>Groups are often organizational groups, but they can also be nested. The following are all Group IDs.</p>
+	    <p>Groups are often organizational groups, but they can
+	    also be nested. The following are all Group IDs.</p>
 
 	    <ul>
 	      <li><b>Google -</b> com.google</li>
@@ -893,30 +900,59 @@
 	      <li><b>Tesla -</b> io.tesla</li>
 	    </ul>
 
-	    <img src="img/web/group-galaxy.jpg"/>
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: Emphasize that com.google and org.apache are
+		groups that contain other groups.</li>
+		<li>"Groups correspond to organizations and
+		projects..."</li>
+		<li>"Groups exist to provide structure to the
+		  repository."</li>
+	      </ul>
+	    </aside>
 	  </section>
 
 	  <section>
+	    <h2>Think of a Group as a...</h2>
+
+	    <img src="img/web/group-galaxy.jpg"/>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Think of a group as a collection of
+		artifacts."</li>
+		<li>"Some top-level groups like 'org.apache' contain
+		many other groups and artifacts."</li>
+		<li>"...other groups may only contain one or two
+		artifacts."</li>
+	      </ul>	
+	    </aside>
+	  </section>
+	  <section>
 	    <h2>Artifact ID</h2>
 
-	    <p><b>Identifier:</b> <code>artifactId</code></p>
-
-	    <p><b>Role:</b> Projects produce artifacts.</p>
-
+	    <ul>
+	      <li><b>Identifier:</b> <code>artifactId</code></li>
+	      <li><b>Role:</b> Projects produce artifacts.</li>
+	    </ul>OA
 	    <br/><br/>
 
 	    <p>"This project produces a WAR artifact."</p>
 
 	    <p>A Maven project produces a single artifact.</p>
 
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: Important not to dwell too long</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Artifacts contain Many Versions</h2>
 
-	    <p>Artifacts correspond to project. For
-	      example Google Guice has an artifact. The
-	      following are all Artifact IDs listed with
-	      corresponding Group IDs.</p>
+	    <p>Artifacts correspond to project. For example Google
+	      Guice has an artifact. The following are all Artifact
+	      IDs listed with corresponding Group IDs.</p>
 
 	    <ul>
 	      <li>com.google:<b>guice</b></li>
@@ -924,17 +960,38 @@
 	      <li>log4j:<b>log4j</b></li>
 	    </ul>
 
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: The pictures are supposed to convey a sense
+		of "zooming in"</li>
+		<li>"Zooming into artifacts, an artifact refers the
+		output of a build."</li>
+	      </ul>
+	    </aside>
+	  </section>
+	  <section>
+	    <h2>Think of an Artifact as a...</h2>
 
 	    <img src="img/web/artifact-planets.jpg"/>
 	  </section>
 
 	  <section>
 	    <h2>Version</h2>
+	    
+	    <ul>
+	      <li><b>Identifier:</b> <code>version</code></li>
+	      <li><b>Role:</b> Software changes over time and releases
+	      need to be versioned.</p></li>
+            </ul>
 
-	    <p><b>Identifier:</b> <code>version</code></p>
-
-	    <p><b>Role:</b> Software changes over time and releases need to be versioned.</p>
-
+            <aside class="notes">
+	      <ul>
+		<li>"So a version is even more specific than a groupId
+		or an artifactId"</li>
+		<li>"The combination of the three coordinates
+		identifies an artifact."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Artifact Version are Unique Artifacts</h2>
@@ -947,13 +1004,31 @@
 	      <li>com.google:guice:<b>3.1</b></li>
 	    </ul>
 
+	    <aside class="notes">
+	      <ul>
+		<li>"Here we see that Google Guice..."</li>
+		<li>"...an Inversion of Control library from
+		Google..."</li>
+		<li>"...is listed with three different release
+		versions."</li>
+	      </ul>
+	    </aside>
 
+	  <section>
+	    <h2>A version is like a...</h2>
 	    <img src="img/web/version-earth.jpg"/>
+	    <aside class="note">
+	      <ul>
+		<li>"Zooming in from a galaxy to a planet..."</li>
+		<li>"Think of a version like a snapshot of a planet in
+		time."</li>
+	      </ul>
+	    </aside>
 	  </section>
 
 	  <section>
 	    <h2>Example Coordinates</h2>
-
+	    
 	    <p>Open up our example project's pom.xml and see this...</p>
 
 	    <code>TODO</code>
@@ -968,6 +1043,15 @@
 	      <li><code>version</code>: "1.0-SNAPSHOT"</li>
 	    </ul>
 
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: Here we're simply making the previous slide
+		more obvious.</li>
+		<li>NOTE: Don't get into the details of SNAPSHOT,
+		that's for later in the class.  Just mention it.</li>
+	      </ul>
+	    </aside>
+
 	  </section>
 
 	  <section>
@@ -977,26 +1061,76 @@
 
 	    <pre>com.jvanzyl.training:sample-project:1.0-SNAPSHOT</pre>
 
-	    <p>If you see or hear someone asking about a
-	      "GAV" coordinate, they are asking for the
-	      coordinate that uniquely identifies a
-	      particular project, dependency, or Maven
-	      Plugin.</p>
+	    <br/><br/>
+	    <p>This Coordinate <b>uniquely</b> identifies an
+	    artifact</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"If someone asks for a "GAV" coordinate"</li>
+		<li>"...they are asking for unique coordinates
+		  for..."</li>
+		<li>"...a particular project, dependency, or Maven
+		  Plugin."</li>
+	      </ul>
+	    </aside>
 	  </section>
 
 	  <section>
 	    <h2>Coordinates Affects Output</h2>
 
+	    <img src="img/web/coordinate-to-artifact.png"/>
+
 	    <pre>sample-project-1.0-SNAPSHOT.jar</pre>
+	    <aside class="notes">
+	      <ul>
+		<li>"The coordinates of the project define what the
+		project's output is named."</li>
+		<li>"Here you can see that the artifactId and version
+		end up in the name of the JAR."</li>
+		<li>"The groupId affects where the artifact is
+		published, but that's for later."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Change Coordinates</h2>
+
+	    <p>If we change a project's coordinates it will change the
+	    project's output.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"To demonstrate how this mapping works..."</li>
+		<li>"...let's change the coordinates of a
+		project..."</li>
+		<li>"...then not how this affects the output of the
+		build."</li>
+	    </aside>
 	  </section>
 
 	</section>
 	<section>
 	  <section>
 	    <h2>Dependencies</h2>
+
+	    <p>These days...</p>
+
+	    <ul>
+	      <li>No project is an island.</li>
+	      <li>You use open source libraries.</li>
+	      <li>Examples: Guice, Derby, Tomcat, etc.</li>
+	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Next we're going to discuss dependencies."</li>
+		<li>NOTE: Talk about how things have changed over the
+		years, how more OSS is used.</li>
+		<li>NOTE: Spend some time talking about the rich
+		landscape of libraries out there.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Example Project</h2>
@@ -1010,11 +1144,17 @@
 	      <li>...client-side Javascript application</li>
 	    </ul>
 
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: Quick read, move on slide.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Example Project Dependencies</h2>
 
-	    <p>We assembled this project using open source libraries:</p>
+	    <p>We assembled this project using open source
+	    libraries:</p>
 
 	    <ul>
 	      <li>Embedded Database: HSQLDB and jDBI</li>
@@ -1022,20 +1162,59 @@
 	      <li>REST API: Jersey</li>
 	      <li>Client-side Javascript: React</li>
 	    </ul>
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: Give a short run-down of each component,
+		quickly.</li>
+		<li>NOTE: The point to make here is that (if a student
+		doesn't already realize it) they should think that
+		Maven is the gateway to all of these awesome
+		projects.</li>
+	      </ul>
+	    </aside>
+
 	  </section>
 
 	  <section>
 	    <h2>Example pom.xml Dependencies</h2>
 
-	    <pre>TODO</pre>
+	    <pre>
+              <dependency>
+                <groupId>org.sonatype.aether</groupId>
+                <artifactId>aether-api</artifactId>
+                <version>1.13.1</version>
+              </dependency>
+	    </pre>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Here is a dependency declaration for Aether"</li>
+		<li>"Note that it references a complete GAV
+		coordinate."</li>
+		<li>"In the next slide, you'll see how these
+		coordinates are mapped to a URL"</li>
+	      </ul>
+	    </aside>
+
 	  </section>
 
 	  <section>
 	    <h2>Dependencies have Coordinates</h2>
 
-	    <p>Take Guice as an example:</p>
+	    <p>Take Aether as an example:</p>
 
-	    <pre>TODO</pre>
+	    <ul>
+	      <li><b>groupId:</b> org.sonatype.aether</li>
+	      <li><b>artifactId:</b> aether-api</li>
+	      <li><b>version:</b> 1.13.1</li>
+	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: Quick slide, keep it moving.</li>
+	      </ul>
+	    </aside>
+
 	  </section>
 
 	  <section>
@@ -1043,7 +1222,16 @@
 
 	    <p>Maven turns these coordinates into a URL.</p>
 
-	    <p>Download dependencies from Central to your Local Repository.</p>
+	    <pre>/org/sonatype/aether/aether-api/1.13.1/aether-api-1.13.1.jar</pre>
+
+	    <p>Download dependencies from Central to your Local
+	    Repository.</p>
+	    
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: Again, keep the slides moving.</li>
+	      </ul>
+	    </aside>
 	  </section>
 
 	  <section>
@@ -1055,6 +1243,18 @@
 	      <li>compile</li>
 	      <li>test</li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Maven also has the concept of scope..."</li>
+		<li>"...Project depend on different artifacts for
+		different reasons."</li>
+		<li>"This example has a compile scope and a test
+		scope."</li>
+		<li>NOTE: Explain these two scopes very quickly we
+		don't need to get into the nitty-gritty.</li>
+	      </ul>
+	    </aside>
 	  </section>
 
 	</section>
@@ -1062,6 +1262,14 @@
 	<section>
 	  <section>
 	    <h2>In Summary...</h2>
+
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: In summary sections are meant to be
+		fast-moving reviews that signal the end of a
+		section.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>mvn clean install</h2>
@@ -1071,17 +1279,28 @@
 	  <section>
 	    <h2>Project Object Model (POM)</h2>
 
-	    <p>All Maven project have a POM.</p>
+	    <p>All Maven projects have a POM.</p>
 
 	    <p>An XML file in pom.xml</p>
 	  </section>
 	  <section>
 	    <h2>Projects have Coordinates</h2>
 
+	    <p>When you create a project you have to give it a GAV
+	    coordinate.</p>
+
 	  </section>
 	  <section>
 	    <h2>Projects have Dependencies</h2>
 
+	    <p>A big feature of Maven is the ability to declare
+	    project dependencies.</p>
+	  </section>
+	  <section>
+	    <h2>Dependencies have Coordinates</h2>
+
+	    <p>Dependencies have coordinates, this is what enables
+	    Maven to go get them from Central.</p>
 	  </section>
 	</section>
 	<section>
@@ -1101,21 +1320,17 @@
 	      <p><b>Min Time: 35 minutes, Max Time: 45 minutes</b></p>
 	      <ul>
 
-		<li>This is going to seem strange, but
-		  there's no mention of a snapshot
-		  here. Here's my thought: most users don't
-		  need to know what a snapshot is until they
-		  think of in-house software releases.
-		  Almost no one is depending on SNAPSHOT
-		  versions from Apache. Introducing
-		  SNAPSHOTs right now is confusing.
+		<li>This is going to seem strange, but there's no
+		  mention of a snapshot here. Most users don't need to
+		  know what a snapshot is until they think of in-house
+		  software releases.  Introducing SNAPSHOTs right now
+		  is confusing.
 		</li>
 
-		<li>Also note that this module isn't
-		  called 'Dependency Management'. That's a
-		  fancy name that means nothing to a junior
-		  developer that just needs to use a new
-		  dependency.
+		<li>Also note that this module isn't called
+		  'Dependency Management'. That's a fancy name that
+		  means nothing to a junior developer that just needs
+		  to use a new dependency.
 		</li>
 
 	      </ul>
@@ -1126,14 +1341,20 @@
 	  <section>
 	    <h2>Where were we?</h2>
 
-	    <p>The previous section really only gave you part of the picture, you learned that:</p>
+	    <p>In the previous section you learned that:</li>
 
 	    <ul>
-	      <li>Dependencies have Coodinates</li>
+	      <li>Dependencies have Coordinates</li>
 	      <li>Maven Downloads Dependencies</li>
 	    </ul>
 
-	    <b>How?</b>
+	    <aside class="notes">
+	      <ul>
+		<li>"In the previous section you learned about dependencies..."</li>
+		<li>"...but there was some details we left out."</li>
+		<li>"In this section, we're going to round out the picture."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <!-- TODO -->
@@ -1141,25 +1362,13 @@
 
 	    <ul>
 	      <li>Demo: Add a New Dependency
-		<ul>
-		  <li>Open simple-project pom.xml</li>
-		  <li>Run a Build and Identify a New Requirement</li>
-		  <li>Locate the Appropriate Dependency in Central</li>
-		  <li>Add a new Dependency</li>
-		  <li>Modify Code to Use New Dependency</li>
-		  <li>Demonstrate Maven Downloading a Dependency</li>
-		</ul>
-	      </li>
 	      <li>Coordinate Details (5 minutes)</li>
 	      <li>Dependencies
 		<ul>
-
 		  <li>Where do dependencies come from?</li>
-
 		  <li>Where dependencies go?</li>
 		  <li>Repository Format</li>
 		  <li>Release Versions</li>
-		  <li>What if your dependency isn't on Central?</li>
 		</ul>
 	      </li>
 	    </ul>
@@ -2105,13 +2314,13 @@
 
 	    <ul>
 	      <li>Remember the lifecycle from the previous section,
-	      well the packaging changes it...</li>
+		well the packaging changes it...</li>
 	      <ul>
 		<li>Demonstrate Packaging</li>
 		<li>Demonstrate (but don't fully delve into) the
-		Assembly plugin</li>
+		  Assembly plugin</li>
 		<li>Build a program that creates a jar with
-		dependencies</li>
+		  dependencies</li>
 		<li>Introduce SNAPSHOT versions</li>
 	      </ul>
 	    </ul>
@@ -2123,14 +2332,14 @@
 	    <h2>Creating Packages</h2>
 
 	    <p>While builds compile and unit test, there's an
-	    important last step - packaging.</p>
+	      important last step - packaging.</p>
 
 	    <ul>
 	      <li><b>Java applications</b> are packaged and
-	      distributed: JARs, WARs, EARs.</li>
+		distributed: JARs, WARs, EARs.</li>
 	      <li><b>Alternative package formats</b> ZIP, Tarball,
-	      other language formats such as gems and npm
-	      packages.</li>
+		other language formats such as gems and npm
+		packages.</li>
 	    </ul>
 	  </section>
 	  <section>
@@ -2388,17 +2597,16 @@
 	      <p><b>Min Time: 45 minutes, Max Time: 50 minutes</b></p>
 	      <ul>
 
-		<li>You can't leave an intro Maven class
-		  without having some exposure to
-		  multi-module projects.
+		<li>You can't leave an intro Maven class without
+		  having some exposure to multi-module projects.
 		</li>
 
 		<li>That last bullet item. It is audacious, but I feel
 		  like the class should build up to something big,
-		  right?  Like at the end of the Maven intro class,
-		  a pretty basic class. We end up standing up an
-		  application server and deploying and application
-		  to it.
+		  right?  Like at the end of the Maven intro class, a
+		  pretty basic class. We end up standing up an
+		  application server and deploying and application to
+		  it.
 		</li>
 
 	      </ul>
@@ -2410,27 +2618,29 @@
 	    <!-- TODO -->
 	    <h2>Module Objectives</h2>
 
-	    <p>This module does two things. It focuses on the WAR plugin
-	      and it uses a simple Assembly:</p>
+	    <p>This module does two things. It focuses on the WAR
+	      plugin and it uses a simple Assembly:</p>
 
 	    <ul>
 	      <li>How does Maven scale projects?</li>
 	      <li>Why would you do this? Why group projects
 		together?</li>
-	      <li>Define Inheritance and discuss what is inherited</li>
-	      <li>Define Aggregation and discuss what is aggregated</li>
+	      <li>Define Inheritance and discuss what is
+		inherited</li>
+	      <li>Define Aggregation and discuss what is
+		aggregated</li>
 	      <li>Demonstrate a Multi-module Build</li>
 	      <li>Discuss the Reactor and how it orders builds</li>
 	    </ul>
 
 	    <aside class="notes">
 	      <ul>
-		<li>This is the last module of our introduction to Maven
-		  class and it sets the stage for the rest of your work with
-		  Maven.</li>
-		<li>At the core of Maven is a very simple system - Maven
-		  reads a POM and then acts upon a project to "build"
-		  it.</li>
+		<li>This is the last module of our introduction to
+		  Maven class and it sets the stage for the rest of
+		  your work with Maven.</li>
+		<li>At the core of Maven is a very simple system -
+		  Maven reads a POM and then acts upon a project to
+		  "build" it.</li>
 		<li>With multi-module Maven projects you can start to
 		  scale Maven to support very large systems.</li>
 	      </ul>
@@ -2454,9 +2664,13 @@
 	    
 	    <aside class="notes">
 	      <ul>
-		<li>That last item deserves special emphasis.  This reall is a core assumption.</li>
-		<li>Maven was designed to scale through aggregation and you shouldn't try to fight this convention.</li>
-		<li>Some balk at modularity for simple projects, but Maven was designed to support projects as they inevitably grow.</li>
+		<li>That last item deserves special emphasis.  This
+		  reall is a core assumption.</li>
+		<li>Maven was designed to scale through aggregation
+		  and you shouldn't try to fight this convention.</li>
+		<li>Some balk at modularity for simple projects, but
+		  Maven was designed to support projects as they
+		  inevitably grow.</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2472,11 +2686,13 @@
 	      <li>Produces multiple outputs</li>
 	    </ul>
 
-	    <aside>
+	    <aside class="notes">
 	      <ul>
-		<li>This can't be emphasized enough - we see this pattern everywhere we go.</li>
+		<li>This can't be emphasized enough - we see this
+		  pattern everywhere we go.</li>
 		<li>A company starts simple and scales quickly.</li>
-		<li>Almost overnight you have an unmanageable build that is holding you back.</li>
+		<li>Almost overnight you have an unmanageable build
+		  that is holding you back.</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2492,13 +2708,14 @@
 	    </ul>
 	    <aside class="notes">
 	      <ul>
-		<li>Rome wasn't build in a day, and Google didn't happen
-		  overnight.</li>
-		<li>All three of these products started out with a simple
-		  idea, a simple conceptual proof-of-concept.</li>
-		<li>Two of these companies now employ thousands of engineers
-		  and all three of them spend many millions of dollars on
-		  build and release infrastructure.</li>
+		<li>Rome wasn't build in a day, and Google didn't
+		  happen overnight.</li>
+		<li>All three of these products started out with a
+		  simple idea, a simple conceptual
+		  proof-of-concept.</li>
+		<li>Two of these companies now employ thousands of
+		  engineers and all three of them spend many millions
+		  of dollars on build and release infrastructure.</li>
 	      </ul>
 	    </aside>
 
@@ -2511,10 +2728,10 @@
 	    <img src="img/web/scale-prototype-step1.png"/>
 	    <aside class="notes">
 	      <ul>
-		<li>"When you start a new project you have an idea and you
-		  write code."</li>
-		<li>"Your only objective is to prove the idea viable, you
-		  usually don't factor in a multi-year plan."</li>
+		<li>"When you start a new project you have an idea and
+		  you write code."</li>
+		<li>"Your only objective is to prove the idea viable,
+		  you usually don't factor in a multi-year plan."</li>
 		<li>"A lot of prototypes tend to throw everything in a
 		  single build 'bucket'."</li>
 	      </ul>
@@ -2523,15 +2740,19 @@
 	  <section>
 	    <h2>The plot thickens...</h2>
 
-	    <p>Your proof of concept proved the concept and your project got staff and resources.</p>
+	    <p>Your proof of concept proved the concept and your
+	      project got staff and resources.</p>
 
 	    <img src="img/web/scale-prototype-step2-wrong.png"/>
 
 	    <aside class="notes">
 	      <ul>
-		<li>One thing is constant in business, budgets are tight and timelines are constrained.</li>
-		<li>No one had the time or the budget to refactor your build...</li>
-		<li>...as your system grows so does your build and the work to maintain it.</li>
+		<li>One thing is constant in business, budgets are
+		  tight and timelines are constrained.</li>
+		<li>No one had the time or the budget to refactor your
+		  build...</li>
+		<li>...as your system grows so does your build and the
+		  work to maintain it.</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2542,14 +2763,15 @@
 
 	    <aside class="notes">
 	      <ul>
-		<li>Four years later you have an entire team of 30 people
-		  devoted to running reports against a Hadoop cluster...</li>
+		<li>Four years later you have an entire team of 30
+		  people devoted to running reports against a Hadoop
+		  cluster...</li>
 		<li>...you have a team of 60 people working on the
 		  front-end...</li>
-		<li>...and you have a whole building of people working on
-		  the back-end infrastructure.</li>
-		<li>The build takes forever and everything is squeezed into
-		  one monolithic project.</li>
+		<li>...and you have a whole building of people working
+		  on the back-end infrastructure.</li>
+		<li>The build takes forever and everything is squeezed
+		  into one monolithic project.</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2576,9 +2798,12 @@
 
 	    <aside class="notes">
 	      <ul>
-		<li>Whether it takes months or years if you don't have a strategy to scale...</li>
-		<li>...you will end up with a single, unmanageable build.</li>
-		<li>The build will take hours and everyone is "held hostage" by this single build.</li>
+		<li>Whether it takes months or years if you don't have
+		  a strategy to scale...</li>
+		<li>...you will end up with a single, unmanageable
+		  build.</li>
+		<li>The build will take hours and everyone is "held
+		  hostage" by this single build.</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2586,25 +2811,29 @@
 	    <h2>The End-game of a Monolith</h2>
 
 	    <ul>
-	      <li>Developer productivity is affected as devs can't build
-		local.</li>
-	      <li>Releases will take <b>forever</b> and the business will
-		suffer.</li>
-	      <li>New projects are difficult to integrate and the build
-		becomes too brittle to manage.</li>
+	      <li>Developer productivity is affected as devs can't
+		build local.</li>
+	      <li>Releases will take <b>forever</b> and the business
+		will suffer.</li>
+	      <li>New projects are difficult to integrate and the
+		build becomes too brittle to manage.</li>
 	    </ul>
 	    
-	    <aside class="note">
+	    <aside class="notes">
 	      <ul>
-		<li>Again the emphasis is that "we're not making this up" and "we see this all the time at the largest companies."</li>
-		<li>Projects can move quickly because everyone is bound together on the same boat.</li>
+		<li>Again the emphasis is that "we're not making this
+		  up" and "we see this all the time at the largest
+		  companies."</li>
+		<li> can move quickly because everyone is bound
+		  together on the same boat.</li>
 	      </ul>
 	    </aside>
 	  </section>
 	  <section>
 	    <h2>Maven's Approach: Modularity</h2>
 
-	    <p>Maven favors smaller components. Components that produce one artifact.</p>
+	    <p>Maven favors smaller components. Components that
+	      produce one artifact.</p>
 
 	    <ul>
 	      <li>Easier to model dependencies</li>
@@ -2626,15 +2855,16 @@
 	    <img src="img/web/scale-prototype-step1.png"/>
 	    <aside class="notes">
 	      <ul>
-		<li>"The beginning of the story is exactly the same with
-		  Maven, the difference is how the system evolves in a more
-		  modular fashion."</li>
+		<li>"The beginning of the story is exactly the same
+		  with Maven, the difference is how the system evolves
+		  in a more modular fashion."</li>
 	    </aside>
 	  </section>
 	  <section>
 	    <h2>Creating Modules as Needed</h2>
 
-	    <p>Your proof of concept proved the concept and your project got staff and resources.</p>
+	    <p>Your proof of concept proved the concept and your
+	      project got staff and resources.</p>
 
 	    <img src="img/web/scale-prototype-step2-right.png"/>
 
@@ -2655,11 +2885,11 @@
 
 	    <aside class="notes">
 	      <ul>
-		<li>As you scale you start creating modules to group related
-		  projects together.</li>
+		<li>As you scale you start creating modules to group
+		  related projects together.</li>
 		<li>You avoid the "Big Monolithic Build"...</li>
-		<li>...but you also avoid the overhead for each developer to
-		  build everything.</li>
+		<li>...but you also avoid the overhead for each
+		  developer to build everything.</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2670,11 +2900,12 @@
 
 	    <aside class="notes">
 	      <ul>
-		<li>The biggest benefit is that you can move faster because
-		  you can...</li>
-		<li>Divide code into functional units and create teams to
-		  focus on individual components.</li>
-		<li>As the application scales so can the organization.</li>
+		<li>The biggest benefit is that you can move faster
+		  because you can...</li>
+		<li>Divide code into functional units and create teams
+		  to focus on individual components.</li>
+		<li>As the application scales so can the
+		  organization.</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2689,8 +2920,8 @@
 		  release timelines.</li>
 		<li>Maybe your website changes very often (maybe every
 		  day)...</li>
-		<li>...but your database schema and the APIs that support it
-		  hardly ever change.</li>
+		<li>...but your database schema and the APIs that
+		  support it hardly ever change.</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2702,10 +2933,11 @@
 	    
 	    <aside class="notes">
 	      <ul>
-		<li>Now that we've discussed the theory of Maven's approach
-		  to modularity, let's talk about the practice.</li>
-		<li>Here's an example and you can see that each of these
-		  groups is a multi-module project.</li>
+		<li>Now that we've discussed the theory of Maven's
+		  approach to modularity, let's talk about the
+		  practice.</li>
+		<li>Here's an example and you can see that each of
+		  these groups is a multi-module project.</li>
 	      </ul>
 	    </aside>
 
@@ -2735,13 +2967,30 @@
 	<section>
 	  <section>
 	    <h2>Aggregation</h2>
+
+	    <p>When you build a multi-module project you are building
+	      an <b>aggregation</b> of several independent projects.</p>
+
+	    <p>Here's a simple diagram...</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>Simple simple, read it. move on.</li>
+	      </ul>
+	    </aside>
+	  </section>
+	  <section>
+	    <h2>Aggregation</h2>
+
+	    <img src="img/web/aggregate-basic.png"/>
 	  </section>
 	  <section>
 	    <h2>Demo: Building a Large Multi-module Project</h2>
 
 	    <aside class="notes">
 	      <ul>
-		<li>Build a large, multi-module project from the top leve.</li>
+		<li>Build a large, multi-module project from the top
+		  leve.</li>
 		<li>Show the reactor</li>
 	      </ul>
 	    </aside>
@@ -2749,53 +2998,158 @@
 	  <section>
 	    <h2>Interdependent Projects</h2>
 
-	    <p>Internal dependencies between modules dictate build order.</p>
+	    <p>Internal dependencies between modules dictate build
+	      order.</p>
+
+	    <img src="img/web/aggregate-dependencies.png"/>
+	    <aside class="notes">
+	      <ul>
+		<li>Here we have a collection of project that depend
+		  on one another.</li>
+		<li>The first thing Maven does is parse all POMs to
+		  identify properly build order.</li>
+		<li>This is called the Maven Reactor.</li>
+	    </aside>
+	  </section>
+	  <section>
+	    <h2>Maven has a Reactor?</h2>
+
+	    <p>The reactor orders builds in a multi-module build.</p>
+
+	    <ul>
+	      <li><b>Parses</b> all POMs in a multi-module build</li>
+	      <li><b>Constructs</b> a model of all dependencies</li>
+	      <li><b>Builds</b> all project in the correct order</li>
+	    </ul>	
+	    <aside class="notes">
+	      <ul>
+		<li>The Reactor exists to guarantee build order.</li>
+		<li>NOTE: Read this slide and move on.</li>
+	      </ul>	
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>The Reactor</h2>
 
-	    <p>The reactor is in charge of making sure that build order is correct.</p>
+	    <img src="img/web/aggregate-dependencies.png"/>
+
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: They've seen this before.  Reemphasize the
+		  ordering. Move on.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>How a Multi-module Build Works</h2>
 
 	    <p>The lifecycle is executed for each project.</p>
-	  </section>
-	  <section>
-	    <h2>Demo: Briefly Show Reactor Options</h2>
+
+	    <img src="img/web/reactor-full-lifecycle.png"/>
 
 	    <aside class="notes">
 	      <ul>
-		<li>Don't dwell on this, just hint at it.</li>
-		<li>People need to understand how to short-cut large reactor
-		  builds.</li>
+		<li>"Now, an important thing to understand is exactly
+		  how..."</li>
+		<li>"...Maven executes multi-module builds."</li>
+		<li>"Remember that each project is independent.  Maven
+		  runs through each lifecycle in a build."</li>
 	      </ul>
 	    </aside>
+	  </section>
+	  <section>
+	    <h2>How a Multi-module Build Doesn't Work</h2>
+
+	    <p>If you come to Maven from Ant...</p>
+
+	    <ul>
+	      <li>You may expect the build to run in "stages"</li>
+	      <li>All compilation completes across all projects.</li>
+	      <li>..then all testing completes across all
+		projects.</li>
+	    </ul>
+
+	    <p>This is a common misconception.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: Many people don't get this BTW.</li>
+		<li>"Maven doesn't iterate through each lifecycle
+		  phase for all projects."</li>
+		<li>"It executes the entire build for each project in
+		  order."</li>
+	      </ul>
+	    </aside>
+	  </section>
+	  <section>
+	    <h2>How a Multi-module Build Doesn't Work</h2>
+
+	    <img src="img/web/reactor-full-lifecycle-wrong.png"/>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Here's an illustration of this
+		  misconception."</li>
+		<li>"Really there's no way to tell Maven..."</li>
+		<li>"...I want you to go compile everything.  It runs
+		  the full lifecycle."</li>
+	      </ul>
+	    </aside>
+	  </section>
+	  <section>
+	    <h2>Demo: Reactor Options</h2>
+
+	    <p>In particularly large builds...
+
+	      <ul>
+		<li>...sometimes you want to skip through projects.</li>
+		<li>...sometimes you want to focus on a single
+		  component.</li>
+	      </ul>
+
+	      <aside class="notes">
+		<ul>
+		  <li>Don't dwell on this, just hint at it.</li>
+		  <li>People need to understand how to short-cut large
+		    reactor builds.</li>
+		</ul>
+	      </aside>
 	  </section>
 	</section>
 	<section>
 	  <section>
 	    <h2>Inheritance</h2>
 
+	    <p>Projects can declare a parent.</p>
+
+	    <img src="img/web/inheritance-basic.png"/>
+
 	    <aside class="notes">
 	      <ul>
-		<li>Show students how inheritance mechanism works.</li>
-		<li>No need to to a full exploration of what is and what is
-		  not inherited.</li>
-		<li>Students should exit section understanding that different
-		  things are done at different levels.</li>
+		<li>Show students how inheritance mechanism
+		  works.</li>
+		<li>No need to to a full exploration of what is and
+		  what is not inherited.</li>
+		<li>Students should exit section understanding that
+		  different things are done at different levels.</li>
 	      </ul>
 	    </aside>
 
 	  </section>
 	  <section>
-	    <h2>Demo: Show Dependencies Defined</h2>
-	  </section>
-	  <section>
-	    <h2>Demo: Show Compiler Configuration</h2>
-	  </section>
-	  <section>
-	    <h2>Demo: Show War Configuration</h2>
+	    <h2>Demo: Inherited Dependencies</h2>
+	    
+	    <p>And for our next trick... inherited dependencies.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: This quick demo is here to setup the next
+		  section on inheritance.</li>
+		<li>NOTE: Be careful not to explain this too early,
+		  the slides are about to do this.</li>
+	      </ul>
+	    </aside>
+
 	  </section>
 	  <section>
 	    <h2>How is this possible?</h2>
@@ -2803,22 +3157,115 @@
 	    <p>The <code>parent</code> element.</p>
 
 	    <ul>
-	      <li>Instructs Maven to interpolate (or merge) POMs
-		together.</li>
-	      <li>POMs at different levels are overlayed to create an
-		effective POM.</li>
+	      <li>Tells Maven to "Interpolate" POMs</li>
+	      <li>POMs are merged together.</li>
+	      <li>Overlayed to create an effective POM.</li>
 	    </ul>
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: Quick slide, read it, move on.</li>
+	      </ul>
+	    </aside>
+	  </section>
+	  <section>
+	    <h2>Declaring a Parent</h2>
+	    
+	    <img src="img/web/inheritance-pom-relationship.png"/>
+	    <aside class="notes">
+	      <ul>
+		<li>"The key to understanding interpolation
+		  is..."</li>
+		<li>"...that it is driven by the child declaring a
+		  parent."</li>
+	      </ul>
+	    </aside>
+	  </section>
+	  <section>
+	    <h2>Inheriting Build Configuration</h2>
+	    
+	    <img src="img/web/inheritance-pom-inherited.png"/>
+	    <aside class="notes">
+	      <ul>
+		<li>"In this illustration one project declares another
+		  project as its parent..."</li>
+		<li>"...Maven then takes config from that parent and
+		  overlays the child atop it."</li>
+		<li>NOTE: It's a bit more complicated, but in this
+		  class we're stopping there.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Inheritance at Every Level</h2>
+	    
+	    <p>With Inheritance...</p>
 
 	    <ul>
-	      <li>Inheritance gives you the ability to define build-wide
-		configuration.</li>
+	      <li>...you define build-wide configuration.</li>
+	      <li>...you can group similar projects together.</li>
+	      <li>...you gain Maven's defaults.</li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Aggregation was interesting, but Inheritance is
+		  the more interesting relationship."</li>
+		<li>"Build-wide common config, configuration for
+		  groups of project, and..."</li>
+		<li>"...via the SuperPOM, Maven's defaults."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Show Group ID / Version Inheritance</h2>
+	    <h2>Every POM Inherits the SuperPOM</h2>
+	    
+	    <img src="img/web/inheritance-pom-inherited-zoomout.png"/>
+	    
+	    <aside class="notes">
+	      <ul>
+		<li>"We've come full circle, this class started with a
+		  discussion of defaults and standards."</li>
+		<li>"...and it ends by showing you how Maven defines
+		  these standards."</li>
+		<li>"All of Maven's standards are defined in this
+		  SuperPOM."</li>
+	      </ul>
+	    </aside>
+	  </section>
+	  <section>
+	    <h2>Demo: Common Compiler Configuration</h2>
+
+	    <p>A very common use case is to define compiler plugin
+	      configuration in a top-level POM.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Show how compiler settings can be defined
+		  at the top level of a build.</li>
+		<li>"This means that all projects that inherit from
+		  this POM share the same compiler settings."</li>
+	      </ul>
+	    </aside>
+	  </section>
+	  <section>
+	    <h2>Demo: Version and Group Inheritance</h2>
+
+	    <p>Version numbers are often the same across a large
+	      multi-module projects.</p>
+
+	    <p>Group Identifiers are also often the same in a
+	      multi-module project.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Show how versions and groupIds ae
+		  inherited in a build.</li>
+		<li>"Versions and Group IDs are usually the same
+		  throughout a large multimodule project."</li>
+		<li>"This makes it easy to update versions when you
+		  make a release."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	</section>
 	<section>
@@ -2829,7 +3276,8 @@
 	      development to release.</p>
 
 	    <ul>
-	      <li>When software is released it is a point-in-time release.
+	      <li>When software is released it is a point-in-time
+		release.
 	      </li>
 	      <li>A software release is an immutable artifact.
 	      </li>
@@ -2842,8 +3290,9 @@
 		<li>Important point: Maven releases != Your production
 		  releases
 		</li>
-		<li>"You might have an internal release that uses puppet or
-		  chef, that is not the same as a Maven release."
+		<li>"You might have an internal release that uses
+		  puppet or chef, that is not the same as a Maven
+		  release."
 		</li>
 		<li>Maven releases focus on push build output to repositories.
 		</li>
@@ -2858,12 +3307,13 @@
 
 	    <ul>
 	      <li><b>Snapshots</b> - Snapshot versions are for
-		development. They are constantly changing, and Maven builds a
-		date and timestamp into the versions of SNAPSHOTs deployed to
-		a repository.
+		development. They are constantly changing, and Maven
+		builds a date and timestamp into the versions of
+		SNAPSHOTs deployed to a repository.
 	      </li>
-	      <li><b>Releases</b> - Releases are point-in-time builds of a
-		particular artifact. Once published they should never change.
+	      <li><b>Releases</b> - Releases are point-in-time builds
+		of a particular artifact. Once published they should
+		never change.
 	      </li>
 	    </ul>
 
@@ -2879,10 +3329,16 @@
 	    </aside>
 	  </section>
 	  <section>
+	    <h2>Illustrating Snapshots and Releases</h2>
+	    <img src="img/web/snapshot-releases.png"/>
+	  </section>
+	  <section>
 	    <h2>Snapshot are for Development</h2>
+	    <img src="img/web/snapshot-releases-dev.png"/>
 	  </section>
 	  <section>
 	    <h2>Releases are Point in Time Events</h2>
+	    <img src="img/web/snapshot-releases-release.png"/>
 	  </section>
 	  <section>
 	    <h2>Preparing for Release</h2>
@@ -2905,10 +3361,41 @@
 	      <ul>
 		<li>Yes, this is a lot of manual work.
 		</li>
-		<li>Most people automate this with the Maven Release Plugin.
+		<li>Most people automate this with the Maven Release
+		  Plugin.
 		</li>
-		<li>We explore the Maven Release plugin in the next class.
+		<li>We explore the Maven Release plugin in the next
+		  class.
 		</li>
+	      </ul>
+	    </aside>
+	  </section>
+	  <section>
+	    <h2>Example Release Pattern</h2>
+	    <img src="img/web/snapshot-releases-dance.png"/>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"This is the pattern you'll become familiar with
+		  as a Maven release."</li>
+		<li>"Once you are ready to 'cut a release', you'll
+		  update the version run the build."</li>
+		<li>"After artifacts are published, you'll move
+		  development to the next SNAPSHOT version."</li>
+	      </ul>
+	    </aside>
+	  </section>
+	  <section>
+	    <h2>The Next Release</h2>
+	    <img src="img/web/snapshot-releases-dance2.png"/>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Once you get used to this, you repeat the pattern
+		  for the next release."</li>
+		<li>"Now there are other resources involved, source
+		  code is branched and tagged and artifacts are
+		  published to repositories."</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -3009,36 +3496,13 @@
       } },
       { src: 'plugin/notes/notes.js', async: true, condition: function () {
       return !!document.body.classList;
+      } },
+      { src: 'plugin/page-number/numbers.js', async: true, condition: function () {
+      return !!document.body.classList;
       } }
       ]
       });
-
-
-      function slidenumber(event) {
-      var totalslides = document.querySelectorAll('.reveal .slides section:not(.stack)').length;
-      var current_slide = 0;
-
-      var horizontal_slides = document.querySelectorAll('.reveal .slides>section');
-      for (var i = 0; i < event.indexh; i++) {
-			  // get subslides
-			  var subslides = horizontal_slides[i].querySelectorAll('section');
-
-			  // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
-			  current_slide += (subslides.length === 0) ? 1 : subslides.length;
-			  }
-
-			  current_slide += event.indexv + 1;
-			  return current_slide.toString() + "/" + totalslides.toString();
-			  }
-
-			  Reveal.addEventListener('slidechanged', function (event) {
-			  document.querySelector(".slidenumber").innerText = slidenumber(event);
-			  });
-			  Reveal.addEventListener('ready', function (event) {
-			  document.querySelector(".slidenumber").innerText = slidenumber(event);
-			  });
-
-			  </script>
+    </script>
   </body>
 </html>
 
