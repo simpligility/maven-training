@@ -732,8 +732,9 @@
 		  from..."</li>
 		<li>"...configuration for a servlet container or
 		  application server..."</li>
-		<li>"...to completely custom user configuration to support
-		  a custom build."</li>
+		<li>"...to completely custom user configuration to
+		  support a custom build."</li>
+	      </ul>
 	    </aside>
 
 	  </section>
@@ -750,7 +751,8 @@
 
 	    <aside class="notes">
 	      <ul>
-		<li></li>
+		<li>"This class is the first step in a long process of
+		becoming more proficient with Maven."</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -760,6 +762,19 @@
 	<section>
 	  <section>
 	    <h2>Directory Structure</h2>
+
+	    <p>The first thing to understand is directory structure.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Maven projects present a standard directory
+		structure."</li>
+		<li>"A logical place to start learning about Maven's
+		conventions."</li>
+		<li>NOTE: Emphasize the fact that much of this class
+		is about learning conventions.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Example Project Contents</h2>
@@ -773,14 +788,34 @@
 	      <li>Javascript and HTML</li>
 	      <li>Unit Tests</li>
 	    </ul>
+	    <aside class="notes">
+	      <ul>
+		<li>"What makes a 'project' a project?"</li>
+		<li>"The source code, the unit tests, the build."</li>
+		<li>"When you look at a project, what you are doing is
+		looking at the contents of a directory."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>A Common Structure</h2>
 
 	    <p>Maven provides a common structure</p>
 
-	    <p>"Everything is in its right place."
-	      - <a href="http://en.wikipedia.org/wiki/Everything_in_Its_Right_Place">Radiohead</a></p>
+	    <p>Everything "in its right place."</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"The benefits of a standard directory can't be
+		overstated."</li>
+		<li>"While some developers resist the idea of a build
+		tool 'telling' them where to put source, tests, and
+		resources..."</li>
+		<li>"...if you've ever worked on a large project,
+		you'll appreciate the standardization."</li>
+	      </ul>
+	    </aside>
+
 	  </section>
 	  <section>
 	    <h2>Source and Resources</h2>
@@ -792,7 +827,17 @@
 
 	    <img src="img/web/source-dirs.png"/>
 
-	    <p>Both directories added to classpath and resulting artifact.</p>
+	    <p>Both directories added to classpath and resulting
+	    artifact.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Source and resources destined for the classpath
+		are housed in 'src/main'."</li>
+		<li>"The contents of both directories will be
+		available in the classpath."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Web Application</h2>
@@ -804,6 +849,12 @@
 	    <img src="img/web/webapp-dirs.png"/>
 
 	    <p>Stored in the resulting artifact.</p>
+	    <aside class="notes">
+	      <ul>
+		<li>"If you are developing a web application, the
+		Docroot is stored in src/main/webapp."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Unit Tests</h2>
@@ -816,9 +867,24 @@
 	    <img src="img/web/test-dirs.png"/>
 
 	    <p><b>Not</b> stored in the resulting artifact.</p>
+	    <aside class="notes">
+	      <ul>
+		<li>"Unit tests and resources are stored in
+		'src/test'"</li>
+		<li>"Why separate tests from source code?  Maven
+		considers this a best practice... because it is."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Inspect Example Artifact</h2>
+
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Walk students through the directory
+		structure of a project.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	</section>
 
@@ -827,6 +893,17 @@
 	  <section>
 	    <h2>Coordinates</h2>
 	    <img src="img/web/world-map-1600.jpg"/>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"The 2nd step with Maven is coordinates."</li>
+		<li>"In Maven *everything* has a
+		coordinate... *everything*..."</li>
+		<li>"...from projects to dependencies to Maven
+		plugins.  Coordinates play a huge part in how Maven
+		works."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Everything has a Coordinate</h2>
@@ -838,6 +915,17 @@
 	    </ul>
 	    <br/>
 	    <img src="img/web/artifact-coordinates.png"/>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"As mentioned in the previous slide.  *Everything*
+		has a coordinate."</li>
+		<li>"If Maven needs to download a new dependency, it
+		looks for a coordinate."</li>
+		<li>"When Maven runs a build, the first thing it does
+		is parse the coordinates of the current project."</li>
+	      </ul>
+	    </aside>
 
 	  </section>
 
@@ -851,6 +939,12 @@
 	    </ol>
 	    <br/>
 	    <img src="img/web/gav-coordinate.png">
+	    <aside class="notes">
+	      <ul>
+		<li>The three main coordinates in Maven are: groupId,
+		artifactId, and version.</li>
+	      </ul>
+	    </aside>
 	  </section>
 
 	  <section>
@@ -1361,9 +1455,11 @@
 
 	    <aside class="notes">
 	      <ul>
-		<li>"In the previous section you learned about dependencies..."</li>
+		<li>"In the previous section you learned about
+		dependencies..."</li>
 		<li>"...but there was some details we left out."</li>
-		<li>"In this section, we're going to round out the picture."</li>
+		<li>"In this section, we're going to round out the
+		picture."</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -1390,53 +1486,143 @@
 	  <section>
 	    <h2>Let's add a Feature</h2>
 
-	    <p>Our web application could use some cache.</p>
+	    <p>Our web application could use some caching.</p>
 
 	    <p>Let's add a Caching library to the REST API</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"This is how it starts. Someone comes up with a
+		new requirement."</li>
+		<li>"We'd like to add a cache to our web
+		application."</li>
+		<li>"Your first step should be to look for the
+		appropriate library."</li>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Find a New Dependency</h2>
 
-	    <p>To find a new dependency, use <a href="http://maven.search.org">maven.search.org</a>
+	    <p>To find a new dependency,
+	    use <a href="http://maven.search.org">maven.search.org</a>
 
-	    <p>We're looking for Guava.</p>
+	    <p>We're looking for Guava.  Google Guava implements a
+	    cache that we can use in our application.</p>
 	  </section>
+	  <section>
+	    <h2>Wait? How did you find Guava?</h2>
+
+	    <p>Interesting question...</p>
+
+	    <ul>
+	      <li>There's no central site to find OSS.</li>
+	      <li>You really just have to "know".</li>
+	      <li>Follow the OSS projects, OR</li>
+	      <li>Read a lot of DZone and InfoQ</li>
+	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Now this is an interesting question.  How did I
+		know what Google Guava is?"</li>
+		<li>"How did I know that it implemented a cache?"</li>
+		<li>"The answer is just that I had a colleague who
+		suggested I use it."</li>
+		<li>NOTE: Emphasize that Central isn't the place to
+		learn about OSS.</li>
+		</ul>
+	    </aside>
+	  </section>
+
 	  <section>
 	    <h2>Demo: Select the Appropriate Version</h2>
 
-	    <p>Show how to locate an artifact on Central.</p>
+	    <p>Locating an artifact on Central.</p>
+	    <p>Show list of available versions.</p>
 
-	    <p>Show how to get a list of available versions.</p>
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Load
+		up <a href="http://search.maven.org">search.maven.org</a>
+		and search for guava.</li>
+		<li>ACTION: Give the students a tour of Central. A
+		quick one.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Find the appropriate coordinates</h2>
 
-	    <p>Once you've located the artifact, grab the coordinates.</p>
+	    <p>Once you've located the artifact, grab the
+	    coordinates.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Zoom into the section that shows the
+		coordinates.</li>
+		<li>NOTE: Try to emphasize (and re-emphasize) the
+		importants of really understanding coordinates.</li>
+		<li>NOTE: Might seem too straightforward, but you can
+		never be too straightforward in training.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Add the Coordinates to the POM</h2>
 
-	    <p>Once you have the appropriate coordinates add them to the POM.</p>
-	  </section>
-	  <section>
-	    <h2>Demo: Modify code to use new dependency</h2>
+	    <p>Once you have the appropriate coordinates add them to
+	    the POM.</p>
 
-	    <p></p>
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Show how the POM is updated. Add a new
+		dependency.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Run the build and track the download</h2>
 
 	    <p>Run the build, follow the artifact.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Next, run the build and show that Maven is
+		downloading the artifact.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
-	    <h2>What just happened?</h2>
+	    <h2>Demo: Modify code to use new dependency</h2>
 
-	    <p>The next few sections explain.</p>
+	    <p>Once the artifact is downloaded and available, we can
+	    use it.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Demonstrate that the JAR is download and
+		that it now appears to be on the classpath for
+		compilation.</li>
+	      </u>
+	    </aside>
 	  </section>
 	</section>
 	<section>
 	  <section>
 	    <h2>Coordinate Details</h2>
+
+	    <ul>
+	      <li>Rounding out Coordinates with...</li>
+	      <li>...<code>packaging</code> and...</li>
+	      <li>...<code>classifier</code></li>
+	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"In this section, we're going to complete our
+		surey of Maven coordinates"</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>GAV Coordinate Review</h2>
@@ -1448,6 +1634,15 @@
 	      <li>artifact</li>
 	      <li>version</li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"These three coordinates uniquely identify a
+		artifact."</li>
+		<li>"They are known collectively as a GAV
+		coordinate."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Dependencies have coordinates</h2>
@@ -1458,14 +1653,36 @@
 	      <li>groupId:artifactId:version</li>
 	      <li>com.sample:sample-artifact:1.0</li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Here is an example of a GAV coordinate for a
+		sample-artifct"</li>
+		<li>"This syntax is shorthand for GAV."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Two more coordinates...</h2>
+
+	    <p>In addition to the three GAV coordinates, there are two
+	    more:</p>
 
 	    <ul>
 	      <li>packaging</li>
 	      <li>classifier</li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"There are two more coordinates in addition to
+		GAV."</li>
+		<li>"One is extremely important and affects every
+		Maven build."</li>
+		<li>"The other is a rarely encountered
+		coordinate."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Coordinate: Packaging</h2>
@@ -1482,6 +1699,17 @@
 		</ul>
 	      </li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Packaging is an important coordinate as it
+		affects the build output."</li>
+		<li>"We haven't talked about it yet because we've been
+		relying on the default value which is 'jar'."</li>
+		<li>"Later in the class we'll see how packaging starts
+		to affect the steps in a build."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Coordinate: Classifier</h2>
@@ -1495,6 +1723,14 @@
 		</ul>
 	      </li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Classifier is rarely used, and we're not going to
+		go into too many details about it in this class."</li>
+		<li>"But the two use cases listed above are..."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Summary: There are 5 Coordinates</h2>
@@ -1503,21 +1739,51 @@
 	      <li>groupId</li>
 	      <li>artifactId</li>
 	      <li>version</li>
-	      <li>packaging</li>
-	      <li>classifier</li>
+	      <li>packaging <i>(default 'jar')</i></li>
+	      <li>classifier <i>(optional)</i></li>
 	    </ul>
 
-	    <p>Next: How does Maven download a dependency?</p>
+	    <p><b>Next:</b> How does Maven download a dependency?</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"These five coordinates help Maven locate an
+		artifact."</li>
+		<li>"Next, we're going to discuss how Maven downloads
+		dependencies."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	</section>
 	<section>
 	  <section>
 	    <h2>How do Dependencies Work?</h2>
+
+	    <p>Once you tell Maven what you need, how does it get a
+	    dependency?</p>
+
+	    <aside class="notes">
+	      <p>"In this next section we're going to walk through the
+	      process Maven uses to recognize and download a
+	      dependency."</p>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Maven sees a Coordinate</h2>
 
+	    <p>When you configure a dependency in a pom.xml Maven sees
+	    a coordinate.</p>
+
 	    <p><code>com.sample:sample-artifact:1.0:jar</code></p>
+
+	    <aside class="notes">
+	      <p>"Note the short-hand syntax for these four
+	      coordinates."</p>
+	      <p>"Also note that there is no classifier.  Remember,
+	      the classifier is optional."</p>
+	      <p>"We need the artifact identified by..." NOTE: Then
+	      walk through the coordinates.</p>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Maven creates a URL</h2>
@@ -1527,9 +1793,20 @@
 	    <p>Turns into:</p>
 
 	    <p><code>http://repo1.maven.org/maven2/com/sample/sample-artifact/1.0/sample-artifact-1.0.jar</code></p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Maven then turns this set of coordinates into a
+		URL."</li>
+		<li>NOTE: Walk through the mapping here.  Show them
+		how the groupId corresponds to a directory.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Coordinates form a Pattern</h2>
+
+	    <p>Breaking this URL down into component sections:</p>
 
 	    <ul>
 	      <li>http://repo1.maven.org</li>
@@ -1539,29 +1816,92 @@
 	      <li>/{artifactId}-{version}.{packaging}</li>
 	    </ul>
 
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: Explain each of these sections.</li>
+		<li>Make the library analogy: "You said you needed to
+		use Guava and Maven knows where to look for that
+		dependency in the repository."</li>
+	      </ul>
+	    </aside>
+
 	  </section>
 	  <section>
 	    <h2>Maven Downloads the Dependency</h2>
 
 	    <p>It also download a POM at the same coordinates...</p>
 
-	    <p>The POM for a depenency points to other dependencies.</p>
+	    <img src="img/web/maven-download-artifact.png"/>
+
+	    <p>The POM for a depenency points to other
+	    dependencies.</p>
+	    <aside class="notes">
+	      <ul>
+		<li>"With these coordinates, Maven then proceeds to
+		download artifacts from Maven Central."</li>
+		<li>"But Maven also downloads something else.  Every
+		artifact in Central also has its own POM."</li>
+		<li>NOTE: Emphasize this point that Maven downloads
+		more than just a JAR. Compare and contrast with
+		managing your own JAR files in an Ant build.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Maven Builds a Graph of Dependencies</h2>
 
 	    <p>Maven grabs your dependencies...</p>
 
+	    <img src="img/web/maven-download-artifact-poms.png"/>
+
 	    <p>...then it grabs your dependencies dependencies...</p>
 
 	    <p>...and so on.</p>
 
-	    <p><b>It's Turtles, all the way down.</b></p>
+	    <aside class="notes">
+	      <ul>
+		<li>"Wait? What? Yes, Maven doesn't just download a
+		JAR...."</li>
+		<li>"It downloads a JAR and a POM, and if the POM has
+		more dependencies..."</li>
+		<li>"Maven will continue to download those
+		dependencies."</li>
+	      </ul>
+	    </aside>
 	  </section>
+	  <section>
+	    <h2>Transitive Dependencies</h2>
+
+	    <p>Your dependencies can have other dependencies.  For example:</p>
+
+	    <ul>
+	      <li>Google Guava has a dependencies on FindBugs and
+	      javax.inject.</li>
+	      <li>To use Google Guava you'll need to also download
+	      these two libraries.</li>
+	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"When you depend on an external library it isn't
+		as simple as just downloading a single JAR."</li>
+		<li>"Dependencies often bring along other
+		dependencies."</li>
+		<li>"In a complex application you can end up having
+		very complex dependency graphs."</li>
+	      </ul>
+	    </aside>
+          </section>
 	  <section>
 	    <h2>Demo: Show Complex Dependency Graph</h2>
 
-	    <p>Show a large graph.</p>
+	    <p>Take a look at a large project's dependency graph</p>
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Load a real project in m2e and show the
+		dependency graph.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Maven then Creates a Classpath</h2>
@@ -1574,6 +1914,16 @@
 	      <li>Classpath for Packaging</li>
 	      <li>Classpath at Runtime</li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"When Maven is create these dependency graphs for
+		a project what it is doing is making sure that it has
+		enough dependencies to create the necessary classpaths
+		for different stages of the build."</li>
+		<li>NOTE: Explain each.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Dependency Scopes</h2>
@@ -1581,42 +1931,137 @@
 	    <p>Maven has several scopes, here are two:</p>
 
 	    <ul>
-	      <li>compile - Classpath for Compilation, Testing, Packaging, and Runtime</li>
-	      <li>test - Classpath for Testing Only</li>
+	      <li><b>compile</b> - Classpath for Compilation, Testing,
+	      Packaging, and Runtime</li>
+	      <li><b>test</b> - Classpath for Testing Only</li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Now there are more scopes than this in Maven, but
+		for the purposes of this class we'll talk about
+		two:..."</li>
+		<li>"..the compile scope is a scope that adds
+		libraries to the compile classpath and which will also
+		package libraries with distributed artifacts like a
+		WAR."</li>
+		<li>"...and the test scope simply keeps things in the
+		classpaths used for unit testing."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Dependency Resolution Result for Compile Scope</h2>
+	    <h2>Demo: Dependency Resolution Result for Compile
+	    Scope</h2>
+
+	    <aside class="notes">
+	      <p>ACTION: Simply run "dependency:resolve" for a
+	      project.</p>
+	      <p>ACTION: Also run "dependency:tree" for the same
+	      project.</p>
+	      <p>NOTE: Discuss the difference between the tree and the
+	      list.</p>
+	    </aside>
+
 	  </section>
 	  <section>
 	    <h2>Demo: Add a Dependency to the Test Scope</h2>
+	    <aside class="notes">
+	      <p>ACTION: Add a dependency to the test scope, modify
+	      test code, run the build.</p>
+	      <p>ACTION: Demonstrate that the new dependency is not on
+	      the compile classpath.</p>
+	    </aside>
 	  </section>
-
 	</section>
 	<section>
 	  <section>
 	    <h2>Summary: Coordinates and Dependencies</h2>
+	    <aside class="notes">
+	      <ul>
+		<li>"We lead this class with coordinates and
+		dependencies because both will be an important part of
+		your work with Maven."</li>
+		<li>"This is also an area that demands you understand
+		the fundamentals."</li>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>It's easy to manage dependencies</h2>
+	    <aside class="notes">
+	      <ul>
+		<li>"This is one of the things that attracts people to
+		Maven.  Maven will take care of dependency
+		management."</li>
+		<li>NOTE: "Dependency management can become complex
+		when your project scales."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Coordinates form Basis of Dependency Management</h2>
+	    <aside class="notes">
+	      <ul>
+		<li>"Remember that picture of the books and my
+		rambling on and on about the Dewey Decimal
+		systems?"</li>
+		<li>"Well, it was relevant, Maven created a coordinate
+		system so that it could catalog and retrieve
+		artifacts."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Maven turn Coordinates into a URL</h2>
+	    <aside class="notes">
+	      <ul>
+		<li>"Maven takes these coordinates and generates a
+		URL..."</li>
+		<li>"...pointing to both the artifact and the
+		artifact's metadata."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Maven downloads artifacts + POMs</h2>
+	    <aside class="notes">
+	      <ul>
+		<li>"Maven downloads the artifact and the artifact's
+		POM."</li>
+		<li>"Maven then proceeds to download all of that
+		artifact's dependencies."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Maven builds a Graph</h2>
+	    <aside class="notes">
+	      <ul>
+		<li>"Maven then generates a graph (or a tree) to model
+		a project's depdnencies."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Maven turns Graph into Classpaths</h2>
+	    <aside class="notes">
+	      <ul>
+		<li>"Once this tree is generated, Maven removes
+		duplicates, slices, and dices this tree to generate
+		classpaths."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Scopes Influence Classpaths</h2>
+	    <aside class="notes">
+	      <ul>
+		<li>"Different portions of the build demand different
+		classes on the classpath..."</li>
+		<li>"...and Maven defines a series of scopes for
+		different use cases."</li>
+		<li>"In this section we introduces two scopes: compile
+		and test."</li>
 	  </section>
 	</section>
 	<section>
