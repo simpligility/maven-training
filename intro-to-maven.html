@@ -2066,7 +2066,7 @@
 	</section>
 	<section>
 	  <section>
-	    <h1>Writing and Executing Unit Tests</h1>
+	    <h1>Working with Unit Tests</h1>
 
 	    <h3>First Steps</h3>
 
@@ -2081,7 +2081,8 @@
 	      <p><b>Min Time: 35 minutes, Max Time: 45 minutes</b></p>
 	      <ul>
 
-		<li>Module not about Unit Tests as much as it is about core principles.
+		<li>Module not about Unit Tests as much as it is about
+		core principles.
 		  <ul>
 		    <li>Hint at full story..</li>
 		    <li>Goals</li>
@@ -2104,38 +2105,45 @@
 	  <section>
 	    <h2>Where were we?</h2>
 
-	    <p>You just learned about coordinates and dependencies.</p>
+	    <p>You just learned about coordinates and
+	    dependencies.</p>
 
-	    <p>Now, we're going to dive into Maven's execution model by learning how Maven executes Unit Tests.</p>
+	    <p>Now, we're going to dive into Maven's execution model
+	    by learning how Maven executes Unit Tests.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"This class isn't about unit testing, but unit
+		testing is an important part of your builds."</li>
+		<li>"In this section, we're going to use Unit testing
+		as an excuse to learn more about how Maven
+		works."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <!-- TODO -->
 	    <h2>Module Objectives</h2>
-
+	    
 	    <ul>
-	      <li>Execute Unit Tests
-		<ul>
-		  <li>Introduce Surefire Plugin</li>
-		  <li>Demonstrate Surefire Plugin</li>
-		  <li>Running a Single Test</li>
-		</ul>
-	      </li>
-	      <li>Discuss Plugin Configuration
-		<ul>
-		  <li>Show TestNG Tests</li>
-		  <li>Configure Plugin to run TestNG
-		  <li>Execute TestNG Tests</li>
-		  <li>Including and Excluding Tests</li>
-		</ul>
-	      </li>
-	      <li>Project Resources
-		<ul>
-
-		  <li>Discuss Test Resources</li>
-		  <li>Demonstrate Test Resources</li>
-		</ul>
-	      </li>
+	      <li>Introduce Surefire Plugin</li>
+	      <li>Demonstrate Surefire Plugin</li>
+	      <li>Running a Single Test</li>
+	      <li>Including and Excluding Tests</li>
+	      <li>Discuss Test Resources</li>
+	      <li>Demonstrate Test Resources</li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"In this section we work with the Surefire
+		plugin."</li>
+		<li>"This is your first exposure to the concepts of
+		plugins and goals."</li>
+		<li>"We will also start to explore simple
+		configuration concepts."</li>
+	      </ul>
+	    </aside>
 
 	  </section>
 	</section>
@@ -2144,11 +2152,30 @@
 	    <h2>Demo: Execute Unit Tests</h2>
 
 	    <p>Open test-example and execute unit tests.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Copy the test-example example to a
+		directory.</li>
+		<li>ACTION: Run "mvn test" show the console
+		output.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Execute a Single Unit Test</h2>
 
-	    <p>Pintpoint one unit test and run it.</p>
+	    <p>Pinpoint one unit test and run it.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Single out one test, run it with the
+		Surefire plugin.</li>
+		<li>NOTE: The goal here is to show how this is
+		configured via the command-line.</li>
+	      </ul>
+	    </aside>
+
 	  </section>
 	  <section>
 	    <h2>What happened here?</h2>
@@ -2160,25 +2187,74 @@
 	    </ul>
 
 	    <p><b>...Maven Surefire Plugin</b></p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: Important point, we were able to run only a
+		portion of the build.</li>
+		<li>"We'll dive into what the meaning of test is
+		later, but for now let's focus on what happened."</li>
+	    </aside>
 	  </section>
 	</section>
 	<section>
 	  <section>
 	    <h2>What's a Plugin? Quickly.</h2>
+
+	    <p>If you use Maven you'll need to understand:</p>
+
+	    <ul>
+	      <li>That most of what happens in Maven happens in plugins.</li>
+	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"When you use Maven you are really just making use
+		of Maven's plugins."</li>
+		<li>"What is this Surefire plugin?"</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Everything is a Goal</h2>
 
 	    <p>In Maven, every action is a goal.</p>
 
-	    <p>From compilation to running unit tests to packaging.</p>
+	    <p>From compilation to running unit tests to
+	    packaging.</p>
+
+	    <im src="img/web/goal.png"/>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Goals are units of work.  In Maven everything is
+		done by a goal."</li>
+		<li>"Here's an example goal named 'test' which scans
+		the classpath, runs tests, and then captures test
+		output."</li>
+		<li>NOTE: If anyone comes from Ant, a Maven goal
+		should remind you of a target in Ant.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Every Goal is in a Plugin</h2>
 
-	    <p>Every goal is combined in a plugin.</p>
+	    <p>Every goal is cotained in a plugin.</p>
 
-	    <p>In Maven, the Surefire plugin is responsible for Unit Testing.</p>
+	    <p>In Maven, the Surefire plugin is responsible for Unit
+	    Testing.</p>
+
+	    <img src="img/web/plugin.png"/>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"If we zoom out one level, you'll see that a
+		plugin collects similar goals together."</li>
+		<li>"Here the Surefire plugin collects the test and
+		test-compile goals.  Both related to testing."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Maven's Surefire Plugin</h2>
@@ -2189,7 +2265,18 @@
 	      <li><code>test</code> - Runs a projects Unit Tests</li>
 	    </ul>
 
-	    <p><a href="http://maven.apache.org/surefire/maven-surefire-plugin/">Maven Surefire Plugin Page</a></p>
+	    <p><a href="http://maven.apache.org/surefire/maven-surefire-plugin/">Maven
+	    Surefire Plugin Page</a></p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: Don't dwell too much on documentation, this
+		is later. Just refer to the fact that "every plugin
+		has documentation".</li>
+		<li>"When you use a plugin in Maven, Maven downloads
+		the plugin just like it would an artifact."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Surefire's Test Goal is a Default</h2>
@@ -2202,22 +2289,61 @@
 	    </p>
 
 	    <p>It's a default. (We'll learn more about this later.)</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: This is very nuanced, but don't dive into
+		the phases yet.</li>
+		<li>NOTE: THE NEXT SECTION TALKS PHASES. Remember
+		don't go too theory.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	</section>
 	<section>
 	  <section>
 	    <h2>Running Unit Tests in Maven</h2>
 
-	    <p>Unit tests are an integral part of software development.</p>
+	    <p>Unit tests are an integral part of software
+	    development.</p>
+
+	    <p><i>This SOUNDS good, but it's really true.  So true
+	    that tests are "baked-in" to the default Maven
+	    lifecycle.</i></p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Again, this class isn't about unit tests.  We're
+		not here to talk about the theory of tests."</li>
+		<li>"But, testing is such an integral part of Maven it
+		is built-in to the default lifecycle."</li>
+		<li>NOTE: Don't really explain what the lifecycle is
+		yet. That's next.</li>
+	      </ul>
+	    </aside>
 
 	  </section>
 	  <section>
 	    <h2>Test in Project Layout</h2>
 
 	    <ul>
-	      <li>Unit tests are found in src/test/java</li>
-	      <li>Test resources are in src/test/resources</li>
+	      <li>Unit tests are found
+	      in <code>src/test/java</code></li>
+	      <li>Test resources are
+	      in <code>src/test/resources</code></li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: This is a reemphasis of early content.</li>
+		<li>"Now we discussed the standard directory layout
+		earlier, but to refresh your memory..."</li>
+		<li>"Maven projects store tests and test resources in
+		a standard set of directories."</li>
+		<li>NOTE: Important point, this makes it easy for a
+		developer to understand how to work with a
+		project.</li>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Test Output</h2>
@@ -2226,47 +2352,76 @@
 	      <li>Bytecode goes into target/test-classes</li>
 	      <li>Reports go into target/surefire</li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"But the standard directory layout applies to more
+		than input and source."</li>
+		<li>"The standard also tells Maven where to store the
+		test output."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Demonstrate Tests Failing a Build</h2>
 
-	    <aside class="notes">
-	      <p>Tests are so integral, your build should fail if they don't pass.</p>
+	    <p>By default, a failing test with fail the entire Maven
+	    build.  Here's how...<p>
 
+	    <aside class="notes">
+	      <p>ACTION: Execute the test-example project with a test
+	      designed to fail.</p>
+	      <p>ACTION: Show console output of failed test.<p>
+	      <p>"Tests are so integral, your build should fail if
+	      they don't pass."</p>
 	    </aside>
 
 	  </section>
 	  <section>
 	    <h2>Demo: Using a Command-line Option to Skip Tests</h2>
 
+	    <p>In a particularly large project it often makes sense to
+	    skip tests:</p>
+
+	    <ul>
+	      <li>There could be tests that take hours to
+	      complete.</li>
+	      <li>Or, there could be failing tests.</li>
+	    </ul>
+
 	    <aside class="notes">
-	      <p>Demonstrate plugin configuration from the command-line</p>
-
-	      <p>Make the point that we're changing build behavior.</p>
-
+	      <p>ACTION: Demonstrate plugin configuration from the
+	      command-line</p>
+	      <p>ACTION: Skip both test execution and test
+	      compilation.</p>
+	      <p>Make the point that we're changing build
+	      behavior.</p>
 	    </aside>
 
 	  </section>
 	  <section>
 	    <h2>Modifying Plugin Behavior from Command-line</h2>
 
-	    <p>What just happened?
+	    <p>What just happened?</p>
 
-	    <p>
+	    <ul>
+	      <li>The Surefire Plugins's...</li>
+	      <li>...Test goal...</li>
+	      <li>...changed behavior based on a command-line
+	      argument.</li>
+	    </ul>
 
-	      <ul>
-		<li>The Surefire Plugins's...</li>
-		<li>...Test goal...</li>
-		<li>...changed behavior based on a command-line argument.</li>
-	      </ul>
-
-	    <p>This is one of several ways to influence build behavior.</p>
+	    <p>This is one of several ways to influence build
+	    behavior.</p>
 
 	    <aside class="notes">
 	      <ul>
-		<li>We're starting to customize behavior.</li>
-
-		<li>In the next section, we'll see different ways to configure a plugin.</li>
+		<li>"We're starting to customize behavior. In this
+		example from the command-line."</li>
+		<li>"The -D option passed in a system variable that
+		modified how the Surefire plugin executed."</li>
+		<li>"In the next section, we'll see different ways to
+		configure a plugin."</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2276,53 +2431,188 @@
 	<section>
 	  <section>
 	    <h2>Test Reporting</h2>
+
+	    <p>Maven offers some simple reports for Unit Tests.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"In this section we've already learned about goals
+		and plugins."</li>
+		<li>"We've seen how behavior can be modified from the
+		command-line."</li>
+		<li>"Next we'll look at some simple ways that Maven
+		reports on behavior."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Generating Reporting Data</h2>
 
 	    <p>Maven generates data that can be easily understood by other tools.</p>
+
+	    <img src="img/web/surefire-sample1.png" height="500"/>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"The reporting capabilities of Maven allow you to
+		generate reports off of build activity."</li>
+		<li>"In this section we see how Maven's approach
+		enables tools to report on build activity."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Show simple HTML Report</h2>
 
 	    <p>View the HTML generated by the Site plugin.</p>
+
+	    <ul>
+	      <li>ACTION: Generate a simple project site.</li>
+	      <li>ACTION: Show the Surefire report detailing
+	      successful and failing tests.</li>
+	    </ul>
 	  </section>
 	  <section>
-	    <h2>Demo: Test Results from a CI Server</h2>
+	    <h2>Surefire Reports</h2>
 
-	    <p>View the test results from a Jenkins instance.</p>
+	    <p>Surefire is an example of a Maven plugin which
+	    generates data that can be reported on.</p>
+
+	    <p>This enables integration with 3rd-party tools like
+	    Eclipse, Jenkins, and Sonar.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"When you run Surefire tests you generate reports
+		in <code>target/</code>"</li>
+		<li>"These standard reports can then be processed by a
+		report generator..."</li>
+		<li>"...or external tools such as Jenkins or
+		Sonar."</li>
+	      </ul>
+	    </aside>
 	  </section>
-	  <section>
-	    <h2>Demo: Test Results from a Sonar Instance</h2>
-
-	    <p>View the test results on a Sonar instance.</p>
-	  </section>
-
 	</section>
 
 	<section>
 	  <section>
 	    <h2>Summary</h2>
+
+	    <p>You've just encountered quite a bit that needs to be explained....</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"In this relatively simple module we learned a number of things...."</li>
+		<li>"...but we also left some concepts unexplained."</li>
+		<li>"What did we learn?"</li>
+	      </ul>
+	    </aside>
 	  </section>
 
 	  <section>
-	    <h2>Tests are an Integral Part of a Build</h2>
+	    <h2>Tests Run by Default</h2>
+
+	    <p>Nothing needs to be configured to run Java tests in
+	    JUnit.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"We seen that nothing needed to be configured to
+		run tests, they ran by default."</li>
+		<li>"Important to note that nothing had to be
+		specified on the command-line."</li>
+		<li>"Also nothing had to be different in the
+		POM."</li>
+	      </ul>
+	    </aside>
 	  </section>
 
 	  <section>
 	    <h2>Maven Surefire Plugin Runs Tests</h2>
+
+	    <p>Goals are the lowest 'unit-of-work' in Maven.</p>
+
+	    <p>Similar goals are assembled into Plugins.</p>
+
+	    <aside class="note">
+	      <ul>
+		<li>"Everything in Maven happens in plugins and
+		goals."</li>
+		<li>"Goals are the lowest level of work, and they are
+		contained in plugins."</li>
+		<li>"In this section we learned that the Surefire
+		plugin is responsible for Unit Testing."</li>
+	      </ul>
+	    </aside>
 	  </section>
 
 	  <section>
 	    <h2>Goal Behavior can be Customized</h2>
+
+	    <p>We changed behavior from the command-line.</p>
+
+	    <p>By passing in the -D option, we can change the way
+	    Maven executes goals.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"This is just a start, but we can modify and
+		customize how Maven works."</li>
+		<li>"In the next section we're going to see more
+		options for coniguring Maven."</li>
+		<li>"But, we've seen how to alter the default
+		configuration for the Surefire plugin."</li>
+	      </ul>
+	    </aside>
 	  </section>
 
 	  <section>
 	    <h2>Tests Generate Reports</h2>
+
+	    <p>Maven is about more than just building software.</p>
+
+	    <p>Maven can generate reports that give you visibility
+	    into test success or failure.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"To support these reports, Maven writes files that
+		capture the results of unit tests."</li>
+		<li>"Reporting plugins than take these files and
+		format them for human consumption."</li>
+		<li>NOTE: Emphasize that this is a benefit of
+		standardization.</li>
+	      </ul>
+	    </aside>
 	  </section>
 
 	  <section>
 	    <h2>Standards Make Integration Easier</h2>
+
+	    <p>If you are developing a tool like m2eclipse or Jenkins,
+	    it helps to have conventions that everyone agrees
+	    upon.</p>
+
+	    <ul>
+	      <li>Standard Directory Layout</li>
+	      <li>How tests are executed</li>
+	      <li>When tests are executed</li>
+	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Maven brings a standardization along with it that
+		affects entire organizations."</li>
+		<li>"If you work somewhere not using Maven, you'll
+		recognize that projects written in Ant tend to
+		innovate too much."</li>
+		<li>"Instead of just checking out a project and
+		running "mvn test", you have to learn how to set up a
+		test environment."</li>
+		<li>"Maven was designed to be intuitive from the
+		start."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	</section>
 
