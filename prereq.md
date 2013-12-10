@@ -1,8 +1,11 @@
 # Intro to Maven Prerequisites
 
 If you've enrolled in Takari's Intro to Maven you'll need to make sure
-that you prepare for this class.  Before class begins there are three
-things you'll need to do:
+that you prepare for this class. Our instructors are going to assume
+that you have installed the necessary prerequisites and that you have
+a workstation available to follow along with any of the demonstrations
+during class.  Before class begins there are three things you'll need
+to do:
 
 * Install the Java Development Kit 1.7.0 (Latest Update)
 
@@ -12,22 +15,32 @@ things you'll need to do:
 
 ## Installing the Java Development Kit (JDK)
 
-* Installing the JDK on Microsoft Windows:
-  http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jdk-installation-windows.html
+Installing a JDK is straightfoward, what you will need to do is:
 
-* Installing the JDK on Apple's OSX:
-  http://docs.oracle.com/javase/7/docs/webnotes/install/mac/mac-jdk.html
+1. Download a JDK from Oracle.  This class was been designed to work
+with a JDK downloaded from Oracle.
 
+1. Configure the necessary environment variables to run Java from the
+   command-line.  Set the environment variable JAVA_HOME to point to
+   the directory of your JDK, and also add ${JAVA_HOME}/bin to your
+   PATH environment variable.
+
+Detailed instructions for installing the JDK on Windows or OSX is
+available from Oracle at one of the following URLs.
+
+* Installing the JDK on Microsoft Windows: http://bit.ly/19AfRHX
+
+* Installing the JDK on Apple's OSX: http://bit.ly/1e40zmg
+
+Once you have successfully install the JDK, test your installation by
+running "java -version".
 
 ## Installing Apache Maven
 
-* Installing Apache Maven: 
+Download Apache Maven from http://maven.apache.org, and then follow
+these instructions from the Apache Maven project.
 
-Maven is a Java tool, so you must have Java installed in order to
-proceed. More precisely, you need a Java Development Kit (JDK), the
-Java Runtime Environment (JRE) is not sufficient. Additional optional
-installation steps are listed after the platform specific
-instructions.
+* Installing Apache Maven: 
 
 ### Windows 2000/XP
 
@@ -46,11 +59,6 @@ instructions.
 
 1. In the same dialog, add the M2 environment variable in the user
    variables with the value %M2_HOME%\bin.
-
-1. Optional: In the same dialog, add the MAVEN_OPTS environment
-   variable in the user variables to specify JVM properties, e.g. the
-   value -Xms256m -Xmx512m. This environment variable can be used to
-   supply extra options to Maven.
 
 1. In the same dialog, update/create the Path environment variable in
    the user variables and prepend the value %M2% to add Maven
@@ -77,10 +85,6 @@ instructions.
 
 1. Add the M2 environment variable, e.g. export M2=$M2_HOME/bin.
 
-1. Optional: Add the MAVEN_OPTS environment variable to specify JVM
-   properties, e.g. export MAVEN_OPTS="-Xms256m -Xmx512m". This
-   environment variable can be used to supply extra options to Maven.
-
 1. Add M2 environment variable to your path, e.g. export
    PATH=$M2:$PATH.
 
@@ -92,7 +96,11 @@ instructions.
 
 ## Installing the Eclipse IDE
 
-Download Eclipse from the Eclipse Downloads Page.
+Download Eclipse from the Eclipse Downloads Page here
+http://www.eclipse.org/downloads/
+
+Follow these instructions from the Eclipse project page for installing
+Eclipse:
 
 The download will be delivered as a compressed (i.e. a ".zip", or
 ".tar.gz") file. Decompress this file into the directory of your
@@ -100,7 +108,7 @@ choice (e.g. "c:\Program Files\Eclipse" on Windows). You can
 optionally create a shortcut of the executable file ("eclipse.exe" on
 Windows, or "eclipse" on Linux).
 
-Note that there is a known problem with the built-in decompression
+Note: that there is a known problem with the built-in decompression
 utility on all current versions of Windows. We recommend that you use
 a more robust decompression utility such as the open source 7zip when
 decompressing an Eclipse download. Some people report success when
