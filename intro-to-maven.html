@@ -3363,6 +3363,16 @@
 	      <li>You've learned about Plugins</li>
 	      <li>You understand the lifecycle.</li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"At this point in the class you understand the big
+		concepts."</li>
+		<li>"You understand how goals are executed in the
+		context of a Lifecycle."</li>
+		<li>"You understand how dependencies work."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <!-- TODO -->
@@ -3384,6 +3394,15 @@
 	      </ul>
 	    </ul>
 
+	    <aside class="notes">
+	      <ul>
+		<li>"In this module we're going to learn how to
+		customizes the packages that Maven creates."</li>
+		<li>"We're also ready to talk about what the
+		difference is between a release and a SNAPSHOT."</li>
+	      </ul>
+	    </aside>
+
 	  </section>
 	</section>
 	<section>
@@ -3400,23 +3419,30 @@
 		other language formats such as gems and npm
 		packages.</li>
 	    </ul>
+
+	    <aside class="note">
+	      <ul>
+		<li>NOTE: A straigtforward slide.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>JARs, WARs, EARs</h2>
 
 	    <ul>
 	      <li>Remember that packaging is a coordinate</li>
-	      <li>groupId, artfiactId, version, <b>packaging</b>, classifier.</li>
+	      <li>groupId, artfiactId, version, <b>packaging</b>,
+	      classifier.</li>
 	    </ul>
 	    <hr/>
 	    <p>Packaging influences the
-	      <phase>package</phase>
-	      Lifecycle phase.
+	      <phase>package</phase> Lifecycle phase.
 	    </p>
 
 	    <aside class="notes">
 	      <ul>
-		<li>"Packaging defines the build's lifecycle more than anything else."</li>
+		<li>"Packaging defines the build's lifecycle more than
+		anything else."</li>
 		<li>"When we describe the project we say, it is a WAR project."</li>
 	      </ul>
 	    </aside>
@@ -3455,8 +3481,10 @@
 
 	    <aside class="notes">
 	      <ul>
-		<li>"Here is a simplified view of the default lifecycle for 'jar'."</li>
-		<li>"Note that jar:jar is executed during the package phase."</li>
+		<li>"Here is a simplified view of the default
+		lifecycle for 'jar'."</li>
+		<li>"Note that jar:jar is executed during the package
+		phase."</li>
 	      </ul>
 	    </aside>
 
@@ -3499,7 +3527,8 @@
 
 	    <aside class="notes">
 	      <ul>
-		<li>"Here's the default lifecycle when packaging is 'war'."</li>
+		<li>"Here's the default lifecycle when packaging is
+		'war'."</li>
 		<li>"Note that there is only one difference."</li>
 	      </ul>
 	    </aside>
@@ -3528,12 +3557,15 @@
 
 	    <hr/>
 
-	    <aside>This is a simplified lifecycle. EAR is very different.</aside>
+	    <aside>This is a simplified lifecycle. EAR is very
+	    different.</aside>
 
 	    <aside class="notes">
 	      <ul>
-		<li>"Here's the default lifecycle when packaging is 'ear'."</li>
-		<li>"Some packaging types define an entirely different set of goal bindings."</li>
+		<li>"Here's the default lifecycle when packaging is
+		'ear'."</li>
+		<li>"Some packaging types define an entirely different
+		set of goal bindings."</li>
 	      </ul>
 	    </aside>
 
@@ -3552,16 +3584,20 @@
 	    <aside class="notes">
 	      <ul>
 		<li>"Standard packages are not always enough."</li>
-		<li>"Maybe you need a ZIP with arbitrary structure?"</li>
-		<li>"Maybe you would like a self-executing JAR file?"</li>
-		<li>"For these requirements we use the Assembly plugin."</li>
+		<li>"Maybe you need a ZIP with arbitrary
+		structure?"</li>
+		<li>"Maybe you would like a self-executing JAR
+		file?"</li>
+		<li>"For these requirements we use the Assembly
+		plugin."</li>
 	      </ul>
 	    </aside>
 	  </section>
 	  <section>
 	    <h2>Built-in Assemblies</h2>
 
-	    <p>The Maven Assembly plugin has a number of built-in descriptors:</p>
+	    <p>The Maven Assembly plugin has a number of built-in
+	    descriptors:</p>
 
 	    <ul>
 	      <li>bin</li>
@@ -3572,7 +3608,8 @@
 
 	    <aside class="notes">
 	      <ul>
-		<li>"The assembly plugin defines some built-in assemblies."</li>
+		<li>"The assembly plugin defines some built-in
+		assemblies."</li>
 		<li><a href="http://maven.apache.org/plugins/maven-assembly-plugin/descriptor-refs.html#bin">bin</a>
 		  assembly for binary distributions.
 		</li>
@@ -3601,8 +3638,10 @@
 
 	    <aside class="notes">
 	      <ul>
-		<li>"If the built-in descriptors don't satisfy your requirements you can define your own."</li>
-		<li>"Assemblies are a declarative format that maps your current project to any archive structure."</li>
+		<li>"If the built-in descriptors don't satisfy your
+		requirements you can define your own."</li>
+		<li>"Assemblies are a declarative format that maps
+		your current project to any archive structure."</li>
 	      </ul>
 	    </aside>
 
@@ -3613,18 +3652,37 @@
 	    <h2>Running Applications</h2>
 	    <aside class="notes">
 	      <ul>
-		<li>We're going to create a self-executing JAR and we're going to deploy a WAR to a container.</li>
+		<li>In this next series of demonstrations...</li>
+		<li>We're going to create a self-executing JAR and
+		we're going to deploy a WAR to a container.</li>
 	      </ul>
 	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: JAR with Dependencies</h2>
+
+	    <ul>
+	      <li>Let's configure an assembly that includes
+	      dependencies...</li>
+	      <li>...and configures a MANIFEST.</li>
+	    </ul>
+	    
 	  </section>
 	  <section>
-	    <h2>Configuring the JAR Plugin</h2>
+	    <h2>Demo: Configuring the JAR Plugin</h2>
+
+	    <ul>
+	      <li>Configuring the JAR plugin to include a
+	      Manifest.</li>
+	    </ul>
 	  </section>
 	  <section>
 	    <h2>Demo: Creating a Self-executing JAR</h2>
+
+	    <ul>
+	      <li>Configuring the Assembly plugin to generate a
+	      Self-executing JAR</li>
+	    </ul>
 	  </section>
 	</section>
 	<section>
