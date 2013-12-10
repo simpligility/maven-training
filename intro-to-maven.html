@@ -2645,11 +2645,10 @@
 		  strong points.
 		</li>
 
-		<li>You can talk for an hour on goals,
-		  plugins, and the lifecycle, but you really
-		  shouldn't. This section is the stuff that
-		  everyone touch Maven should know, but
-		  never does.
+		<li>You can talk for an hour on goals, plugins, and
+		  the lifecycle, but you really shouldn't. This
+		  section is the stuff that everyone touch Maven
+		  should know, but never does.
 		</li>
 
 	      </ul>
@@ -2660,7 +2659,8 @@
 	  <section>
 	    <h2>Where were we?</h2>
 
-	    <p>Last module was a brief introduction to the Surefire Plugin.</p>
+	    <p>Last module was a brief introduction to the Surefire
+	    Plugin.</p>
 
 	    <ul>
 	      <li>Tests are integral to a build.</li>
@@ -2672,7 +2672,8 @@
 	    <aside class="note">
 	      <ul>
 		<li>Last module was "foreshadowing"</li>
-		<li>Now, you'll really show them goals.</li>
+		<li>Now, you'll really show them goals, plugins,
+		etc..</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2685,26 +2686,25 @@
 	      <li>What is a Goal?
 		<ul>
 		  <li>When you run a Maven build...</li>
-		  <li>Maven just runs a series of Goals (2 slides - QUICK!)</li>
-		  <li>These goals are contained in Plugins (2 slides - QUICK!)</li>
-		  <li>Let's review: Goals are units of work, Plugins group similar goals, and Maven has a set
-		    lifecycle to which goals are bound.
+		  <li>Goals, Plugins... == LIFECYCLE
 		  </li>
 		</ul>
 	      </li>
-	      <li>What is the Lifecycle?
-		<ul>
-		  <li>Goals are executed within a Lifecycle (2 slides - QUICK)</li>
-		  <li>So when you run your build, this is what's happening (show default lifecycle)</li>
-		  <li>Demonstrate the lifecycle</li>
-		  <li>Hit them with a bit of theory… All maven projects follow this lifecycle, it is configurable, but
-		    this is why we standardized.
-		  </li>
-		</ul>
-	      </li>
-	      <li>Talk (briefly) about convention over configuration</li>
-	      <li>Talk (briefly) about what life is like without Maven</li>
+	      <li>What is the Lifecycle?</li>
+
+	      <li>Convention over configuration</li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"In the last module we learned about goals and
+		plugins, but..."</li>
+		<li>"...there's one concept we need to develop that is
+		central to Maven."</li>
+		<li>"In this module we're going to discuss the
+		Lifecycle and talk about configuration."</li>
+	      </ul>
+	    </aside>
 
 	  </section>
 	</section>
@@ -2720,20 +2720,40 @@
 	    <ul>
 	      <li>A single action.</li>
 	      <li>Configurable from the Command-line</li>
-	      <li>Take a look at this goals configurable properties...</li>
+	      <li>Take a look at this goals configurable
+	      properties...</li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"First a bit of review: In Maven everything
+		happens in a Goal."</li>
+		<li>"A Goal is a single action, and we saw that a goal
+		was configurable."</li>
+		<li>"In the last section we configured a goal via the
+		command-line."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Goal Documentation for test</h2>
 
-	    <p>Look at the <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">test goal
-		documentation</a>.</p>
+	    <p>The best way to understand the configuration options
+	    for a plugin is to...</p>
+
+	    <p>Look at
+		the <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">test
+		goal documentation</a>.</p>
 	    <aside class="notes">
 	      <ul>
-		<li>Load the Goal documentation from <a
-							href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html</a>
+		<li>ACTION: Load the Goal documentation
+		rom <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html</a>
 		</li>
-		<li>Show the description, full name, and properties.</li>
+		<li>ACTION: Show the description, full name, and
+		properties.</li>
+		<li>NOTE: REALLY DWELL ON THIS. Reading Plugin
+		documentation is *most important skill* from this
+		class.</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2749,58 +2769,134 @@
 	    </ul>
 
 	    <p>Each of these actions is encpaulated in a goal.</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>NOTE: This is when we zoom out and tell them that
+		everything is like that test goal.</li>
+		<li>"When I said that everything was a goal, I meant
+		it. Maven knows how to do very little."</li>
+		<li>"Let's take a look at several, very fundamental
+		goals you will come into contact with."</li>
+		</ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Goal Documentation for compile</h2>
 
-	    <p>Look at the <a href="http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html">compile goal
-		documentation</a>.</p>
+	    <p>The project compiles Java code, right? Well...</p>
+
+	    <p>Look at
+		the <a href="http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html">compile
+		goal documentation</a>.</p>
 	    <aside class="notes">
 	      <ul>
-		<li>Load the Goal documentation from <a
-							href="http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html">http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html</a>
+		<li>ACTION: Load the Goal documentation
+		from <a href="http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html">http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html</a>
 		</li>
-		<li>Show the description, full name, and properties.</li>
+		<li>NOTE: Dwell and really explore some interesting
+		options. This is the sort of thing that enables
+		students to understand how to help themselves.</li>
+		<li>Show the description, full name, and
+		properties.</li>
 	      </ul>
 	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Customize the Compile Goal</h2>
 
-	    <p>Target different Java versions with "source" and "target".</p>
+	    <p>Target different Java versions with "source" and
+	    "target".</p>
 
 	    <p>From the command-line.</p>
 
 	    <aside class="notes">
 	      <ul>
-		<li>You would never do this from the command-line.</li>
-		<li>This demo sets up the next few slides.</li>
+		<li>NOTE: This demo sets up the next few slides.</li>
+		<li>"Now, please note that You would never do this
+		from the command-line."</li>
+		<li>"If you have a project that needs to target Java
+		1.7, you would likely configure this in a POM."</li>
+		<li>"Let's move away from command-line configuration
+		and look at how to do this in a POM."</li>
 	      </ul>
 	    </aside>
 	  </section>
 	  <section>
 	    <h2>Configuring Goals in a POM</h2>
 
-	    <p>The compile Goal of the compiler plugin can be configured in a POM.</p>
+	    <p>The compile Goal of the compiler plugin can be
+	    configured in a POM.</p>
 
-	    <pre>TBD</pre>
+	    <pre>
+	      <project>
+		<build>
+		  <plugins>
+		    <plugin>
+		      <groupId>org.apache.maven.plugins</groupId>
+		      <artifactId>maven-compiler-plugin</artifactId>
+		      <configuration>
+			<source>7</source>
+			<target>7</target>
+		      </configuration>
+		    </plugin>
+		  </plugins>
+		</build>
+	      </project>
+	    </pre>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Ok, so this is a whole different approach.  We
+		don't have to pass in..."</li>
+		<li>"...configuration from the command-line; in fact,
+		that is rarely done."</li>
+		<li>"But in this example, we're accomplishing the same
+		configuration task in the POM."</li>
+		<li>NOTE: Explain every single line in this example.</li>
+	      </ul>
+	    </aside>
+
 	  </section>
 	  <section>
 	    <h2>Demo: Configure Compile Goal in POM</h2>
 
-	    <p>Configure Compile Behavior in the POM</p>
+	    <p>Let's use that previous example in a POM and see what happens.</p>
+
+	    <p>Configure Compiler Behavior in the POM</p>
 
 	    <aside class="notes">
 	      <ul>
-		<li>Do same thing as previous except in POM.</li>
-		<li>Run build, demonstrate results.</li>
+		<li>ACTION: Do same thing that is shown in the
+		previous slide in a POM.</li>
+		<li>ACTION: Modify the source and target level and see
+		how the build reacts.</li>
+		<li>"Once you understand the structures 'goals and
+		plugins' and how to configure goal execution, you
+		understand the core fundamentals of Maven"</li>
 	      </ul>
 	    </aside>
 	  </section>
 	  <section>
 	    <h2>Configuring a Goal Execution</h2>
 
-	    <p>In the last demonstration we configured a Goal Execution.</p>
+	    <p>In the last demonstration we configured a Goal
+	    Execution.</p>
+
+	    <ul>
+	      <li>Goals are Executed at a Stage in the Lifecycle</li>
+	      <li>The Lifecycle is a Sequence of Phases</li>
+	      <li>...more on this later.</li>
+	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"We've talked about goals, but in the previous
+		example we..."</li>
+		<li>"...executed a goal at a phase in the
+		lifecycle."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	</section>
 	<section>
@@ -2808,26 +2904,40 @@
 	    <h2>What is a Plugin?</h2>
 
 	    <h3>Zooming Out a Level</h3>
-	  </section>
-	  <section>
-	    <h2>Plugins contain Goals</h2>
 
-	    <p>A plugin is an artifact, with a coordinate.</p>
+	    <ul>
+	      <li>Reiterating what a plugin is...</li>
+	      <li>...a plugin contains related goals.</li>
+	      <li>Let's explore some of the plugins we're
+	      using...</li>
+	    </ul>
 
-	    <p>A plugin contains one or more related goals.</p>
+	    <aside class="notes">
+	      <ul>
+		<li>"Again, this is a reiteration of the information
+		from the last module."</li>
+		<li>"Plugins contain related goals."</li>
+		<li>"These related goals are often focused on a topic:
+		like compilation, testing, or web applications."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Maven Surefire Plugin Documentation</h2>
 
 	    <ul>
-	      <li>LIST GOALS</li>
+	      <li>surefire:help</li>
+	      <li>surefire:test</li>
 	    </ul>
 
 	    <aside class="notes">
 	      <ul>
-		<li>Show the plugin web page.</li>
-		<li>Reading plugin doc is a main objective of this module.</li>
-		<li>Teach them how to find answers.</li>
+		<li>ACTION: Show the plugin web page.</li>
+		<li>NOTE Reading plugin doc is a main objective of
+		this module.</li>
+		<li>ACTION: Demonstrate the help goal mvn
+		surefire:help -Ddetail=true
+		-Dgoal=compiler:compile</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2835,12 +2945,15 @@
 	    <h2>Demo: Maven Compiler Plugin Documentation</h2>
 
 	    <ul>
-	      <li>LIST GOALS</li>
+	      <li>compiler:compiler</li>
+	      <li>compiler:help</li>
+	      <li>compiler:testCompile</li>
 	    </ul>
 
 	    <aside class="notes">
 	      <ul>
-		<li>These pages are very helpful...</li>
+		<li>ACTION: Show the documentation</li>
+		<li>NOTE: These pages are very helpful...</li>
 		<li>..."In fact, you should bookmark the plugin documentation."</li>
 		<li>..."This is where you can come to find answers about Maven."</li>
 	      </ul>
@@ -2850,43 +2963,96 @@
 	    <h2>Demo: Maven War Plugin Documentation</h2>
 
 	    <ul>
-	      <li>LIST GOALS</li>
+	      <li>war:exploded</li>
+	      <li>war:help</li>
+	      <li>war:inplace</li>
+	      <li>war:manifest</li>
+	      <li>war:war</li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Show the documentation page.</li>
+		<li>Discuss which goals are frequency used in a POM.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Plugins have Coordinates</h2>
+
+	    <p>Now, let's tie plugins back to dependencies.  Plugins
+	    are a lot like dependencies - they have coordinates:</p>
 
 	    <ul>
 	      <li>groupId</li>
 	      <li>artifactId</li>
 	      <li>version</li>
 	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Let's take a quick look at these configuration
+		sections...."</li>
+		<li>"...notice that every plugin has the same set of
+		coordinates that dependencies have."</li>
+		<li>NOTE: Emphasize that Maven is using a similar
+		mechanism for plugins and dependencies.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Plugins are Artifacts</h2>
 
 	    <p>Maven downloads plugins as needed.</p>
+	    <p><b><i>Just like depednencies.</i></b></p>
+	    <br/><br/>
+	    <p>Also... Maven can have more than one version of a
+	    plugin.</p>
 
-	    <p>Maven can have more than one version of a plugin.</p>
+	    <aside class="notes">
+	      <ul>
+		<li>"Maven is really nothing more than a simple tool
+		to parse a POM..."</li>
+		<li>"...download plugins and execute goals.  As a tool
+		it doesn't know..."</li>
+		<li>"...how to do anything.  Maven downloads plugins
+		as needed."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Show Maven Downloading Plugins</h2>
+
+	    <p>Let's modify a POM and change a plugin version.</p>
+
+	    <p>Watch Maven download this plugin.  Where does it
+	    go?</p>
+
 	    <aside class="notes">
 	      <ul>
 		<li>Show how Maven downloads a plugin.</li>
 		<li>Just like a dependency.</li>
-		<li>Make strong point: Maven ships with very little "built-in".</li>
+		<li>Make strong point: Maven ships with very little
+		"built-in".</li>
 	      </ul>
 	    </aside>
 	  </section>
 	  <section>
 	    <h2>Demo: Configuring Goals at Plugin Level</h2>
 
+	    <p>Plugins can be configured at different "levels".</p>
+
+	    <br/><br/>
+
+	    <p>Let's move plugin confguration from an execution to the
+	    plugin level.</p>
+
 	    <aside class="notes">
 	      <ul>
-		<li>Take the compile goal example...</li>
-		<li>Move the configuration up to the plugin level.</li>
-		<li>Demonstrate different config scope.</li>
+		<li>"Take the compile goal example..."</li>
+		<li>"Move the configuration up to the plugin
+		level."</li>
+		<li>"Demonstrate different config scope."</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2901,15 +3067,36 @@
 
 	    <aside class="notes">
 	      <ul>
-		<li>These different levels are used for different reasons.</li>
-		<li>Command-line customizations are one-off, throw away commands.</li>
-		<li>Configuration at the execution level are for targeted changes.</li>
-		<li>Configuring at the Plugin is for wider customization.</li>
+		<li>"These different levels are used for different
+		reasons."</li>
+		<li>"Command-line customizations are one-off, throw
+		away commands."</li>
+		<li>"Configuration at the execution level are for
+		targeted changes."</li>
+		<li>"Configuring at the Plugin is for wider
+		customization."</li>
 	      </ul>
 	    </aside>
 	  </section>
 	  <section>
 	    <h2>Why do these goals run?</h2>
+
+	    <p>We've hinted at the Lifecycle...</p>
+
+	    <br/><br/>
+
+	    <p>...but we haven't explained it...</p>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Right, so you have all the building blocks to
+		configure plugin goals..."</li>
+		<li>"...but you still don't know exactly 'why' these
+		goals are running."</li>
+		<li>"The Lifecycle is what drives Maven and it's a
+		critical concept at the core of a Maven build."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	</section>
 	<section>
@@ -2917,6 +3104,15 @@
 	    <h2>The Lifecycle</h2>
 
 	    <h3>Zooming Out Another Level</h3>
+
+	    <img src="img/web/lifecycle.png"/>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"The lifecycle is the sequence of steps that is
+		executed by a Maven build."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Everything Hinges on the Lifecycle</h2>
@@ -2925,18 +3121,44 @@
 
 	    <ul>
 	      <li>A single, linear series of steps (or phases)</li>
-	      <li>Goals are bound to these
-		<phase>phases</phase>
-		.
+	      <li>Goals are bound to these <phase>phases</phase>.
 	      </li>
 	    </ul>
+
+	  </section>
+	  <section>
+	    <h2>Goals are Bound to Lifecycle</h2>
+
+	    <img src="img/web/lifecycle.png"/>
 	  </section>
 	  <section>
 	    <h2>The Default Lifecycle</h2>
 
-	    <ul>
-	      <li>TBD</li>
-	    </ul>
+	    <pre><phases>
+  <phase>validate</phase>
+  <phase>initialize</phase>
+  <phase>generate-sources</phase>
+  <phase>process-sources</phase>
+  <phase>generate-resources</phase>
+  <phase>process-resources</phase>
+  <phase>compile</phase>
+  <phase>process-classes</phase>
+  <phase>generate-test-sources</phase>
+  <phase>process-test-sources</phase>
+  <phase>generate-test-resources</phase>
+  <phase>process-test-resources</phase>
+  <phase>test-compile</phase>
+  <phase>process-test-classes</phase>
+  <phase>test</phase>
+  <phase>prepare-package</phase>
+  <phase>package</phase>
+  <phase>pre-integration-test</phase>
+  <phase>integration-test</phase>
+  <phase>post-integration-test</phase>
+  <phase>verify</phase>
+  <phase>install</phase>
+  <phase>deploy</phase>
+</phases></pre>
 
 	    <aside class="notes">
 	      <ul>
