@@ -3191,14 +3191,26 @@
 
 	    <p><code>mvn test</code></p>
 
-	    <img src="http://placehold.it/350x150">
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Show the build output at the console.</li>
+		<li>ACTION: Demonstrate how maven prints out the lifecycle phases.</li>
+	      </ul>
+	    </aside>
+
 	  </section>
 	  <section>
 	    <h2>Demo: Running Phases: Install</h2>
 
 	    <p><code>mvn install</code></p>
 
-	    <img src="http://placehold.it/350x150">
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Show the build output at the console.</li>
+		<li>ACTION: Demonstrate how maven prints out lifecycle phases.</li>
+	      </ul>
+	    </aside>
+
 	  </section>
 	  <section>
 	    <h2>Default Lifecycle Bindings</h2>
@@ -3229,37 +3241,81 @@
     org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy
   </deploy>
 </phases></pre>
+
+	    <aside class="notes">
+	      <p>"This is the default lifecycle"</p>
+	      <p>NOTE: Explain each step.</p>
+	    </aside>
 	  </section>
 	  <section>
 	    <h2>Customizing the Lifecycle</h2>
 
+	    <p>How do you add new goals to the Lifecycle?</p>
+
 	    <p>This is explored later in the class.</p>
+
+	    <aside class="notes">
+	      <p>"So you understand you the lifecycle works and how
+	      goals are bound to the lifecycle by default, but to
+	      really take advantage of Maven you have to understand
+	      how to customize the lifecycle."</p>
+	    </aside>
 	  </section>
 	</section>
 	<section>
 	  <section>
 	    <h2>Summary</h2>
+
+	    <p>Goals -> Plugins -> THE LIFECYCLE</p>
 	  </section>
 	  <section>
 	    <h2>Plugins are Artifacts</h2>
+
+	    <ul>
+	      <li>Plugins are Artifacts</li>
+	      <li>They have coordinates</li>
+	      <li>Maven downloads them on-demand</li>
+	    </ul>
 	  </section>
 	  <section>
 	    <h2>Plugins Aggregate Goals</h2>
+	    
+	    <ul>
+	      <li>Plugins collect similar goals together.</li>
+	    </ul>
 	  </section>
 	  <section>
 	    <h2>Every Action is a Goal</h2>
-	  </section>
-	  <section>
-	    <h2>Goal Executions</h2>
+
+	    <ul>
+	      <li>Everything that happens in Maven is a Goal</li>
+	    </ul>
 	  </section>
 	  <section>
 	    <h2>Goals Bind to Phases</h2>
+
+	    <ul>
+	      <li>When you execute goals you bind them to phases in
+	      the Maven Lifecycle.</li>
+	    </ul>
+
 	  </section>
 	  <section>
 	    <h2>Lifecycle: Sequence of Phases</h2>
+
+	    <ul>
+	      <li>The Lifecycle is everything.</li>
+	      <li>Understand the Lifecycle and Maven will Make Sense.</li>
+	    </ul>
 	  </section>
 	  <section>
 	    <h2>There is a Default Lifecycle</h2>
+
+	    <ul>
+	      <li>The only reason Maven does anything by default?</li>
+	      <li>The is a default Maven lifecycle...</li>
+	      <li>...with default lifecycle bindings.</li>
+	    </ul>
 	  </section>
 	</section>
 
