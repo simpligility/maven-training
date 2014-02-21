@@ -4,8 +4,9 @@ If you've enrolled in Takari's Intro to Maven you'll need to make sure
 that you prepare for this class. Our instructors are going to assume
 that you have installed the necessary prerequisites and that you have
 a workstation available to follow along with any of the demonstrations
-during class.  Before class begins there are three things you'll need
-to do:
+during class.
+
+Before class begins there are three things you'll need to do:
 
 * Install the Java Development Kit 1.7.0 (Latest Update)
 
@@ -13,9 +14,21 @@ to do:
 
 * Install Eclipse IDE for Java Developers 4.3.1
 
+We've included instruction in this email to help you complete these
+tasks, and we've also created a series of videos that demonstrate
+installation of Java, Maven, and Eclipse on both a Windows and Mac OSX
+platform.
+
+To view the videos view our [Getting Ready for Maven Training -
+Windows](http://www.youtube.com/playlist?list=PLKyGBX4mhtB9nVkgjVPkBSZ-2m46viLAJ)
+or [Getting Ready for Maven Training - Mac
+OSX](http://www.youtube.com/watch?v=lc7mt2_xCS4&list=PLKyGBX4mhtB8HvRRbrtiCfBW1v-6yuj1x)
+playlists on YouTube.
+
+
 ## Installing the Java Development Kit (JDK)
 
-Installing a JDK is straightfoward, what you will need to do is:
+Installing a JDK is straightfoward. Complete the following steps:
 
 1. Download a JDK from Oracle.  This class was been designed to work
 with a JDK downloaded from Oracle.
@@ -25,15 +38,15 @@ with a JDK downloaded from Oracle.
    the directory of your JDK, and also add ${JAVA_HOME}/bin to your
    PATH environment variable.
 
-Detailed instructions for installing the JDK on Windows or OSX is
+Detailed instructions for installing the JDK on Windows or OSX are
 available from Oracle at one of the following URLs.
 
 * Installing the JDK on Microsoft Windows: http://bit.ly/19AfRHX
 
 * Installing the JDK on Apple's OSX: http://bit.ly/1e40zmg
 
-Once you have successfully install the JDK, test your installation by
-running "java -version".
+Once you have successfully installed the JDK, test your installation
+by running "java -version".
 
 ## Installing Apache Maven
 
@@ -46,14 +59,13 @@ these instructions from the Apache Maven project.
 
 1. Unzip the distribution archive, i.e. apache-maven-3.1.1-bin.zip to
    the directory you wish to install Maven 3.1.1. These instructions
-   assume you chose C:\Program Files\Apache Software Foundation. The
+   assume you chose C:\Program Files\. The
    subdirectory apache-maven-3.1.1 will be created from the archive.
 
 1. Add the M2_HOME environment variable by opening up the system
    properties (WinKey + Pause), selecting the "Advanced" tab, and the
    "Environment Variables" button, then adding the M2_HOME variable in
-   the user variables with the value C:\Program Files\Apache Software
-   Foundation\apache-maven-3.1.1. Be sure to omit any quotation marks
+   the user variables with the value C:\Program Files\apache-maven-3.1.1. Be sure to omit any quotation marks
    around the path even if it contains spaces. Note: For Maven 2.0.9,
    also be sure that the M2_HOME doesn't have a '\' as last character.
 
@@ -66,7 +78,7 @@ these instructions from the Apache Maven project.
 
 1. In the same dialog, make sure that JAVA_HOME exists in your user
    variables or in the system variables and it is set to the location
-   of your JDK, e.g. C:\Program Files\Java\jdk1.5.0_02 and that
+   of your JDK, e.g. C:\Program Files\Java\jdk1.7.0_51 and that
    %JAVA_HOME%\bin is in your Path environment variable.
 
 1. Open a new command prompt (Winkey + R then type cmd) and run 
@@ -89,7 +101,7 @@ these instructions from the Apache Maven project.
    PATH=$M2:$PATH.
 
 1. Make sure that JAVA_HOME is set to the location of your JDK,
-   e.g. export JAVA_HOME=/usr/java/jdk1.5.0_02 and that $JAVA_HOME/bin
+   e.g. export JAVA_HOME=/usr/java/jdk1.7.0_51 and that $JAVA_HOME/bin
    is in your PATH environment variable.
 
 1. Run mvn --version to verify that it is correctly installed.
