@@ -1028,7 +1028,7 @@
 	    <ul>
 	      <li><b>Identifier:</b> <code>artifactId</code></li>
 	      <li><b>Role:</b> Projects produce artifacts.</li>
-	    </ul>OA
+	    </ul>
 	    <br/><br/>
 
 	    <p>"This project produces a WAR artifact."</p>
@@ -2812,7 +2812,7 @@
 
 	    <aside class="notes">
 	      <ul>
-		<li>NOTE: This demo sets up the next few slides.</li>
+		<li>ACTION: This demo sets up the next few slides.</li>
 		<li>"Now, please note that You would never do this
 		from the command-line."</li>
 		<li>"If you have a project that needs to target Java
@@ -2936,8 +2936,8 @@
 		<li>NOTE Reading plugin doc is a main objective of
 		this module.</li>
 		<li>ACTION: Demonstrate the help goal mvn
-		surefire:help -Ddetail=true
-		-Dgoal=compiler:compile</li>
+		help:describe -Ddetail=true
+		-Dcmd=surefire:test</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2952,7 +2952,7 @@
 
 	    <aside class="notes">
 	      <ul>
-		<li>ACTION: Show the documentation</li>
+		<li>ACTION: Show the documentation (from previous video)</li>
 		<li>NOTE: These pages are very helpful...</li>
 		<li>..."In fact, you should bookmark the plugin documentation."</li>
 		<li>..."This is where you can come to find answers about Maven."</li>
@@ -3030,7 +3030,7 @@
 
 	    <aside class="notes">
 	      <ul>
-		<li>Show how Maven downloads a plugin.</li>
+		<li>ACTION: Show how Maven downloads a plugin.</li>
 		<li>Just like a dependency.</li>
 		<li>Make strong point: Maven ships with very little
 		"built-in".</li>
@@ -3650,6 +3650,11 @@
 	<section>
 	  <section>
 	    <h2>Running Applications</h2>
+	    <ul>
+	      <li>In this next series of demonstrations...</li>
+	      <li>We're going to create a self-executing JAR and
+		we're going to deploy a WAR to a container.</li>
+	    </ul>
 	    <aside class="notes">
 	      <ul>
 		<li>In this next series of demonstrations...</li>
@@ -3664,9 +3669,20 @@
 	    <ul>
 	      <li>Let's configure an assembly that includes
 	      dependencies...</li>
-	      <li>...and configures a MANIFEST.</li>
+	      <li>...and configure a MANIFEST.</li>
 	    </ul>
 	    
+	    <aside class="notes">
+
+	      <ul>
+		<li>ACTION: Show how to configure the assembly plugin.</li>
+		<li>ACTION: Show where the assembly shows up, unpack it.</li>
+		<li>ACTION: Run the program with the assembly.</li>
+	      </ul>
+
+	    </aside>
+	    
+
 	  </section>
 	  <section>
 	    <h2>Demo: Configuring the JAR Plugin</h2>
@@ -3675,6 +3691,16 @@
 	      <li>Configuring the JAR plugin to include a
 	      Manifest.</li>
 	    </ul>
+
+	    <aside class="notes">
+
+	      <ul>
+		<li>ACTION: Show how the Jar plugin is configured.</li>
+		<li>ACTION: Modify the Jar plugin.</li>
+	      </ul>
+
+	    </aside>
+
 	  </section>
 	  <section>
 	    <h2>Demo: Creating a Self-executing JAR</h2>
@@ -3682,18 +3708,129 @@
 	    <ul>
 	      <li>Configuring the Assembly plugin to generate a
 	      Self-executing JAR</li>
+	      <li>Note that this example is advanced.</li>
+	      <li>Uses the Shade plugin + Nifty Executable.</li>
 	    </ul>
+
+	    <aside class="notes">
+
+	      <ul>
+		<li>ACTION: Show the Shade Plugin</li>
+		<li>ACTION: Show Nifty Executable</li>
+	      </ul>
+
+	    </aside>
+
 	  </section>
 	</section>
 	<section>
 	  <section>
 	    <h2>Publishing Packages</h2>
+
+	    <ul>
+	      <li>Think of Central: How did those JARs get there?</li>
+	      <li>Answer: Maven. Maven packages can be published.</li>
+	      <li>Note: Outside the scope of this class.</li>
+	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Throughout this class we've been talking about
+		artifacts and downloading artifacts from
+		'Central'."</li>
+
+		<li>"Artifacts are shared and published using Maven.
+		These packaging plugins - JAR, EAR, WAR. They are
+		responsible for creating artifacts published to
+		Central."</li>
+	      </ul>
+	    </aside>
 	  </section>
 	  <section>
+	    <h2>Public and Private Repos</h2>
+
+	    <ul>
+	      <li>You can proxy Central with a Repository
+	      Manager.</li>
+
+	      <li>You can also publish your own artifacts to a private
+	      repository.</li>
+
+	      <li>Bringing the ease and accessibility of Central
+	      in-house.</li>
+	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"While repository management and repository
+		managers are beyond the scope of this class."</li>
+
+		<li>"There are a lot of organizations that have
+		installed repository managers."</li>
+
+		<li>"They use Maven to publish artifacts to
+		repositories."</li>
+	      </ul>
+	    </aside>
+	  </section>
+
+	  <section>
 	    <h2>What is a SNAPSHOT?</h2>
+
+	    <ul>
+	      <li>Snapshots are timestamped builds for artifacts still
+	      in development.</li>
+	      <li>You develop with snapshots.</li>
+	      <li>Snapshots are constantly changing artifacts.</li>
+	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"An important point for people publishing
+		artifacts.  There are releases and snapshots."</li>
+		<li>"Snapshots are artifacts published from projects
+		that are still changing."</li>
+		<li>"You use SNAPSHOTs in development."</li>
+	      </ul>
+	    </aside>
+
 	  </section>
 	  <section>
 	    <h2>What is a Release?</h2>
+
+	    <ul>
+	      <li>Releases are point-in-time versions.</li>
+	      <li>They never change. For example: commons-lang 1.1
+	      will never change.</li>
+	      <li>You download releases from Central.</li>
+	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>"Releases, on the other hand, they never
+		change."</li>
+		<li>"When you relese software you 'cut a version' and
+		publish that artifact to a repository."</li>
+		<li>"When you download from Central, you are
+		downloading Release versions."</li>
+	      </ul>
+	    </aside>
+	  </section>
+	  <section>
+	    <h2>Demo: Release a Version</h2>
+
+	    <ul>
+	      <li>Let's see exactly what happens between SNAPSHOTs and
+	      Releases.</li>
+	    </ul>
+
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Take the simple-project - build a
+		snapshot.  Then change to a version number. Show the
+		result.</li>
+	      </ul>
+	    </aside>
 	  </section>
 	</section>
 
@@ -3768,6 +3905,15 @@
 	<section>
 	  <section>
 	    <h2>Demo: Build a Large Multi-module Project</h2>
+
+	    <aside class="notes">
+	      <ul>
+		<li>ACTION: Build up a Multi-module project.</li>
+		<li>NOTE: There is no movie for this, you'll have to
+		just do it.</li>
+	      </ul>
+	    </aside>
+
 	  </section>
 	  <section>
 	    <h2>How Projects Scale in Maven</h2>
@@ -3821,7 +3967,7 @@
 	    <ul>
 	      <li>Facebook was once just a bunch of PHP code.</li>
 	      <li>Google was someone's Standford thesis.</li>
-	      <li>Twitter was a side-project from Odio.</li>
+	      <li>Twitter was a side-project from Odeo.</li>
 	    </ul>
 	    <aside class="notes">
 	      <ul>
@@ -4065,6 +4211,7 @@
 
 	    <aside class="notes">
 	      <ul>
+		<li>ACTION: Explore a multi-module project. https://github.com/facebook/presto</li>
 		<li>Start with a diagram</li>
 		<li>Connect modules together</li>
 		<li>Then show a filesystem</li>
@@ -4106,8 +4253,9 @@
 
 	    <aside class="notes">
 	      <ul>
+		<li>ACTION: Build Presto - https://github.com/facebook/presto</li>
 		<li>Build a large, multi-module project from the top
-		  leve.</li>
+		  level.</li>
 		<li>Show the reactor</li>
 	      </ul>
 	    </aside>

@@ -20,9 +20,9 @@ installation of Java, Maven, and Eclipse on both a Windows and Mac OSX
 platform.
 
 To view the videos view our [Getting Ready for Maven Training -
-Windows](http://www.youtube.com/playlist?list=PLKyGBX4mhtB9nVkgjVPkBSZ-2m46viLAJ)
+Windows](http://www.youtube.com/watch?v=JfNJ-x-aC5M&list=PLTY3FUC1M6rn3tFxk_gXfuBqgmf2et2qe)
 or [Getting Ready for Maven Training - Mac
-OSX](http://www.youtube.com/watch?v=lc7mt2_xCS4&list=PLKyGBX4mhtB8HvRRbrtiCfBW1v-6yuj1x)
+OSX](http://www.youtube.com/watch?v=BVqVgqf_wTY&list=PLTY3FUC1M6rnw7O2yqvVDIFbx-f2iGhuS)
 playlists on YouTube.
 
 
