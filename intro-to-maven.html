@@ -1636,95 +1636,88 @@
 	      </ul>
 	    </aside>
 	  </section>
-	  <section>
-	    <h2>Dependencies have coordinates</h2>
+        <section>
+          <h2>Dependencies have coordinates</h2>
+          <p>Our dependencies:</p>
+          <ul>
+            <li>groupId:artifactId:version</li>
+            <li>com.sample:sample-artifact:1.0</li>
+          </ul>
+          <aside class="notes">
+            <ul>
+              <li>"Here is an example of a GAV coordinate for a
+                sample-artifct"</li>
+              <li>"This syntax is shorthand for GAV."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Two more coordinates...</h2>
+          <p>In addition to the three GAV coordinates, there are two more:</p>
+          <ul>
+            <li>packaging</li>
+            <li>classifier</li>
+          </ul>
 
-	    <p>Our dependencies:</p>
+          <aside class="notes">
+            <ul>
+              <li>"There are two more coordinates in addition to GAV."</li>
+              <li>"One is extremely important and affects every Maven
+                build."</li>
+              <li>"The other is a rarely encountered coordinate."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Coordinate: Packaging</h2>
 
-	    <ul>
-	      <li>groupId:artifactId:version</li>
-	      <li>com.sample:sample-artifact:1.0</li>
-	    </ul>
+          <ul>
+            <li>Implicit value is "jar"</li>
+            <li>Influences packaging type of a build</li>
+            <li>Possible values? Anything...
+              <ul>
+                <li>zip</li>
+                <li>war</li>
+                <li>ear</li>
+                <li>sar</li>
+                <li>pom</li>
+                <li>apk</li>
+              </ul>
+            </li>
+          </ul>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"Here is an example of a GAV coordinate for a
-		sample-artifct"</li>
-		<li>"This syntax is shorthand for GAV."</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>Two more coordinates...</h2>
+          <aside class="notes">
+            <ul>
+              <li>"Packaging is an important coordinate as it affects the
+                build output."</li>
+              <li>"We haven't talked about it yet because we've been
+                relying on the default value which is 'jar'."</li>
+              <li>"Later in the class we'll see how packaging starts to
+                affect the steps in a build."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Coordinate: Classifier</h2>
+          <ul>
+            <li>Rarely used</li>
+            <li>Can be used for:
+              <ul>
+                <li>JDK compatibility</li>
+                <li>Extra Packages and Assemblies</li>
+              </ul>
+            </li>
+          </ul>
 
-	    <p>In addition to the three GAV coordinates, there are two
-	    more:</p>
-
-	    <ul>
-	      <li>packaging</li>
-	      <li>classifier</li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"There are two more coordinates in addition to
-		GAV."</li>
-		<li>"One is extremely important and affects every
-		Maven build."</li>
-		<li>"The other is a rarely encountered
-		coordinate."</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>Coordinate: Packaging</h2>
-
-	    <ul>
-	      <li>Implicit value is "jar"</li>
-	      <li>Influences packaging type of a build</li>
-	      <li>Possible values? Anything...
-		<ul>
-		  <li>zip</li>
-		  <li>war</li>
-		  <li>ear</li>
-		  <li>sar</li>
-		</ul>
-	      </li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"Packaging is an important coordinate as it
-		affects the build output."</li>
-		<li>"We haven't talked about it yet because we've been
-		relying on the default value which is 'jar'."</li>
-		<li>"Later in the class we'll see how packaging starts
-		to affect the steps in a build."</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>Coordinate: Classifier</h2>
-
-	    <ul>
-	      <li>Rarely used</li>
-	      <li>Classified can be used for:
-		<ul>
-		  <li>JDK compatibility</li>
-		  <li>Extra Packages and Assemblies</li>
-		</ul>
-	      </li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"Classifier is rarely used, and we're not going to
-		go into too many details about it in this class."</li>
-		<li>"But the two use cases listed above are..."</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
+          <aside class="notes">
+            <ul>
+              <li>"Classifier is rarely used, and we're not going to go
+                into too many details about it in this class."</li>
+              <li>"But the two use cases listed above are..."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
 	    <h2>Summary: There are 5 Coordinates</h2>
 
 	    <ul>
