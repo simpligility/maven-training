@@ -1474,58 +1474,53 @@
         </section>
       </section>
       <section>
-	  <section>
-	    <h2>Let's add a Feature</h2>
+        <section>
+          <h2>Let's add a Feature</h2>
+          <p>Our web application could use some caching.</p>
+          <p>Let's add a caching library to the REST API</p>
 
-	    <p>Our web application could use some caching.</p>
+          <aside class="notes">
+            <ul>
+              <li>"This is how it starts. Someone comes up with a new
+                requirement."</li>
+              <li>"We'd like to add a cache to our web application."</li>
+              <li>"Your first step should be to look for the appropriate
+                library."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Demo: Find a New Dependency</h2>
+          <p>
+            To find a new dependency, use the Central Repository at <a
+              href="http://search.maven.org">http://search.maven.org</a>
+          <p>We're looking for Guava. Google Guava implements a cache that
+            we can use in our application.</p>
+        </section>
+        <section>
+          <h2>Wait? How did you find Guava?</h2>
+          <p>Interesting question...</p>
+          <ul>
+            <li>There's no central site to find OSS.</li>
+            <li>You really just have to "know".</li>
+            <li>Follow the OSS projects, OR</li>
+            <li>Read a lot of DZone and InfoQ</li>
+          </ul>
 
-	    <p>Let's add a Caching library to the REST API</p>
+          <aside class="notes">
+            <ul>
+              <li>"Now this is an interesting question. How did I know 
+                what Google Guava is?"</li>
+              <li>"How did I know that it implemented a cache?"</li>
+              <li>"The answer is just that I had a colleague who suggested
+                I use it."</li>
+              <li>NOTE: Emphasize that Central isn't the place to learn
+                about OSS.</li>
+            </ul>
+          </aside>
+        </section>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"This is how it starts. Someone comes up with a
-		new requirement."</li>
-		<li>"We'd like to add a cache to our web
-		application."</li>
-		<li>"Your first step should be to look for the
-		appropriate library."</li>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>Demo: Find a New Dependency</h2>
-
-	    <p>To find a new dependency,
-	    use <a href="http://maven.search.org">maven.search.org</a>
-
-	    <p>We're looking for Guava.  Google Guava implements a
-	    cache that we can use in our application.</p>
-	  </section>
-	  <section>
-	    <h2>Wait? How did you find Guava?</h2>
-
-	    <p>Interesting question...</p>
-
-	    <ul>
-	      <li>There's no central site to find OSS.</li>
-	      <li>You really just have to "know".</li>
-	      <li>Follow the OSS projects, OR</li>
-	      <li>Read a lot of DZone and InfoQ</li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"Now this is an interesting question.  How did I
-		know what Google Guava is?"</li>
-		<li>"How did I know that it implemented a cache?"</li>
-		<li>"The answer is just that I had a colleague who
-		suggested I use it."</li>
-		<li>NOTE: Emphasize that Central isn't the place to
-		learn about OSS.</li>
-		</ul>
-	    </aside>
-	  </section>
-
-	  <section>
+        <section>
 	    <h2>Demo: Select the Appropriate Version</h2>
 
 	    <p>Locating an artifact on Central.</p>
