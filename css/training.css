@@ -15,3 +15,8 @@ section.present ul li {
         line-height: 50px;
 
 }
+
+.reveal pre {
+  font-size: 1em;
+  width: 100%;
+}
