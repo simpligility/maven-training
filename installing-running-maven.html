@@ -109,8 +109,8 @@
           <ol>
             <li>Go to <a href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a></li>
             <li>Download
-              either <a href="http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz">apache-maven-3.1.1-bin.tar.gz</a>
-              or <a href="http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.zip">apache-maven-3.1.1-bin.zip</a></li>
+              either <a href="http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.2.1/binaries/apache-maven-3.2.1-bin.tar.gz">apache-maven-3.2.1-bin.tar.gz</a>
+              or <a href="http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.2.1/binaries/apache-maven-3.2.1-bin.zip">apache-maven-3.2.1-bin.zip</a></li>
           </ol>
 	</section>
 
@@ -118,14 +118,18 @@
           <h2>Installing Maven</h2>
 
           <ol>
-            <li>Unpack the Maven distribution to a directory. (i.e. /usr/local/apache-maven-3.1.1)</li>
+            <li>Unpack the Maven distribution in any directory.
+                <ul>
+                  <li>e.g. extraction in /opt will create /opt/apache-maven-3.2.1</li>
+                </ul>
+            </li>  
             <li>Set two environment variables:
-              <ol>
-		<li><code>M2_HOME</code> should point to /usr/local/apache-maven-3.1.1</li>
-		<li><code>PATH</code> add ${M2_HOME}/bin to PATH</li>
-              </ol>
+              <ul>
+                <li><code>M2_HOME</code> should point to /opt/apache-maven-3.2.1</li>
+                <li><code>PATH</code> add ${M2_HOME}/bin to PATH</li>
+              </ul>
             </li>
-            <li>Restart shell to pick-up environment variable changes</li>
+            <li>Restart shell to pick-up environment variable changes.</li>
           </ol>
 	</section>
 
@@ -135,15 +139,13 @@
           <p>Once Maven has been installed, run the following command:</p>
 
           <pre>$ mvn -v
-	    Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 
-	        2013-09-17 10:22:22-0500)
-	    Maven home: /Users/Tim/programs/apache-maven-3.1.1
-	    Java version: 1.7.0_05, vendor: Oracle Corporation
-	    Java home: /Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents\
-	        /Home/jre
-	    Default locale: en_US, platform encoding: UTF-8
-	    OS name: "mac os x", version: "10.8.3", arch: "x86_64", 
-	        family: "mac"
+      Apache Maven 3.2.1 (ea8b2b07643dbb1b84b6d16e1f08391b666bc1e9; 
+        2014-02-14T09:37:52-08:00)
+      Maven home: /opt/apache-maven-3.2.1
+      Java version: 1.7.0_51, vendor: Oracle Corporation
+      Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre
+      Default locale: en_US, platform encoding: UTF-8
+      OS name: "mac os x", version: "10.8.5", arch: "x86_64", family: "mac"
 	  </pre>
 	</section>
 
