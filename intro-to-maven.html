@@ -1221,75 +1221,72 @@
 	  </section>
 
 	</section>
-	<section>
-	  <section>
-	    <h2>Dependencies</h2>
+      <section>
+        <section>
+          <h2>Dependencies</h2>
 
-	    <p>These days...</p>
+          <p>These days...</p>
 
-	    <ul>
-	      <li>No project is an island</li>
-	      <li>You use open source libraries</li>
-	      <li>Examples: Guice, Derby, Tomcat, etc.</li>
-	    </ul>
+          <ul>
+            <li>No project is an island</li>
+            <li>You use open source libraries</li>
+            <li>Examples: Guice, Derby, Tomcat, etc.</li>
+          </ul>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"Next we're going to discuss dependencies."</li>
-		<li>NOTE: Talk about how things have changed over the
-		years, how more OSS is used.</li>
-		<li>NOTE: Spend some time talking about the rich
-		landscape of libraries out there.</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>Example Project</h2>
+          <aside class="notes">
+            <ul>
+              <li>"Next we're going to discuss dependencies."</li>
+              <li>NOTE: Talk about how things have changed over the years,
+                how more OSS is used.</li>
+              <li>NOTE: Spend some time talking about the rich landscape of
+                libraries out there.</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Example Project</h2>
 
-	    <p>We built a web application which does the following:</p>
+          <p>We built a web application which does the following:</p>
 
-	    <ul>
-	      <li>Connects to an embedded database</li>
-	      <li>Creates service objects</li>
-	      <li>Exposes a REST API to a...</li>
-	      <li>...client-side Javascript application</li>
-	    </ul>
+          <ul>
+            <li>Connects to an embedded database</li>
+            <li>Creates service objects</li>
+            <li>Exposes a REST API to a...</li>
+            <li>...client-side Javascript application</li>
+          </ul>
 
-	    <aside class="notes">
-	      <ul>
-		<li>NOTE: Quick read, move on slide.</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>Example Project Dependencies</h2>
+          <aside class="notes">
+            <ul>
+              <li>NOTE: Quick read, move on slide.</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Example Project Dependencies</h2>
 
-	    <p>We assembled this project using open source
-	    libraries:</p>
+          <p>We assembled this project using open source libraries:</p>
 
-	    <ul>
-	      <li>Embedded Database: HSQLDB and jDBI</li>
-	      <li>Dependency Injection: Guice</li>
-	      <li>REST API: Jersey</li>
-	      <li>Client-side Javascript: React</li>
-	    </ul>
-	    <aside class="notes">
-	      <ul>
-		<li>NOTE: Give a short run-down of each component,
-		quickly.</li>
-		<li>NOTE: The point to make here is that (if a student
-		doesn't already realize it) they should think that
-		Maven is the gateway to all of these awesome
-		projects.</li>
-	      </ul>
-	    </aside>
+          <ul>
+            <li>Embedded Database: HSQLDB and jDBI</li>
+            <li>Dependency Injection: Guice</li>
+            <li>REST API: Jersey</li>
+            <li>Client-side Javascript: React</li>
+          </ul>
+          <aside class="notes">
+            <ul>
+              <li>NOTE: Give a short run-down of each component, quickly.</li>
+              <li>NOTE: The point to make here is that (if a student
+                doesn't already realize it) they should think that Maven is the
+                gateway to all of these awesome projects.</li>
+            </ul>
+          </aside>
 
-	  </section>
+        </section>
 
-	  <section>
-	    <h2>Example pom.xml Dependencies</h2>
+        <section>
+          <h2>Example pom.xml Dependencies</h2>
 
-	    <pre>
+          <pre>
 &lt;dependency&gt;
   &lt;groupId&gt;org.sonatype.aether&lt;/groupId&gt;
   &lt;artifactId&gt;aether-api&lt;/artifactId&gt;
@@ -1297,203 +1294,186 @@
 &lt;/dependency&gt;
 	    </pre>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"Here is a dependency declaration for Aether"</li>
-		<li>"Note that it references a complete GAV
-		coordinate."</li>
-		<li>"In the next slide, you'll see how these
-		coordinates are mapped to a URL"</li>
-	      </ul>
-	    </aside>
+          <aside class="notes">
+            <ul>
+              <li>"Here is a dependency declaration for Aether"</li>
+              <li>"Note that it references a complete GAV coordinate."</li>
+              <li>"In the next slide, you'll see how these coordinates are
+                mapped to a URL"</li>
+            </ul>
+          </aside>
 
-	  </section>
+        </section>
 
-	  <section>
-	    <h2>Dependencies have Coordinates</h2>
+        <section>
+          <h2>Dependencies have Coordinates</h2>
 
-	    <p>Take Aether as an example:</p>
+          <p>Take Aether as an example:</p>
 
-	    <ul>
-	      <li><b>groupId:</b> org.sonatype.aether</li>
-	      <li><b>artifactId:</b> aether-api</li>
-	      <li><b>version:</b> 1.13.1</li>
-	    </ul>
+          <ul>
+            <li><b>groupId:</b> org.sonatype.aether</li>
+            <li><b>artifactId:</b> aether-api</li>
+            <li><b>version:</b> 1.13.1</li>
+          </ul>
 
-	    <aside class="notes">
-	      <ul>
-		<li>NOTE: Quick slide, keep it moving.</li>
-	      </ul>
-	    </aside>
+          <aside class="notes">
+            <ul>
+              <li>NOTE: Quick slide, keep it moving.</li>
+            </ul>
+          </aside>
 
-	  </section>
+        </section>
 
-	  <section>
-	    <h2>Maven Downloads Dependencies</h2>
+        <section>
+          <h2>Maven Downloads Dependencies</h2>
 
-	    <p>Maven turns these coordinates into a URL.</p>
+          <p>Maven turns these coordinates into a URL.</p>
 
-	    <pre>/org/sonatype/aether/aether-api/1.13.1/aether-api-1.13.1.jar</pre>
+          <pre>
+/org/sonatype/aether/
+                    aether-api/
+                               1.13.1/
 
-	    <p>Download dependencies</p>
-      <ul>
-      <li>from the Central Repository</li>
-      <li>to your Local Repository.</li>
-      </ul>
-	    
-	    <aside class="notes">
-	      <ul>
-		    <li>NOTE: Again, keep the slides moving.</li>
-	      </ul>
-	    </aside>
-	  </section>
+                    aether-api-1.13.1.jar
+      </pre>
 
-	  <section>
-	    <h2>Dependencies have Scope</h2>
+          <p>Download dependencies</p>
+          <ul>
+            <li>from the Central Repository</li>
+            <li>to your Local Repository.</li>
+          </ul>
 
-	    <p>This example uses two scopes:</p>
+          <aside class="notes">
+            <ul>
+              <li>NOTE: Again, keep the slides moving.</li>
+            </ul>
+          </aside>
+        </section>
 
-	    <ul>
-	      <li>compile</li>
-	      <li>test</li>
-	    </ul>
+        <section>
+          <h2>Dependencies have Scope</h2>
+          <p>This example uses two scopes:</p>
+          <ul>
+            <li>compile</li>
+            <li>test</li>
+          </ul>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"Maven also has the concept of scope..."</li>
-		<li>"...Project depend on different artifacts for
-		different reasons."</li>
-		<li>"This example has a compile scope and a test
-		scope."</li>
-		<li>NOTE: Explain these two scopes very quickly we
-		don't need to get into the nitty-gritty.</li>
-	      </ul>
-	    </aside>
-	  </section>
+          <aside class="notes">
+            <ul>
+              <li>"Maven also has the concept of scope..."</li>
+              <li>"...Project depend on different artifacts for different
+                reasons."</li>
+              <li>"This example has a compile scope and a test scope."</li>
+              <li>NOTE: Explain these two scopes very quickly we don't need
+                to get into the nitty-gritty.</li>
+            </ul>
+          </aside>
+        </section>
+      </section>
 
-	</section>
+      <section>
+        <section>
+          <h2>In Summary...</h2>
+          <aside class="notes">
+            <ul>
+              <li>NOTE: In summary sections are meant to be fast-moving
+                reviews that signal the end of a section.</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>mvn clean install</h2>
+          <p>Building a Maven Project is straightforward.</p>
+        </section>
+        <section>
+          <h2>Project Object Model (POM)</h2>
+          <p>All Maven projects have a POM.</p>
+          <p>An XML file in pom.xml</p>
+        </section>
+        <section>
+          <h2>Projects have Coordinates</h2>
+          <p>When you create a project, you have to give it a GAV
+            coordinate.</p>
+        </section>
+        <section>
+          <h2>Projects have Dependencies</h2>
+          <p>A big feature of Maven is the ability to declare project
+            dependencies.</p>
+        </section>
+        <section>
+          <h2>Dependencies have Coordinates</h2>
+          <p>Coordinates enable Maven to go get dependencies from the
+            Central Repository.</p>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Working with Dependencies</h1>
+          <h3>First Steps</h3>
+          <p>
+            <small>Created by Jason van Zyl / <a
+              href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+          </p>
 
-	<section>
-	  <section>
-	    <h2>In Summary...</h2>
+          <aside class="notes">
+            <p>
+              <b>Min Time: 35 minutes, Max Time: 45 minutes</b>
+            </p>
+            <ul>
+              <li>This is going to seem strange, but there's no mention of
+                a snapshot here. Most users don't need to know what a 
+                snapshot is until they think of in-house software 
+                releases. Introducing SNAPSHOTs right now is confusing.
+                </li>
 
-	    <aside class="notes">
-	      <ul>
-		<li>NOTE: In summary sections are meant to be
-		fast-moving reviews that signal the end of a
-		section.</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>mvn clean install</h2>
+              <li>Also note that this module isn't called 'Dependency
+                Management'. That's a fancy name that means nothing to a 
+                junior developer that just needs to use a new dependency.
+                </li>
 
-	    <p>Building a Maven Project is straightforward.</p>
-	  </section>
-	  <section>
-	    <h2>Project Object Model (POM)</h2>
+              <li>Module Playlist: <a target="_new"
+                href="http://www.youtube.com/playlist?list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S">YouTube</a></li>
+            </ul>
+          </aside>
+        </section>
 
-	    <p>All Maven projects have a POM.</p>
+        <section>
+          <h2>Where were we?</h2>
+          <p>In the previous section you learned that:
+          <ul>
+            <li>Dependencies have coordinates</li>
+            <li>Maven downloads dependencies</li>
+          </ul>
 
-	    <p>An XML file in pom.xml</p>
-	  </section>
-	  <section>
-	    <h2>Projects have Coordinates</h2>
+          <aside class="notes">
+            <ul>
+              <li>"In the previous section you learned about
+                dependencies..."</li>
+              <li>"...but there was some details we left out."</li>
+              <li>"In this section, we're going to round out the picture."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
 
-	    <p>When you create a project you have to give it a GAV
-	    coordinate.</p>
+          <h2>Module Objectives</h2>
 
-	  </section>
-	  <section>
-	    <h2>Projects have Dependencies</h2>
+          <ul>
+            <li>Demo: Add a new dependency
+            <li>Coordinate details (5 minutes)</li>
+            <li>Dependencies
+              <ul>
+                <li>Where do dependencies come from?</li>
+                <li>Where dependencies go?</li>
+                <li>Maven repository format</li>
+                <li>Release versions</li>
+              </ul>
+            </li>
+          </ul>
 
-	    <p>A big feature of Maven is the ability to declare
-	    project dependencies.</p>
-	  </section>
-	  <section>
-	    <h2>Dependencies have Coordinates</h2>
-
-	    <p>Dependencies have coordinates, this is what enables
-	    Maven to go get them from Central.</p>
-	  </section>
-	</section>
-	<section>
-	  <section>
-	    <h1>Working with Dependencies</h1>
-
-	    <h3>First Steps</h3>
-
-	    <p>
-
-	      <small>Created by Jason van Zyl
-		/ <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
-
-	    </p>
-
-	    <aside class="notes">
-	      <p><b>Min Time: 35 minutes, Max Time: 45 minutes</b></p>
-	      <ul>
-
-		<li>This is going to seem strange, but there's no
-		  mention of a snapshot here. Most users don't need to
-		  know what a snapshot is until they think of in-house
-		  software releases.  Introducing SNAPSHOTs right now
-		  is confusing.
-		</li>
-
-		<li>Also note that this module isn't called
-		  'Dependency Management'. That's a fancy name that
-		  means nothing to a junior developer that just needs
-		  to use a new dependency.
-		</li>
-
-		<li>Module Playlist: <a target="_new" href="http://www.youtube.com/playlist?list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S">YouTube</a></li>
-
-	      </ul>
-
-	    </aside>
-	  </section>
-
-	  <section>
-	    <h2>Where were we?</h2>
-
-	    <p>In the previous section you learned that:</li>
-
-	    <ul>
-	      <li>Dependencies have Coordinates</li>
-	      <li>Maven Downloads Dependencies</li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"In the previous section you learned about
-		dependencies..."</li>
-		<li>"...but there was some details we left out."</li>
-		<li>"In this section, we're going to round out the
-		picture."</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <!-- TODO -->
-	    <h2>Module Objectives</h2>
-
-	    <ul>
-	      <li>Demo: Add a New Dependency
-	      <li>Coordinate Details (5 minutes)</li>
-	      <li>Dependencies
-		<ul>
-		  <li>Where do dependencies come from?</li>
-		  <li>Where dependencies go?</li>
-		  <li>Repository Format</li>
-		  <li>Release Versions</li>
-		</ul>
-	      </li>
-	    </ul>
-
-	  </section>
-	</section>
-	<section>
+        </section>
+      </section>
+      <section>
 	  <section>
 	    <h2>Let's add a Feature</h2>
 
