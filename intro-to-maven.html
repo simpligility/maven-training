@@ -1490,21 +1490,24 @@
           </aside>
         </section>
         <section>
-          <h2>Demo: Find a New Dependency</h2>
+          <h2>Demo: To Find a New Dependency...</h2>
           <p>
-            To find a new dependency, use the Central Repository at <a
+            ... use the Central Repository at <a
               href="http://search.maven.org">http://search.maven.org</a>
-          <p>We're looking for Guava. Google Guava implements a cache that
+          <p>We're looking for Guava. </p>
+          <p>Google Guava implements a cache that
             we can use in our application.</p>
         </section>
         <section>
           <h2>Wait? How did you find Guava?</h2>
           <p>Interesting question...</p>
           <ul>
-            <li>There's no central site to find OSS.</li>
-            <li>You really just have to "know".</li>
-            <li>Follow the OSS projects, OR</li>
+            <li>There's no central site to find OSS</li>
+            <li>You really just have to "know"</li>
+            <li>Talk to your peers</li>
+            <li>Follow the OSS projects</li>
             <li>Read a lot of DZone and InfoQ</li>
+            <li>...</li>
           </ul>
 
           <aside class="notes">
@@ -1521,10 +1524,10 @@
         </section>
 
         <section>
-	    <h2>Demo: Select the Appropriate Version</h2>
+	    <h2>Demo: <br />Select the Appropriate Version</h2>
 
-	    <p>Locating an artifact on Central.</p>
-	    <p>Show list of available versions.</p>
+	    <p>Locate an artifact on the Central Repository</p>
+	    <p>Show list of available versions</p>
 
 	    <aside class="notes">
 	      <ul>
@@ -1537,7 +1540,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Find the appropriate coordinates</h2>
+	    <h2>Demo: <br /> Find the appropriate coordinates</h2>
 
 	    <p>Once you've located the artifact, grab the
 	    coordinates.</p>
@@ -1553,21 +1556,22 @@
 	      </ul>
 	    </aside>
 	  </section>
-	  <section>
-	    <h2>Demo: Add the Coordinates to the POM</h2>
-
-	    <p>Once you have the appropriate coordinates add them to
-	    the POM.</p>
-
-	    <aside class="notes">
-	      <ul>
-		<li><a target="_new" href="http://www.youtube.com/watch?v=40Rw61Bl8j4&list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S">ACTION</a>: Show how the POM is updated. Add a new
-		dependency to simple-project.</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>Demo: Run the build and track the download</h2>
+        <section>
+          <h2>
+            Demo:<br />Add the Coordinates to the POM
+          </h2>
+          <p>Once you have the appropriate coordinates, add them to the POM.</p>
+          <aside class="notes">
+            <ul>
+              <li><a target="_new"
+                href="http://www.youtube.com/watch?v=40Rw61Bl8j4&list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S">ACTION</a>:
+                Show how the POM is updated. Add a new dependency to
+                simple-project.</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+	    <h2>Demo:<br />Run the build and track the download</h2>
 
 	    <p>Run the build, follow the artifact.</p>
 
@@ -1578,29 +1582,31 @@
 	      </ul>
 	    </aside>
 	  </section>
-	  <section>
-	    <h2>Demo: Modify code to use new dependency</h2>
-
-	    <p>Once the artifact is downloaded and available, we can
-	    use it.</p>
-
-	    <aside class="notes">
-	      <ul>
-		<li><a target="_new" href="http://www.youtube.com/watch?v=40Rw61Bl8j4&list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S">ACTION</a>: Demonstrate that the JAR is download and
-		that it now appears to be on the classpath for
-		compilation.</li>
-	      </u>
-	    </aside>
-	  </section>
-	</section>
+        <section>
+          <h2>
+            Demo: <br />Modify project to use new dependency
+          </h2>
+          <p>Once the artifact is downloaded and available, we can use it.
+          </p>
+          <aside class="notes">
+            <ul>
+              <li><a target="_new"
+                href="http://www.youtube.com/watch?v=40Rw61Bl8j4&list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S">ACTION</a>:
+                Demonstrate that the JAR is download and that it now 
+                appears to be on the classpath for compilation.</li>
+                <li>its just modifying the pom</li>
+            </ul>
+          </aside>
+        </section>
+      </section>
 	<section>
 	  <section>
 	    <h2>Coordinate Details</h2>
 
 	    <ul>
-	      <li>Rounding out Coordinates with...</li>
-	      <li>...<code>packaging</code> and...</li>
-	      <li>...<code>classifier</code></li>
+	      <li>Rounding out Coordinates with</li>
+	      <li><code>packaging</code> and</li>
+	      <li><code>classifier</code></li>
 	    </ul>
 
 	    <aside class="notes">
@@ -1617,7 +1623,7 @@
 
 	    <ul>
 	      <li>groupId</li>
-	      <li>artifact</li>
+	      <li>artifactId</li>
 	      <li>version</li>
 	    </ul>
 
