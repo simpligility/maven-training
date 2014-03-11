@@ -2846,7 +2846,7 @@
 
 	  </section>
 	  <section>
-	    <h2>Demo: Configure Compile Goal in POM</h2>
+	    <h2>Demo:<br /> Configure Compile Goal in POM</h2>
 
 	    <p>Let's use that previous example in a POM and see what happens.</p>
 
@@ -2861,6 +2861,7 @@
 		<li>"Once you understand the structures 'goals and
 		plugins' and how to configure goal execution, you
 		understand the core fundamentals of Maven"</li>
+    <li>also show how Eclipse automatically adapts the project
 	      </ul>
 	    </aside>
 	  </section>
@@ -2868,12 +2869,13 @@
 	    <h2>Configuring a Goal Execution</h2>
 
 	    <p>In the last demonstration we configured a Goal
-	    Execution.</p>
+	    execution.</p>
 
 	    <ul>
-	      <li>Goals are Executed at a Stage in the Lifecycle</li>
-	      <li>The Lifecycle is a Sequence of Phases</li>
-	      <li>...more on this later.</li>
+	      <li>Goals are executed at a specific stage in the lifecycle</li>
+	      <li>The Lifecycle is a sequence of stages</li>
+        <li>called "phases" 
+	      <li>...more on this later</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -2910,7 +2912,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Maven Surefire Plugin Documentation</h2>
+	    <h2>Demo:<br /> Maven Surefire Plugin Documentation</h2>
 
 	    <ul>
 	      <li>surefire:help</li>
@@ -2929,7 +2931,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Maven Compiler Plugin Documentation</h2>
+	    <h2>Demo:<br />Maven Compiler Plugin Documentation</h2>
 
 	    <ul>
 	      <li>compiler:compiler</li>
@@ -2947,7 +2949,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Maven War Plugin Documentation</h2>
+	    <h2>Demo:<br />Maven War Plugin Documentation</h2>
 
 	    <ul>
 	      <li>war:exploded</li>
@@ -2967,7 +2969,7 @@
 	  <section>
 	    <h2>Plugins have Coordinates</h2>
 
-	    <p>Now, let's tie plugins back to dependencies.  Plugins
+	    <p>Now, let's tie plugins back to dependencies. Plugins
 	    are a lot like dependencies - they have coordinates:</p>
 
 	    <ul>
@@ -2991,7 +2993,7 @@
 	    <h2>Plugins are Artifacts</h2>
 
 	    <p>Maven downloads plugins as needed.</p>
-	    <p><b><i>Just like depednencies.</i></b></p>
+	    <p><b><i>Just like dependencies.</i></b></p>
 	    <br/><br/>
 	    <p>Also... Maven can have more than one version of a
 	    plugin.</p>
@@ -3008,7 +3010,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Show Maven Downloading Plugins</h2>
+	    <h2>Demo:<br /> Show Maven Downloading Plugins</h2>
 
 	    <p>Let's modify a POM and change a plugin version.</p>
 
@@ -3025,7 +3027,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Configuring Goals at Plugin Level</h2>
+	    <h2>Demo:<br />Configuring Goals at Plugin Level</h2>
 
 	    <p>Plugins can be configured at different "levels".</p>
 
@@ -3048,7 +3050,7 @@
 
 	    <ul>
 	      <li>From the command-line</li>
-	      <li>In a Goal Execution</li>
+	      <li>In a goal execution</li>
 	      <li>In the plugin configuration</li>
 	    </ul>
 
@@ -3108,7 +3110,7 @@
 
 	    <ul>
 	      <li>A single, linear series of steps (or phases)</li>
-	      <li>Goals are bound to these <phase>phases</phase>.
+	      <li><goal>Goals</goal> are bound to these <phase>phases</phase>.
 	      </li>
 	    </ul>
 
@@ -3122,29 +3124,17 @@
 	    <h2>The Default Lifecycle</h2>
 
 	    <pre><phases>
-  <phase>validate</phase>
-  <phase>initialize</phase>
-  <phase>generate-sources</phase>
-  <phase>process-sources</phase>
-  <phase>generate-resources</phase>
-  <phase>process-resources</phase>
-  <phase>compile</phase>
-  <phase>process-classes</phase>
-  <phase>generate-test-sources</phase>
-  <phase>process-test-sources</phase>
-  <phase>generate-test-resources</phase>
-  <phase>process-test-resources</phase>
-  <phase>test-compile</phase>
-  <phase>process-test-classes</phase>
+  <phase>validate</phase>, <phase>initialize</phase>
+  <phase>generate-sources</phase>, <phase>process-sources</phase>
+  <phase>generate-resources</phase>, <phase>process-resources</phase>
+  <phase>compile</phase>, <phase>process-classes</phase>
+  <phase>generate-test-sources</phase>, <phase>process-test-sources</phase>, 
+  <phase>generate-test-resources</phase>, <phase>process-test-resources</phase>
+  <phase>test-compile</phase>, <phase>process-test-classes</phase>, 
   <phase>test</phase>
-  <phase>prepare-package</phase>
-  <phase>package</phase>
-  <phase>pre-integration-test</phase>
-  <phase>integration-test</phase>
-  <phase>post-integration-test</phase>
-  <phase>verify</phase>
-  <phase>install</phase>
-  <phase>deploy</phase>
+  <phase>prepare-package</phase>, <phase>package</phase>
+  <phase>pre-integration-test</phase>, <phase>integration-test</phase>, <phase>post-integration-test</phase>, <phase>verify</phase>
+  <phase>install</phase>, <phase>deploy</phase>
 </phases></pre>
 
 	    <aside class="notes">
@@ -3153,6 +3143,7 @@
 		<li>You can customize this, but that falls outside the
 		scope of this class.</li>
 		<li>It is also not very common.</li>
+    <li>Demo: Run "mvn"" to see the list in error message.</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -3174,7 +3165,7 @@
 
 	  </section>
 	  <section>
-	    <h2>Demo: Running Phases: Test</h2>
+	    <h2>Demo:<br />Running Phases: Test</h2>
 
 	    <p><code>mvn test</code></p>
 
@@ -3187,7 +3178,7 @@
 
 	  </section>
 	  <section>
-	    <h2>Demo: Running Phases: Install</h2>
+	    <h2>Demo:<br />Running Phases: Install</h2>
 
 	    <p><code>mvn install</code></p>
 
@@ -3202,32 +3193,25 @@
 	  <section>
 	    <h2>Default Lifecycle Bindings</h2>
 
-	    <pre><phases>
-  <process-resources>
-    org.apache.maven.plugins:maven-resources-plugin:2.6:resources
-  </process-resources>
-  <compile>
-    org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile
-  </compile>
-  <process-test-resources>
-    org.apache.maven.plugins:maven-resources-plugin:2.6:testResources
-  </process-test-resources>
-  <test-compile>
-    org.apache.maven.plugins:maven-compiler-plugin:2.5.1:testCompile
-  </test-compile>
-  <test>
-    org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test
-  </test>
-  <package>
-    org.apache.maven.plugins:maven-jar-plugin:2.4:jar
-  </package>
-  <install>
-    org.apache.maven.plugins:maven-install-plugin:2.4:install
-  </install>
-  <deploy>
-    org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy
-  </deploy>
-</phases></pre>
+      <dl>
+  <dt>process-resources</dt>
+  <dd>org.apache.maven.plugins:maven-resources-plugin:2.6:resources</dd>
+  <dt>compile</dt>
+  <dd>org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile</dd>
+  <dt>process-test-resources</dt>
+  <dd>org.apache.maven.plugins:maven-resources-plugin:2.6:testResources</dd>
+  <dt>test-compile</dt>
+  <dd>org.apache.maven.plugins:maven-compiler-plugin:2.5.1:testCompile</dd>
+  <dt>test</dt>
+  <dd>org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test</dd>
+  <dt>package</dt>
+  <dd>org.apache.maven.plugins:maven-jar-plugin:2.4:jar</dd>
+  <dt>install</dt>
+  <dd>org.apache.maven.plugins:maven-install-plugin:2.4:install</dd>
+  <dt>deploy</dt>
+  <dd>org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy</dd>
+      </dl>
+
 
 	    <aside class="notes">
 	      <p>"This is the default lifecycle"</p>
