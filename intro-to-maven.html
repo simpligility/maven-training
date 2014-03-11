@@ -3226,7 +3226,7 @@
 	    <p>This is explored later in the class.</p>
 
 	    <aside class="notes">
-	      <p>"So you understand you the lifecycle works and how
+	      <p>"So you understand how the lifecycle works and how
 	      goals are bound to the lifecycle by default, but to
 	      really take advantage of Maven you have to understand
 	      how to customize the lifecycle."</p>
@@ -3237,7 +3237,7 @@
 	  <section>
 	    <h2>Summary</h2>
 
-	    <p>Goals -> Plugins -> THE LIFECYCLE</p>
+	    <p>Goals -> Plugins -> Lifecycle</p>
 	  </section>
 	  <section>
 	    <h2>Plugins are Artifacts</h2>
@@ -3252,7 +3252,7 @@
 	    <h2>Plugins Aggregate Goals</h2>
 	    
 	    <ul>
-	      <li>Plugins collect similar goals together.</li>
+	      <li>Plugins collect similar goals together</li>
 	    </ul>
 	  </section>
 	  <section>
@@ -3266,7 +3266,7 @@
 	    <h2>Goals Bind to Phases</h2>
 
 	    <ul>
-	      <li>When you execute goals you bind them to phases in
+	      <li>When you execute goals, you bind them to phases in
 	      the Maven Lifecycle.</li>
 	    </ul>
 
@@ -3276,16 +3276,17 @@
 
 	    <ul>
 	      <li>The Lifecycle is everything.</li>
-	      <li>Understand the Lifecycle and Maven will Make Sense.</li>
+	      <li>Understand the Lifecycle and Maven will make sense.</li>
 	    </ul>
 	  </section>
 	  <section>
-	    <h2>There is a Default Lifecycle</h2>
+	    <h2>Default Lifecycle</h2>
 
 	    <ul>
-	      <li>The only reason Maven does anything by default?</li>
-	      <li>The is a default Maven lifecycle...</li>
-	      <li>...with default lifecycle bindings.</li>
+	      <li>The only reason Maven does anything by default.</li>
+	      <li>There is a default lifecycle...</li>
+	      <li>...with default lifecycle bindings</li>
+        <li>...defined within Maven itself.</li>
 	    </ul>
 	  </section>
 	</section>
@@ -3333,8 +3334,9 @@
 	    <p>In the previous sections:</p>
 
 	    <ul>
-	      <li>You've learned about Plugins</li>
-	      <li>You understand the lifecycle.</li>
+	      <li>You've learned about plugins</li>
+	      <li>and the lifecycle</li>
+        <li>and how they relate to each other.</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -3347,37 +3349,34 @@
 	      </ul>
 	    </aside>
 	  </section>
-	  <section>
-	    <!-- TODO -->
-	    <h2>Module Objectives</h2>
+        <section>
+          <h2>Module Objectives</h2>
+          <p>This module does two things.</p>
+          <ul>
+            <li>It focuses on the WAR plugin</li>
+            <li>and it uses a simple Assembly:</li>
+          </ul>
+          <p>Remember the lifecycle from the previous section, well the
+            packaging changes it...</p>
+          <ul>
+            <li>Demonstrate packaging</li>
+            <li>Demonstrate (but don't fully delve into) the Assembly
+              plugin</li>
+            <li>Build a program that creates a jar with dependencies</li>
+            <li>Introduce SNAPSHOT versions</li>
+          </ul>
 
-	    <p>This module does two things. It focuses on the WAR
-	      plugin and it uses a simple Assembly:</p>
+          <aside class="notes">
+            <ul>
+              <li>"In this module we're going to learn how to customize
+                the packages that Maven creates."</li>
+              <li>"We're also ready to talk about what the difference is
+                between a release and a SNAPSHOT."</li>
+            </ul>
+          </aside>
 
-	    <ul>
-	      <li>Remember the lifecycle from the previous section,
-		well the packaging changes it...</li>
-	      <ul>
-		<li>Demonstrate Packaging</li>
-		<li>Demonstrate (but don't fully delve into) the
-		  Assembly plugin</li>
-		<li>Build a program that creates a jar with
-		  dependencies</li>
-		<li>Introduce SNAPSHOT versions</li>
-	      </ul>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"In this module we're going to learn how to
-		customizes the packages that Maven creates."</li>
-		<li>"We're also ready to talk about what the
-		difference is between a release and a SNAPSHOT."</li>
-	      </ul>
-	    </aside>
-
-	  </section>
-	</section>
+        </section>
+      </section>
 	<section>
 	  <section>
 	    <h2>Creating Packages</h2>
@@ -3389,11 +3388,11 @@
 	      <li><b>Java applications</b> are packaged and
 		distributed: JARs, WARs, EARs.</li>
 	      <li><b>Alternative package formats</b> ZIP, Tarball,
-		other language formats such as gems and npm
+		other language formats such as aar, gems and npm
 		packages.</li>
 	    </ul>
 
-	    <aside class="note">
+	    <aside class="notes">
 	      <ul>
 		<li>NOTE: A straigtforward slide.</li>
 	      </ul>
@@ -3409,7 +3408,7 @@
 	    </ul>
 	    <hr/>
 	    <p>Packaging influences the
-	      <phase>package</phase> Lifecycle phase.
+	      <phase>package</phase> lifecycle phase.
 	    </p>
 
 	    <aside class="notes">
@@ -3553,6 +3552,7 @@
 	      <hr/>
 
 	    <p>Use the Maven Assembly Plugin</p>
+      <p>Or a plugin that natively supports a specific packaging</p>
 
 	    <aside class="notes">
 	      <ul>
@@ -3563,6 +3563,7 @@
 		file?"</li>
 		<li>"For these requirements we use the Assembly
 		plugin."</li>
+        <li>E.g. Android Maven Plugin supports apk and aar and others</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -3637,7 +3638,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: JAR with Dependencies</h2>
+	    <h2>Demo:<br /> JAR with Dependencies</h2>
 
 	    <ul>
 	      <li>Let's configure an assembly that includes
@@ -3658,7 +3659,7 @@
 
 	  </section>
 	  <section>
-	    <h2>Demo: Configuring the JAR Plugin</h2>
+	    <h2>Demo:<br />Configuring the JAR Plugin</h2>
 
 	    <ul>
 	      <li>Configuring the JAR plugin to include a
@@ -3676,7 +3677,7 @@
 
 	  </section>
 	  <section>
-	    <h2>Demo: Creating a Self-executing JAR</h2>
+	    <h2>Demo:<br />Creating a Self-executing JAR</h2>
 
 	    <ul>
 	      <li>Configuring the Assembly plugin to generate a
@@ -3701,7 +3702,7 @@
 	    <h2>Publishing Packages</h2>
 
 	    <ul>
-	      <li>Think of Central: How did those JARs get there?</li>
+	      <li>Think of the Central Repository: How did those JARs get there?</li>
 	      <li>Answer: Maven. Maven packages can be published.</li>
 	      <li>Note: Outside the scope of this class.</li>
 	    </ul>
@@ -3719,42 +3720,39 @@
 	      </ul>
 	    </aside>
 	  </section>
-	  <section>
-	    <h2>Public and Private Repos</h2>
+        <section>
+          <h2>Public and Private Repos</h2>
+          <ul>
+            <li>You can proxy the Central Repository with a Repository
+              Manager.</li>
+            <li>You can also publish your own artifacts to a private
+              repository.</li>
+            <li>Bringing the ease and accessibility of the Central
+              Repository in-house.</li>
+            <li>And you can publish your open source project to the Central
+              Repository</li>
+          </ul>
 
-	    <ul>
-	      <li>You can proxy Central with a Repository
-	      Manager.</li>
+          <aside class="notes">
+            <ul>
+              <li>"While repository management and repository managers are
+                beyond the scope of this class."</li>
+              <li>"There are a lot of organizations that have installed
+                repository managers."</li>
+              <li>"They use Maven to publish artifacts to repositories."
+              </li>
+            </ul>
+          </aside>
+        </section>
 
-	      <li>You can also publish your own artifacts to a private
-	      repository.</li>
-
-	      <li>Bringing the ease and accessibility of Central
-	      in-house.</li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"While repository management and repository
-		managers are beyond the scope of this class."</li>
-
-		<li>"There are a lot of organizations that have
-		installed repository managers."</li>
-
-		<li>"They use Maven to publish artifacts to
-		repositories."</li>
-	      </ul>
-	    </aside>
-	  </section>
-
-	  <section>
+        <section>
 	    <h2>What is a SNAPSHOT?</h2>
 
 	    <ul>
 	      <li>Snapshots are timestamped builds for artifacts still
-	      in development.</li>
-	      <li>You develop with snapshots.</li>
-	      <li>Snapshots are constantly changing artifacts.</li>
+	      in development</li>
+	      <li>You develop with snapshots</li>
+	      <li>Snapshots are constantly changing artifacts</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -3772,10 +3770,11 @@
 	    <h2>What is a Release?</h2>
 
 	    <ul>
-	      <li>Releases are point-in-time versions.</li>
-	      <li>They never change. For example: commons-lang 1.1
+	      <li>Releases are point-in-time versions</li>
+	      <li>They never change. For example commons-lang 1.1
 	      will never change.</li>
-	      <li>You download releases from Central.</li>
+	      <li>You download releases from the Central Repository</li>
+        <li>.. or other release repositories.</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -3852,12 +3851,12 @@
 	      <li>How does Maven scale projects?</li>
 	      <li>Why would you do this? Why group projects
 		together?</li>
-	      <li>Define Inheritance and discuss what is
+	      <li>Define "inheritance" and discuss what is
 		inherited</li>
-	      <li>Define Aggregation and discuss what is
+	      <li>Define "aggregation"" and discuss what is
 		aggregated</li>
-	      <li>Demonstrate a Multi-module Build</li>
-	      <li>Discuss the Reactor and how it orders builds</li>
+	      <li>Demonstrate a multi-module Build</li>
+	      <li>Discuss the "reactor" and how it orders builds</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -3877,7 +3876,7 @@
 	</section>
 	<section>
 	  <section>
-	    <h2>Demo: Build a Large Multi-module Project</h2>
+	    <h2>Demo:<br />Build a Large Multi-module Project</h2>
 
 	    <aside class="notes">
 	      <ul>
@@ -3888,37 +3887,38 @@
 	    </aside>
 
 	  </section>
-	  <section>
-	    <h2>How Projects Scale in Maven</h2>
+        <section>
+          <h2>How Projects Scale in Maven</h2>
+          <ul>
+            <li>Maven projects scale in a particular way.</li>
+            <li>Through the aggregation of smaller projects.</li>
+          </ul>
+          <br />
+          <p>
+            <b>This is a core assumption of the tool.</b>
+          </p>
 
-	    <ul>
-	      <li>Maven projects scale in a particular way.</li>
-	      <li>Through the aggregation of smaller projects.</li>
-	    </ul>
-
-	    <p>This is a core assumption of the tool.</p>
-	    
-	    <aside class="notes">
-	      <ul>
-		<li>That last item deserves special emphasis.  This
-		  reall is a core assumption.</li>
-		<li>Maven was designed to scale through aggregation
-		  and you shouldn't try to fight this convention.</li>
-		<li>Some balk at modularity for simple projects, but
-		  Maven was designed to support projects as they
-		  inevitably grow.</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
+          <aside class="notes">
+            <ul>
+              <li>That last item deserves special emphasis. This really is
+                a core assumption.</li>
+              <li>Maven was designed to scale through aggregation and you
+                shouldn't try to fight this convention.</li>
+              <li>Some balk at modularity for simple projects, but Maven
+                was designed to support projects as they inevitably grow.
+                </li>
+            </ul>
+          </aside>
+        </section>
+        <section>
 	    <h2>One common pattern: Monolithic Apps</h2>
 
 	    <p>A popular build pattern for large projects is...</p>
 
 	    <ul>
 	      <li><b>The Monolith</b></li>
-	      <li>Many modules crammed into one.</li>
-	      <li>A Very Large (Unmanageable) Build</li>
+	      <li>Many modules crammed into one</li>
+	      <li>A very large, unmanageable build</li>
 	      <li>Produces multiple outputs</li>
 	    </ul>
 
@@ -3959,7 +3959,7 @@
 	  <section>
 	    <h2>In the Beginning...</h2>
 
-	    <p>In the beginning the build is simple:</p>
+	    <p>...the build is simple:</p>
 
 	    <img src="img/web/scale-prototype-step1.png"/>
 	    <aside class="notes">
@@ -3976,7 +3976,7 @@
 	  <section>
 	    <h2>The plot thickens...</h2>
 
-	    <p>Your proof of concept proved the concept and your
+	    <p>Your proof of concept worked and your
 	      project got staff and resources.</p>
 
 	    <img src="img/web/scale-prototype-step2-wrong.png"/>
@@ -4011,23 +4011,22 @@
 	      </ul>
 	    </aside>
 	  </section>
-	  <section>
-	    <h2>Monoliths Don't Scale</h2>
+        <section>
+          <h2>Monoliths Don't Scale</h2>
 
-	    <p>Software lives for years (often decades)</p>
+          <p>Software lives for years (often decades)</p>
 
-	    <ul>
-	      <li>As systems and teams scale, single builds do not.</li>
-	      <li>As modularity develops, monolithic builds
-		constrain.</li>
-	      <li>At scale, monolithic builds inhibit progress.</li>
-	    </ul>
+          <ul>
+            <li>As systems and teams scale, single builds do not</li>
+            <li>As modularity develops, monolithic builds constrain</li>
+            <li>At scale, monolithic builds inhibit progress.</li>
+          </ul>
 
-	    <aside class="notes">
-	      <li>This slide is quick just read it and move on.</li>
-	    </aside>
-	  </section>
-	  <section>
+          <aside class="notes">
+            <p>This slide is quick just read it and move on.</p>
+          </aside>
+        </section>
+        <section>
 	    <h2>The End-game of a Monolith</h2>
 
 	    <img src="img/web/scale-prototype-summary-wrong.png">
@@ -4068,8 +4067,8 @@
 	  <section>
 	    <h2>Maven's Approach: Modularity</h2>
 
-	    <p>Maven favors smaller components. Components that
-	      produce one artifact.</p>
+	    <p>Maven favors smaller components.</p>
+      <p>Components that produce one artifact.</p>
 
 	    <ul>
 	      <li>Easier to model dependencies</li>
@@ -4086,7 +4085,7 @@
 	  <section>
 	    <h2>In the Beginning...</h2>
 
-	    <p>In the beginning the build is simple:</p>
+	    <p>...the build is simple:</p>
 
 	    <img src="img/web/scale-prototype-step1.png"/>
 	    <aside class="notes">
@@ -4094,6 +4093,7 @@
 		<li>"The beginning of the story is exactly the same
 		  with Maven, the difference is how the system evolves
 		  in a more modular fashion."</li>
+      </ul>
 	    </aside>
 	  </section>
 	  <section>
@@ -4180,7 +4180,7 @@
 	  </section>
 	  
 	  <section>
-	    <h2>Demo: Structure of a Multi-module Project</h2>
+	    <h2>Demo:<br />Structure of a Multi-module Project</h2>
 
 	    <aside class="notes">
 	      <ul>
@@ -4192,12 +4192,12 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Two Concepts: Aggregation and Inheritance</h2>
+	    <h2>Two Concepts:<br /> Aggregation and Inheritance</h2>
 	    <ul>
-	      <li><b>Aggregation:</b> A Parent Module contains
-		Submodules</li>
-	      <li><b>Inheritance:</b> A Model Declares a Parent and
-		Inherits POM Configuration</li>
+	      <li><b>Aggregation:</b> A project contains
+		modules</li>
+	      <li><b>Inheritance:</b> A project Declares a "parent" and
+		inherits POM configuration</li>
 	    </ul>
 	  </section>
 	</section>
@@ -4222,7 +4222,7 @@
 	    <img src="img/web/aggregate-basic.png"/>
 	  </section>
 	  <section>
-	    <h2>Demo: Building a Large Multi-module Project</h2>
+	    <h2>Demo:<br />Building a Large Multi-module Project</h2>
 
 	    <aside class="notes">
 	      <ul>
@@ -4279,7 +4279,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>How a Multi-module Build Works</h2>
+	    <h2>How a Multi-Module Build Works</h2>
 
 	    <p>The lifecycle is executed for each project.</p>
 
@@ -4296,17 +4296,16 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>How a Multi-module Build Doesn't Work</h2>
+	    <h2>How a Multi-Module Build Doesn't Work</h2>
 
 	    <p>If you come to Maven from Ant...</p>
 
 	    <ul>
 	      <li>You may expect the build to run in "stages"</li>
-	      <li>All compilation completes across all projects.</li>
-	      <li>..then all testing completes across all
-		projects.</li>
+	      <li>All compilation completes across all projects</li>
+	      <li>..then all testing completes across all projects.</li>
 	    </ul>
-
+      <br />
 	    <p>This is a common misconception.</p>
 
 	    <aside class="notes">
@@ -4320,7 +4319,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>How a Multi-module Build Doesn't Work</h2>
+	    <h2>How a Multi-Module Build Doesn't Work</h2>
 
 	    <img src="img/web/reactor-full-lifecycle-wrong.png"/>
 
@@ -4377,7 +4376,7 @@
 	  <section>
 	    <h2>Demo: Inherited Dependencies</h2>
 	    
-	    <p>And for our next trick... inherited dependencies.</p>
+	    <p>...for our next trick.</p>
 
 	    <aside class="notes">
 	      <ul>
@@ -4402,6 +4401,7 @@
 	    <aside class="notes">
 	      <ul>
 		<li>NOTE: Quick slide, read it, move on.</li>
+    <li>like inheritance for Java classes</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -4471,7 +4471,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Common Compiler Configuration</h2>
+	    <h2>Demo:<br />Common Compiler Configuration</h2>
 
 	    <p>A very common use case is to define compiler plugin
 	      configuration in a top-level POM.</p>
@@ -4486,10 +4486,10 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Version and Group Inheritance</h2>
+	    <h2>Demo:<br />Version and Group Inheritance</h2>
 
 	    <p>Version numbers are often the same across a large
-	      multi-module projects.</p>
+	      multi-module project.</p>
 
 	    <p>Group Identifiers are also often the same in a
 	      multi-module project.</p>
@@ -4507,38 +4507,30 @@
 	  </section>
 	</section>
 	<section>
-	  <section>
-	    <h2>Releasing Software</h2>
+        <section>
+          <h2>Releasing Software</h2>
+          <p>Maven has a standard for a transition from development to
+            release.</p>
+          <ul>
+            <li>When software is released it is a point-in-time release
+            </li>
+            <li>A software release is an immutable artifact</li>
+            <li>Releases are published to repositories</li>
+          </ul>
 
-	    <p>Maven has a standard for a transition from
-	      development to release.</p>
+          <aside class="notes">
+            <ul>
+              <li>Important point: Maven releases != Your production
+                releases</li>
+              <li>"You might have an internal release that uses puppet or
+                chef, that is not the same as a Maven release."</li>
+              <li>Maven releases focus on push build output to
+                repositories.</li>
+            </ul>
+          </aside>
 
-	    <ul>
-	      <li>When software is released it is a point-in-time
-		release.
-	      </li>
-	      <li>A software release is an immutable artifact.
-	      </li>
-	      <li>Releases are published to repositories.
-	      </li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>Important point: Maven releases != Your production
-		  releases
-		</li>
-		<li>"You might have an internal release that uses
-		  puppet or chef, that is not the same as a Maven
-		  release."
-		</li>
-		<li>Maven releases focus on push build output to repositories.
-		</li>
-	      </ul>
-	    </aside>
-
-	  </section>
-	  <section>
+        </section>
+        <section>
 	    <h2>Releases vs. Snapshots</h2>
 
 	    <p>A critical distinction: two types of versions.</p>
@@ -4585,13 +4577,13 @@
 	      tasks:</p>
 
 	    <ul>
-	      <li>Update project version numbers to a Release version.
+	      <li>Update project version numbers to a release version
 	      </li>
-	      <li>Run a build and generate output artifacts.
+	      <li>Run a build and generate output artifacts
 	      </li>
-	      <li>Publish artifacts to a binary repository manager.
+	      <li>Publish artifacts to a binary repository manager
 	      </li>
-	      <li>Increment version numbers to next snapshot.
+	      <li>Increment version numbers to next snapshot
 	      </li>
 	    </ul>
 
@@ -4638,13 +4630,13 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Perform a Release</h2>
+	    <h2>Demo:<br />Perform a Release</h2>
 
 	    <ul>
-	      <li>Demonstrate a manual release.</li>
-	      <li>Discuss the general process for Releases.
+	      <li>Demonstrate a manual release</li>
+	      <li>Discuss the general process for Releases
 	      </li>
-	      <li>In Advanced Maven you'll learn about the Release plugin.
+	      <li>In Advanced Maven you'll learn about the Release plugin
 	      </li>
 	    </ul>
 
