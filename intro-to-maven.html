@@ -1756,7 +1756,7 @@
 	  <section>
 	    <h2>Maven sees a Coordinate</h2>
 
-	    <p>When you configure a dependency in a pom.xml Maven sees
+	    <p>When you configure a dependency in a pom.xml,<br /> Maven sees
 	    a coordinate.</p>
 
 	    <p><code>com.sample:sample-artifact:1.0:jar</code></p>
@@ -1794,7 +1794,7 @@
 	    <p>Breaking this URL down into component sections:</p>
 
 	    <ul>
-	      <li>http://repo1.maven.org</li>
+	      <li>Repository URL (default is http://repo1.maven.org/maven2)</li>
 	      <li>/{groupId}</li>
 	      <li>/{artifactId}</li>
 	      <li>/{version}</li>
@@ -1814,7 +1814,7 @@
 	  <section>
 	    <h2>Maven Downloads the Dependency</h2>
 
-	    <p>It also download a POM at the same coordinates...</p>
+	    <p>It also downloads a POM at the same coordinates...</p>
 
 	    <img src="img/web/maven-download-artifact.png"/>
 
@@ -1823,12 +1823,13 @@
 	    <aside class="notes">
 	      <ul>
 		<li>"With these coordinates, Maven then proceeds to
-		download artifacts from Maven Central."</li>
+		download artifacts from the Central Repository."</li>
 		<li>"But Maven also downloads something else.  Every
 		artifact in Central also has its own POM."</li>
 		<li>NOTE: Emphasize this point that Maven downloads
 		more than just a JAR. Compare and contrast with
 		managing your own JAR files in an Ant build.</li>
+    <li>The POM of the project is just the pom.xml used</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -1839,7 +1840,7 @@
 
 	    <img src="img/web/maven-download-artifact-poms.png"/>
 
-	    <p>...then it grabs your dependencies dependencies...</p>
+	    <p>...then it grabs your dependencies dependenciesm</p>
 
 	    <p>...and so on.</p>
 
@@ -1878,7 +1879,7 @@
 	    </aside>
           </section>
 	  <section>
-	    <h2>Demo: Show Complex Dependency Graph</h2>
+	    <h2>Demo: <br />Show Complex Dependency Graph</h2>
 
 	    <p>Take a look at a large project's dependency graph</p>
 	    <aside class="notes">
@@ -1888,40 +1889,40 @@
 	      </ul>
 	    </aside>
 	  </section>
-	  <section>
-	    <h2>Maven then Creates a Classpath</h2>
+        <section>
+          <h2>Maven then Creates a Classpath</h2>
 
-	    <p>There are a few different classpaths:</p>
+          <p>There are a few different classpaths:</p>
 
-	    <ul>
-	      <li>Classpath for Compilation</li>
-	      <li>Classpath for Testing</li>
-	      <li>Classpath for Packaging</li>
-	      <li>Classpath at Runtime</li>
-	    </ul>
+          <ul>
+            <li>for compilation</li>
+            <li>for test execution</li>
+            <li>for packaging</li>
+            <li>for runtime usage</li>
+          </ul>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"When Maven is create these dependency graphs for
-		a project what it is doing is making sure that it has
-		enough dependencies to create the necessary classpaths
-		for different stages of the build."</li>
-		<li>NOTE: Explain each.</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
+          <aside class="notes">
+            <ul>
+              <li>"When Maven is create these dependency graphs for a
+                project what it is doing is making sure that it has 
+                enough dependencies to create the necessary classpaths for 
+                different stages of the build."</li>
+              <li>NOTE: Explain each.</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
 	    <h2>Dependency Scopes</h2>
 
 	    <p>Maven has several scopes, here are two:</p>
 
-	    <ul>
-	      <li><b>compile</b> - Classpath for Compilation, Testing,
-	      Packaging, and Runtime</li>
-	      <li><b>test</b> - Classpath for Testing Only</li>
-	    </ul>
+          <ul>
+            <li><b>compile</b> - for compilation, packaging, and runtime
+              </li>
+            <li><b>test</b> - for test compilation and execution</li>
+          </ul>
 
-	    <aside class="notes">
+          <aside class="notes">
 	      <ul>
 		<li>"Now there are more scopes than this in Maven, but
 		for the purposes of this class we'll talk about
@@ -1936,7 +1937,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Dependency Resolution Result for Compile
+	    <h2>Demo:<br /> Dependency Resolution Result for Compile
 	    Scope</h2>
 
 	    <aside class="notes">
@@ -1950,7 +1951,7 @@
 
 	  </section>
 	  <section>
-	    <h2>Demo: Add a Dependency to the Test Scope</h2>
+	    <h2>Demo: <br />Add a Dependency to the Test Scope</h2>
 	    <aside class="notes">
 	      <p><a target="_new" href="http://www.youtube.com/watch?v=s6YtB9wy9HU&list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S&index=5">ACTION</a>: Add a dependency to the test scope, modify
 	      test code, run the build.</p>
@@ -1960,18 +1961,21 @@
 	  </section>
 	</section>
 	<section>
-	  <section>
-	    <h2>Summary: Coordinates and Dependencies</h2>
-	    <aside class="notes">
-	      <ul>
-		<li>"We lead this class with coordinates and
-		dependencies because both will be an important part of
-		your work with Maven."</li>
-		<li>"This is also an area that demands you understand
-		the fundamentals."</li>
-	    </aside>
-	  </section>
-	  <section>
+        <section>
+          <h2>
+            Summary: <br />Coordinates and Dependencies
+          </h2>
+          <aside class="notes">
+            <ul>
+              <li>"We lead this class with coordinates and dependencies
+                because both will be an important part of your work with
+                Maven."</li>
+              <li>"This is also an area that demands you understand the
+                fundamentals."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
 	    <h2>It's easy to manage dependencies</h2>
 	    <aside class="notes">
 	      <ul>
@@ -2023,7 +2027,7 @@
 	    <aside class="notes">
 	      <ul>
 		<li>"Maven then generates a graph (or a tree) to model
-		a project's depdnencies."</li>
+		a project's dependencies."</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2072,7 +2076,7 @@
 		    <li>Hint at full story..</li>
 		    <li>Goals</li>
 		    <li>Plugins</li>
-		    <li>Plugin Configuration</li>
+		    <li>Plugin configuration</li>
 		    <li>Reporting</li>
 		  </ul>
 		</li>
@@ -2096,7 +2100,7 @@
 	    dependencies.</p>
 
 	    <p>Now, we're going to dive into Maven's execution model
-	    by learning how Maven executes Unit Tests.</p>
+	    by learning how Maven executes unit tests.</p>
 
 	    <aside class="notes">
 	      <ul>
@@ -2109,16 +2113,15 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <!-- TODO -->
 	    <h2>Module Objectives</h2>
 	    
 	    <ul>
-	      <li>Introduce Surefire Plugin</li>
-	      <li>Demonstrate Surefire Plugin</li>
-	      <li>Running a Single Test</li>
-	      <li>Including and Excluding Tests</li>
-	      <li>Discuss Test Resources</li>
-	      <li>Demonstrate Test Resources</li>
+	      <li>Introduce Surefire plugin</li>
+	      <li>Demonstrate Surefire plugin</li>
+	      <li>Running a single test</li>
+	      <li>Including and excluding tests</li>
+	      <li>Discuss test resources</li>
+	      <li>Demonstrate test resources</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -2136,7 +2139,7 @@
 	</section>
 	<section>
 	  <section>
-	    <h2>Demo: Execute Unit Tests</h2>
+	    <h2>Demo:<br /> Execute Unit Tests</h2>
 
 	    <p>Open test-example and execute unit tests.</p>
 
@@ -2150,7 +2153,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Execute a Single Unit Test</h2>
+	    <h2>Demo:<br /> Execute a Single Unit Test</h2>
 
 	    <p>Pinpoint one unit test and run it.</p>
 
@@ -2164,34 +2167,35 @@
 	    </aside>
 
 	  </section>
-	  <section>
-	    <h2>What happened here?</h2>
+        <section>
+          <h2>What happened here?</h2>
+          <ul>
+            <li>Instead of packging a project...</li>
+            <li>We executed unit tests</li>
+            <li>Unit testing is the domain of the...</li>
+          </ul>
+          <p>
+            <b>Maven Surefire Plugin</b>
+          </p>
 
-	    <ul>
-	      <li>Instead of packging a project...</li>
-	      <li>We executed Unit Tests</li>
-	      <li>Unit Testing is the domain of the...</li>
-	    </ul>
-
-	    <p><b>...Maven Surefire Plugin</b></p>
-
-	    <aside class="notes">
-	      <ul>
-		<li>NOTE: Important point, we were able to run only a
-		portion of the build.</li>
-		<li>"We'll dive into what the meaning of test is
-		later, but for now let's focus on what happened."</li>
-	    </aside>
-	  </section>
-	</section>
+          <aside class="notes">
+            <ul>
+              <li>NOTE: Important point, we were able to run only a 
+                portion of the build.</li>
+              <li>"We'll dive into what the meaning of test is later, but
+                for now let's focus on what happened."</li>
+            </ul>
+          </aside>
+        </section>
+      </section>
 	<section>
 	  <section>
-	    <h2>What's a Plugin? Quickly.</h2>
+	    <h2>What is a Plugin? Quickly.</h2>
 
 	    <p>If you use Maven you'll need to understand:</p>
 
 	    <ul>
-	      <li>That most of what happens in Maven happens in plugins.</li>
+	      <li>That most of what happens in Maven, happens in plugins.</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -2226,11 +2230,9 @@
 	  </section>
 	  <section>
 	    <h2>Every Goal is in a Plugin</h2>
-
-	    <p>Every goal is cotained in a plugin.</p>
-
-	    <p>In Maven, the Surefire plugin is responsible for Unit
-	    Testing.</p>
+	    <p>Every goal is contained in a plugin.</p>
+	    <p>In Maven, the Surefire plugin is responsible for unit testing.
+      </p>
 
 	    <img src="img/web/plugin.png"/>
 
@@ -2270,9 +2272,8 @@
 
 	    <p>When we run "mvn test" we invoke a phase.</p>
 
-	    <p>The Surefire "test" goal is bound to this
-	      <phase>phase</phase>
-	      .
+	    <p>The Surefire <goal>test</goal> goal is bound to this 
+        <phase>phase</phase>.
 	    </p>
 
 	    <p>It's a default. (We'll learn more about this later.)</p>

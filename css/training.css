@@ -1,12 +1,12 @@
 phase {
   border: 1px solid blue;
-  background-color: blue;
+  background-color: white;
   padding: 5px;
 }
 
 goal {
   border: 1px solid green;
-  background-color: green;
+  background-color: white;
   padding: 5px;
 }
 
