@@ -2676,12 +2676,7 @@
 
 	    <ul>
 	      <li>What is a Goal?
-		<ul>
-		  <li>When you run a Maven build...</li>
-		  <li>Goals, Plugins... == LIFECYCLE
-		  </li>
-		</ul>
-	      </li>
+		    </li>
 	      <li>What is the Lifecycle?</li>
 
 	      <li>Convention over configuration</li>
@@ -2711,7 +2706,7 @@
 
 	    <ul>
 	      <li>A single action.</li>
-	      <li>Configurable from the Command-line</li>
+	      <li>Configurable from the command-line</li>
 	      <li>Take a look at this goals configurable
 	      properties...</li>
 	    </ul>
@@ -2733,8 +2728,8 @@
 	    <p>The best way to understand the configuration options
 	    for a plugin is to...</p>
 
-	    <p>Look at
-		the <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">test
+	    <p>look at
+		the <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">
 		goal documentation</a>.</p>
 	    <aside class="notes">
 	      <ul>
@@ -2760,7 +2755,7 @@
 	      <li>It creates a package.</li>
 	    </ul>
 
-	    <p>Each of these actions is encpaulated in a goal.</p>
+	    <p>Each of these actions is encapsulated in a goal.</p>
 
 	    <aside class="notes">
 	      <ul>
@@ -2774,7 +2769,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Goal Documentation for compile</h2>
+	    <h2>Demo:<br />Goal Documentation for compile</h2>
 
 	    <p>The project compiles Java code, right? Well...</p>
 
@@ -2795,7 +2790,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Customize the Compile Goal</h2>
+	    <h2>Demo:<br /> Customize the Compile Goal</h2>
 
 	    <p>Target different Java versions with "source" and
 	    "target".</p>
@@ -2821,20 +2816,20 @@
 	    configured in a POM.</p>
 
 	    <pre>
-	      <project>
-		<build>
-		  <plugins>
-		    <plugin>
-		      <groupId>org.apache.maven.plugins</groupId>
-		      <artifactId>maven-compiler-plugin</artifactId>
-		      <configuration>
-			<source>7</source>
-			<target>7</target>
-		      </configuration>
-		    </plugin>
-		  </plugins>
-		</build>
-	      </project>
+&lt;project&gt;
+  &lt;build&gt;
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+        &lt;configuration&gt;
+          &lt;source&gt;7&lt;/source&gt;
+          &lt;target&gt;7&lt;/target&gt;
+        &lt;/configuration&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+&lt;/project&gt;
 	    </pre>
 
 	    <aside class="notes">
