@@ -223,7 +223,7 @@
             <br/><br/>
 
             <p>
-              but you can use Linux - at your own risk ;-)
+              but you can use Linux too - at your own risk ;-)
             </p>
             <aside class="notes">
               <ul>
@@ -265,7 +265,7 @@
 
             <img src="img/web/eclipse-kepler.png" width="350"/>
 
-            <p>But, you can use IntelliJ or NetBeans if
+            <p>But you can use IntelliJ or NetBeans, if
               that is what you are familiar with.</p>
 
             <p>Again, use an alternative IDE at your own
@@ -434,7 +434,7 @@
 
             <p>Introducing a simple example:</p>
 
-            <pre>$ cp examples/simple-project working</pre>
+            <pre>$ cp labs/simple-project working</pre>
 
 	    <aside class="notes">
 	      <ul>
@@ -577,8 +577,9 @@
 
 	    <p>Run the example application like this:</p>
 
-	    <pre>$ cd target
-	      $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
+	    <pre>
+$ cd target
+$ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
 
 	    <aside class="notes">
 	      <ul>
@@ -786,14 +787,14 @@
 	    <h2>Example Project Contents</h2>
 
 	    <p>Our example project has...</p>
-
+	    
 	    <ul>
 	      <li>Java source files</li>
-	      <li>Properties files</li>
-	      <li>A web application descriptor</li>
-	      <li>Javascript and HTML</li>
-	      <li>Java unit tests</li>
-	    </ul>
+        <li>Java unit tests</li>
+      </ul>
+      
+      <p>.. but could also have properties files, a web application 
+      descriptor, Javascript and HTML, images, and more</p>
 	    <aside class="notes">
 	      <ul>
 		<li>"What makes a 'project' a project?"</li>
@@ -1251,10 +1252,10 @@
           <ul>
             <li>Connects to an embedded database</li>
             <li>Creates service objects</li>
-            <li>Exposes a REST API to a...</li>
-            <li>...client-side Javascript application</li>
           </ul>
-
+          <p>Next steps could be to expose a REST API to a
+            client-side Javascript application</p>
+          
           <aside class="notes">
             <ul>
               <li>NOTE: Quick read, move on slide.</li>
@@ -1553,6 +1554,7 @@
 		importants of really understanding coordinates.</li>
 		<li>NOTE: Might seem too straightforward, but you can
 		never be too straightforward in training.</li>
+		<li>Search for newer version of guice, search for commons-lang3, </li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -1595,6 +1597,8 @@
                 Demonstrate that the JAR is download and that it now 
                 appears to be on the classpath for compilation.</li>
                 <li>its just modifying the pom</li>
+                <li>show how it is added in eclipse</li>
+                <li>show how you can get javadoc and sources loaded</li>
             </ul>
           </aside>
         </section>
@@ -2162,7 +2166,9 @@
 		<li><a target="_new" href="http://www.youtube.com/watch?v=pnu_73Pzrv0&list=PLTY3FUC1M6rliDMpNGnDZBugjmj2bIMpb">ACTION</a>: Single out one test, run it with the
 		Surefire plugin.</li>
 		<li>NOTE: The goal here is to show how this is
-		configured via the command-line.</li>
+		configured via the command-line.
+		</li>
+		<li>mvn test -Dtest=StudentTest</li>
 	      </ul>
 	    </aside>
 
@@ -2379,6 +2385,12 @@
 	      <li>Or, there could be failing tests.</li>
 	    </ul>
 
+      <p>Let's try</p>	    
+	    <pre>
+mvn install -DskipTests=true
+mvn install -Dmaven.test.skip=true
+      </pre
+
 	    <aside class="notes">
 	      <p><a target="_new" href="http://www.youtube.com/watch?v=fXyp6ipNFvM&list=PLTY3FUC1M6rliDMpNGnDZBugjmj2bIMpb">ACTION</a>: Demonstrate plugin configuration from the
 	      command-line - skip tests</p>
@@ -2390,7 +2402,8 @@
 
 	  </section>
 	  <section>
-	    <h2>Modifying Plugin Behavior from Command-line</h2>
+	    <h2>Modifying Plugin Behavior <br />
+	     - from the Command-line</h2>
 
 	    <p>What just happened?</p>
 
@@ -2734,13 +2747,14 @@
 	    <aside class="notes">
 	      <ul>
 		<li><a target="_new" href="http://www.youtube.com/watch?v=YuX9ywxD8DY&list=PLTY3FUC1M6rmasFnZ5Z1AHM0SU63MAisx">ACTION</a>: Load the Goal documentation
-		rom <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html</a>
+		from <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html</a>
 		</li>
 		<li>ACTION: Show the description, full name, and
 		properties.</li>
 		<li>NOTE: REALLY DWELL ON THIS. Reading Plugin
 		documentation is *most important skill* from this
 		class.</li>
+		<li>Dig in to find the skipTests and maven.test.skip properties</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2962,7 +2976,7 @@
 	    <aside class="notes">
 	      <ul>
 		<li><a target="_new" href="http://www.youtube.com/watch?v=RMb8hUoxIp0&list=PLTY3FUC1M6rmasFnZ5Z1AHM0SU63MAisx">ACTION</a>: Show the documentation page.</li>
-		<li>Discuss which goals are frequency used in a POM.</li>
+		<li>Discuss which goals are frequently used in a POM.</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -3243,7 +3257,7 @@
 	    <h2>Plugins are Artifacts</h2>
 
 	    <ul>
-	      <li>Plugins are Artifacts</li>
+	      <li>Plugins are artifacts</li>
 	      <li>They have coordinates</li>
 	      <li>Maven downloads them on-demand</li>
 	    </ul>
@@ -3690,7 +3704,9 @@
 
 	      <ul>
 		<li><a target="_new" href="http://www.youtube.com/watch?v=P19M5tjx91s&list=PLTY3FUC1M6rmH8k9hS3zLtJX-aqAG0tQQ&index=2">ACTION</a>: Show the Shade Plugin</li>
-		<li>ACTION: Show Nifty Executable</li>
+		<li>ACTION: Show Nifty Executable
+		</li>
+		<li>https://github.com/brianm/really-executable-jars-maven-plugin</li>
 	      </ul>
 
 	    </aside>
