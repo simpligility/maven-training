@@ -7,7 +7,7 @@
     <title>Installing and Running Maven</title>
 
     <meta name="description" content="Installing and Running Maven">
-    <meta name="author" content="Tim O'Brien, Jason van Zyl">
+    <meta name="author" content="Tim O'Brien, Jason van Zyl, Manfred Moser">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -20,9 +20,11 @@
     <!-- For syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
 
-	<!-- For Takari styling -->
+    <!-- For Takari styling -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/takari.css">
+    <link rel="stylesheet" href="css/training.css">
+    
     
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
@@ -72,7 +74,6 @@
 	</section>
 	
 	<section>
-          <!-- TODO -->
 	  <h2>Module Objectives</h2>
 
           <ul>
@@ -93,10 +94,10 @@
           <p><b>This class uses Java 7.</b></p>
 
           <ol>
-            <li>Visit Oracle's JavaSE Page: <a href="http://www.oracle.com/technetwork/java/javase/overview/index.html">http://java.oracle.com</a></li>
-            <li>Download Java</li>
-            <li>Install Java</li>
-            <li>Set the JAVA_HOME variable to point to installation directory.</li>
+            <li>Visit Oracle's JavaSE Page: <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://java.oracle.com</a></li>
+            <li>Download Java Development Kit (JDK)</li>
+            <li>Install JDK</li>
+            <li>Set the JAVA_HOME variable to point to the installation directory</li>
           </ol>
 
 	</section>
@@ -104,13 +105,16 @@
 	<section>
           <h2>Downloading Maven</h2>
 
-          <p>Downloading Maven is Easy</p>
+          <p>.. is Easy</p>
           
           <ol>
             <li>Go to <a href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a></li>
-            <li>Download
-              either <a href="http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz">apache-maven-3.1.1-bin.tar.gz</a>
-              or <a href="http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.zip">apache-maven-3.1.1-bin.zip</a></li>
+            <li>Download zip or tar.gz file, contents are identical
+              <ul>
+                <li><a href="http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.2.1/binaries/apache-maven-3.2.1-bin.tar.gz">apache-maven-3.2.1-bin.tar.gz</a></li>
+                <li><a href="http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.2.1/binaries/apache-maven-3.2.1-bin.zip">apache-maven-3.2.1-bin.zip</a></li>
+              </ul>
+            </li>
           </ol>
 	</section>
 
@@ -118,12 +122,16 @@
           <h2>Installing Maven</h2>
 
           <ol>
-            <li>Unpack the Maven distribution to a directory. (i.e. /usr/local/apache-maven-3.1.1)</li>
+            <li>Unpack the Maven distribution in any directory
+                <ul>
+                  <li>e.g. extraction in /opt will create /opt/apache-maven-3.2.1</li>
+                </ul>
+            </li>  
             <li>Set two environment variables:
-              <ol>
-		<li><code>M2_HOME</code> should point to /usr/local/apache-maven-3.1.1</li>
-		<li><code>PATH</code> add ${M2_HOME}/bin to PATH</li>
-              </ol>
+              <ul>
+                <li><code>M2_HOME</code> should point to /opt/apache-maven-3.2.1</li>
+                <li><code>PATH</code> add ${M2_HOME}/bin to PATH</li>
+              </ul>
             </li>
             <li>Restart shell to pick-up environment variable changes</li>
           </ol>
@@ -135,20 +143,20 @@
           <p>Once Maven has been installed, run the following command:</p>
 
           <pre>$ mvn -v
-	    Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 
-	        2013-09-17 10:22:22-0500)
-	    Maven home: /Users/Tim/programs/apache-maven-3.1.1
-	    Java version: 1.7.0_05, vendor: Oracle Corporation
-	    Java home: /Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents\
-	        /Home/jre
-	    Default locale: en_US, platform encoding: UTF-8
-	    OS name: "mac os x", version: "10.8.3", arch: "x86_64", 
-	        family: "mac"
+Apache Maven 3.2.1 (ea8b2b07643dbb1b84b...; 
+  2014-02-14T09:37:52-08:00)
+Maven home: /opt/apache-maven-3.2.1
+Java version: 1.7.0_51, vendor: Oracle Corporation
+Java home: /Library/Java/JavaVirtualMachines/
+          jdk1.7.0_51.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "mac os x", version: "10.8.5", 
+arch: "x86_64", family: "mac"
 	  </pre>
 	</section>
 
       </div>
-      <div class="slidenumber">BORK</div>
+      <div class="slidenumber">1</div>
     </div>
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.min.js"></script>

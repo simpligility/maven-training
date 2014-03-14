@@ -1,17 +1,33 @@
 phase {
   border: 1px solid blue;
-  background-color: blue;
+  background-color: white;
   padding: 5px;
+}
+
+phases {
+  font-size: 0.7em;
 }
 
 goal {
   border: 1px solid green;
-  background-color: green;
+  background-color: white;
   padding: 5px;
 }
 
 section.present ul li {
 
         line-height: 50px;
+}
 
+.reveal pre {
+  font-size: 1em;
+  width: 100%;
+}
+
+dl {
+  text-align: left;
+}
+
+dt {
+  text-decoration: underline;
 }

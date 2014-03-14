@@ -7,7 +7,7 @@
     <title>Introduction to Maven</title>
 
     <meta name="description" content="A Introduction to Maven">
-    <meta name="author" content="Tim O'Brien, Jason van Zyl">
+    <meta name="author" content="Tim O'Brien, Jason van Zyl, Manfred Moser">
 
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
@@ -23,6 +23,7 @@
 	<!-- For Takari styling -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/takari.css">
+    <link rel="stylesheet" href="css/training.css">
     
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
@@ -74,29 +75,24 @@
             </aside>
 	  </section>
 
-	  <section>
-            <!-- TODO -->
-            <h2>Welcome</h2>
+        <section>
+          <!-- TODO -->
+          <h2>Welcome to Introduction to Maven</h2>
 
-            <p>
-              Welcome to Introduction to Maven. In this
-              class you will learn how to use Maven to build
-              your projects.
-            </p>
+          <p>In this class you will learn how to use Maven to build your
+            projects.</p>
 
-            <aside class="notes">
-
-              <b>Min Time: 5 minutes, Max Time: 10 minutes</b>
-              <ul>
-                <li>This section needs to start and end in a manner of
-                  minutes.</li>
-                <li>You might see this as filler, but it's important
-                  to provide a "roadmap" for the course.</li>
-              </ul>
-
-            </aside>
-	  </section>
-	  <section>
+          <aside class="notes">
+            <b>Min Time: 5 minutes, Max Time: 10 minutes</b>
+            <ul>
+              <li>This section needs to start and end in a manner of
+                minutes.</li>
+              <li>You might see this as filler, but it's important to
+                provide a "roadmap" for the course.</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
             <h2>Goals and Objectives</h2>
 
             <p>
@@ -125,10 +121,10 @@
               At the end of this class, you should know how to:
             </p>
             <ul>
-              <li>Configure Unit Testing Plugins</li>
-              <li>Customize Build Output and Packages</li>
-              <li>Understand the Basics of Build Customization</li>
-              <li>Understand Multimodule Builds</li>
+              <li>Configure unit testing plugins</li>
+              <li>Customize build output and packages</li>
+              <li>Understand the basics of build customization</li>
+              <li>Understand multimodule builds</li>
             </ul>
             <aside class="notes">
               <ul>
@@ -145,27 +141,26 @@
 	</section>
 
 	<section>
-	  <section>
-            <h2>Prerequisites</h2>
+        <section>
+          <h2>Prerequisites</h2>
 
-            <p>Here are a few prerequisites we've assumed...
-            </p>
+          <p>Here are a few prerequisites we've assumed...</p>
 
-            <aside class="notes">
-	      <ul>
-		<li>We've designed this class to be efficient and
-		  fast-paced.</li>
-		<li>...but to do this we've assumed a few
-		  prerequisites.</li>
-            </aside>
-	  </section>
-	  <section>
+          <aside class="notes">
+            <ul>
+              <li>We've designed this class to be efficient and
+                fast-paced.</li>
+              <li>...but to do this we've assumed a few prerequisites.
+                </li>
+          </aside>
+        </section>
+        <section>
             <h2>You are Comfortable with the OS</h2>
 
             <p>You should know how to:</p>
             <ul>
               <li>Download a file to your workstation</li>
-              <li>Set an Environment Variable</li>
+              <li>Set an environment variable</li>
               <li>Run shell and batch scripts</li>
             </ul>
             <aside class="notes">
@@ -228,8 +223,7 @@
             <br/><br/>
 
             <p>
-              You can also use Linux, (but you do so at
-              your own risk.)
+              but you can use Linux too - at your own risk ;-)
             </p>
             <aside class="notes">
               <ul>
@@ -257,6 +251,9 @@
                   here, tell them we have to run a
                   supported version.  Java 6 is EOL.
                 </li>
+                <li>Also you can still target Java 6 if you need to, but
+                that is an advanced topic to cover in detail,
+                mention compiler plugin config and more if necessary</li>
               </ul>
             </aside>
 	  </section>
@@ -268,7 +265,7 @@
 
             <img src="img/web/eclipse-kepler.png" width="350"/>
 
-            <p>But, you can use IntelliJ or NetBeans if
+            <p>But you can use IntelliJ or NetBeans, if
               that is what you are familiar with.</p>
 
             <p>Again, use an alternative IDE at your own
@@ -309,45 +306,44 @@
               In this class we are going to:
             </p>
             <ul>
-              <li>Learn by Doing</li>
+              <li>Learn by doing</li>
               <li>Talk "Theory" only as-needed</li>
-              <li>Emphasize Demos over Talk</li>
+              <li>Emphasize demos over talk</li>
             </ul>
-	    <aside class="notes">
-	      <ul>
-		<li>Other Maven classes emphasize theory over practice...</li>
-		<li>Takari's class is different in that we're emphasizing pragmatic, use-case driven examples.</li>
-		<li>We start with a real project example and we only explore "theory" in support of an example.</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-            <h2>Please Interrupt Me</h2>
-
-            <p>
-              If you have a question, please interrupt me.
-            </p>
-
-            <br/>
+          <aside class="notes">
             <ul>
-              <li>Ask away.</li>
-
-              <li>We've built in time for questions.</li>
-
-              <li>Questions help tailor content to specific concerns.</li>
-
+              <li>Other Maven classes emphasize theory over practice...
+              </li>
+              <li>Takari's class is different in that we're emphasizing
+                pragmatic, use-case driven examples.</li>
+              <li>We start with a real project example and we only explore
+                "theory" in support of an example.</li>
             </ul>
-            <br/><br/>
+          </aside>
+        </section>
+        <section>
+          <h2>Please Interrupt Me</h2>
+          <p>..., if you have a question.</p>
+          <br />
+          <ul>
+            <li>Ask away.</li>
+            <li>We've built in time for questions.</li>
+            <li>Questions help tailor content to specific concerns.</li>
+          </ul>
+          <br />
+          <br />
+          <p>
+            <b>Note:</b> Instructors are available after class.
+          </p>
 
-            <p><b>Note:</b> Instructors available after class.</p>
-
-            <aside class="notes">
-              <ul>
-                <li>This crowd is reticent to ask questions.</li>
-                <li>You really have to encourage it.</li>
-              </ul>
-	  </section>
-	</section>
+          <aside class="notes">
+            <ul>
+              <li>This crowd is reticent to ask questions.</li>
+              <li>You really have to encourage it.</li>
+            </ul>
+          </aside>
+        </section>
+      </section>
 	<section>
 	  <section>
             <h1>Building a Simple Project</h1>
@@ -389,30 +385,28 @@
 	  </section>
 
 	  <section>
-            <!-- TODO -->
             <h2>Module Objectives</h2>
 
             <ul>
-              <li>Introduce an Example Project</li>
+              <li>Introduce an example project</li>
               <li>Examine the pom.xml</li>
               <li>Explain directory structure</li>
               <li>Introduce coordinates</li>
               <li>Introduce dependencies</li>
             </ul>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"We're starting with a real project, not a 'Hello
-		  World' example."</li>
-		<li>After this section you'll understand enough to get
-		  started with a simple Maven build.</li>
+          <aside class="notes">
+            <ul>
+              <li>"We're starting with a real project, not a 'Hello World'
+                example."</li>
+              <li>After this section you'll understand enough to get
+                started with a simple Maven build.</li>
+              <li>Module Playlist: <a target="_new"
+                href="http://www.youtube.com/playlist?list=PLTY3FUC1M6rlrlgBwsBtd6vdrY7WqeRjh&feature=edit_ok">YouTube</a></li>
+            </ul>
+          </aside>
 
-		<li>Module Playlist: <a target="_new" href="http://www.youtube.com/playlist?list=PLTY3FUC1M6rlrlgBwsBtd6vdrY7WqeRjh&feature=edit_ok">YouTube</a></li>
-	      </ul>
-
-	    </aside>
-
-	  </section>
+        </section>
 	</section>
 	<section>
 	  <section>
@@ -438,9 +432,9 @@
 	  <section>
             <h2>First Example: Copy</h2>
 
-            <p>Introducing a Simple Example:</p>
+            <p>Introducing a simple example:</p>
 
-            <pre>$ cp examples/simple-project working</pre>
+            <pre>$ cp labs/simple-project working</pre>
 
 	    <aside class="notes">
 	      <ul>
@@ -460,7 +454,7 @@
 	  <section>
 	    <h2>First Example: Purpose</h2>
 	    
-	    <p>This example is a single-module Maven build.</p>
+	    <p>This example is a single-module Maven project.</p>
 	    
 	    <p>A command-line application which:</p>
 	    
@@ -489,7 +483,7 @@
 	    <p>A University has a Registrar to check student status.</p>
 
 	    <ul>
-	      <li>Registrar fires up a CLI application.</li>
+	      <li>Registrar fires up a CLI application</li>
 	      <li>Enters in a Student's ID Number</li>
 	      <li>Student is Full Time if Credits > 12</li>
 	    </ul>
@@ -583,8 +577,9 @@
 
 	    <p>Run the example application like this:</p>
 
-	    <pre>$ cd target
-	      $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
+	    <pre>
+$ cd target
+$ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
 
 	    <aside class="notes">
 	      <ul>
@@ -604,7 +599,7 @@
 	      <li><code>target/</code> contains build output</li>
 	      <li>Build configured the Jar Manifest</li>
 	      <li>Build copied dependencies to <code>target/</code></li>
-	      <li>Output == An Executable Jar</li>
+	      <li>Build output: an executable (!) jar file</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -624,27 +619,25 @@
 
 	<section>
 
-	  <section>
-	    <h2>What is a Maven Project?</h2>
+        <section>
+          <h2>What is a Maven Project?</h2>
+          <p>A Maven project is...
+          <ol>
+            <li>A collection of files and folders</li>
+            <li>Including a pom.xml file</li>
+          </ol>
 
-	    <p>A Maven project is...
+          <aside class="notes">
+            <ul>
+              <li>"What makes a Maven project a Maven project?"</li>
+              <li>"A pom.xml file or a Project Object Model, and..."</li>
+              <li>"...a collection of files."</li>
+            </ul>
+          </aside>
 
-	      <ol>
-		<li>A collection of files and folders.</li>
-		<li>With a pom.xml file.</li>
-	      </ol>
+        </section>
 
-	      <aside class="notes">
-		<ul>
-		  <li>"What makes a Maven project a Maven project?"</li>
-		  <li>"A pom.xml file or a Project Object Model, and..."</li>
-		  <li>"...a collection of files."</li>
-		</ul>
-	      </aside>
-
-	  </section>
-
-	  <section>
+        <section>
 	    <h2>What's in a POM?</h2>
 
 	    <img src="img/web/maven-pom-relationship.png"/>
@@ -660,37 +653,34 @@
 
 	  </section>
 
-	  <section>
-	    <h2>Everything is in the POM...</h2>
+        <section>
+          <h2>Everything is in the POM - the Basics...</h2>
+          <ul>
+            <li>Directory structure</li>
+            <li>Coordinates</li>
+            <li>Dependencies</li>
+          </ul>
 
-	    <p>Everything from the basics:</p>
+          <aside class="notes">
+            <ul>
+              <li>"The Project Object Model defines everything..."</li>
+              <li>"directories, coordinates, and dependencies..."</li>
+            </ul>
+          </aside>
+        </section>
 
-	    <ul>
-	      <li>Directory Structure</li>
-	      <li>Coordinates</li>
-	      <li>Dependencies</li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"The Project Object Model defines everything..."</li>
-		<li>"directories, coordinates, and dependencies..."</li>
-		<ul>
-	    </aside>
-	  </section>
-
-	  <section>
-	    <h2>..and Configuration</h2>
+        <section>
+	    <h2>... and Configuration</h2>
 
 	    <p>
-	      Builds are configured, plugins are
-	      configured in the POM:
+	      Plugins are configured in the POM for:
 	    </p>
 
 	    <ul>
-	      <li>Build Configuration</li>
-	      <li>Unit Testing Configuration</li>
-	      <li>Package Customizations</li>
+	      <li>Build configuration</li>
+	      <li>Unit testing configuration</li>
+	      <li>Package customizations</li>
+        <li>...</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -704,100 +694,107 @@
 
 	  </section>
 
-	  <section>
-	    <h2>...and Project "Metadata"...</h2>
+        <section>
+          <h2>...and Project "Metadata"...</h2>
+          <p>Projects often point to external resources...</p>
+          <ul>
+            <li>Repository manager configuration</li>
+            <li>Continuous integration server configuration</li>
+            <li>Project information e.g. name, description, developers,
+              organization,...</li>
+            <li>Source code management system</li>
+          </ul>
 
-	    <p>
-	      Projects often point to external resources...
-	    </p>
+          <aside class="notes">
+            <ul>
+              <li>"The POM also points to external resources such as..."
+                </li>
+              <li>all optional, some plugins use the info for various
+                things</li>
+            </ul>
+          </aside>
+        </section>
 
-	    <ul>
-	      <li>Repository Manager Configuration</li>
-	      <li>Continuous Integration Server Configuration</li>
-	      <li>Open Source Project Information*</li>
-	    </ul>
+        <section>
+          <h2>...and more</h2>
+          <ul>
+            <li><b>Container configuration</b> - servlet container or an
+              application server.</li>
+            <li><b>Custom user properties</b></li>
+            <li><b>Anything related to your build</b></li>
+          </ul>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"The POM also points to external resources such
-		  as..."</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>...and more...</h2>
+          <aside class="notes">
+            <ul>
+              <li>"The POM can really contain just about anything from..."
+                </li>
+              <li>"...configuration for a servlet container or application
+                server..."</li>
+              <li>"...to completely custom user configuration to support a
+                custom build."</li>
+            </ul>
+          </aside>
 
-	    <ul>
-	      <li><b>Container Configuration</b> - servlet container or
-		an application server.
-	      </li>
-	      <li><b>Custom User Properties</b>
-	      </li>
-	      <li><b>Anything related to your build</b></li>
-	    </ul>
+        </section>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"The POM can really contain just about anything
-		  from..."</li>
-		<li>"...configuration for a servlet container or
-		  application server..."</li>
-		<li>"...to completely custom user configuration to
-		  support a custom build."</li>
-	      </ul>
-	    </aside>
+        <section>
+          <h2>Focus on First Steps...</h2>
+          <p>Learning Maven is a process. The first steps?</p>
+          <ul>
+            <li><b>Directory structure</b></li>
+            <li><b>Coordinates</b></li>
+            <li><b>Dependencies</b></li>
+          </ul>
 
-	  </section>
+          <aside class="notes">
+            <ul>
+              <li>"This class is the first step in a long process of
+                becoming more proficient with Maven."</li>
+              <li>Just like learning any other tool or programming 
+                language, starting with a good foundation helps.</li>
+                
+            </ul>
+          </aside>
+        </section>
 
-	  <section>
-	    <h2>Focus on First Steps...</h2>
-
-	    <p>Learning Maven is a long process. The first steps?</p>
-
-	    <ul>
-	      <li><b>Directory Structure</b></li>
-	      <li><b>Coordinates & Dependencies</b></li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"This class is the first step in a long process of
-		becoming more proficient with Maven."</li>
-	      </ul>
-	    </aside>
-	  </section>
-
-	</section>
+      </section>
 
 	<section>
-	  <section>
-	    <h2>Directory Structure</h2>
+        <section>
+          <h2>Directory Structure</h2>
 
-	    <p>The first thing to understand is directory structure.</p>
+          <p>The first thing to understand:</p>
+          <ul>
+            <li>there is a directory structure</li>
+            <li>and it is based on conventions</li>
+          </ul>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"Maven projects present a standard directory
-		structure."</li>
-		<li>"A logical place to start learning about Maven's
-		conventions."</li>
-		<li>NOTE: Emphasize the fact that much of this class
-		is about learning conventions.</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
+          <aside class="notes">
+            <ul>
+              <li>"Maven projects present a standard directory structure."
+              </li>
+              <li>"A logical place to start learning about Maven's
+                conventions."</li>
+              <li>NOTE: Emphasize the fact that much of this class is 
+                about learning conventions.</li>
+              <li>Conventions are so useful that pretty much all other 
+                build tools have adopted the practice.</li>
+                
+            </ul>
+          </aside>
+        </section>
+        <section>
 	    <h2>Example Project Contents</h2>
 
 	    <p>Our example project has...</p>
-
+	    
 	    <ul>
-	      <li>Java Source Files</li>
-	      <li>Properties Files</li>
-	      <li>A Web Application Descriptor</li>
-	      <li>Javascript and HTML</li>
-	      <li>Unit Tests</li>
-	    </ul>
+	      <li>Java source files</li>
+        <li>Java unit tests</li>
+      </ul>
+      
+      <p>.. but could also have properties files, a web application 
+      descriptor, Javascript and HTML, images, and more</p>
 	    <aside class="notes">
 	      <ul>
 		<li>"What makes a 'project' a project?"</li>
@@ -812,7 +809,7 @@
 
 	    <p>Maven provides a common structure</p>
 
-	    <p>Everything "in its right place."</p>
+	    <p>"Everything in its right place."</p>
 
 	    <aside class="notes">
 	      <ul>
@@ -831,8 +828,8 @@
 	    <h2>Source and Resources</h2>
 
 	    <ul>
-	      <li><b>Source Code:</b>: <code>src/main/java</code></li>
-	      <li><b>Resources:</b>: <code>src/main/resources</code></li>
+	      <li><b>Source code:</b> <code>src/main/java</code></li>
+	      <li><b>Resources:</b> <code>src/main/resources</code></li>
 	    </ul>
 
 	    <img src="img/web/source-dirs.png"/>
@@ -853,7 +850,7 @@
 	    <h2>Web Application</h2>
 
 	    <ul>
-	      <li><b>Web Application:</b>: <code>src/main/webapp</code></li>
+	      <li><b>Web Application:</b> <code>src/main/webapp</code></li>
 	    </ul>
 
 	    <img src="img/web/webapp-dirs.png"/>
@@ -870,8 +867,8 @@
 	    <h2>Unit Tests</h2>
 
 	    <ul>
-	      <li><b>Unit Tests:</b>: <code>src/test/java</code></li>
-	      <li><b>Test Resources:</b>: <code>src/test/resources</code></li>
+	      <li><b>Unit Tests:</b> <code>src/test/java</code></li>
+	      <li><b>Test Resources:</b> <code>src/test/resources</code></li>
 	    </ul>
 
 	    <img src="img/web/test-dirs.png"/>
@@ -940,7 +937,7 @@
 	  </section>
 
 	  <section>
-	    <h2>Give me the Coordinates?</h2>
+	    <h2>Give Me the Coordinates?</h2>
 
 	    <ol>
 	      <li>Group ID</li>
@@ -1131,25 +1128,25 @@
 	    </aside>
 	  </section>
 
-	  <section>
-	    <h2>Example Coordinates</h2>
-	    
-	    <p>Open up our example project's pom.xml and see this...</p>
+        <section>
+          <h2>Example Coordinates</h2>
+          <p>Open up our example project's pom.xml and see this...</p>
+          <pre>
+&lt;project&gt;
+  &lt;groupId&gt;io.takari.training.simple&lt;/groupId&gt;
+  &lt;artifactId&gt;simple-project&lt;/artifactId&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+  ...
+&lt;/project&gt;
+          </pre>
 
-	    <pre>
-	      <project>
-		<groupId>io.takari.training.simple</groupId>
-		<artifactId>simple-project</artifactId>
-		<version>1.0-SNAPSHOT</version>
-	      </project>
-	    </pre>
+          <aside class="notes">
+            <p>"This is something that every project requires - a set of
+              coordinates for itself."</p>
+          </aside>
+        </section>
 
-	    <aside class="notes">
-	      <p>"This is something that every project requires - a set of coordinates for itself."</p>
-	    </aside>
-	  </section>
-
-	  <section>
+        <section>
 	    <h2>Example Coordinates</h2>
 
 	    <ul>
@@ -1172,12 +1169,12 @@
 	  <section>
 	    <h2>GAV Coordinate</h2>
 
-	    <p><b>G</b>roup ID, <b>A</b>rtifact ID, <b>V</b>version</p>
+	    <p><b>G</b>roup ID, <b>A</b>rtifact ID, <b>V</b>ersion</p>
 
 	    <pre>io.takari.training.simple:simple-project:1.0-SNAPSHOT</pre>
 
 	    <br/><br/>
-	    <p>This Coordinate <b>uniquely</b> identifies an
+	    <p>This coordinate set <b>uniquely</b> identifies an
 	    artifact</p>
 
 	    <aside class="notes">
@@ -1192,7 +1189,7 @@
 	  </section>
 
 	  <section>
-	    <h2>Coordinates Affects Output</h2>
+	    <h2>Coordinates Affect Output</h2>
 
 	    <img src="img/web/coordinate-to-artifact.png"/>
 
@@ -1211,7 +1208,7 @@
 	  <section>
 	    <h2>Demo: Change Coordinates</h2>
 
-	    <p>If we change a project's coordinates it will change the
+	    <p>If we change a project's coordinates, we change the
 	    project's output.</p>
 
 	    <aside class="notes">
@@ -1225,332 +1222,313 @@
 	  </section>
 
 	</section>
-	<section>
-	  <section>
-	    <h2>Dependencies</h2>
+      <section>
+        <section>
+          <h2>Dependencies</h2>
 
-	    <p>These days...</p>
+          <p>These days...</p>
 
-	    <ul>
-	      <li>No project is an island.</li>
-	      <li>You use open source libraries.</li>
-	      <li>Examples: Guice, Derby, Tomcat, etc.</li>
-	    </ul>
+          <ul>
+            <li>No project is an island</li>
+            <li>You use open source libraries</li>
+            <li>Examples: Guice, Derby, Tomcat, etc.</li>
+          </ul>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"Next we're going to discuss dependencies."</li>
-		<li>NOTE: Talk about how things have changed over the
-		years, how more OSS is used.</li>
-		<li>NOTE: Spend some time talking about the rich
-		landscape of libraries out there.</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>Example Project</h2>
+          <aside class="notes">
+            <ul>
+              <li>"Next we're going to discuss dependencies."</li>
+              <li>NOTE: Talk about how things have changed over the years,
+                how more OSS is used.</li>
+              <li>NOTE: Spend some time talking about the rich landscape of
+                libraries out there.</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Example Project</h2>
 
-	    <p>We built a web application which does the following:</p>
+          <p>We built a web application which does the following:</p>
 
-	    <ul>
-	      <li>Connects to an embedded Database</li>
-	      <li>Creates service objects</li>
-	      <li>Exposes a REST API to a...</li>
-	      <li>...client-side Javascript application</li>
-	    </ul>
+          <ul>
+            <li>Connects to an embedded database</li>
+            <li>Creates service objects</li>
+          </ul>
+          <p>Next steps could be to expose a REST API to a
+            client-side Javascript application</p>
+          
+          <aside class="notes">
+            <ul>
+              <li>NOTE: Quick read, move on slide.</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Example Project Dependencies</h2>
 
-	    <aside class="notes">
-	      <ul>
-		<li>NOTE: Quick read, move on slide.</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>Example Project Dependencies</h2>
+          <p>We assembled this project using open source libraries:</p>
 
-	    <p>We assembled this project using open source
-	    libraries:</p>
+          <ul>
+            <li>Embedded Database: HSQLDB and jDBI</li>
+            <li>Dependency Injection: Guice</li>
+            <li>REST API: Jersey</li>
+            <li>Client-side Javascript: React</li>
+          </ul>
+          <aside class="notes">
+            <ul>
+              <li>NOTE: Give a short run-down of each component, quickly.</li>
+              <li>NOTE: The point to make here is that (if a student
+                doesn't already realize it) they should think that Maven is the
+                gateway to all of these awesome projects.</li>
+            </ul>
+          </aside>
 
-	    <ul>
-	      <li>Embedded Database: HSQLDB and jDBI</li>
-	      <li>Dependency Injection: Guice</li>
-	      <li>REST API: Jersey</li>
-	      <li>Client-side Javascript: React</li>
-	    </ul>
-	    <aside class="notes">
-	      <ul>
-		<li>NOTE: Give a short run-down of each component,
-		quickly.</li>
-		<li>NOTE: The point to make here is that (if a student
-		doesn't already realize it) they should think that
-		Maven is the gateway to all of these awesome
-		projects.</li>
-	      </ul>
-	    </aside>
+        </section>
 
-	  </section>
+        <section>
+          <h2>Example pom.xml Dependencies</h2>
 
-	  <section>
-	    <h2>Example pom.xml Dependencies</h2>
-
-	    <pre>
-              <dependency>
-                <groupId>org.sonatype.aether</groupId>
-                <artifactId>aether-api</artifactId>
-                <version>1.13.1</version>
-              </dependency>
+          <pre>
+&lt;dependency&gt;
+  &lt;groupId&gt;org.sonatype.aether&lt;/groupId&gt;
+  &lt;artifactId&gt;aether-api&lt;/artifactId&gt;
+  &lt;version&gt;1.13.1&lt;/version&gt;
+&lt;/dependency&gt;
 	    </pre>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"Here is a dependency declaration for Aether"</li>
-		<li>"Note that it references a complete GAV
-		coordinate."</li>
-		<li>"In the next slide, you'll see how these
-		coordinates are mapped to a URL"</li>
-	      </ul>
-	    </aside>
+          <aside class="notes">
+            <ul>
+              <li>"Here is a dependency declaration for Aether"</li>
+              <li>"Note that it references a complete GAV coordinate."</li>
+              <li>"In the next slide, you'll see how these coordinates are
+                mapped to a URL"</li>
+            </ul>
+          </aside>
 
-	  </section>
+        </section>
 
-	  <section>
-	    <h2>Dependencies have Coordinates</h2>
+        <section>
+          <h2>Dependencies have Coordinates</h2>
 
-	    <p>Take Aether as an example:</p>
+          <p>Take Aether as an example:</p>
 
-	    <ul>
-	      <li><b>groupId:</b> org.sonatype.aether</li>
-	      <li><b>artifactId:</b> aether-api</li>
-	      <li><b>version:</b> 1.13.1</li>
-	    </ul>
+          <ul>
+            <li><b>groupId:</b> org.sonatype.aether</li>
+            <li><b>artifactId:</b> aether-api</li>
+            <li><b>version:</b> 1.13.1</li>
+          </ul>
 
-	    <aside class="notes">
-	      <ul>
-		<li>NOTE: Quick slide, keep it moving.</li>
-	      </ul>
-	    </aside>
+          <aside class="notes">
+            <ul>
+              <li>NOTE: Quick slide, keep it moving.</li>
+            </ul>
+          </aside>
 
-	  </section>
+        </section>
 
-	  <section>
-	    <h2>Maven Downloads Dependencies</h2>
+        <section>
+          <h2>Maven Downloads Dependencies</h2>
 
-	    <p>Maven turns these coordinates into a URL.</p>
+          <p>Maven turns these coordinates into a URL.</p>
 
-	    <pre>/org/sonatype/aether/aether-api/1.13.1/aether-api-1.13.1.jar</pre>
+          <pre>
+/org/sonatype/aether/
+                    aether-api/
+                               1.13.1/
 
-	    <p>Download dependencies from Central to your Local
-	    Repository.</p>
-	    
-	    <aside class="notes">
-	      <ul>
-		<li>NOTE: Again, keep the slides moving.</li>
-	      </ul>
-	    </aside>
-	  </section>
+                    aether-api-1.13.1.jar
+      </pre>
 
-	  <section>
-	    <h2>Dependencies have Scope</h2>
+          <p>Download dependencies</p>
+          <ul>
+            <li>from the Central Repository</li>
+            <li>to your Local Repository.</li>
+          </ul>
 
-	    <p>This example uses two scopes:</p>
+          <aside class="notes">
+            <ul>
+              <li>NOTE: Again, keep the slides moving.</li>
+            </ul>
+          </aside>
+        </section>
 
-	    <ul>
-	      <li>compile</li>
-	      <li>test</li>
-	    </ul>
+        <section>
+          <h2>Dependencies have Scope</h2>
+          <p>This example uses two scopes:</p>
+          <ul>
+            <li>compile</li>
+            <li>test</li>
+          </ul>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"Maven also has the concept of scope..."</li>
-		<li>"...Project depend on different artifacts for
-		different reasons."</li>
-		<li>"This example has a compile scope and a test
-		scope."</li>
-		<li>NOTE: Explain these two scopes very quickly we
-		don't need to get into the nitty-gritty.</li>
-	      </ul>
-	    </aside>
-	  </section>
+          <aside class="notes">
+            <ul>
+              <li>"Maven also has the concept of scope..."</li>
+              <li>"...Project depend on different artifacts for different
+                reasons."</li>
+              <li>"This example has a compile scope and a test scope."</li>
+              <li>NOTE: Explain these two scopes very quickly we don't need
+                to get into the nitty-gritty.</li>
+            </ul>
+          </aside>
+        </section>
+      </section>
 
-	</section>
+      <section>
+        <section>
+          <h2>In Summary...</h2>
+          <aside class="notes">
+            <ul>
+              <li>NOTE: In summary sections are meant to be fast-moving
+                reviews that signal the end of a section.</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>mvn clean install</h2>
+          <p>Building a Maven Project is straightforward.</p>
+        </section>
+        <section>
+          <h2>Project Object Model (POM)</h2>
+          <p>All Maven projects have a POM.</p>
+          <p>An XML file in pom.xml</p>
+        </section>
+        <section>
+          <h2>Projects have Coordinates</h2>
+          <p>When you create a project, you have to give it a GAV
+            coordinate.</p>
+        </section>
+        <section>
+          <h2>Projects have Dependencies</h2>
+          <p>A big feature of Maven is the ability to declare project
+            dependencies.</p>
+        </section>
+        <section>
+          <h2>Dependencies have Coordinates</h2>
+          <p>Coordinates enable Maven to go get dependencies from the
+            Central Repository.</p>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Working with Dependencies</h1>
+          <h3>First Steps</h3>
+          <p>
+            <small>Created by Jason van Zyl / <a
+              href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
+          </p>
 
-	<section>
-	  <section>
-	    <h2>In Summary...</h2>
+          <aside class="notes">
+            <p>
+              <b>Min Time: 35 minutes, Max Time: 45 minutes</b>
+            </p>
+            <ul>
+              <li>This is going to seem strange, but there's no mention of
+                a snapshot here. Most users don't need to know what a 
+                snapshot is until they think of in-house software 
+                releases. Introducing SNAPSHOTs right now is confusing.
+                </li>
 
-	    <aside class="notes">
-	      <ul>
-		<li>NOTE: In summary sections are meant to be
-		fast-moving reviews that signal the end of a
-		section.</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>mvn clean install</h2>
+              <li>Also note that this module isn't called 'Dependency
+                Management'. That's a fancy name that means nothing to a 
+                junior developer that just needs to use a new dependency.
+                </li>
 
-	    <p>Building a Maven Project is straightforward.</p>
-	  </section>
-	  <section>
-	    <h2>Project Object Model (POM)</h2>
+              <li>Module Playlist: <a target="_new"
+                href="http://www.youtube.com/playlist?list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S">YouTube</a></li>
+            </ul>
+          </aside>
+        </section>
 
-	    <p>All Maven projects have a POM.</p>
+        <section>
+          <h2>Where were we?</h2>
+          <p>In the previous section you learned that:
+          <ul>
+            <li>Dependencies have coordinates</li>
+            <li>Maven downloads dependencies</li>
+          </ul>
 
-	    <p>An XML file in pom.xml</p>
-	  </section>
-	  <section>
-	    <h2>Projects have Coordinates</h2>
+          <aside class="notes">
+            <ul>
+              <li>"In the previous section you learned about
+                dependencies..."</li>
+              <li>"...but there was some details we left out."</li>
+              <li>"In this section, we're going to round out the picture."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
 
-	    <p>When you create a project you have to give it a GAV
-	    coordinate.</p>
+          <h2>Module Objectives</h2>
 
-	  </section>
-	  <section>
-	    <h2>Projects have Dependencies</h2>
+          <ul>
+            <li>Demo: Add a new dependency
+            <li>Coordinate details (5 minutes)</li>
+            <li>Dependencies
+              <ul>
+                <li>Where do dependencies come from?</li>
+                <li>Where dependencies go?</li>
+                <li>Maven repository format</li>
+                <li>Release versions</li>
+              </ul>
+            </li>
+          </ul>
 
-	    <p>A big feature of Maven is the ability to declare
-	    project dependencies.</p>
-	  </section>
-	  <section>
-	    <h2>Dependencies have Coordinates</h2>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>Let's add a Feature</h2>
+          <p>Our web application could use some caching.</p>
+          <p>Let's add a caching library to the REST API</p>
 
-	    <p>Dependencies have coordinates, this is what enables
-	    Maven to go get them from Central.</p>
-	  </section>
-	</section>
-	<section>
-	  <section>
-	    <h1>Working with Dependencies</h1>
+          <aside class="notes">
+            <ul>
+              <li>"This is how it starts. Someone comes up with a new
+                requirement."</li>
+              <li>"We'd like to add a cache to our web application."</li>
+              <li>"Your first step should be to look for the appropriate
+                library."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Demo: To Find a New Dependency...</h2>
+          <p>
+            ... use the Central Repository at <a
+              href="http://search.maven.org">http://search.maven.org</a>
+          <p>We're looking for Guava. </p>
+          <p>Google Guava implements a cache that
+            we can use in our application.</p>
+        </section>
+        <section>
+          <h2>Wait? How did you find Guava?</h2>
+          <p>Interesting question...</p>
+          <ul>
+            <li>There's no central site to find OSS</li>
+            <li>You really just have to "know"</li>
+            <li>Talk to your peers</li>
+            <li>Follow the OSS projects</li>
+            <li>Read a lot of DZone and InfoQ</li>
+            <li>...</li>
+          </ul>
 
-	    <h3>First Steps</h3>
+          <aside class="notes">
+            <ul>
+              <li>"Now this is an interesting question. How did I know 
+                what Google Guava is?"</li>
+              <li>"How did I know that it implemented a cache?"</li>
+              <li>"The answer is just that I had a colleague who suggested
+                I use it."</li>
+              <li>NOTE: Emphasize that Central isn't the place to learn
+                about OSS.</li>
+            </ul>
+          </aside>
+        </section>
 
-	    <p>
+        <section>
+	    <h2>Demo: <br />Select the Appropriate Version</h2>
 
-	      <small>Created by Jason van Zyl
-		/ <a href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
-
-	    </p>
-
-	    <aside class="notes">
-	      <p><b>Min Time: 35 minutes, Max Time: 45 minutes</b></p>
-	      <ul>
-
-		<li>This is going to seem strange, but there's no
-		  mention of a snapshot here. Most users don't need to
-		  know what a snapshot is until they think of in-house
-		  software releases.  Introducing SNAPSHOTs right now
-		  is confusing.
-		</li>
-
-		<li>Also note that this module isn't called
-		  'Dependency Management'. That's a fancy name that
-		  means nothing to a junior developer that just needs
-		  to use a new dependency.
-		</li>
-
-		<li>Module Playlist: <a target="_new" href="http://www.youtube.com/playlist?list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S">YouTube</a></li>
-
-	      </ul>
-
-	    </aside>
-	  </section>
-
-	  <section>
-	    <h2>Where were we?</h2>
-
-	    <p>In the previous section you learned that:</li>
-
-	    <ul>
-	      <li>Dependencies have Coordinates</li>
-	      <li>Maven Downloads Dependencies</li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"In the previous section you learned about
-		dependencies..."</li>
-		<li>"...but there was some details we left out."</li>
-		<li>"In this section, we're going to round out the
-		picture."</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <!-- TODO -->
-	    <h2>Module Objectives</h2>
-
-	    <ul>
-	      <li>Demo: Add a New Dependency
-	      <li>Coordinate Details (5 minutes)</li>
-	      <li>Dependencies
-		<ul>
-		  <li>Where do dependencies come from?</li>
-		  <li>Where dependencies go?</li>
-		  <li>Repository Format</li>
-		  <li>Release Versions</li>
-		</ul>
-	      </li>
-	    </ul>
-
-	  </section>
-	</section>
-	<section>
-	  <section>
-	    <h2>Let's add a Feature</h2>
-
-	    <p>Our web application could use some caching.</p>
-
-	    <p>Let's add a Caching library to the REST API</p>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"This is how it starts. Someone comes up with a
-		new requirement."</li>
-		<li>"We'd like to add a cache to our web
-		application."</li>
-		<li>"Your first step should be to look for the
-		appropriate library."</li>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>Demo: Find a New Dependency</h2>
-
-	    <p>To find a new dependency,
-	    use <a href="http://maven.search.org">maven.search.org</a>
-
-	    <p>We're looking for Guava.  Google Guava implements a
-	    cache that we can use in our application.</p>
-	  </section>
-	  <section>
-	    <h2>Wait? How did you find Guava?</h2>
-
-	    <p>Interesting question...</p>
-
-	    <ul>
-	      <li>There's no central site to find OSS.</li>
-	      <li>You really just have to "know".</li>
-	      <li>Follow the OSS projects, OR</li>
-	      <li>Read a lot of DZone and InfoQ</li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"Now this is an interesting question.  How did I
-		know what Google Guava is?"</li>
-		<li>"How did I know that it implemented a cache?"</li>
-		<li>"The answer is just that I had a colleague who
-		suggested I use it."</li>
-		<li>NOTE: Emphasize that Central isn't the place to
-		learn about OSS.</li>
-		</ul>
-	    </aside>
-	  </section>
-
-	  <section>
-	    <h2>Demo: Select the Appropriate Version</h2>
-
-	    <p>Locating an artifact on Central.</p>
-	    <p>Show list of available versions.</p>
+	    <p>Locate an artifact on the Central Repository</p>
+	    <p>Show list of available versions</p>
 
 	    <aside class="notes">
 	      <ul>
@@ -1563,7 +1541,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Find the appropriate coordinates</h2>
+	    <h2>Demo: <br /> Find the appropriate coordinates</h2>
 
 	    <p>Once you've located the artifact, grab the
 	    coordinates.</p>
@@ -1576,24 +1554,26 @@
 		importants of really understanding coordinates.</li>
 		<li>NOTE: Might seem too straightforward, but you can
 		never be too straightforward in training.</li>
+		<li>Search for newer version of guice, search for commons-lang3, </li>
 	      </ul>
 	    </aside>
 	  </section>
-	  <section>
-	    <h2>Demo: Add the Coordinates to the POM</h2>
-
-	    <p>Once you have the appropriate coordinates add them to
-	    the POM.</p>
-
-	    <aside class="notes">
-	      <ul>
-		<li><a target="_new" href="http://www.youtube.com/watch?v=40Rw61Bl8j4&list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S">ACTION</a>: Show how the POM is updated. Add a new
-		dependency to simple-project.</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>Demo: Run the build and track the download</h2>
+        <section>
+          <h2>
+            Demo:<br />Add the Coordinates to the POM
+          </h2>
+          <p>Once you have the appropriate coordinates, add them to the POM.</p>
+          <aside class="notes">
+            <ul>
+              <li><a target="_new"
+                href="http://www.youtube.com/watch?v=40Rw61Bl8j4&list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S">ACTION</a>:
+                Show how the POM is updated. Add a new dependency to
+                simple-project.</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+	    <h2>Demo:<br />Run the build and track the download</h2>
 
 	    <p>Run the build, follow the artifact.</p>
 
@@ -1604,29 +1584,33 @@
 	      </ul>
 	    </aside>
 	  </section>
-	  <section>
-	    <h2>Demo: Modify code to use new dependency</h2>
-
-	    <p>Once the artifact is downloaded and available, we can
-	    use it.</p>
-
-	    <aside class="notes">
-	      <ul>
-		<li><a target="_new" href="http://www.youtube.com/watch?v=40Rw61Bl8j4&list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S">ACTION</a>: Demonstrate that the JAR is download and
-		that it now appears to be on the classpath for
-		compilation.</li>
-	      </u>
-	    </aside>
-	  </section>
-	</section>
+        <section>
+          <h2>
+            Demo: <br />Modify project to use new dependency
+          </h2>
+          <p>Once the artifact is downloaded and available, we can use it.
+          </p>
+          <aside class="notes">
+            <ul>
+              <li><a target="_new"
+                href="http://www.youtube.com/watch?v=40Rw61Bl8j4&list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S">ACTION</a>:
+                Demonstrate that the JAR is download and that it now 
+                appears to be on the classpath for compilation.</li>
+                <li>its just modifying the pom</li>
+                <li>show how it is added in eclipse</li>
+                <li>show how you can get javadoc and sources loaded</li>
+            </ul>
+          </aside>
+        </section>
+      </section>
 	<section>
 	  <section>
 	    <h2>Coordinate Details</h2>
 
 	    <ul>
-	      <li>Rounding out Coordinates with...</li>
-	      <li>...<code>packaging</code> and...</li>
-	      <li>...<code>classifier</code></li>
+	      <li>Rounding out Coordinates with</li>
+	      <li><code>packaging</code> and</li>
+	      <li><code>classifier</code></li>
 	    </ul>
 
 	    <aside class="notes">
@@ -1643,7 +1627,7 @@
 
 	    <ul>
 	      <li>groupId</li>
-	      <li>artifact</li>
+	      <li>artifactId</li>
 	      <li>version</li>
 	    </ul>
 
@@ -1656,95 +1640,88 @@
 	      </ul>
 	    </aside>
 	  </section>
-	  <section>
-	    <h2>Dependencies have coordinates</h2>
+        <section>
+          <h2>Dependencies have coordinates</h2>
+          <p>Our dependencies:</p>
+          <ul>
+            <li>groupId:artifactId:version</li>
+            <li>com.sample:sample-artifact:1.0</li>
+          </ul>
+          <aside class="notes">
+            <ul>
+              <li>"Here is an example of a GAV coordinate for a
+                sample-artifct"</li>
+              <li>"This syntax is shorthand for GAV."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Two more coordinates...</h2>
+          <p>In addition to the three GAV coordinates, there are two more:</p>
+          <ul>
+            <li>packaging</li>
+            <li>classifier</li>
+          </ul>
 
-	    <p>Our dependencies:</p>
+          <aside class="notes">
+            <ul>
+              <li>"There are two more coordinates in addition to GAV."</li>
+              <li>"One is extremely important and affects every Maven
+                build."</li>
+              <li>"The other is a rarely encountered coordinate."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Coordinate: Packaging</h2>
 
-	    <ul>
-	      <li>groupId:artifactId:version</li>
-	      <li>com.sample:sample-artifact:1.0</li>
-	    </ul>
+          <ul>
+            <li>Implicit value is "jar"</li>
+            <li>Influences packaging type of a build</li>
+            <li>Possible values? Anything...
+              <ul>
+                <li>zip</li>
+                <li>war</li>
+                <li>ear</li>
+                <li>sar</li>
+                <li>pom</li>
+                <li>apk</li>
+              </ul>
+            </li>
+          </ul>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"Here is an example of a GAV coordinate for a
-		sample-artifct"</li>
-		<li>"This syntax is shorthand for GAV."</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>Two more coordinates...</h2>
+          <aside class="notes">
+            <ul>
+              <li>"Packaging is an important coordinate as it affects the
+                build output."</li>
+              <li>"We haven't talked about it yet because we've been
+                relying on the default value which is 'jar'."</li>
+              <li>"Later in the class we'll see how packaging starts to
+                affect the steps in a build."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Coordinate: Classifier</h2>
+          <ul>
+            <li>Rarely used</li>
+            <li>Can be used for:
+              <ul>
+                <li>JDK compatibility</li>
+                <li>Extra Packages and Assemblies</li>
+              </ul>
+            </li>
+          </ul>
 
-	    <p>In addition to the three GAV coordinates, there are two
-	    more:</p>
-
-	    <ul>
-	      <li>packaging</li>
-	      <li>classifier</li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"There are two more coordinates in addition to
-		GAV."</li>
-		<li>"One is extremely important and affects every
-		Maven build."</li>
-		<li>"The other is a rarely encountered
-		coordinate."</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>Coordinate: Packaging</h2>
-
-	    <ul>
-	      <li>Implicit value is "jar"</li>
-	      <li>Influences packaging type of a build</li>
-	      <li>Possible values? Anything...
-		<ul>
-		  <li>zip</li>
-		  <li>war</li>
-		  <li>ear</li>
-		  <li>sar</li>
-		</ul>
-	      </li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"Packaging is an important coordinate as it
-		affects the build output."</li>
-		<li>"We haven't talked about it yet because we've been
-		relying on the default value which is 'jar'."</li>
-		<li>"Later in the class we'll see how packaging starts
-		to affect the steps in a build."</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
-	    <h2>Coordinate: Classifier</h2>
-
-	    <ul>
-	      <li>Rarely used</li>
-	      <li>Classified can be used for:
-		<ul>
-		  <li>JDK compatibility</li>
-		  <li>Extra Packages and Assemblies</li>
-		</ul>
-	      </li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"Classifier is rarely used, and we're not going to
-		go into too many details about it in this class."</li>
-		<li>"But the two use cases listed above are..."</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
+          <aside class="notes">
+            <ul>
+              <li>"Classifier is rarely used, and we're not going to go
+                into too many details about it in this class."</li>
+              <li>"But the two use cases listed above are..."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
 	    <h2>Summary: There are 5 Coordinates</h2>
 
 	    <ul>
@@ -1783,7 +1760,7 @@
 	  <section>
 	    <h2>Maven sees a Coordinate</h2>
 
-	    <p>When you configure a dependency in a pom.xml Maven sees
+	    <p>When you configure a dependency in a pom.xml,<br /> Maven sees
 	    a coordinate.</p>
 
 	    <p><code>com.sample:sample-artifact:1.0:jar</code></p>
@@ -1821,7 +1798,7 @@
 	    <p>Breaking this URL down into component sections:</p>
 
 	    <ul>
-	      <li>http://repo1.maven.org</li>
+	      <li>Repository URL (default is http://repo1.maven.org/maven2)</li>
 	      <li>/{groupId}</li>
 	      <li>/{artifactId}</li>
 	      <li>/{version}</li>
@@ -1841,7 +1818,7 @@
 	  <section>
 	    <h2>Maven Downloads the Dependency</h2>
 
-	    <p>It also download a POM at the same coordinates...</p>
+	    <p>It also downloads a POM at the same coordinates...</p>
 
 	    <img src="img/web/maven-download-artifact.png"/>
 
@@ -1850,12 +1827,13 @@
 	    <aside class="notes">
 	      <ul>
 		<li>"With these coordinates, Maven then proceeds to
-		download artifacts from Maven Central."</li>
+		download artifacts from the Central Repository."</li>
 		<li>"But Maven also downloads something else.  Every
 		artifact in Central also has its own POM."</li>
 		<li>NOTE: Emphasize this point that Maven downloads
 		more than just a JAR. Compare and contrast with
 		managing your own JAR files in an Ant build.</li>
+    <li>The POM of the project is just the pom.xml used</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -1866,7 +1844,7 @@
 
 	    <img src="img/web/maven-download-artifact-poms.png"/>
 
-	    <p>...then it grabs your dependencies dependencies...</p>
+	    <p>...then it grabs your dependencies dependenciesm</p>
 
 	    <p>...and so on.</p>
 
@@ -1905,7 +1883,7 @@
 	    </aside>
           </section>
 	  <section>
-	    <h2>Demo: Show Complex Dependency Graph</h2>
+	    <h2>Demo: <br />Show Complex Dependency Graph</h2>
 
 	    <p>Take a look at a large project's dependency graph</p>
 	    <aside class="notes">
@@ -1915,40 +1893,40 @@
 	      </ul>
 	    </aside>
 	  </section>
-	  <section>
-	    <h2>Maven then Creates a Classpath</h2>
+        <section>
+          <h2>Maven then Creates a Classpath</h2>
 
-	    <p>There are a few different classpaths:</p>
+          <p>There are a few different classpaths:</p>
 
-	    <ul>
-	      <li>Classpath for Compilation</li>
-	      <li>Classpath for Testing</li>
-	      <li>Classpath for Packaging</li>
-	      <li>Classpath at Runtime</li>
-	    </ul>
+          <ul>
+            <li>for compilation</li>
+            <li>for test execution</li>
+            <li>for packaging</li>
+            <li>for runtime usage</li>
+          </ul>
 
-	    <aside class="notes">
-	      <ul>
-		<li>"When Maven is create these dependency graphs for
-		a project what it is doing is making sure that it has
-		enough dependencies to create the necessary classpaths
-		for different stages of the build."</li>
-		<li>NOTE: Explain each.</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
+          <aside class="notes">
+            <ul>
+              <li>"When Maven is create these dependency graphs for a
+                project what it is doing is making sure that it has 
+                enough dependencies to create the necessary classpaths for 
+                different stages of the build."</li>
+              <li>NOTE: Explain each.</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
 	    <h2>Dependency Scopes</h2>
 
 	    <p>Maven has several scopes, here are two:</p>
 
-	    <ul>
-	      <li><b>compile</b> - Classpath for Compilation, Testing,
-	      Packaging, and Runtime</li>
-	      <li><b>test</b> - Classpath for Testing Only</li>
-	    </ul>
+          <ul>
+            <li><b>compile</b> - for compilation, packaging, and runtime
+              </li>
+            <li><b>test</b> - for test compilation and execution</li>
+          </ul>
 
-	    <aside class="notes">
+          <aside class="notes">
 	      <ul>
 		<li>"Now there are more scopes than this in Maven, but
 		for the purposes of this class we'll talk about
@@ -1963,7 +1941,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Dependency Resolution Result for Compile
+	    <h2>Demo:<br /> Dependency Resolution Result for Compile
 	    Scope</h2>
 
 	    <aside class="notes">
@@ -1977,7 +1955,7 @@
 
 	  </section>
 	  <section>
-	    <h2>Demo: Add a Dependency to the Test Scope</h2>
+	    <h2>Demo: <br />Add a Dependency to the Test Scope</h2>
 	    <aside class="notes">
 	      <p><a target="_new" href="http://www.youtube.com/watch?v=s6YtB9wy9HU&list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S&index=5">ACTION</a>: Add a dependency to the test scope, modify
 	      test code, run the build.</p>
@@ -1987,18 +1965,21 @@
 	  </section>
 	</section>
 	<section>
-	  <section>
-	    <h2>Summary: Coordinates and Dependencies</h2>
-	    <aside class="notes">
-	      <ul>
-		<li>"We lead this class with coordinates and
-		dependencies because both will be an important part of
-		your work with Maven."</li>
-		<li>"This is also an area that demands you understand
-		the fundamentals."</li>
-	    </aside>
-	  </section>
-	  <section>
+        <section>
+          <h2>
+            Summary: <br />Coordinates and Dependencies
+          </h2>
+          <aside class="notes">
+            <ul>
+              <li>"We lead this class with coordinates and dependencies
+                because both will be an important part of your work with
+                Maven."</li>
+              <li>"This is also an area that demands you understand the
+                fundamentals."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
 	    <h2>It's easy to manage dependencies</h2>
 	    <aside class="notes">
 	      <ul>
@@ -2050,7 +2031,7 @@
 	    <aside class="notes">
 	      <ul>
 		<li>"Maven then generates a graph (or a tree) to model
-		a project's depdnencies."</li>
+		a project's dependencies."</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2099,7 +2080,7 @@
 		    <li>Hint at full story..</li>
 		    <li>Goals</li>
 		    <li>Plugins</li>
-		    <li>Plugin Configuration</li>
+		    <li>Plugin configuration</li>
 		    <li>Reporting</li>
 		  </ul>
 		</li>
@@ -2123,7 +2104,7 @@
 	    dependencies.</p>
 
 	    <p>Now, we're going to dive into Maven's execution model
-	    by learning how Maven executes Unit Tests.</p>
+	    by learning how Maven executes unit tests.</p>
 
 	    <aside class="notes">
 	      <ul>
@@ -2136,16 +2117,15 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <!-- TODO -->
 	    <h2>Module Objectives</h2>
 	    
 	    <ul>
-	      <li>Introduce Surefire Plugin</li>
-	      <li>Demonstrate Surefire Plugin</li>
-	      <li>Running a Single Test</li>
-	      <li>Including and Excluding Tests</li>
-	      <li>Discuss Test Resources</li>
-	      <li>Demonstrate Test Resources</li>
+	      <li>Introduce Surefire plugin</li>
+	      <li>Demonstrate Surefire plugin</li>
+	      <li>Running a single test</li>
+	      <li>Including and excluding tests</li>
+	      <li>Discuss test resources</li>
+	      <li>Demonstrate test resources</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -2163,7 +2143,7 @@
 	</section>
 	<section>
 	  <section>
-	    <h2>Demo: Execute Unit Tests</h2>
+	    <h2>Demo:<br /> Execute Unit Tests</h2>
 
 	    <p>Open test-example and execute unit tests.</p>
 
@@ -2177,7 +2157,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Execute a Single Unit Test</h2>
+	    <h2>Demo:<br /> Execute a Single Unit Test</h2>
 
 	    <p>Pinpoint one unit test and run it.</p>
 
@@ -2186,39 +2166,42 @@
 		<li><a target="_new" href="http://www.youtube.com/watch?v=pnu_73Pzrv0&list=PLTY3FUC1M6rliDMpNGnDZBugjmj2bIMpb">ACTION</a>: Single out one test, run it with the
 		Surefire plugin.</li>
 		<li>NOTE: The goal here is to show how this is
-		configured via the command-line.</li>
+		configured via the command-line.
+		</li>
+		<li>mvn test -Dtest=StudentTest</li>
 	      </ul>
 	    </aside>
 
 	  </section>
-	  <section>
-	    <h2>What happened here?</h2>
+        <section>
+          <h2>What happened here?</h2>
+          <ul>
+            <li>Instead of packging a project...</li>
+            <li>We executed unit tests</li>
+            <li>Unit testing is the domain of the...</li>
+          </ul>
+          <p>
+            <b>Maven Surefire Plugin</b>
+          </p>
 
-	    <ul>
-	      <li>Instead of packging a project...</li>
-	      <li>We executed Unit Tests</li>
-	      <li>Unit Testing is the domain of the...</li>
-	    </ul>
-
-	    <p><b>...Maven Surefire Plugin</b></p>
-
-	    <aside class="notes">
-	      <ul>
-		<li>NOTE: Important point, we were able to run only a
-		portion of the build.</li>
-		<li>"We'll dive into what the meaning of test is
-		later, but for now let's focus on what happened."</li>
-	    </aside>
-	  </section>
-	</section>
+          <aside class="notes">
+            <ul>
+              <li>NOTE: Important point, we were able to run only a 
+                portion of the build.</li>
+              <li>"We'll dive into what the meaning of test is later, but
+                for now let's focus on what happened."</li>
+            </ul>
+          </aside>
+        </section>
+      </section>
 	<section>
 	  <section>
-	    <h2>What's a Plugin? Quickly.</h2>
+	    <h2>What is a Plugin? Quickly.</h2>
 
 	    <p>If you use Maven you'll need to understand:</p>
 
 	    <ul>
-	      <li>That most of what happens in Maven happens in plugins.</li>
+	      <li>That most of what happens in Maven, happens in plugins.</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -2253,11 +2236,9 @@
 	  </section>
 	  <section>
 	    <h2>Every Goal is in a Plugin</h2>
-
-	    <p>Every goal is cotained in a plugin.</p>
-
-	    <p>In Maven, the Surefire plugin is responsible for Unit
-	    Testing.</p>
+	    <p>Every goal is contained in a plugin.</p>
+	    <p>In Maven, the Surefire plugin is responsible for unit testing.
+      </p>
 
 	    <img src="img/web/plugin.png"/>
 
@@ -2297,9 +2278,8 @@
 
 	    <p>When we run "mvn test" we invoke a phase.</p>
 
-	    <p>The Surefire "test" goal is bound to this
-	      <phase>phase</phase>
-	      .
+	    <p>The Surefire <goal>test</goal> goal is bound to this 
+        <phase>phase</phase>.
 	    </p>
 
 	    <p>It's a default. (We'll learn more about this later.)</p>
@@ -2357,6 +2337,7 @@
 		<li>NOTE: Important point, this makes it easy for a
 		developer to understand how to work with a
 		project.</li>
+    </ul>
 	    </aside>
 	  </section>
 	  <section>
@@ -2377,10 +2358,11 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Demonstrate Tests Failing a Build</h2>
+	    <h2>Demo:<br /> Demonstrate Tests Failing a Build</h2>
 
-	    <p>By default, a failing test with fail the entire Maven
-	    build.  Here's how...<p>
+	    <p>By default, a failing test will fail the entire Maven
+	    build.</p>
+      <p>Here's how...</p>
 
 	    <aside class="notes">
 	      <p><a target="_new" href="http://www.youtube.com/watch?v=TKN7kjH0qkA&list=PLTY3FUC1M6rliDMpNGnDZBugjmj2bIMpb">ACTION</a>: Execute the simple-project project with a test
@@ -2392,7 +2374,7 @@
 
 	  </section>
 	  <section>
-	    <h2>Demo: Using a Command-line Option to Skip Tests</h2>
+	    <h2>Demo:<br /> Using a Command-line Option to Skip Tests</h2>
 
 	    <p>In a particularly large project it often makes sense to
 	    skip tests:</p>
@@ -2402,6 +2384,12 @@
 	      complete.</li>
 	      <li>Or, there could be failing tests.</li>
 	    </ul>
+
+      <p>Let's try</p>	    
+	    <pre>
+mvn install -DskipTests=true
+mvn install -Dmaven.test.skip=true
+      </pre
 
 	    <aside class="notes">
 	      <p><a target="_new" href="http://www.youtube.com/watch?v=fXyp6ipNFvM&list=PLTY3FUC1M6rliDMpNGnDZBugjmj2bIMpb">ACTION</a>: Demonstrate plugin configuration from the
@@ -2414,14 +2402,15 @@
 
 	  </section>
 	  <section>
-	    <h2>Modifying Plugin Behavior from Command-line</h2>
+	    <h2>Modifying Plugin Behavior <br />
+	     - from the Command-line</h2>
 
 	    <p>What just happened?</p>
 
 	    <ul>
 	      <li>The Surefire Plugins's...</li>
-	      <li>...Test goal...</li>
-	      <li>...changed behavior based on a command-line
+	      <li><goal>test</goal> goal ...</li>
+	      <li>changed behavior based on a command-line
 	      argument.</li>
 	    </ul>
 
@@ -2479,18 +2468,19 @@
 	    <h2>Demo: Show simple HTML Report</h2>
 
 	    <p>View the HTML generated by the Site plugin.</p>
-
+<aside class="notes">
 	    <ul>
 	      <li><a target="_new" href="http://www.youtube.com/watch?v=JOaqATYmUSI&list=PLTY3FUC1M6rliDMpNGnDZBugjmj2bIMpb">ACTION</a>: Generate a simple-project site.</li>
 	      <li>Show the Surefire report detailing
 	      successful and failing tests.</li>
 	    </ul>
+      </aside>
 	  </section>
 	  <section>
 	    <h2>Surefire Reports</h2>
 
-	    <p>Surefire is an example of a Maven plugin which
-	    generates data that can be reported on.</p>
+	    <p>Surefire is an example of a Maven plugin, which
+	    generates data, that can be reported on.</p>
 
 	    <p>This enables integration with 3rd-party tools like
 	    Eclipse, Jenkins, and Sonar.</p>
@@ -2512,7 +2502,7 @@
 	  <section>
 	    <h2>Summary</h2>
 
-	    <p>You've just encountered quite a bit that needs to be explained....</p>
+	    <p>You've just encountered quite a bit, that needs to be explained....</p>
 
 	    <aside class="notes">
 	      <ul>
@@ -2548,7 +2538,7 @@
 
 	    <p>Similar goals are assembled into Plugins.</p>
 
-	    <aside class="note">
+	    <aside class="notes">
 	      <ul>
 		<li>"Everything in Maven happens in plugins and
 		goals."</li>
@@ -2573,7 +2563,7 @@
 		<li>"This is just a start, but we can modify and
 		customize how Maven works."</li>
 		<li>"In the next section we're going to see more
-		options for coniguring Maven."</li>
+		options for configuring Maven."</li>
 		<li>"But, we've seen how to alter the default
 		configuration for the Surefire plugin."</li>
 	      </ul>
@@ -2608,7 +2598,7 @@
 	    upon.</p>
 
 	    <ul>
-	      <li>Standard Directory Layout</li>
+	      <li>Standard directory layout</li>
 	      <li>How tests are executed</li>
 	      <li>When tests are executed</li>
 	    </ul>
@@ -2679,13 +2669,13 @@
 	    Plugin.</p>
 
 	    <ul>
-	      <li>Tests are integral to a build.</li>
-	      <li>Surefire plugin has a Test goal.</li>
-	      <li>This goal can be configure.</li>
-	      <li>Tests generate reports.</li>
+	      <li>Tests are integral to a build</li>
+	      <li>Surefire plugin has a Test goal</li>
+	      <li>This goal can be configured</li>
+	      <li>Tests generate reports</li>
 	    </ul>
 
-	    <aside class="note">
+	    <aside class="notes">
 	      <ul>
 		<li>Last module was "foreshadowing"</li>
 		<li>Now, you'll really show them goals, plugins,
@@ -2695,17 +2685,11 @@
 	  </section>
 
 	  <section>
-	    <!-- TODO -->
 	    <h2>Module Objectives</h2>
 
 	    <ul>
 	      <li>What is a Goal?
-		<ul>
-		  <li>When you run a Maven build...</li>
-		  <li>Goals, Plugins... == LIFECYCLE
-		  </li>
-		</ul>
-	      </li>
+		    </li>
 	      <li>What is the Lifecycle?</li>
 
 	      <li>Convention over configuration</li>
@@ -2735,7 +2719,7 @@
 
 	    <ul>
 	      <li>A single action.</li>
-	      <li>Configurable from the Command-line</li>
+	      <li>Configurable from the command-line</li>
 	      <li>Take a look at this goals configurable
 	      properties...</li>
 	    </ul>
@@ -2757,19 +2741,20 @@
 	    <p>The best way to understand the configuration options
 	    for a plugin is to...</p>
 
-	    <p>Look at
-		the <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">test
+	    <p>look at
+		the <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">
 		goal documentation</a>.</p>
 	    <aside class="notes">
 	      <ul>
 		<li><a target="_new" href="http://www.youtube.com/watch?v=YuX9ywxD8DY&list=PLTY3FUC1M6rmasFnZ5Z1AHM0SU63MAisx">ACTION</a>: Load the Goal documentation
-		rom <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html</a>
+		from <a href="http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html">http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html</a>
 		</li>
 		<li>ACTION: Show the description, full name, and
 		properties.</li>
 		<li>NOTE: REALLY DWELL ON THIS. Reading Plugin
 		documentation is *most important skill* from this
 		class.</li>
+		<li>Dig in to find the skipTests and maven.test.skip properties</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2784,7 +2769,7 @@
 	      <li>It creates a package.</li>
 	    </ul>
 
-	    <p>Each of these actions is encpaulated in a goal.</p>
+	    <p>Each of these actions is encapsulated in a goal.</p>
 
 	    <aside class="notes">
 	      <ul>
@@ -2798,7 +2783,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Goal Documentation for compile</h2>
+	    <h2>Demo:<br />Goal Documentation for compile</h2>
 
 	    <p>The project compiles Java code, right? Well...</p>
 
@@ -2819,7 +2804,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Customize the Compile Goal</h2>
+	    <h2>Demo:<br /> Customize the Compile Goal</h2>
 
 	    <p>Target different Java versions with "source" and
 	    "target".</p>
@@ -2845,20 +2830,20 @@
 	    configured in a POM.</p>
 
 	    <pre>
-	      <project>
-		<build>
-		  <plugins>
-		    <plugin>
-		      <groupId>org.apache.maven.plugins</groupId>
-		      <artifactId>maven-compiler-plugin</artifactId>
-		      <configuration>
-			<source>7</source>
-			<target>7</target>
-		      </configuration>
-		    </plugin>
-		  </plugins>
-		</build>
-	      </project>
+&lt;project&gt;
+  &lt;build&gt;
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+        &lt;configuration&gt;
+          &lt;source&gt;7&lt;/source&gt;
+          &lt;target&gt;7&lt;/target&gt;
+        &lt;/configuration&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+&lt;/project&gt;
 	    </pre>
 
 	    <aside class="notes">
@@ -2875,7 +2860,7 @@
 
 	  </section>
 	  <section>
-	    <h2>Demo: Configure Compile Goal in POM</h2>
+	    <h2>Demo:<br /> Configure Compile Goal in POM</h2>
 
 	    <p>Let's use that previous example in a POM and see what happens.</p>
 
@@ -2890,6 +2875,7 @@
 		<li>"Once you understand the structures 'goals and
 		plugins' and how to configure goal execution, you
 		understand the core fundamentals of Maven"</li>
+    <li>also show how Eclipse automatically adapts the project
 	      </ul>
 	    </aside>
 	  </section>
@@ -2897,12 +2883,13 @@
 	    <h2>Configuring a Goal Execution</h2>
 
 	    <p>In the last demonstration we configured a Goal
-	    Execution.</p>
+	    execution.</p>
 
 	    <ul>
-	      <li>Goals are Executed at a Stage in the Lifecycle</li>
-	      <li>The Lifecycle is a Sequence of Phases</li>
-	      <li>...more on this later.</li>
+	      <li>Goals are executed at a specific stage in the lifecycle</li>
+	      <li>The Lifecycle is a sequence of stages</li>
+        <li>called "phases" 
+	      <li>...more on this later</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -2939,7 +2926,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Maven Surefire Plugin Documentation</h2>
+	    <h2>Demo:<br /> Maven Surefire Plugin Documentation</h2>
 
 	    <ul>
 	      <li>surefire:help</li>
@@ -2958,7 +2945,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Maven Compiler Plugin Documentation</h2>
+	    <h2>Demo:<br />Maven Compiler Plugin Documentation</h2>
 
 	    <ul>
 	      <li>compiler:compiler</li>
@@ -2976,7 +2963,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Maven War Plugin Documentation</h2>
+	    <h2>Demo:<br />Maven War Plugin Documentation</h2>
 
 	    <ul>
 	      <li>war:exploded</li>
@@ -2989,14 +2976,14 @@
 	    <aside class="notes">
 	      <ul>
 		<li><a target="_new" href="http://www.youtube.com/watch?v=RMb8hUoxIp0&list=PLTY3FUC1M6rmasFnZ5Z1AHM0SU63MAisx">ACTION</a>: Show the documentation page.</li>
-		<li>Discuss which goals are frequency used in a POM.</li>
+		<li>Discuss which goals are frequently used in a POM.</li>
 	      </ul>
 	    </aside>
 	  </section>
 	  <section>
 	    <h2>Plugins have Coordinates</h2>
 
-	    <p>Now, let's tie plugins back to dependencies.  Plugins
+	    <p>Now, let's tie plugins back to dependencies. Plugins
 	    are a lot like dependencies - they have coordinates:</p>
 
 	    <ul>
@@ -3020,7 +3007,7 @@
 	    <h2>Plugins are Artifacts</h2>
 
 	    <p>Maven downloads plugins as needed.</p>
-	    <p><b><i>Just like depednencies.</i></b></p>
+	    <p><b><i>Just like dependencies.</i></b></p>
 	    <br/><br/>
 	    <p>Also... Maven can have more than one version of a
 	    plugin.</p>
@@ -3037,7 +3024,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Show Maven Downloading Plugins</h2>
+	    <h2>Demo:<br /> Show Maven Downloading Plugins</h2>
 
 	    <p>Let's modify a POM and change a plugin version.</p>
 
@@ -3054,7 +3041,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Configuring Goals at Plugin Level</h2>
+	    <h2>Demo:<br />Configuring Goals at Plugin Level</h2>
 
 	    <p>Plugins can be configured at different "levels".</p>
 
@@ -3077,7 +3064,7 @@
 
 	    <ul>
 	      <li>From the command-line</li>
-	      <li>In a Goal Execution</li>
+	      <li>In a goal execution</li>
 	      <li>In the plugin configuration</li>
 	    </ul>
 
@@ -3137,7 +3124,7 @@
 
 	    <ul>
 	      <li>A single, linear series of steps (or phases)</li>
-	      <li>Goals are bound to these <phase>phases</phase>.
+	      <li><goal>Goals</goal> are bound to these <phase>phases</phase>.
 	      </li>
 	    </ul>
 
@@ -3151,29 +3138,17 @@
 	    <h2>The Default Lifecycle</h2>
 
 	    <pre><phases>
-  <phase>validate</phase>
-  <phase>initialize</phase>
-  <phase>generate-sources</phase>
-  <phase>process-sources</phase>
-  <phase>generate-resources</phase>
-  <phase>process-resources</phase>
-  <phase>compile</phase>
-  <phase>process-classes</phase>
-  <phase>generate-test-sources</phase>
-  <phase>process-test-sources</phase>
-  <phase>generate-test-resources</phase>
-  <phase>process-test-resources</phase>
-  <phase>test-compile</phase>
-  <phase>process-test-classes</phase>
+  <phase>validate</phase>, <phase>initialize</phase>
+  <phase>generate-sources</phase>, <phase>process-sources</phase>
+  <phase>generate-resources</phase>, <phase>process-resources</phase>
+  <phase>compile</phase>, <phase>process-classes</phase>
+  <phase>generate-test-sources</phase>, <phase>process-test-sources</phase>, 
+  <phase>generate-test-resources</phase>, <phase>process-test-resources</phase>
+  <phase>test-compile</phase>, <phase>process-test-classes</phase>, 
   <phase>test</phase>
-  <phase>prepare-package</phase>
-  <phase>package</phase>
-  <phase>pre-integration-test</phase>
-  <phase>integration-test</phase>
-  <phase>post-integration-test</phase>
-  <phase>verify</phase>
-  <phase>install</phase>
-  <phase>deploy</phase>
+  <phase>prepare-package</phase>, <phase>package</phase>
+  <phase>pre-integration-test</phase>, <phase>integration-test</phase>, <phase>post-integration-test</phase>, <phase>verify</phase>
+  <phase>install</phase>, <phase>deploy</phase>
 </phases></pre>
 
 	    <aside class="notes">
@@ -3182,6 +3157,7 @@
 		<li>You can customize this, but that falls outside the
 		scope of this class.</li>
 		<li>It is also not very common.</li>
+    <li>Demo: Run "mvn"" to see the list in error message.</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -3203,7 +3179,7 @@
 
 	  </section>
 	  <section>
-	    <h2>Demo: Running Phases: Test</h2>
+	    <h2>Demo:<br />Running Phases: Test</h2>
 
 	    <p><code>mvn test</code></p>
 
@@ -3216,7 +3192,7 @@
 
 	  </section>
 	  <section>
-	    <h2>Demo: Running Phases: Install</h2>
+	    <h2>Demo:<br />Running Phases: Install</h2>
 
 	    <p><code>mvn install</code></p>
 
@@ -3231,32 +3207,25 @@
 	  <section>
 	    <h2>Default Lifecycle Bindings</h2>
 
-	    <pre><phases>
-  <process-resources>
-    org.apache.maven.plugins:maven-resources-plugin:2.6:resources
-  </process-resources>
-  <compile>
-    org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile
-  </compile>
-  <process-test-resources>
-    org.apache.maven.plugins:maven-resources-plugin:2.6:testResources
-  </process-test-resources>
-  <test-compile>
-    org.apache.maven.plugins:maven-compiler-plugin:2.5.1:testCompile
-  </test-compile>
-  <test>
-    org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test
-  </test>
-  <package>
-    org.apache.maven.plugins:maven-jar-plugin:2.4:jar
-  </package>
-  <install>
-    org.apache.maven.plugins:maven-install-plugin:2.4:install
-  </install>
-  <deploy>
-    org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy
-  </deploy>
-</phases></pre>
+      <dl>
+  <dt>process-resources</dt>
+  <dd>org.apache.maven.plugins:maven-resources-plugin:2.6:resources</dd>
+  <dt>compile</dt>
+  <dd>org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile</dd>
+  <dt>process-test-resources</dt>
+  <dd>org.apache.maven.plugins:maven-resources-plugin:2.6:testResources</dd>
+  <dt>test-compile</dt>
+  <dd>org.apache.maven.plugins:maven-compiler-plugin:2.5.1:testCompile</dd>
+  <dt>test</dt>
+  <dd>org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test</dd>
+  <dt>package</dt>
+  <dd>org.apache.maven.plugins:maven-jar-plugin:2.4:jar</dd>
+  <dt>install</dt>
+  <dd>org.apache.maven.plugins:maven-install-plugin:2.4:install</dd>
+  <dt>deploy</dt>
+  <dd>org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy</dd>
+      </dl>
+
 
 	    <aside class="notes">
 	      <p>"This is the default lifecycle"</p>
@@ -3271,7 +3240,7 @@
 	    <p>This is explored later in the class.</p>
 
 	    <aside class="notes">
-	      <p>"So you understand you the lifecycle works and how
+	      <p>"So you understand how the lifecycle works and how
 	      goals are bound to the lifecycle by default, but to
 	      really take advantage of Maven you have to understand
 	      how to customize the lifecycle."</p>
@@ -3282,13 +3251,13 @@
 	  <section>
 	    <h2>Summary</h2>
 
-	    <p>Goals -> Plugins -> THE LIFECYCLE</p>
+	    <p>Goals -> Plugins -> Lifecycle</p>
 	  </section>
 	  <section>
 	    <h2>Plugins are Artifacts</h2>
 
 	    <ul>
-	      <li>Plugins are Artifacts</li>
+	      <li>Plugins are artifacts</li>
 	      <li>They have coordinates</li>
 	      <li>Maven downloads them on-demand</li>
 	    </ul>
@@ -3297,7 +3266,7 @@
 	    <h2>Plugins Aggregate Goals</h2>
 	    
 	    <ul>
-	      <li>Plugins collect similar goals together.</li>
+	      <li>Plugins collect similar goals together</li>
 	    </ul>
 	  </section>
 	  <section>
@@ -3311,7 +3280,7 @@
 	    <h2>Goals Bind to Phases</h2>
 
 	    <ul>
-	      <li>When you execute goals you bind them to phases in
+	      <li>When you execute goals, you bind them to phases in
 	      the Maven Lifecycle.</li>
 	    </ul>
 
@@ -3321,16 +3290,17 @@
 
 	    <ul>
 	      <li>The Lifecycle is everything.</li>
-	      <li>Understand the Lifecycle and Maven will Make Sense.</li>
+	      <li>Understand the Lifecycle and Maven will make sense.</li>
 	    </ul>
 	  </section>
 	  <section>
-	    <h2>There is a Default Lifecycle</h2>
+	    <h2>Default Lifecycle</h2>
 
 	    <ul>
-	      <li>The only reason Maven does anything by default?</li>
-	      <li>The is a default Maven lifecycle...</li>
-	      <li>...with default lifecycle bindings.</li>
+	      <li>The only reason Maven does anything by default.</li>
+	      <li>There is a default lifecycle...</li>
+	      <li>...with default lifecycle bindings</li>
+        <li>...defined within Maven itself.</li>
 	    </ul>
 	  </section>
 	</section>
@@ -3378,8 +3348,9 @@
 	    <p>In the previous sections:</p>
 
 	    <ul>
-	      <li>You've learned about Plugins</li>
-	      <li>You understand the lifecycle.</li>
+	      <li>You've learned about plugins</li>
+	      <li>and the lifecycle</li>
+        <li>and how they relate to each other.</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -3392,37 +3363,34 @@
 	      </ul>
 	    </aside>
 	  </section>
-	  <section>
-	    <!-- TODO -->
-	    <h2>Module Objectives</h2>
+        <section>
+          <h2>Module Objectives</h2>
+          <p>This module does two things.</p>
+          <ul>
+            <li>It focuses on the WAR plugin</li>
+            <li>and it uses a simple Assembly:</li>
+          </ul>
+          <p>Remember the lifecycle from the previous section, well the
+            packaging changes it...</p>
+          <ul>
+            <li>Demonstrate packaging</li>
+            <li>Demonstrate (but don't fully delve into) the Assembly
+              plugin</li>
+            <li>Build a program that creates a jar with dependencies</li>
+            <li>Introduce SNAPSHOT versions</li>
+          </ul>
 
-	    <p>This module does two things. It focuses on the WAR
-	      plugin and it uses a simple Assembly:</p>
+          <aside class="notes">
+            <ul>
+              <li>"In this module we're going to learn how to customize
+                the packages that Maven creates."</li>
+              <li>"We're also ready to talk about what the difference is
+                between a release and a SNAPSHOT."</li>
+            </ul>
+          </aside>
 
-	    <ul>
-	      <li>Remember the lifecycle from the previous section,
-		well the packaging changes it...</li>
-	      <ul>
-		<li>Demonstrate Packaging</li>
-		<li>Demonstrate (but don't fully delve into) the
-		  Assembly plugin</li>
-		<li>Build a program that creates a jar with
-		  dependencies</li>
-		<li>Introduce SNAPSHOT versions</li>
-	      </ul>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"In this module we're going to learn how to
-		customizes the packages that Maven creates."</li>
-		<li>"We're also ready to talk about what the
-		difference is between a release and a SNAPSHOT."</li>
-	      </ul>
-	    </aside>
-
-	  </section>
-	</section>
+        </section>
+      </section>
 	<section>
 	  <section>
 	    <h2>Creating Packages</h2>
@@ -3434,11 +3402,11 @@
 	      <li><b>Java applications</b> are packaged and
 		distributed: JARs, WARs, EARs.</li>
 	      <li><b>Alternative package formats</b> ZIP, Tarball,
-		other language formats such as gems and npm
+		other language formats such as aar, gems and npm
 		packages.</li>
 	    </ul>
 
-	    <aside class="note">
+	    <aside class="notes">
 	      <ul>
 		<li>NOTE: A straigtforward slide.</li>
 	      </ul>
@@ -3454,7 +3422,7 @@
 	    </ul>
 	    <hr/>
 	    <p>Packaging influences the
-	      <phase>package</phase> Lifecycle phase.
+	      <phase>package</phase> lifecycle phase.
 	    </p>
 
 	    <aside class="notes">
@@ -3598,6 +3566,7 @@
 	      <hr/>
 
 	    <p>Use the Maven Assembly Plugin</p>
+      <p>Or a plugin that natively supports a specific packaging</p>
 
 	    <aside class="notes">
 	      <ul>
@@ -3608,6 +3577,7 @@
 		file?"</li>
 		<li>"For these requirements we use the Assembly
 		plugin."</li>
+        <li>E.g. Android Maven Plugin supports apk and aar and others</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -3682,7 +3652,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: JAR with Dependencies</h2>
+	    <h2>Demo:<br /> JAR with Dependencies</h2>
 
 	    <ul>
 	      <li>Let's configure an assembly that includes
@@ -3703,7 +3673,7 @@
 
 	  </section>
 	  <section>
-	    <h2>Demo: Configuring the JAR Plugin</h2>
+	    <h2>Demo:<br />Configuring the JAR Plugin</h2>
 
 	    <ul>
 	      <li>Configuring the JAR plugin to include a
@@ -3721,7 +3691,7 @@
 
 	  </section>
 	  <section>
-	    <h2>Demo: Creating a Self-executing JAR</h2>
+	    <h2>Demo:<br />Creating a Self-executing JAR</h2>
 
 	    <ul>
 	      <li>Configuring the Assembly plugin to generate a
@@ -3734,7 +3704,9 @@
 
 	      <ul>
 		<li><a target="_new" href="http://www.youtube.com/watch?v=P19M5tjx91s&list=PLTY3FUC1M6rmH8k9hS3zLtJX-aqAG0tQQ&index=2">ACTION</a>: Show the Shade Plugin</li>
-		<li>ACTION: Show Nifty Executable</li>
+		<li>ACTION: Show Nifty Executable
+		</li>
+		<li>https://github.com/brianm/really-executable-jars-maven-plugin</li>
 	      </ul>
 
 	    </aside>
@@ -3746,7 +3718,7 @@
 	    <h2>Publishing Packages</h2>
 
 	    <ul>
-	      <li>Think of Central: How did those JARs get there?</li>
+	      <li>Think of the Central Repository: How did those JARs get there?</li>
 	      <li>Answer: Maven. Maven packages can be published.</li>
 	      <li>Note: Outside the scope of this class.</li>
 	    </ul>
@@ -3764,42 +3736,39 @@
 	      </ul>
 	    </aside>
 	  </section>
-	  <section>
-	    <h2>Public and Private Repos</h2>
+        <section>
+          <h2>Public and Private Repos</h2>
+          <ul>
+            <li>You can proxy the Central Repository with a Repository
+              Manager.</li>
+            <li>You can also publish your own artifacts to a private
+              repository.</li>
+            <li>Bringing the ease and accessibility of the Central
+              Repository in-house.</li>
+            <li>And you can publish your open source project to the Central
+              Repository</li>
+          </ul>
 
-	    <ul>
-	      <li>You can proxy Central with a Repository
-	      Manager.</li>
+          <aside class="notes">
+            <ul>
+              <li>"While repository management and repository managers are
+                beyond the scope of this class."</li>
+              <li>"There are a lot of organizations that have installed
+                repository managers."</li>
+              <li>"They use Maven to publish artifacts to repositories."
+              </li>
+            </ul>
+          </aside>
+        </section>
 
-	      <li>You can also publish your own artifacts to a private
-	      repository.</li>
-
-	      <li>Bringing the ease and accessibility of Central
-	      in-house.</li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>"While repository management and repository
-		managers are beyond the scope of this class."</li>
-
-		<li>"There are a lot of organizations that have
-		installed repository managers."</li>
-
-		<li>"They use Maven to publish artifacts to
-		repositories."</li>
-	      </ul>
-	    </aside>
-	  </section>
-
-	  <section>
+        <section>
 	    <h2>What is a SNAPSHOT?</h2>
 
 	    <ul>
 	      <li>Snapshots are timestamped builds for artifacts still
-	      in development.</li>
-	      <li>You develop with snapshots.</li>
-	      <li>Snapshots are constantly changing artifacts.</li>
+	      in development</li>
+	      <li>You develop with snapshots</li>
+	      <li>Snapshots are constantly changing artifacts</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -3817,10 +3786,11 @@
 	    <h2>What is a Release?</h2>
 
 	    <ul>
-	      <li>Releases are point-in-time versions.</li>
-	      <li>They never change. For example: commons-lang 1.1
+	      <li>Releases are point-in-time versions</li>
+	      <li>They never change. For example commons-lang 1.1
 	      will never change.</li>
-	      <li>You download releases from Central.</li>
+	      <li>You download releases from the Central Repository</li>
+        <li>.. or other release repositories.</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -3897,12 +3867,12 @@
 	      <li>How does Maven scale projects?</li>
 	      <li>Why would you do this? Why group projects
 		together?</li>
-	      <li>Define Inheritance and discuss what is
+	      <li>Define "inheritance" and discuss what is
 		inherited</li>
-	      <li>Define Aggregation and discuss what is
+	      <li>Define "aggregation"" and discuss what is
 		aggregated</li>
-	      <li>Demonstrate a Multi-module Build</li>
-	      <li>Discuss the Reactor and how it orders builds</li>
+	      <li>Demonstrate a multi-module Build</li>
+	      <li>Discuss the "reactor" and how it orders builds</li>
 	    </ul>
 
 	    <aside class="notes">
@@ -3922,7 +3892,7 @@
 	</section>
 	<section>
 	  <section>
-	    <h2>Demo: Build a Large Multi-module Project</h2>
+	    <h2>Demo:<br />Build a Large Multi-module Project</h2>
 
 	    <aside class="notes">
 	      <ul>
@@ -3933,37 +3903,38 @@
 	    </aside>
 
 	  </section>
-	  <section>
-	    <h2>How Projects Scale in Maven</h2>
+        <section>
+          <h2>How Projects Scale in Maven</h2>
+          <ul>
+            <li>Maven projects scale in a particular way.</li>
+            <li>Through the aggregation of smaller projects.</li>
+          </ul>
+          <br />
+          <p>
+            <b>This is a core assumption of the tool.</b>
+          </p>
 
-	    <ul>
-	      <li>Maven projects scale in a particular way.</li>
-	      <li>Through the aggregation of smaller projects.</li>
-	    </ul>
-
-	    <p>This is a core assumption of the tool.</p>
-	    
-	    <aside class="notes">
-	      <ul>
-		<li>That last item deserves special emphasis.  This
-		  reall is a core assumption.</li>
-		<li>Maven was designed to scale through aggregation
-		  and you shouldn't try to fight this convention.</li>
-		<li>Some balk at modularity for simple projects, but
-		  Maven was designed to support projects as they
-		  inevitably grow.</li>
-	      </ul>
-	    </aside>
-	  </section>
-	  <section>
+          <aside class="notes">
+            <ul>
+              <li>That last item deserves special emphasis. This really is
+                a core assumption.</li>
+              <li>Maven was designed to scale through aggregation and you
+                shouldn't try to fight this convention.</li>
+              <li>Some balk at modularity for simple projects, but Maven
+                was designed to support projects as they inevitably grow.
+                </li>
+            </ul>
+          </aside>
+        </section>
+        <section>
 	    <h2>One common pattern: Monolithic Apps</h2>
 
 	    <p>A popular build pattern for large projects is...</p>
 
 	    <ul>
 	      <li><b>The Monolith</b></li>
-	      <li>Many modules crammed into one.</li>
-	      <li>A Very Large (Unmanageable) Build</li>
+	      <li>Many modules crammed into one</li>
+	      <li>A very large, unmanageable build</li>
 	      <li>Produces multiple outputs</li>
 	    </ul>
 
@@ -4004,7 +3975,7 @@
 	  <section>
 	    <h2>In the Beginning...</h2>
 
-	    <p>In the beginning the build is simple:</p>
+	    <p>...the build is simple:</p>
 
 	    <img src="img/web/scale-prototype-step1.png"/>
 	    <aside class="notes">
@@ -4021,7 +3992,7 @@
 	  <section>
 	    <h2>The plot thickens...</h2>
 
-	    <p>Your proof of concept proved the concept and your
+	    <p>Your proof of concept worked and your
 	      project got staff and resources.</p>
 
 	    <img src="img/web/scale-prototype-step2-wrong.png"/>
@@ -4056,23 +4027,22 @@
 	      </ul>
 	    </aside>
 	  </section>
-	  <section>
-	    <h2>Monoliths Don't Scale</h2>
+        <section>
+          <h2>Monoliths Don't Scale</h2>
 
-	    <p>Software lives for years (often decades)</p>
+          <p>Software lives for years (often decades)</p>
 
-	    <ul>
-	      <li>As systems and teams scale, single builds do not.</li>
-	      <li>As modularity develops, monolithic builds
-		constrain.</li>
-	      <li>At scale, monolithic builds inhibit progress.</li>
-	    </ul>
+          <ul>
+            <li>As systems and teams scale, single builds do not</li>
+            <li>As modularity develops, monolithic builds constrain</li>
+            <li>At scale, monolithic builds inhibit progress.</li>
+          </ul>
 
-	    <aside class="notes">
-	      <li>This slide is quick just read it and move on.</li>
-	    </aside>
-	  </section>
-	  <section>
+          <aside class="notes">
+            <p>This slide is quick just read it and move on.</p>
+          </aside>
+        </section>
+        <section>
 	    <h2>The End-game of a Monolith</h2>
 
 	    <img src="img/web/scale-prototype-summary-wrong.png">
@@ -4113,8 +4083,8 @@
 	  <section>
 	    <h2>Maven's Approach: Modularity</h2>
 
-	    <p>Maven favors smaller components. Components that
-	      produce one artifact.</p>
+	    <p>Maven favors smaller components.</p>
+      <p>Components that produce one artifact.</p>
 
 	    <ul>
 	      <li>Easier to model dependencies</li>
@@ -4131,7 +4101,7 @@
 	  <section>
 	    <h2>In the Beginning...</h2>
 
-	    <p>In the beginning the build is simple:</p>
+	    <p>...the build is simple:</p>
 
 	    <img src="img/web/scale-prototype-step1.png"/>
 	    <aside class="notes">
@@ -4139,6 +4109,7 @@
 		<li>"The beginning of the story is exactly the same
 		  with Maven, the difference is how the system evolves
 		  in a more modular fashion."</li>
+      </ul>
 	    </aside>
 	  </section>
 	  <section>
@@ -4225,7 +4196,7 @@
 	  </section>
 	  
 	  <section>
-	    <h2>Demo: Structure of a Multi-module Project</h2>
+	    <h2>Demo:<br />Structure of a Multi-module Project</h2>
 
 	    <aside class="notes">
 	      <ul>
@@ -4237,12 +4208,12 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Two Concepts: Aggregation and Inheritance</h2>
+	    <h2>Two Concepts:<br /> Aggregation and Inheritance</h2>
 	    <ul>
-	      <li><b>Aggregation:</b> A Parent Module contains
-		Submodules</li>
-	      <li><b>Inheritance:</b> A Model Declares a Parent and
-		Inherits POM Configuration</li>
+	      <li><b>Aggregation:</b> A project contains
+		modules</li>
+	      <li><b>Inheritance:</b> A project Declares a "parent" and
+		inherits POM configuration</li>
 	    </ul>
 	  </section>
 	</section>
@@ -4267,7 +4238,7 @@
 	    <img src="img/web/aggregate-basic.png"/>
 	  </section>
 	  <section>
-	    <h2>Demo: Building a Large Multi-module Project</h2>
+	    <h2>Demo:<br />Building a Large Multi-module Project</h2>
 
 	    <aside class="notes">
 	      <ul>
@@ -4324,7 +4295,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>How a Multi-module Build Works</h2>
+	    <h2>How a Multi-Module Build Works</h2>
 
 	    <p>The lifecycle is executed for each project.</p>
 
@@ -4341,17 +4312,16 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>How a Multi-module Build Doesn't Work</h2>
+	    <h2>How a Multi-Module Build Doesn't Work</h2>
 
 	    <p>If you come to Maven from Ant...</p>
 
 	    <ul>
 	      <li>You may expect the build to run in "stages"</li>
-	      <li>All compilation completes across all projects.</li>
-	      <li>..then all testing completes across all
-		projects.</li>
+	      <li>All compilation completes across all projects</li>
+	      <li>..then all testing completes across all projects.</li>
 	    </ul>
-
+      <br />
 	    <p>This is a common misconception.</p>
 
 	    <aside class="notes">
@@ -4365,7 +4335,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>How a Multi-module Build Doesn't Work</h2>
+	    <h2>How a Multi-Module Build Doesn't Work</h2>
 
 	    <img src="img/web/reactor-full-lifecycle-wrong.png"/>
 
@@ -4422,7 +4392,7 @@
 	  <section>
 	    <h2>Demo: Inherited Dependencies</h2>
 	    
-	    <p>And for our next trick... inherited dependencies.</p>
+	    <p>...for our next trick.</p>
 
 	    <aside class="notes">
 	      <ul>
@@ -4447,6 +4417,7 @@
 	    <aside class="notes">
 	      <ul>
 		<li>NOTE: Quick slide, read it, move on.</li>
+    <li>like inheritance for Java classes</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -4516,7 +4487,7 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Common Compiler Configuration</h2>
+	    <h2>Demo:<br />Common Compiler Configuration</h2>
 
 	    <p>A very common use case is to define compiler plugin
 	      configuration in a top-level POM.</p>
@@ -4531,10 +4502,10 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Version and Group Inheritance</h2>
+	    <h2>Demo:<br />Version and Group Inheritance</h2>
 
 	    <p>Version numbers are often the same across a large
-	      multi-module projects.</p>
+	      multi-module project.</p>
 
 	    <p>Group Identifiers are also often the same in a
 	      multi-module project.</p>
@@ -4552,38 +4523,30 @@
 	  </section>
 	</section>
 	<section>
-	  <section>
-	    <h2>Releasing Software</h2>
+        <section>
+          <h2>Releasing Software</h2>
+          <p>Maven has a standard for a transition from development to
+            release.</p>
+          <ul>
+            <li>When software is released it is a point-in-time release
+            </li>
+            <li>A software release is an immutable artifact</li>
+            <li>Releases are published to repositories</li>
+          </ul>
 
-	    <p>Maven has a standard for a transition from
-	      development to release.</p>
+          <aside class="notes">
+            <ul>
+              <li>Important point: Maven releases != Your production
+                releases</li>
+              <li>"You might have an internal release that uses puppet or
+                chef, that is not the same as a Maven release."</li>
+              <li>Maven releases focus on push build output to
+                repositories.</li>
+            </ul>
+          </aside>
 
-	    <ul>
-	      <li>When software is released it is a point-in-time
-		release.
-	      </li>
-	      <li>A software release is an immutable artifact.
-	      </li>
-	      <li>Releases are published to repositories.
-	      </li>
-	    </ul>
-
-	    <aside class="notes">
-	      <ul>
-		<li>Important point: Maven releases != Your production
-		  releases
-		</li>
-		<li>"You might have an internal release that uses
-		  puppet or chef, that is not the same as a Maven
-		  release."
-		</li>
-		<li>Maven releases focus on push build output to repositories.
-		</li>
-	      </ul>
-	    </aside>
-
-	  </section>
-	  <section>
+        </section>
+        <section>
 	    <h2>Releases vs. Snapshots</h2>
 
 	    <p>A critical distinction: two types of versions.</p>
@@ -4630,13 +4593,13 @@
 	      tasks:</p>
 
 	    <ul>
-	      <li>Update project version numbers to a Release version.
+	      <li>Update project version numbers to a release version
 	      </li>
-	      <li>Run a build and generate output artifacts.
+	      <li>Run a build and generate output artifacts
 	      </li>
-	      <li>Publish artifacts to a binary repository manager.
+	      <li>Publish artifacts to a binary repository manager
 	      </li>
-	      <li>Increment version numbers to next snapshot.
+	      <li>Increment version numbers to next snapshot
 	      </li>
 	    </ul>
 
@@ -4683,13 +4646,13 @@
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Demo: Perform a Release</h2>
+	    <h2>Demo:<br />Perform a Release</h2>
 
 	    <ul>
-	      <li>Demonstrate a manual release.</li>
-	      <li>Discuss the general process for Releases.
+	      <li>Demonstrate a manual release</li>
+	      <li>Discuss the general process for Releases
 	      </li>
-	      <li>In Advanced Maven you'll learn about the Release plugin.
+	      <li>In Advanced Maven you'll learn about the Release plugin
 	      </li>
 	    </ul>
 
