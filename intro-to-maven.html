@@ -166,7 +166,7 @@
             <aside class="notes">
               <ul>
                 <li>Quickly now, we've already told them this..</li>
-		<li>In the preclass material you should have already
+		<li>In the pre-class material you should have already
 		  installed Maven and configured environment
 		  variables.</li>
               </ul>
@@ -412,7 +412,7 @@
 	  <section>
             <h2>Do First, Learn Later</h2>
 
-            <p>Our training philsophy is straightforward...</p>
+            <p>Our training philosophy is straightforward...</p>
 
             <p>We learn from experience, not from watching slides.</p>
 
@@ -531,7 +531,7 @@
 	      <li>...<b>inspected</b> a file called the Project Object
 		Model (POM)</li>
 	      <li>...<b>downloaded</b> dependencies.</li>
-	      <li>...<b>compiled</b> Java code into bytecode.</li>
+	      <li>...<b>compiled</b> Java code into byte-code.</li>
 	      <li>...<b>ran</b> a series of Unit Tests.</li>
 	      <li>...<b>assembled</b> everything into a JAR file.</li>
 	    </ul>
@@ -834,15 +834,15 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
 
 	    <img src="img/web/source-dirs.png"/>
 
-	    <p>Both directories added to classpath and resulting
+	    <p>Both directories added to class-path and resulting
 	    artifact.</p>
 
 	    <aside class="notes">
 	      <ul>
-		<li>"Source and resources destined for the classpath
+		<li>"Source and resources destined for the class-path
 		are housed in 'src/main'."</li>
 		<li>"The contents of both directories will be
-		available in the classpath."</li>
+		available in the class-path."</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -1595,7 +1595,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
               <li><a target="_new"
                 href="http://www.youtube.com/watch?v=40Rw61Bl8j4&list=PLTY3FUC1M6rlzozPZO0kuhkUxTCVcG41S">ACTION</a>:
                 Demonstrate that the JAR is download and that it now 
-                appears to be on the classpath for compilation.</li>
+                appears to be on the class-path for compilation.</li>
                 <li>its just modifying the pom</li>
                 <li>show how it is added in eclipse</li>
                 <li>show how you can get javadoc and sources loaded</li>
@@ -1616,7 +1616,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
 	    <aside class="notes">
 	      <ul>
 		<li>"In this section, we're going to complete our
-		surey of Maven coordinates"</li>
+		survey of Maven coordinates"</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -1650,7 +1650,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
           <aside class="notes">
             <ul>
               <li>"Here is an example of a GAV coordinate for a
-                sample-artifct"</li>
+                sample-artifact"</li>
               <li>"This syntax is shorthand for GAV."</li>
             </ul>
           </aside>
@@ -1816,13 +1816,13 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
 
 	  </section>
 	  <section>
-	    <h2>Maven Downloads the Dependency</h2>
+	    <h2>Maven Downloads the Dependency</h2>dependency
 
 	    <p>It also downloads a POM at the same coordinates...</p>
 
 	    <img src="img/web/maven-download-artifact.png"/>
 
-	    <p>The POM for a depenency points to other
+	    <p>The POM for a dependency points to other
 	    dependencies.</p>
 	    <aside class="notes">
 	      <ul>
@@ -1844,7 +1844,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
 
 	    <img src="img/web/maven-download-artifact-poms.png"/>
 
-	    <p>...then it grabs your dependencies dependenciesm</p>
+	    <p>...then it grabs your dependencies' dependencies</p>
 
 	    <p>...and so on.</p>
 
@@ -1896,7 +1896,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
         <section>
           <h2>Maven then Creates a Classpath</h2>
 
-          <p>There are a few different classpaths:</p>
+          <p>There are a few different class-paths:</p>
 
           <ul>
             <li>for compilation</li>
@@ -1909,7 +1909,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
             <ul>
               <li>"When Maven is create these dependency graphs for a
                 project what it is doing is making sure that it has 
-                enough dependencies to create the necessary classpaths for 
+                enough dependencies to create the necessary class-paths for 
                 different stages of the build."</li>
               <li>NOTE: Explain each.</li>
             </ul>
@@ -1936,7 +1936,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
 		package libraries with distributed artifacts like a
 		WAR."</li>
 		<li>"...and the test scope simply keeps things in the
-		classpaths used for unit testing."</li>
+		class-paths used for unit testing."</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2036,17 +2036,17 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Maven turns Graph into Classpaths</h2>
+	    <h2>Maven turns Graph into Class-paths</h2>
 	    <aside class="notes">
 	      <ul>
 		<li>"Once this tree is generated, Maven removes
 		duplicates, slices, and dices this tree to generate
-		classpaths."</li>
+		class-paths."</li>
 	      </ul>
 	    </aside>
 	  </section>
 	  <section>
-	    <h2>Scopes Influence Classpaths</h2>
+	    <h2>Scopes Influence Class-paths</h2>
 	    <aside class="notes">
 	      <ul>
 		<li>"Different portions of the build demand different
@@ -2176,7 +2176,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
         <section>
           <h2>What happened here?</h2>
           <ul>
-            <li>Instead of packging a project...</li>
+            <li>Instead of packaging a project...</li>
             <li>We executed unit tests</li>
             <li>Unit testing is the domain of the...</li>
           </ul>
@@ -2397,12 +2397,12 @@ mvn install -Dmaven.test.skip=true
 	      <p><a target="_new" href="http://www.youtube.com/watch?v=SPhxH2O514Y&list=PLTY3FUC1M6rliDMpNGnDZBugjmj2bIMpb">ACTION</a>: Skip both test execution and test
 	      compilation.</p>
 	      <p>Make the point that we're changing build
-	      behavior.</p>
+	      behaviour.</p>
 	    </aside>
 
 	  </section>
 	  <section>
-	    <h2>Modifying Plugin Behavior <br />
+	    <h2>Modifying Plugin Behaviour <br />
 	     - from the Command-line</h2>
 
 	    <p>What just happened?</p>
@@ -2410,16 +2410,16 @@ mvn install -Dmaven.test.skip=true
 	    <ul>
 	      <li>The Surefire Plugins's...</li>
 	      <li><goal>test</goal> goal ...</li>
-	      <li>changed behavior based on a command-line
+	      <li>changed behaviour based on a command-line
 	      argument.</li>
 	    </ul>
 
 	    <p>This is one of several ways to influence build
-	    behavior.</p>
+	    behaviour.</p>
 
 	    <aside class="notes">
 	      <ul>
-		<li>"We're starting to customize behavior. In this
+		<li>"We're starting to customize behaviour. In this
 		example from the command-line."</li>
 		<li>"The -D option passed in a system variable that
 		modified how the Surefire plugin executed."</li>
@@ -2441,10 +2441,10 @@ mvn install -Dmaven.test.skip=true
 	      <ul>
 		<li>"In this section we've already learned about goals
 		and plugins."</li>
-		<li>"We've seen how behavior can be modified from the
+		<li>"We've seen how behaviour can be modified from the
 		command-line."</li>
 		<li>"Next we'll look at some simple ways that Maven
-		reports on behavior."</li>
+		reports on behaviour."</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -2551,9 +2551,9 @@ mvn install -Dmaven.test.skip=true
 	  </section>
 
 	  <section>
-	    <h2>Goal Behavior can be Customized</h2>
+	    <h2>Goal Behaviour can be Customized</h2>
 
-	    <p>We changed behavior from the command-line.</p>
+	    <p>We changed behaviour from the command-line.</p>
 
 	    <p>By passing in the -D option, we can change the way
 	    Maven executes goals.</p>
@@ -2864,7 +2864,7 @@ mvn install -Dmaven.test.skip=true
 
 	    <p>Let's use that previous example in a POM and see what happens.</p>
 
-	    <p>Configure Compiler Behavior in the POM</p>
+	    <p>Configure Compiler Behaviour in the POM</p>
 
 	    <aside class="notes">
 	      <ul>
@@ -3047,7 +3047,7 @@ mvn install -Dmaven.test.skip=true
 
 	    <br/><br/>
 
-	    <p>Let's move plugin confguration from an execution to the
+	    <p>Let's move plugin configuration from an execution to the
 	    plugin level.</p>
 
 	    <aside class="notes">
@@ -3408,7 +3408,7 @@ mvn install -Dmaven.test.skip=true
 
 	    <aside class="notes">
 	      <ul>
-		<li>NOTE: A straigtforward slide.</li>
+		<li>NOTE: A straightforward slide.</li>
 	      </ul>
 	    </aside>
 	  </section>
@@ -3797,7 +3797,7 @@ mvn install -Dmaven.test.skip=true
 	      <ul>
 		<li>"Releases, on the other hand, they never
 		change."</li>
-		<li>"When you relese software you 'cut a version' and
+		<li>"When you release software you 'cut a version' and
 		publish that artifact to a repository."</li>
 		<li>"When you download from Central, you are
 		downloading Release versions."</li>
@@ -4083,7 +4083,7 @@ mvn install -Dmaven.test.skip=true
 	  <section>
 	    <h2>Maven's Approach: Modularity</h2>
 
-	    <p>Maven favors smaller components.</p>
+	    <p>Maven favours smaller components.</p>
       <p>Components that produce one artifact.</p>
 
 	    <ul>
@@ -4512,7 +4512,7 @@ mvn install -Dmaven.test.skip=true
 
 	    <aside class="notes">
 	      <ul>
-		<li>ACTION: Show how versions and groupIds ae
+		<li>ACTION: Show how versions and groupIds are
 		  inherited in a build.</li>
 		<li>"Versions and Group IDs are usually the same
 		  throughout a large multimodule project."</li>
