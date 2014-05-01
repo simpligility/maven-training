@@ -52,14 +52,8 @@
         <section>
           <h1>Introduction to Maven</h1>
           <h3>
-            Building, Testing, and<br> Assembling Applications
+            Building, Testing, <br> and Assembling Applications
           </h3>
-
-          <p>
-            <small>Created by Jason van Zyl / <a
-              href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
-          </p>
-
           <aside class="notes">
             <ul>
               <li>Focus on activity rather than theory.
@@ -74,12 +68,9 @@
         </section>
 
         <section>
-          <!-- TODO -->
           <h2>Welcome to Introduction to Maven</h2>
-
           <p>In this class you will learn how to use Maven to build your
             projects.</p>
-
           <aside class="notes">
             <b>Min Time: 5 minutes, Max Time: 10 minutes</b>
             <ul>
@@ -92,7 +83,6 @@
         </section>
         <section>
           <h2>Goals and Objectives</h2>
-
           <p>At the end of this class, you should know how to:</p>
           <ul>
             <li>Download and install Maven</li>
@@ -112,7 +102,6 @@
         </section>
         <section>
           <h2>Goals and Objectives</h2>
-
           <p>At the end of this class, you should know how to:</p>
           <ul>
             <li>Configure unit testing plugins</li>
@@ -136,18 +125,16 @@
       <section>
         <section>
           <h2>Prerequisites</h2>
-
           <p>Here are a few prerequisites we've assumed...</p>
-
           <aside class="notes">
             <ul>
               <li>We've designed this class to be efficient and fast-paced.</li>
               <li>...but to do this we've assumed a few prerequisites.</li>
+            </ul>
           </aside>
         </section>
         <section>
           <h2>You are Comfortable with the OS</h2>
-
           <p>You should know how to:</p>
           <ul>
             <li>Download a file to your workstation</li>
@@ -164,7 +151,6 @@
         </section>
         <section>
           <h2>You Understand Java Development</h2>
-
           <p>We assume that you:</p>
           <ul>
             <li>Know how to install Java.</li>
@@ -184,7 +170,6 @@
       <section>
         <section>
           <h2>Target Technologies</h2>
-
           <p>We've developed this class to address a set of technologies.</p>
           <aside class="notes">
             <ul>
@@ -195,22 +180,18 @@
         </section>
         <section>
           <h2>Operating Systems</h2>
-
           <p>This class targets:</p>
-
           <div
             style="vertical-align: middle; display: inline-block; margin-right: 20px;">
-            <img src="img/web/windows-8-logo.png" height="150" /><br />Windows 7
-            or Higher
+            <img src="img/web/windows-8-logo.png" height="150" /><br />Windows
+            7 or Higher
           </div>
           <div
             style="vertical-align: middle; display: inline-block; margin-left: 20px;">
             <img src="img/web/mavericks-logo.png" height="150" /><br /> OSX
             Mountain Lion
           </div>
-          <br />
-          <br />
-
+          <br /> <br />
           <p>but you can use Linux too - at your own risk ;-)</p>
           <aside class="notes">
             <ul>
@@ -221,11 +202,8 @@
         </section>
         <section>
           <h2>Java Version</h2>
-
           <p>This class is based on Java 7.</p>
-
           <img src="img/web/java-7-logo.png" width="300" />
-
           <p>Can you use Java 6? Use at your own risk.</p>
           <p>
             <b>Note:</b> Examples may not work.
@@ -243,14 +221,10 @@
         </section>
         <section>
           <h2>IDE</h2>
-
           <p>The examples in this class will feature Eclipse Kepler.</p>
-
           <img src="img/web/eclipse-kepler.png" width="350" />
-
           <p>But you can use IntelliJ or NetBeans, if that is what you are
             familiar with.</p>
-
           <p>Again, use an alternative IDE at your own risk.</p>
           <aside class="notes">
             <ul>
@@ -263,9 +237,7 @@
       <section>
         <section>
           <h2>Instructor Intro</h2>
-
           <p>Who's teaching this class?</p>
-
           <aside class="notes">
             <ul>
               <li>Instructor, please make this quick.</li>
@@ -277,10 +249,8 @@
             </ul>
           </aside>
         </section>
-
         <section>
           <h2>Planned Class Structure</h2>
-
           <p>In this class we are going to:</p>
           <ul>
             <li>Learn by doing</li>
@@ -310,7 +280,6 @@
           <p>
             <b>Note:</b> Instructors are available after class.
           </p>
-
           <aside class="notes">
             <ul>
               <li>This crowd is reticent to ask questions.</li>
@@ -322,42 +291,25 @@
       <section>
         <section>
           <h1>Building a Simple Project</h1>
-
           <h3>First Steps</h3>
-
-          <p>
-
-            <small>Created by Jason van Zyl / <a
-              href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
-
-          </p>
-
           <aside class="notes">
             <p>
               <b>Min Time: 25 minutes, Max Time: 35 minutes</b>
             </p>
             <ul>
-
               <li>Don't go into all the detail. This class is not a
                 reference book.</li>
-
               <li>Don't talk about where resource filters go, they are not
                 there yet. src/main/java, src/test/java - that's it.</li>
-
               <li>You'll note that we introduce dependency scope out of
                 order here. This is fine, we're hinting at the next section.</li>
-
               <li>Module Playlist: <a target="_new"
                 href="http://www.youtube.com/playlist?list=PLTY3FUC1M6rlrlgBwsBtd6vdrY7WqeRjh&feature=edit_ok">YouTube</a></li>
-
             </ul>
-
           </aside>
         </section>
-
         <section>
           <h2>Module Objectives</h2>
-
           <ul>
             <li>Introduce an example project</li>
             <li>Examine the pom.xml</li>
@@ -365,7 +317,6 @@
             <li>Introduce coordinates</li>
             <li>Introduce dependencies</li>
           </ul>
-
           <aside class="notes">
             <ul>
               <li>"We're starting with a real project, not a 'Hello World'
@@ -376,21 +327,16 @@
                 href="http://www.youtube.com/playlist?list=PLTY3FUC1M6rlrlgBwsBtd6vdrY7WqeRjh&feature=edit_ok">YouTube</a></li>
             </ul>
           </aside>
-
         </section>
       </section>
       <section>
         <section>
           <h2>Do First, Learn Later</h2>
-
           <p>Our training philosophy is straightforward...</p>
-
           <p>We learn from experience, not from watching slides.</p>
-
           <p>
             <b>Let's get to work.</b>
           </p>
-
           <aside class="notes">
             <ul>
               <li>"Just a quick reminder. Half of this class is
@@ -399,16 +345,11 @@
                 theory as we need to."</li>
             </ul>
           </aside>
-
         </section>
-
         <section>
           <h2>First Example: Copy</h2>
-
           <p>Introducing a simple example:</p>
-
-          <pre>$ cp labs/simple-project working</pre>
-
+          <pre>$ cp -R labs/simple-project working</pre>
           <aside class="notes">
             <ul>
               <li><a target="_new"
@@ -770,16 +711,18 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
         </section>
         <section>
           <h2>Example Project Contents</h2>
-
           <p>Our example project has...</p>
-
           <ul>
             <li>Java source files</li>
             <li>Java unit tests</li>
           </ul>
-
-          <p>.. but could also have properties files, a web application
-            descriptor, Javascript and HTML, images, and more</p>
+          <p>.. but could also have</p>
+          <ul>
+            <li>properties files,</li>
+            <li>a web application descriptor,</li>
+            <li>Javascript and HTML,</li>
+            <li>images, and more</li>
+          </ul>
           <aside class="notes">
             <ul>
               <li>"What makes a 'project' a project?"</li>
@@ -791,11 +734,8 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
         </section>
         <section>
           <h2>A Common Structure</h2>
-
           <p>Maven provides a common structure</p>
-
           <p>"Everything in its right place."</p>
-
           <aside class="notes">
             <ul>
               <li>"The benefits of a standard directory can't be
@@ -869,7 +809,6 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
         </section>
         <section>
           <h2>Demo: Inspect Example Artifact</h2>
-
           <aside class="notes">
             <ul>
               <li><a target="_new"
@@ -1018,8 +957,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
             <li><b>Identifier:</b> <code>artifactId</code></li>
             <li><b>Role:</b> Projects produce artifacts.</li>
           </ul>
-          <br />
-          <br />
+          <br /> <br />
 
           <p>"This project produces a WAR artifact."</p>
 
@@ -1156,8 +1094,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
 
           <pre>io.takari.training.simple:simple-project:1.0-SNAPSHOT</pre>
 
-          <br />
-          <br />
+          <br /> <br />
           <p>
             This coordinate set <b>uniquely</b> identifies an artifact
           </p>
@@ -1231,12 +1168,12 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
           <p>We built a web application which does the following:</p>
 
           <ul>
-            <li>Connects to an embedded database</li>
-            <li>Creates service objects</li>
+            <li>Parses command line inputs</li>
+            <li>Creates and manages objects</li>
+            <li>Uses DI to simplify codebase and separate concerns</li>
           </ul>
-          <p>Next steps could be to expose a REST API to a client-side
-            Javascript application</p>
-
+          <p>Next steps could be to create a web interface for the
+            application.</p>
           <aside class="notes">
             <ul>
               <li>NOTE: Quick read, move on slide.</li>
@@ -1246,11 +1183,11 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
         <section>
           <h2>Example Project Dependencies</h2>
 
-          <p>We assembled this project using open source libraries:</p>
-
+          <p>We assembled this project using open source libraries and could
+            add more for further features:</p>
           <ul>
-            <li>Embedded Database: HSQLDB and jDBI</li>
             <li>Dependency Injection: Guice</li>
+            <li>Embedded Database: HSQLDB and jDBI</li>
             <li>REST API: Jersey</li>
             <li>Client-side Javascript: React</li>
           </ul>
@@ -1392,11 +1329,6 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
         <section>
           <h1>Working with Dependencies</h1>
           <h3>First Steps</h3>
-          <p>
-            <small>Created by Jason van Zyl / <a
-              href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
-          </p>
-
           <aside class="notes">
             <p>
               <b>Min Time: 35 minutes, Max Time: 45 minutes</b>
@@ -1735,8 +1667,8 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
         <section>
           <h2>How do Dependencies Work?</h2>
 
-          <p>Once you tell Maven what you need, how does it get a
-            dependency?</p>
+          <p>Once you tell Maven what you need,<br /> how does it get the
+            dependency files?</p>
 
           <aside class="notes">
             <p>"In this next section we're going to walk through the process
@@ -2059,22 +1991,12 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
       <section>
         <section>
           <h1>Working with Unit Tests</h1>
-
           <h3>First Steps</h3>
-
-          <p>
-
-            <small>Created by Jason van Zyl / <a
-              href="http://twitter.com/jvanzyl">@jvanzyl</a></small>
-
-          </p>
-
           <aside class="notes">
             <p>
               <b>Min Time: 35 minutes, Max Time: 45 minutes</b>
             </p>
             <ul>
-
               <li>Module not about Unit Tests as much as it is about core
                 principles.
                 <ul>
@@ -2085,15 +2007,11 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
                   <li>Reporting</li>
                 </ul>
               </li>
-
               <li>Unit tests are such a fundamental requirement, we should
                 spend an entire module on it.</li>
-
               <li>Module Playlist: <a target="_new"
                 href="http://www.youtube.com/playlist?list=PLTY3FUC1M6rliDMpNGnDZBugjmj2bIMpb">YouTube</a></li>
-
             </ul>
-
           </aside>
         </section>
 
@@ -2398,7 +2316,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
           <pre>
 mvn install -DskipTests=true
 mvn install -Dmaven.test.skip=true
-      </pre
+</pre>
           <aside class="notes">
             <p>
               <a target="_new"
@@ -2482,6 +2400,17 @@ mvn install -Dmaven.test.skip=true
           <h2>Demo: Show simple HTML Report</h2>
 
           <p>View the HTML generated by the Site plugin.</p>
+          <pre>
+&lt;reporting&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;maven-surefire-report-plugin&lt;/artifactId&gt;
+      &lt;version&gt;2.17&lt;/version&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/reporting&gt;
+          </pre>
           <aside class="notes">
             <ul>
               <li><a target="_new"
@@ -2494,13 +2423,11 @@ mvn install -Dmaven.test.skip=true
         </section>
         <section>
           <h2>Surefire Reports</h2>
-
-          <p>Surefire is an example of a Maven plugin, which generates data,
-            that can be reported on.</p>
-
-          <p>This enables integration with 3rd-party tools like Eclipse,
-            Jenkins, and Sonar.</p>
-
+          <p>Surefire is an example of a Maven plugin,</p>
+          <p>which generates data, that can be reported on.</p>
+          <br /><br />
+          <p>This enables integration with 3rd-party tools</p> 
+          <p>like Eclipse, Jenkins, and Sonar.</p>
           <aside class="notes">
             <ul>
               <li>"When you run Surefire tests you generate reports in <code>target/</code>"
@@ -3034,8 +2961,7 @@ mvn install -Dmaven.test.skip=true
           <p>
             <b><i>Just like dependencies.</i></b>
           </p>
-          <br />
-          <br />
+          <br /> <br />
           <p>Also... Maven can have more than one version of a plugin.</p>
 
           <aside class="notes">
@@ -3076,8 +3002,7 @@ mvn install -Dmaven.test.skip=true
 
           <p>Plugins can be configured at different "levels".</p>
 
-          <br />
-          <br />
+          <br /> <br />
 
           <p>Let's move plugin configuration from an execution to the plugin
             level.</p>
@@ -3115,8 +3040,7 @@ mvn install -Dmaven.test.skip=true
 
           <p>We've hinted at the Lifecycle...</p>
 
-          <br />
-          <br />
+          <br /> <br />
 
           <p>...but we haven't explained it...</p>
 
@@ -4680,44 +4604,60 @@ mvn install -Dmaven.test.skip=true
   <script src="js/reveal.min.js"></script>
 
   <script>
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls : true,
+				progress : true,
+				history : true,
+				center : true,
 
-      // Full list of configuration options available here:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
-      center: true,
+				theme : Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition : Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-      // Optional libraries used to extend on reveal.js
-      dependencies: [
-      { src: 'lib/js/classList.js', condition: function () {
-      return !document.body.classList;
-      } },
-      { src: 'plugin/markdown/marked.js', condition: function () {
-      return !!document.querySelector('[data-markdown]');
-      } },
-      { src: 'plugin/markdown/markdown.js', condition: function () {
-      return !!document.querySelector('[data-markdown]');
-      } },
-      { src: 'plugin/highlight/highlight.js', async: true, callback: function () {
-      hljs.initHighlightingOnLoad();
-      } },
-      { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () {
-      return !!document.body.classList;
-      } },
-      { src: 'plugin/notes/notes.js', async: true, condition: function () {
-      return !!document.body.classList;
-      } },
-      { src: 'plugin/page-number/numbers.js', async: true, condition: function () {
-      return !!document.body.classList;
-      } }
-      ]
-      });
-    </script>
+				// Optional libraries used to extend on reveal.js
+				dependencies : [ {
+					src : 'lib/js/classList.js',
+					condition : function() {
+						return !document.body.classList;
+					}
+				}, {
+					src : 'plugin/markdown/marked.js',
+					condition : function() {
+						return !!document.querySelector('[data-markdown]');
+					}
+				}, {
+					src : 'plugin/markdown/markdown.js',
+					condition : function() {
+						return !!document.querySelector('[data-markdown]');
+					}
+				}, {
+					src : 'plugin/highlight/highlight.js',
+					async : true,
+					callback : function() {
+						hljs.initHighlightingOnLoad();
+					}
+				}, {
+					src : 'plugin/zoom-js/zoom.js',
+					async : true,
+					condition : function() {
+						return !!document.body.classList;
+					}
+				}, {
+					src : 'plugin/notes/notes.js',
+					async : true,
+					condition : function() {
+						return !!document.body.classList;
+					}
+				}, {
+					src : 'plugin/page-number/numbers.js',
+					async : true,
+					condition : function() {
+						return !!document.body.classList;
+					}
+				} ]
+			});
+		</script>
 </body>
 </html>
 
