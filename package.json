@@ -5,7 +5,6 @@
   "homepage": "http://takari.io",
   "subdomain": "training",
   "scripts": {
-    "test": "grunt test",
     "start": ""
   },
   "engines": {
