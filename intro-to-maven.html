@@ -291,7 +291,6 @@
       <section>
         <section>
           <h1>Building a Simple Project</h1>
-          <h3>First Steps</h3>
           <aside class="notes">
             <p>
               <b>Min Time: 25 minutes, Max Time: 35 minutes</b>
@@ -1328,7 +1327,6 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
       <section>
         <section>
           <h1>Working with Dependencies</h1>
-          <h3>First Steps</h3>
           <aside class="notes">
             <p>
               <b>Min Time: 35 minutes, Max Time: 45 minutes</b>
@@ -1991,7 +1989,6 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
       <section>
         <section>
           <h1>Working with Unit Tests</h1>
-          <h3>First Steps</h3>
           <aside class="notes">
             <p>
               <b>Min Time: 35 minutes, Max Time: 45 minutes</b>
@@ -2883,7 +2880,7 @@ mvn install -Dmaven.test.skip=true
           </h2>
 
           <ul>
-            <li>compiler:compiler</li>
+            <li>compiler:compile</li>
             <li>compiler:help</li>
             <li>compiler:testCompile</li>
           </ul>
@@ -3310,11 +3307,14 @@ mvn install -Dmaven.test.skip=true
           <h2>Module Objectives</h2>
           <p>This module does two things.</p>
           <ul>
-            <li>It focuses on the WAR plugin</li>
+            <li>It focuses on packaging </li>
             <li>and it uses a simple Assembly:</li>
           </ul>
           <p>Remember the lifecycle from the previous section, well the
             packaging changes it...</p>
+        </section>
+        <section>
+          <h2>And here is what we are going to do</h2>    
           <ul>
             <li>Demonstrate packaging</li>
             <li>Demonstrate (but don't fully delve into) the Assembly
@@ -3477,16 +3477,13 @@ mvn install -Dmaven.test.skip=true
         </section>
         <section>
           <h2>Built-in Assemblies</h2>
-
           <p>The Maven Assembly plugin has a number of built-in descriptors:</p>
-
           <ul>
             <li>bin</li>
             <li>jar-with-dependencies</li>
             <li>src</li>
             <li>project</li>
           </ul>
-
           <aside class="notes">
             <ul>
               <li>"The assembly plugin defines some built-in assemblies."</li>
@@ -3502,13 +3499,9 @@ mvn install -Dmaven.test.skip=true
         </section>
         <section>
           <h2>Custom Assemblies</h2>
-
           <p>You can also define your own assembly descriptors.</p>
-
           <hr />
-
           <p>An assembly descriptor can:</p>
-
           <ul>
             <li>Copy files from your project to a custom directory
               structure.</li>
@@ -3532,14 +3525,14 @@ mvn install -Dmaven.test.skip=true
           <h2>Running Applications</h2>
           <ul>
             <li>In this next series of demonstrations...</li>
-            <li>We're going to create a self-executing JAR and we're going
-              to deploy a WAR to a container.</li>
+            <li>We're going to create a self-executing JAR</li>
+            <li>With a webapp we could deploy a WAR to a container.</li>
           </ul>
           <aside class="notes">
             <ul>
               <li>In this next series of demonstrations...</li>
-              <li>We're going to create a self-executing JAR and we're
-                going to deploy a WAR to a container.</li>
+              <li>Tomcat plugin could even create a self executing war 
+              with tomcat in the war</li>
             </ul>
           </aside>
         </section>
@@ -3568,40 +3561,28 @@ mvn install -Dmaven.test.skip=true
 
         </section>
         <section>
-          <h2>
-            Demo:<br />Configuring the JAR Plugin
-          </h2>
-
+          <h2>Demo:<br />Configuring the JAR Plugin</h2>
           <ul>
             <li>Configuring the JAR plugin to include a Manifest.</li>
           </ul>
-
           <aside class="notes">
-
             <ul>
               <li><a target="_new"
                 href="http://www.youtube.com/watch?v=dox66_0nKvA&list=PLTY3FUC1M6rmH8k9hS3zLtJX-aqAG0tQQ&index=5">ACTION</a>:
                 Show how the Jar plugin is configured.</li>
               <li>ACTION: Modify the Jar plugin.</li>
             </ul>
-
           </aside>
-
         </section>
         <section>
-          <h2>
-            Demo:<br />Creating a Self-executing JAR
-          </h2>
-
+          <h2>Demo:<br />Creating a Self-executing JAR</h2>
           <ul>
             <li>Configuring the Assembly plugin to generate a
               Self-executing JAR</li>
             <li>Note that this example is advanced.</li>
             <li>Uses the Shade plugin + Nifty Executable.</li>
           </ul>
-
           <aside class="notes">
-
             <ul>
               <li><a target="_new"
                 href="http://www.youtube.com/watch?v=P19M5tjx91s&list=PLTY3FUC1M6rmH8k9hS3zLtJX-aqAG0tQQ&index=2">ACTION</a>:
@@ -3609,22 +3590,19 @@ mvn install -Dmaven.test.skip=true
               <li>ACTION: Show Nifty Executable</li>
               <li>https://github.com/brianm/really-executable-jars-maven-plugin</li>
             </ul>
-
           </aside>
-
         </section>
       </section>
+
       <section>
         <section>
           <h2>Publishing Packages</h2>
-
           <ul>
             <li>Think of the Central Repository: How did those JARs get
               there?</li>
             <li>Answer: Maven. Maven packages can be published.</li>
             <li>Note: Outside the scope of this class.</li>
           </ul>
-
           <aside class="notes">
             <ul>
               <li>"Throughout this class we've been talking about artifacts
@@ -3662,14 +3640,12 @@ mvn install -Dmaven.test.skip=true
 
         <section>
           <h2>What is a SNAPSHOT?</h2>
-
           <ul>
             <li>Snapshots are timestamped builds for artifacts still in
               development</li>
             <li>You develop with snapshots</li>
             <li>Snapshots are constantly changing artifacts</li>
           </ul>
-
           <aside class="notes">
             <ul>
               <li>"An important point for people publishing artifacts.
@@ -3704,18 +3680,16 @@ mvn install -Dmaven.test.skip=true
         </section>
         <section>
           <h2>Demo: Release a Version</h2>
-
           <ul>
             <li>Let's see exactly what happens between SNAPSHOTs and
               Releases.</li>
           </ul>
-
           <aside class="notes">
             <ul>
               <li><a target="_new"
                 href="http://www.youtube.com/watch?v=420Kes9RSEA&list=PLTY3FUC1M6rmH8k9hS3zLtJX-aqAG0tQQ&index=1">ACTION</a>:
                 Take the simple-project - build a snapshot. Then change to a
-                version number. Show the result.</li>
+                version number. Show the result. </li>
             </ul>
           </aside>
         </section>
@@ -3729,28 +3703,20 @@ mvn install -Dmaven.test.skip=true
               <b>Min Time: 45 minutes, Max Time: 50 minutes</b>
             </p>
             <ul>
-
               <li>You can't leave an intro Maven class without having some
                 exposure to multi-module projects.</li>
-
               <li>That last bullet item. It is audacious, but I feel like
                 the class should build up to something big, right? Like at the
                 end of the Maven intro class, a pretty basic class. We end up
                 standing up an application server and deploying and application
                 to it.</li>
-
             </ul>
-
           </aside>
         </section>
 
         <section>
-          <!-- TODO -->
           <h2>Module Objectives</h2>
-
-          <p>This module does two things. It focuses on the WAR plugin and
-            it uses a simple Assembly:</p>
-
+          <p>What if things are not that simple...</p>
           <ul>
             <li>How does Maven scale projects?</li>
             <li>Why would you do this? Why group projects together?</li>
@@ -3759,7 +3725,6 @@ mvn install -Dmaven.test.skip=true
             <li>Demonstrate a multi-module Build</li>
             <li>Discuss the "reactor" and how it orders builds</li>
           </ul>
-
           <aside class="notes">
             <ul>
               <li>This is the last module of our introduction to Maven
@@ -3776,9 +3741,7 @@ mvn install -Dmaven.test.skip=true
       </section>
       <section>
         <section>
-          <h2>
-            Demo:<br />Build a Large Multi-module Project
-          </h2>
+          <h2>Demo:<br />Build a Large Multi-module Project</h2>
 
           <aside class="notes">
             <ul>
@@ -3795,9 +3758,10 @@ mvn install -Dmaven.test.skip=true
             <li>Maven projects scale in a particular way.</li>
             <li>Through the aggregation of smaller projects.</li>
           </ul>
-          <br />
+          <br /><br />
+          <hr />
           <p>
-            <b>This is a core assumption of the tool.</b>
+            <b>This is a core assumption of the Maven.</b>
           </p>
 
           <aside class="notes">
@@ -3813,9 +3777,7 @@ mvn install -Dmaven.test.skip=true
         </section>
         <section>
           <h2>One common pattern: Monolithic Apps</h2>
-
           <p>A popular build pattern for large projects is...</p>
-
           <ul>
             <li><b>The Monolith</b></li>
             <li>Many modules crammed into one</li>
@@ -3964,16 +3926,13 @@ mvn install -Dmaven.test.skip=true
         </section>
         <section>
           <h2>Maven's Approach: Modularity</h2>
-
           <p>Maven favours smaller components.</p>
           <p>Components that produce one artifact.</p>
-
           <ul>
             <li>Easier to model dependencies</li>
             <li>Easier to separate from larger builds</li>
             <li>Supported by dependency management</li>
           </ul>
-
           <aside class="notes">
             <ul>
               <li>Again a quick slide, move on...</li>
@@ -3982,9 +3941,8 @@ mvn install -Dmaven.test.skip=true
         </section>
         <section>
           <h2>In the Beginning...</h2>
-
+          <br /><br />
           <p>...the build is simple:</p>
-
           <img src="img/web/scale-prototype-step1.png" />
           <aside class="notes">
             <ul>
@@ -3996,12 +3954,9 @@ mvn install -Dmaven.test.skip=true
         </section>
         <section>
           <h2>Creating Modules as Needed</h2>
-
-          <p>Your proof of concept proved the concept and your project got
-            staff and resources.</p>
-
+          <p>Your proof of concept got traction<br/> 
+            and your project got staff and resources.</p>
           <img src="img/web/scale-prototype-step2-right.png" />
-
           <aside class="notes">
             <ul>
               <li>"Once you have the need for more modularity you can start
@@ -4125,14 +4080,16 @@ mvn install -Dmaven.test.skip=true
         </section>
         <section>
           <h2>
-            Demo:<br />Building a Large Multi-module Project
+            Demo:<br />Building a Multi-module Project
           </h2>
 
           <aside class="notes">
             <ul>
-              <li>ACTION: Build Presto - https://github.com/facebook/presto</li>
+              <li>ACTION: Build Presto - https://github.com/facebook/presto 
+              or some other large project</li>
               <li>Build a large, multi-module project from the top level.</li>
               <li>Show the reactor</li>
+              <li>Start showing multi module version of simple project - build it and show structure</li>
             </ul>
           </aside>
         </section>
@@ -4517,11 +4474,10 @@ mvn install -Dmaven.test.skip=true
           </aside>
         </section>
         <section>
-          <h2>
-            Demo:<br />Perform a Release
-          </h2>
+          <h2>Demo:<br />Perform a Release</h2>
 
           <ul>
+            <li>add distributionMgt for a localhost Nexus to multi module project</li>
             <li>Demonstrate a manual release</li>
             <li>Discuss the general process for Releases</li>
             <li>In Advanced Maven you'll learn about the Release plugin</li>
