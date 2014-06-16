@@ -10,13 +10,13 @@ grunt serve
 
 and then look at 
 
-http://localhost:8000(http://localhost:8000)
+[http://localhost:8000](http://localhost:8000)
 
 To create a PDF print version use
 
-http://localhost:8000/installing-running-maven.html?print-pdf(http://localhost:8000/installing-running-maven.html?print-pdf)
+[http://localhost:8000/installing-running-maven.html?print-pdf](http://localhost:8000/installing-running-maven.html?print-pdf)
 
-http://localhost:8000/intro-to-maven.html?print-pdf#/(http://localhost:8000/intro-to-maven.html?print-pdf#/)
+[http://localhost:8000/intro-to-maven.html?print-pdf](http://localhost:8000/intro-to-maven.html?print-pdf#/)
 
 and then print to a PDF. You have to use Chrome for this to work.
 
