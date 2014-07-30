@@ -31,3 +31,14 @@ dl {
 dt {
   text-decoration: underline;
 }
+
+.footer {
+  background-color: white;
+  position: absolute; 
+  bottom: 1em;
+  display: block;
+}
+
+.footer p {
+  font-size: 14px;
+}
