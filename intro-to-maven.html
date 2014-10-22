@@ -233,8 +233,8 @@ If the query includes 'print-pdf', include the PDF print sheet -->
         </section>
         <section>
           <h2>IDE</h2>
-          <p>The examples in this class will feature Eclipse Kepler.</p>
-          <img src="img/web/eclipse-kepler.png" width="350" />
+          <p>The examples in this class will feature Eclipse Luna.</p>
+          <img src="img/web/eclipse-luna.png" width="350" />
           <p>But you can use IntelliJ or NetBeans, if that is what you are
             familiar with.</p>
           <p>Again, use an alternative IDE at your own risk.</p>
@@ -435,7 +435,7 @@ If the query includes 'print-pdf', include the PDF print sheet -->
 
           <p>Let's build this project...</p>
 
-          <pre>$ mvn clean install</pre>
+          <pre>$ mvn clean package</pre>
 
           <p>Note: This should take about a minute to complete.</p>
 
@@ -934,7 +934,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
             <li><b>Google -</b> com.google</li>
             <li><b>Google Android -</b> com.google.android</li>
             <li><b>Apache -</b> org.apache</li>
-            <li><b>Tesla -</b> io.tesla</li>
+            <li><b>Takari -</b> io.takari</li>
           </ul>
 
           <aside class="notes">
@@ -1218,15 +1218,15 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
 
           <pre>
 &lt;dependency&gt;
-  &lt;groupId&gt;org.sonatype.aether&lt;/groupId&gt;
-  &lt;artifactId&gt;aether-api&lt;/artifactId&gt;
-  &lt;version&gt;1.13.1&lt;/version&gt;
+  &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;
+  &lt;artifactId&gt;commons-compress&lt;/artifactId&gt;
+  &lt;version&gt;1.9&lt;/version&gt;
 &lt;/dependency&gt;
 	    </pre>
 
           <aside class="notes">
             <ul>
-              <li>"Here is a dependency declaration for Aether"</li>
+              <li>"Here is a dependency declaration for Commons Compress"</li>
               <li>"Note that it references a complete GAV coordinate."</li>
               <li>"In the next slide, you'll see how these coordinates are
                 mapped to a URL"</li>
@@ -1238,12 +1238,12 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
         <section>
           <h2>Dependencies have Coordinates</h2>
 
-          <p>Take Aether as an example:</p>
+          <p>Take Commons-Compress as an example:</p>
 
           <ul>
-            <li><b>groupId:</b> org.sonatype.aether</li>
-            <li><b>artifactId:</b> aether-api</li>
-            <li><b>version:</b> 1.13.1</li>
+            <li><b>groupId:</b> org.apache.commons</li>
+            <li><b>artifactId:</b> commons-compress</li>
+            <li><b>version:</b> 1.9</li>
           </ul>
 
           <aside class="notes">
@@ -1260,11 +1260,11 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
           <p>Maven turns these coordinates into a URL.</p>
 
           <pre>
-/org/sonatype/aether/
-                    aether-api/
-                               1.13.1/
+/org/apache/commons/
+                    commons-compress/
+                                     1.9/
 
-                    aether-api-1.13.1.jar
+                    commons-compress-1.9.jar
       </pre>
 
           <p>Download dependencies</p>
@@ -1312,7 +1312,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
           </aside>
         </section>
         <section>
-          <h2>mvn clean install</h2>
+          <h2>mvn clean package</h2>
           <p>Building a Maven Project is straightforward.</p>
         </section>
         <section>
@@ -4489,7 +4489,7 @@ mvn install -Dmaven.test.skip=true
           <h2>Demo:<br />Perform a Release</h2>
 
           <ul>
-            <li>add distributionMgt for a localhost Nexus to multi module project</li>
+            <li>Add distributionMgt for a localhost Nexus to multi module project</li>
             <li>Demonstrate a manual release</li>
             <li>Discuss the general process for Releases</li>
             <li>In Advanced Maven you'll learn about the Release plugin</li>

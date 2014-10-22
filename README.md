@@ -15,7 +15,8 @@ grunt serve
 ````
 
 and then look at [http://localhost:8000] (http://localhost:8000). Serving it
-from a local server like that will make sure the speaker notes work.
+from a local server like that will make sure the speaker notes work. (Press "s" to 
+show the notes).
 
 Familiarize yourself with the exercises in the labs folder up front also taking the
 comments inline as well as the speaker notes into account.  
