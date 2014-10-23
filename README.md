@@ -31,8 +31,18 @@ To create a PDF print version use
 * [http://localhost:8000/installing-running-maven.html?print-pdf](http://localhost:8000/installing-running-maven.html?print-pdf)
 * [http://localhost:8000/intro-to-maven.html?print-pdf](http://localhost:8000/intro-to-maven.html?print-pdf#/)
 
-and then print to a PDF. You have to use Chrome for this to work. More info at [https://github.com/hakimel/reveal.js]
-(https://github.com/hakimel/reveal.js)
+and then print to the PDF files in the materials folder. You have to use Chrome
+for this to work. More info at
+[https://github.com/hakimel/reveal.js](https://github.com/hakimel/reveal.js).
+
+Check those files into git to make things easier for next time. Then create the
+overall archive with these PDF files as well as the labs by running
+
+````
+grunt package
+````
+
+and provide the file 'target/'
 
 
 
