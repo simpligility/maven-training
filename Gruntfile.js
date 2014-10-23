@@ -6,9 +6,7 @@ module.exports = function(grunt) {
       .initConfig({
         pkg : grunt.file.readJSON('package.json'),
         meta : {
-          banner : '/*!\n'
-              + ' * reveal.js <%= pkg.version %> (<%= grunt.template.today("yyyy-mm-dd, HH:MM") %>)\n'
-              + ' */'
+          banner : '/*!\n* reveal.js <%= pkg.version %> (<%= grunt.template.today("yyyy-mm-dd, HH:MM") %>)\n*/'
         },
 
         uglify : {
@@ -78,9 +76,10 @@ module.exports = function(grunt) {
         },
 
         zip : {
-          'reveal-js-presentation.zip' : [ 'installing-running-maven.html',
+          'target/takari-training-presentation.zip' : [ 'installing-running-maven.html',
               'intro-to-maven.html', 'css/**', 'js/**', 'lib/**', 'images/**',
-              'plugin/**' ]
+              'plugin/**' ],
+          'target/takari-training-materials.zip' : [ 'takari-training-labs/**']
         },
 
         watch : {
@@ -107,7 +106,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-zip');
 
   // Default task
-  grunt.registerTask('default', [ 'jshint', 'cssmin', 'uglify', 'qunit' ]);
+  grunt.registerTask('default', [ 'jshint', 'cssmin', 'uglify' ]);
 
   // Theme task
   grunt.registerTask('themes', [ 'sass' ]);
