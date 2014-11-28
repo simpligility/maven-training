@@ -3133,7 +3133,7 @@ mvn install -Dmaven.test.skip=true
         </section>
         <section>
           <h2>
-            Demo:<br />Running Phases: Test
+            Demo Running Phases::<br /><br /> Test
           </h2>
 
           <p>
@@ -3151,7 +3151,7 @@ mvn install -Dmaven.test.skip=true
         </section>
         <section>
           <h2>
-            Demo:<br />Running Phases: Install
+            Demo Running Phases:<br /><br /> Install
           </h2>
 
           <p>
@@ -3321,8 +3321,9 @@ mvn install -Dmaven.test.skip=true
             <li>It focuses on packaging </li>
             <li>and it uses a simple Assembly:</li>
           </ul>
-          <p>Remember the lifecycle from the previous section, well the
-            packaging changes it...</p>
+          <br />
+          <p>Remember the lifecycle from the previous section, <br />
+          well the packaging changes it...</p>
         </section>
         <section>
           <h2>And here is what we are going to do</h2>    
@@ -3370,7 +3371,7 @@ mvn install -Dmaven.test.skip=true
 
           <ul>
             <li>Remember that packaging is a coordinate</li>
-            <li>groupId, artfiactId, version, <b>packaging</b>, classifier.
+            <li>groupId, artifactId, version, <b>packaging</b>, classifier.
             </li>
           </ul>
           <hr />
@@ -3455,7 +3456,7 @@ mvn install -Dmaven.test.skip=true
 
           <hr />
 
-          <aside>This is a simplified lifecycle. EAR is very different.</aside>
+          <aside>Same lifecycle, different bindings. EAR is very different.</aside>
 
           <aside class="notes">
             <ul>
@@ -3605,106 +3606,6 @@ mvn install -Dmaven.test.skip=true
         </section>
       </section>
 
-      <section>
-        <section>
-          <h2>Publishing Packages</h2>
-          <ul>
-            <li>Think of the Central Repository: How did those JARs get
-              there?</li>
-            <li>Answer: Maven. Maven packages can be published.</li>
-            <li>Note: Outside the scope of this class.</li>
-          </ul>
-          <aside class="notes">
-            <ul>
-              <li>"Throughout this class we've been talking about artifacts
-                and downloading artifacts from 'Central'."</li>
-
-              <li>"Artifacts are shared and published using Maven. These
-                packaging plugins - JAR, EAR, WAR. They are responsible for
-                creating artifacts published to Central."</li>
-            </ul>
-          </aside>
-        </section>
-        <section>
-          <h2>Public and Private Repos</h2>
-          <ul>
-            <li>You can proxy the Central Repository with a Repository
-              Manager.</li>
-            <li>You can also publish your own artifacts to a private
-              repository.</li>
-            <li>Bringing the ease and accessibility of the Central
-              Repository in-house.</li>
-            <li>And you can publish your open source project to the Central
-              Repository</li>
-          </ul>
-
-          <aside class="notes">
-            <ul>
-              <li>"While repository management and repository managers are
-                beyond the scope of this class."</li>
-              <li>"There are a lot of organizations that have installed
-                repository managers."</li>
-              <li>"They use Maven to publish artifacts to repositories."</li>
-            </ul>
-          </aside>
-        </section>
-
-        <section>
-          <h2>What is a SNAPSHOT?</h2>
-          <ul>
-            <li>Snapshots are timestamped builds for artifacts still in
-              development</li>
-            <li>You develop with snapshots</li>
-            <li>Snapshots are constantly changing artifacts</li>
-          </ul>
-          <aside class="notes">
-            <ul>
-              <li>"An important point for people publishing artifacts.
-                There are releases and snapshots."</li>
-              <li>"Snapshots are artifacts published from projects that are
-                still changing."</li>
-              <li>"You use SNAPSHOTs in development."</li>
-            </ul>
-          </aside>
-
-        </section>
-        <section>
-          <h2>What is a Release?</h2>
-
-          <ul>
-            <li>Releases are point-in-time versions</li>
-            <li>They never change. For example commons-lang 1.1 will never
-              change.</li>
-            <li>You download releases from the Central Repository</li>
-            <li>.. or other release repositories.</li>
-          </ul>
-
-          <aside class="notes">
-            <ul>
-              <li>"Releases, on the other hand, they never change."</li>
-              <li>"When you release software you 'cut a version' and
-                publish that artifact to a repository."</li>
-              <li>"When you download from Central, you are downloading
-                Release versions."</li>
-            </ul>
-          </aside>
-        </section>
-        <section>
-          <h2>Demo: Release a Version</h2>
-          <ul>
-            <li>Let's see exactly what happens between SNAPSHOTs and
-              Releases.</li>
-          </ul>
-          <aside class="notes">
-            <ul>
-              <li><a target="_new"
-                href="http://www.youtube.com/watch?v=420Kes9RSEA&list=PLTY3FUC1M6rmH8k9hS3zLtJX-aqAG0tQQ&index=1">ACTION</a>:
-                Take the simple-project - build a snapshot. Then change to a
-                version number. Show the result. </li>
-            </ul>
-          </aside>
-        </section>
-      </section>
 
       <section>
         <section>
@@ -3772,7 +3673,7 @@ mvn install -Dmaven.test.skip=true
           <br /><br />
           <hr />
           <p>
-            <b>This is a core assumption of the Maven.</b>
+            <b>This is a core assumption of Maven.</b>
           </p>
 
           <aside class="notes">
@@ -3889,8 +3790,8 @@ mvn install -Dmaven.test.skip=true
           <p>Software lives for years (often decades)</p>
 
           <ul>
-            <li>As systems and teams scale, single builds do not</li>
-            <li>As modularity develops, monolithic builds constrain</li>
+            <li>As systems and teams scale, single builds do not.</li>
+            <li>As modularity develops, monolithic builds constrain.</li>
             <li>At scale, monolithic builds inhibit progress.</li>
           </ul>
 
@@ -3922,8 +3823,8 @@ mvn install -Dmaven.test.skip=true
             <li>Releases will take <b>forever</b> and the business will
               suffer.
             </li>
-            <li>New projects are difficult to integrate and the build
-              becomes too brittle to manage.</li>
+            <li>New projects are difficult to integrate</li>
+            <li>And the build becomes too brittle to change.</li>
           </ul>
 
           <aside class="notes">
@@ -4377,6 +4278,48 @@ mvn install -Dmaven.test.skip=true
       </section>
       <section>
         <section>
+          <h2>Publishing Packages</h2>
+          <ul>
+            <li>Think of the Central Repository: How did those JARs get
+              there?</li>
+            <li>Answer: Maven. Maven packages can be published.</li>
+            <li>Note: Outside the scope of this class.</li>
+          </ul>
+          <aside class="notes">
+            <ul>
+              <li>"Throughout this class we've been talking about artifacts
+                and downloading artifacts from 'Central'."</li>
+
+              <li>"Artifacts are shared and published using Maven. These
+                packaging plugins - JAR, EAR, WAR. They are responsible for
+                creating artifacts published to Central."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Public and Private Repos</h2>
+          <ul>
+            <li>You can proxy the Central Repository with a Repository
+              Manager.</li>
+            <li>You can also publish your own artifacts to a private
+              repository.</li>
+            <li>Bringing the ease and accessibility of the Central
+              Repository in-house.</li>
+            <li>And you can publish your open source project to the Central
+              Repository</li>
+          </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>"While repository management and repository managers are
+                beyond the scope of this class."</li>
+              <li>"There are a lot of organizations that have installed
+                repository managers."</li>
+              <li>"They use Maven to publish artifacts to repositories."</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
           <h2>Releasing Software</h2>
           <p>Maven has a standard for a transition from development to
             release.</p>
@@ -4418,6 +4361,47 @@ mvn install -Dmaven.test.skip=true
                 Releases, and these concepts are not up for redefinition."</li>
               <li>"If Snapshots and Releases don't fit your software model,
                 we strongly discourage people to skip Snapshots."</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+          <h2>What is a SNAPSHOT?</h2>
+          <ul>
+            <li>Snapshots are timestamped builds for artifacts still in
+              development</li>
+            <li>You develop with snapshots</li>
+            <li>Snapshots are constantly changing artifacts</li>
+          </ul>
+          <aside class="notes">
+            <ul>
+              <li>"An important point for people publishing artifacts.
+                There are releases and snapshots."</li>
+              <li>"Snapshots are artifacts published from projects that are
+                still changing."</li>
+              <li>"You use SNAPSHOTs in development."</li>
+            </ul>
+          </aside>
+
+        </section>
+        <section>
+          <h2>What is a Release?</h2>
+
+          <ul>
+            <li>Releases are point-in-time versions</li>
+            <li>They never change. For example commons-lang 1.1 will never
+              change.</li>
+            <li>You download releases from the Central Repository</li>
+            <li>.. or other release repositories.</li>
+          </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>"Releases, on the other hand, they never change."</li>
+              <li>"When you release software you 'cut a version' and
+                publish that artifact to a repository."</li>
+              <li>"When you download from Central, you are downloading
+                Release versions."</li>
             </ul>
           </aside>
         </section>
@@ -4485,13 +4469,28 @@ mvn install -Dmaven.test.skip=true
           </aside>
         </section>
         <section>
-          <h2>Demo:<br />Perform a Release</h2>
+          <h2>Demo: Perform a Release</h2>
+          <ul>
+            <li>Let's see exactly what happens between SNAPSHOTs and
+              Releases.</li>
+          </ul>
+          <aside class="notes">
+            <ul>
+              <li><a target="_new"
+                href="http://www.youtube.com/watch?v=420Kes9RSEA&list=PLTY3FUC1M6rmH8k9hS3zLtJX-aqAG0tQQ&index=1">ACTION</a>:
+                Take the simple-project - build a snapshot. Then change to a
+                version number. Show the result. </li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Demo: Perform a Release</h2>
 
           <ul>
-            <li>Add distributionMgt for a localhost Nexus to multi module project</li>
-            <li>Demonstrate a manual release</li>
-            <li>Discuss the general process for Releases</li>
-            <li>In Advanced Maven you'll learn about the Release plugin</li>
+            <li>Add distributionMgt for a localhost Nexus to multi module project.</li>
+            <li>Demonstrate a manual release.</li>
+            <li>Discuss the general process for Releases.</li>
+            <li>In Advanced Maven you'll learn about the Release plugin.</li>
           </ul>
 
           <aside class="notes">
