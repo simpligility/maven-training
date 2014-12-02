@@ -77,7 +77,7 @@ module.exports = function(grunt) {
 
         zip : {
           'target/takari-training-presentation.zip' : [ 'installing-running-maven.html',
-              'intro-to-maven.html', 'css/**', 'js/**', 'lib/**', 'images/**',
+              'intro-to-maven.html', 'css/**', 'js/**', 'lib/**', 'img/**',
               'plugin/**' ],
           'target/takari-training-materials.zip' : [ 'takari-training-labs/**',
               'takari-training-slides/**']
