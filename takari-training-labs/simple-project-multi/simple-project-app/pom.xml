@@ -1,10 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>io.takari.training.simple</groupId>
     <artifactId>simple-project-multi</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
+
   <artifactId>simple-project-app</artifactId>
 
   <dependencies>
@@ -28,10 +31,12 @@
       <artifactId>commons-lang3</artifactId>
     </dependency>
   </dependencies>
+
   <build>
     <plugins>
       <!-- jar plugin configured to have main class in manifest -->
-      <!-- <plugin>
+      <!--
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <version>2.4</version>
@@ -45,7 +50,7 @@
           </archive>
         </configuration>
       </plugin>
-       -->
+      -->
       <!-- dependency plugin only used to copy dependencies into target -->
       <!-- 
       <plugin>
@@ -64,9 +69,9 @@
           </execution>
         </executions>
       </plugin>
-       -->
+      -->
 
-      <!--  executable jar with dependencies inside(!), note archive config -->
+      <!-- executable jar with dependencies inside(!), note archive config -->
       <!--  
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
@@ -95,7 +100,7 @@
       </plugin>
       -->
       
-      <!--  shade and nifty combined -->
+      <!-- shade and nifty combined -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
@@ -110,7 +115,7 @@
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                 <!-- note that the main class is set *here* -->
+                  <!-- note that the main class is set *here* -->
                   <mainClass>io.takari.training.Main</mainClass>
                 </transformer>
               </transformers>
@@ -124,29 +129,28 @@
           </execution>
         </executions>
       </plugin>
-			<!-- now make the jar chmod +x style executable -->
+      <!-- now make the jar chmod +x style executable -->
       <plugin>
         <groupId>org.skife.maven</groupId>
         <artifactId>really-executable-jar-maven-plugin</artifactId>
         <version>1.1.0</version>
         <configuration>
-					<!-- value of flags will be interpolated into the java invocation -->
-					<!-- as "java $flags -jar ..." -->
+          <!-- value of flags will be interpolated into the java invocation -->
+          <!-- as "java $flags -jar ..." -->
           <flags>-Xmx1G</flags>
 
-					<!-- (optional) name for binary executable, if not set will just -->
-					<!-- make the regular jar artifact executable -->
+          <!-- (optional) name for binary executable, if not set will just -->
+          <!-- make the regular jar artifact executable -->
           <programFile>nifty-executable</programFile>
 
-					<!-- (optional) name for a file that will define what script gets -->
-					<!-- embedded into the executable jar. This can be used to -->
-					<!-- override the default startup script which is -->
-					<!-- `#!/bin/sh -->
-					<!-- -->
-					<!-- exec java " + flags + " -jar "$0" "$@" -->
-					<!-- <scriptFile>src/packaging/someScript.extension</scriptFile> -->
+          <!-- (optional) name for a file that will define what script gets -->
+          <!-- embedded into the executable jar. This can be used to -->
+          <!-- override the default startup script which is -->
+          <!-- `#!/bin/sh -->
+          <!-- -->
+          <!-- exec java " + flags + " -jar "$0" "$@" -->
+          <!-- <scriptFile>src/packaging/someScript.extension</scriptFile> -->
         </configuration>
-
         <executions>
           <execution>
             <phase>package</phase>
@@ -156,9 +160,9 @@
           </execution>
         </executions>
       </plugin>
-
     </plugins>
   </build>
+
   <reporting>
     <plugins>
       <plugin>
