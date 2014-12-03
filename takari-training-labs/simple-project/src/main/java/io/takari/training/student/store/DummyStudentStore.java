@@ -3,10 +3,8 @@ package io.takari.training.student.store;
 import io.takari.training.student.Student;
 import io.takari.training.student.StudentStore;
 
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 import javax.inject.Singleton;
 
