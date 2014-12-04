@@ -818,7 +818,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
           </aside>
         </section>
         <section>
-          <h2>Demo: Inspect Example Artifact</h2>
+          <h2>Demo: Inspect Example Project</h2>
           <aside class="notes">
             <ul>
               <li><a target="_new"
@@ -1293,7 +1293,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
           <aside class="notes">
             <ul>
               <li>"Maven also has the concept of scope..."</li>
-              <li>"...Project depend on different artifacts for different
+              <li>"...Projects depend on different artifacts for different
                 reasons."</li>
               <li>"This example has a compile scope and a test scope."</li>
               <li>NOTE: Explain these two scopes very quickly we don't need
@@ -1786,7 +1786,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
           <aside class="notes">
             <ul>
               <li>"Wait? What? Yes, Maven doesn't just download a JAR...."</li>
-              <li>"It downloads a JAR and a POM, and if the POM has more
+              <li>"It downloads a JAR and a POM, and if the POM declares more
                 dependencies..."</li>
               <li>"Maven will continue to download those dependencies."</li>
             </ul>
@@ -1843,7 +1843,7 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
 
           <aside class="notes">
             <ul>
-              <li>"When Maven is create these dependency graphs for a
+              <li>"When Maven creates these dependency graphs for a
                 project what it is doing is making sure that it has enough
                 dependencies to create the necessary class-paths for different
                 stages of the build."</li>
@@ -2171,8 +2171,8 @@ $ java -jar simple-project-1.0-SNAPSHOT.jar</pre>
             <ul>
               <li>"If we zoom out one level, you'll see that a plugin
                 collects similar goals together."</li>
-              <li>"Here the Surefire plugin collects the test and
-                test-compile goals. Both related to testing."</li>
+              <li>"Here the Surefire plugin only collects one goal, the
+                test goal."</li>
             </ul>
           </aside>
         </section>
@@ -2349,7 +2349,7 @@ mvn install -Dmaven.test.skip=true
           <p>What just happened?</p>
 
           <ul>
-            <li>The Surefire Plugins's...</li>
+            <li>The Surefire Plugin's...</li>
             <li><goal>test</goal> goal ...</li>
             <li>changed behaviour based on a command-line argument.</li>
           </ul>
@@ -2583,7 +2583,7 @@ mvn install -Dmaven.test.skip=true
 
               <li>You can talk for an hour on goals, plugins, and the
                 lifecycle, but you really shouldn't. This section is the stuff
-                that everyone touch Maven should know, but never does.</li>
+                that everyone touching Maven should know, but never does.</li>
 
               <li>Module Playlist: <a target="_new"
                 href="https://www.youtube.com/playlist?list=PLTY3FUC1M6rmasFnZ5Z1AHM0SU63MAisx">YouTube</a></li>
@@ -2646,9 +2646,9 @@ mvn install -Dmaven.test.skip=true
           <p>In the previous module we ran the "test" goal.</p>
 
           <ul>
-            <li>A single action.</li>
+            <li>A single action</li>
             <li>Configurable from the command-line</li>
-            <li>Take a look at this goals configurable properties...</li>
+            <li>Take a look at this goal's configurable properties...</li>
           </ul>
 
           <aside class="notes">
@@ -3133,7 +3133,7 @@ mvn install -Dmaven.test.skip=true
         </section>
         <section>
           <h2>
-            Demo Running Phases::<br /><br /> Test
+            Demo Running Phases:<br /><br /> Test
           </h2>
 
           <p>
@@ -3620,7 +3620,7 @@ mvn install -Dmaven.test.skip=true
               <li>That last bullet item. It is audacious, but I feel like
                 the class should build up to something big, right? Like at the
                 end of the Maven intro class, a pretty basic class. We end up
-                standing up an application server and deploying and application
+                starting up an application server and deploying and application
                 to it.</li>
             </ul>
           </aside>
@@ -4217,12 +4217,12 @@ mvn install -Dmaven.test.skip=true
                 interesting relationship."</li>
               <li>"Build-wide common config, configuration for groups of
                 project, and..."</li>
-              <li>"...via the SuperPOM, Maven's defaults."</li>
+              <li>"...via the super-POM, Maven's defaults."</li>
             </ul>
           </aside>
         </section>
         <section>
-          <h2>Every POM Inherits the SuperPOM</h2>
+          <h2>Every POM Inherits the Super-POM</h2>
 
           <img src="img/web/inheritance-pom-inherited-zoomout.png" />
 
