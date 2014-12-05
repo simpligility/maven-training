@@ -33,9 +33,9 @@
   </dependencies>
 
   <build>
+   <pluginManagement>
     <plugins>
       <!-- jar plugin configured to have main class in manifest -->
-      <!--
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -50,7 +50,9 @@
           </archive>
         </configuration>
       </plugin>
-      -->
+      </plugins>
+    </pluginManagement>
+    <plugins>
       <!-- dependency plugin only used to copy dependencies into target -->
       <!-- 
       <plugin>
