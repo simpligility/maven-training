@@ -3475,6 +3475,7 @@ mvn install -Dmaven.test.skip=true
           <hr />
 
           <p>Use the Maven Assembly Plugin</p>
+          <p>Maybe add the AppAssembler Maven Plugin</p>
           <p>Or a plugin that natively supports a specific packaging</p>
 
           <aside class="notes">
@@ -3484,6 +3485,7 @@ mvn install -Dmaven.test.skip=true
               <li>"Maybe you would like a self-executing JAR file?"</li>
               <li>"For these requirements we use the Assembly plugin."</li>
               <li>E.g. Android Maven Plugin supports apk and aar and others</li>
+              <li>Example for Assembly and Appsembler combined is e.g. assembly module of https://github.com/khmarbaise/supose</li>
             </ul>
           </aside>
         </section>
@@ -3589,10 +3591,37 @@ mvn install -Dmaven.test.skip=true
         <section>
           <h2>Demo:<br />Creating a Self-executing JAR</h2>
           <ul>
-            <li>Configuring the Assembly plugin to generate a
-              Self-executing JAR</li>
-            <li>Note that this example is advanced.</li>
-            <li>Uses the Shade plugin + Nifty Executable.</li>
+            <li>Configuring the Assembly plugin to generate the JAR</li>
+            <li>Including the dependencies</li>
+          </ul>
+          <aside class="notes">
+            <ul>
+              <li>See simple-project-exec, run java -jar in target there</li>
+              <li>Checkout Assembly Plugin docs for jar-with-dependencies</li>
+              <li>Show assembly descriptor for it, to be able to start customization</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>More Distribution Options</h2>
+          <ul>
+            <li>Assembly Plugin customized</li>
+            <li>Or combine with AppAssembler Plugin</li>
+            <li>It can create startup scripts for programs or services</li>
+            <li>For different operating systems as well!</li>
+          </ul>
+          <aside class="notes">
+            <ul>
+              <li>https://github.com/khmarbaise/supose
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Even More Distribution Options</h2>
+           <ul>
+            <li>Combine Shade Plugin</li>
+            <li>With Nifty Executable Plugin</li>
+            <li>Watch your operating system needs</li>
           </ul>
           <aside class="notes">
             <ul>
@@ -3609,7 +3638,7 @@ mvn install -Dmaven.test.skip=true
 
       <section>
         <section>
-          <h1>Creating a Multi-module Project</h1>
+          <h1>Creating a Multi-Module Project</h1>
           <aside class="notes">
             <p>
               <b>Min Time: 45 minutes, Max Time: 50 minutes</b>
