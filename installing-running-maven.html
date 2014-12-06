@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/takari.css">
 <link rel="stylesheet" href="css/training.css">
+<script src="js/jquery-1.11.1.js"></script>
 
 <!-- If the query includes 'print-pdf', use the PDF print sheet -->
 <!-- <script>
@@ -40,7 +41,12 @@ If the query includes 'print-pdf', include the PDF print sheet -->
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   }
 </script>
-
+<!--  <script> -->
+//   if ( window.location.search.match( /print-pdf/gi ) ) {
+//       document.write( '<link rel="stylesheet" href="css/print/pdf.css" type="text/css">' );
+//       document.write( '<link rel="stylesheet" href="css/print/pdf_custom.css" type="text/css">' );
+//   }
+<!-- </script> -->
 <!--[if lt IE 9]>
 	<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
@@ -48,9 +54,9 @@ If the query includes 'print-pdf', include the PDF print sheet -->
 
 <body>
   <div class="reveal">
-    <div class="brand">
-      <img src="img/takari_logo.png" alt="Takari" style="float: left;" />
-    </div>
+<!--     <div class="brand"> -->
+<!--       <img src="img/takari_logo.png" alt="Takari" style="float: left;" /> -->
+<!--     </div> -->
 
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
@@ -243,6 +249,18 @@ OS name: "mac os x", version: "10.8.5",
 								document.querySelector(".slidenumber").innerText = slidenumber(event);
 							});
 		</script>
+    <!--  Trying to get header in each slide, also on pdf 
+    https://github.com/hakimel/reveal.js/issues/806
+    -->  
+    <script type="text/javascript">
+      var foo = '<div class="brand"><img src="img/takari_logo.png" alt="Takari" style="float: left;" /></div>';
+      if( window.location.search.match( /print-pdf/gi ) ) {
+          $('section').append(foo);
+      }
+      else {
+          $('div.reveal').append(foo);
+      }
+    </script>
 </body>
 </html>
 
