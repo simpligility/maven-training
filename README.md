@@ -35,6 +35,18 @@ and then print to the PDF files in the materials folder. You have to use Chrome
 for this to work. More info at
 [https://github.com/hakimel/reveal.js](https://github.com/hakimel/reveal.js).
 
+An alternative way to print can be done using phantomjs. First install that with
+
+````
+npm install phantomjs
+````
+
+and then start the server and run the script
+
+````
+./makepdfs.sh
+````
+
 Check those files into git to make things easier for next time. Then create the
 overall archive with these PDF files as well as the labs by running
 
