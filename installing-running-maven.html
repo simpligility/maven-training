@@ -74,7 +74,7 @@ If the query includes 'print-pdf', include the PDF print sheet -->
       <section>
         <h2>Module Objectives</h2>
         <ul>
-          <li>Install Java 7</li>
+          <li>Install Java 8</li>
           <li>Download Maven</li>
           <li>Install Maven</li>
           <li>Run Maven</li>
@@ -83,10 +83,10 @@ If the query includes 'print-pdf', include the PDF print sheet -->
       </section>
 
       <section>
-        <h2>Install Java 7</h2>
+        <h2>Install Java </h2>
         <p>Maven is designed to run on Java 6 or higher.</p>
         <p>
-          <b>This class uses Java 7.</b>
+          <b>This class uses Java 8.</b>
         </p>
         <ol>
           <li>Visit Oracle's Java SE Page: <a
@@ -106,9 +106,9 @@ If the query includes 'print-pdf', include the PDF print sheet -->
           <li>Download zip or tar.gz file, contents are identical
             <ul>
               <li><a
-                href="http://repo1.maven.org/maven2/org/apache/maven/apache-maven/3.2.3/apache-maven-3.2.3-bin.tar.gz">apache-maven-3.2.3-bin.tar.gz</a></li>
+                href="http://repo1.maven.org/maven2/org/apache/maven/apache-maven/3.3.9/apache-maven-3.3.9-bin.tar.gz">apache-maven-3.3.9-bin.tar.gz</a></li>
               <li><a
-                href="http://repo1.maven.org/maven2/org/apache/maven/apache-maven/3.2.3/apache-maven-3.2.3-bin.zip">apache-maven-3.2.3-bin.zip</a></li>
+                href="http://repo1.maven.org/maven2/org/apache/maven/apache-maven/3.3.9/apache-maven-3.3.9-bin.zip">apache-maven-3.3.9-bin.zip</a></li>
             </ul>
           </li>
         </ol>
@@ -120,14 +120,12 @@ If the query includes 'print-pdf', include the PDF print sheet -->
           <li>Unpack the Maven distribution in any directory
             <ul>
               <li>e.g. extraction in /opt will create
-                /opt/apache-maven-3.2.3</li>
+                /opt/apache-maven-3.3.9</li>
             </ul>
           </li>
-          <li>Set two environment variables:
+          <li>Edit the PATH environment variable:
             <ul>
-              <li><code>M2_HOME</code> should point to
-                /opt/apache-maven-3.2.3</li>
-              <li><code>PATH</code> add ${M2_HOME}/bin to PATH</li>
+              <li>add /opt/apache-maven-3.3.9/bin</li>
             </ul>
           </li>
           <li>Restart shell to pick-up environment variable changes</li>
@@ -138,22 +136,22 @@ If the query includes 'print-pdf', include the PDF print sheet -->
         <h2>Running Maven</h2>
         <p>Once Maven has been installed, run the following command:</p>
         <pre>$ mvn -v
-Apache Maven 3.2.3 (33f8c3e1027c3ddde99d...; 
-    2014-08-11T13:58:10-07:00)
-Maven home: /opt/apache-maven-3.2.3
-Java version: 1.7.0_71, vendor: Oracle Corporation
-Java home: /Library/Java/JavaVirtualMachines/
-    jdk1.7.0_71.jdk/Contents/Home/jre
+Apache Maven 3.3.9 (bb52d85...; 
+    2015-11-10T08:41:47-08:00)
+Maven home: /opt/apache-maven-3.3.9
+Java version: 1.8.0_60, vendor: Oracle Corporation
+Java home: /Library/Java/JavaVirtualMachines
+    /jdk1.8.0_60.jdk/Contents/Home/jre
 Default locale: en_US, platform encoding: UTF-8
 OS name: "mac os x", version: "10.8.5", 
-    arch: "x86_64", family: "mac"
+   arch: "x86_64", family: "mac"
       </pre>
       </section>
 
     </div>
     <div class="slidenumber">1</div>
     <div class="footer">
-      <p>Copyright 2013-2014 Takari, Inc. All rights reserved. Further details in the included LICENSE file.</p>
+      <p>Copyright 2013-Present Takari, Inc. All rights reserved. Further details in the included LICENSE file.</p>
     </div>    
   </div>
   <script src="lib/js/head.min.js"></script>
