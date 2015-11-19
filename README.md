@@ -41,7 +41,7 @@ An alternative way to print can be done using phantomjs. First install that with
 npm install phantomjs
 ````
 
-and then start the server and run the script
+and then start the server (!) and run the script
 
 ````
 ./makepdfs.sh
